@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import { LowAltitudeEconomy } from "./pages/LowAltitudeEconomy";
 import { ApplicationsPage } from "./pages/ApplicationsPage";
 import { ProductsPage } from "./pages/ProductsPage";
+import { TrainingCenter } from "./pages/TrainingCenter";
 
 // We extract the home layout into a sub-component for clean routing
 
@@ -22,6 +23,7 @@ function App() {
                     <Route path="/economy" element={<LowAltitudeEconomy />} /> {/* Add this route */}
                     <Route path="/applications" element={<ApplicationsPage />} /> {/* Add this route */}
                     <Route path="/products" element={<ProductsPage />} /> {/* Add Products Route */}
+                    <Route path="/training" element={<TrainingCenter />} /> {/* Add Training Route */}
                 </Routes>
 
                 <Footer />
