@@ -46,7 +46,11 @@ export const Navbar = () => {
                             Applications
                         </Link>
                     </li>{" "}
-                    <li className="hover:text-aero-blue cursor-pointer transition-colors">Products</li>
+                    <li>
+                        <Link to="/products" className="hover:text-aero-blue transition-colors">
+                            Series Products
+                        </Link>
+                    </li>{" "}
                     <li className="hover:text-aero-blue cursor-pointer transition-colors">Training Center</li>
                 </ul>
 

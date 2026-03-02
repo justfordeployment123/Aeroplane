@@ -5,6 +5,7 @@ import { About } from "./pages/About"; // Import the new page
 import Home from "./pages/Home";
 import { LowAltitudeEconomy } from "./pages/LowAltitudeEconomy";
 import { ApplicationsPage } from "./pages/ApplicationsPage";
+import { ProductsPage } from "./pages/ProductsPage";
 
 // We extract the home layout into a sub-component for clean routing
 
@@ -20,6 +21,7 @@ function App() {
                     <Route path="/about" element={<About />} />
                     <Route path="/economy" element={<LowAltitudeEconomy />} /> {/* Add this route */}
                     <Route path="/applications" element={<ApplicationsPage />} /> {/* Add this route */}
+                    <Route path="/products" element={<ProductsPage />} /> {/* Add Products Route */}
                 </Routes>
 
                 <Footer />
