@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+/* Define our custom AeroNexus theme variables here */
+@theme {
+  --color-aero-dark: #050505;
+  --color-aero-blue: #00d2ff;
+  --color-aero-purple: #3a7bd5;
+  --color-aero-panel: rgba(255, 255, 255, 0.03);
+}
+
+body {
+  background-color: var(--color-aero-dark);
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar for a sleek look */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-aero-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-aero-blue);
+}
