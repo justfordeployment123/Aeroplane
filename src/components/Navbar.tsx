@@ -41,7 +41,11 @@ export const Navbar = () => {
                             Low Altitude Economy
                         </Link>
                     </li>
-                    <li className="hover:text-aero-blue cursor-pointer transition-colors">Applications</li>
+                    <li>
+                        <Link to="/applications" className="hover:text-aero-blue transition-colors">
+                            Applications
+                        </Link>
+                    </li>{" "}
                     <li className="hover:text-aero-blue cursor-pointer transition-colors">Products</li>
                     <li className="hover:text-aero-blue cursor-pointer transition-colors">Training Center</li>
                 </ul>

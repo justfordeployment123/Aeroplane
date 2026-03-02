@@ -1,5 +1,6 @@
 // src/components/Applications.tsx
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const apps = [
     {
@@ -66,17 +67,19 @@ export const Applications = () => {
 
                                 {/* Learn More Link */}
                                 <div className="opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200">
-                                    <span className="inline-flex items-center text-aero-blue font-semibold uppercase tracking-wider text-sm">
-                                        Learn More
-                                        <svg
-                                            className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                        >
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                        </svg>
-                                    </span>
+                                    <Link to="/applications">
+                                        <span className="inline-flex items-center text-aero-blue font-semibold uppercase tracking-wider text-sm cursor-pointer">
+                                            Learn More
+                                            <svg
+                                                className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke="currentColor"
+                                            >
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                            </svg>
+                                        </span>
+                                    </Link>
                                 </div>
                             </div>
                         </motion.div>
