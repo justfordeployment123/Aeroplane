@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X, Search, Globe } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -25,8 +26,16 @@ export const Navbar = () => {
                 </div>
 
                 <ul className="hidden md:flex space-x-8 text-sm font-medium text-gray-300">
-                    <li className="hover:text-aero-blue cursor-pointer transition-colors">Home</li>
-                    <li className="hover:text-aero-blue cursor-pointer transition-colors">About Us</li>
+                    <li>
+                        <Link to="/" className="hover:text-aero-blue cursor-pointer transition-colors">
+                            Home
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/about" className="hover:text-aero-blue cursor-pointer transition-colors">
+                            About Us
+                        </Link>
+                    </li>
                     <li className="hover:text-aero-blue cursor-pointer transition-colors">Applications</li>
                     <li className="hover:text-aero-blue cursor-pointer transition-colors">Products</li>
                     <li className="hover:text-aero-blue cursor-pointer transition-colors">Training Center</li>

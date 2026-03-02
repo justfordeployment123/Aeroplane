@@ -1,21 +1,28 @@
-import { Navbar } from "./components/Navbar";
-import { Hero } from "./components/Hero";
-import { Applications } from "./components/Applications";
-import { Products } from "./components/Products";
-import { CoreAdvantages } from "./components/CoreAdvantages";
-import { Footer } from "./components/Footer";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Navbar } from './components/Navbar';
+import { Footer } from './components/Footer';
+import { About } from './pages/About'; // Import the new page
+import Home from './pages/Home';
+
+// We extract the home layout into a sub-component for clean routing
+
 
 function App() {
-    return (
-        <div className="min-h-screen bg-aero-dark font-sans text-white selection:bg-aero-blue selection:text-black">
-            <Navbar />
-            <Hero />
-            <Products /> {/* The new drone grid */}
-            <Applications />
-            <CoreAdvantages />
-            <Footer />
-        </div>
-    );
+  return (
+    <Router>
+      <div className="min-h-screen bg-aero-dark font-sans text-white selection:bg-aero-blue selection:text-black">
+        <Navbar />
+        
+        {/* Route Configuration */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+        
+        <Footer />
+      </div>
+    </Router>
+  );
 }
 
 export default App;
