@@ -87,6 +87,8 @@ export const Applications = () => {
                             <img
                                 src={apps[0].img}
                                 alt={apps[0].title}
+                                loading="lazy"
+                                decoding="async"
                                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-[2s] ease-out group-hover:scale-105"
                             />
                             {/* Overlays */}
@@ -165,6 +167,8 @@ export const Applications = () => {
                                     <img
                                         src={app.img}
                                         alt={app.title}
+                                        loading="lazy"
+                                        decoding="async"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-[2s] ease-out group-hover:scale-105"
                                     />
                                     {/* Overlays */}

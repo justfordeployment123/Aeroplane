@@ -131,6 +131,8 @@ const ParallaxImage = ({ src, alt }: { src: string; alt: string }) => {
                     <motion.img
                         src={src}
                         alt={alt}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full object-cover rounded-3xl"
                         style={{ x: imgX, y: imgY }}
                     />
@@ -178,6 +180,8 @@ const FlipCard = ({ cert, idx }: { cert: (typeof certificates)[number]; idx: num
                         <img
                             src={cert.img}
                             alt={cert.title}
+                            loading="lazy"
+                            decoding="async"
                             className="max-h-full max-w-full object-contain drop-shadow-md"
                         />
                     </div>
@@ -690,6 +694,8 @@ export const About = () => {
                                     <img
                                         src="https://www.htsdfp.com/UploadFiles/2024-03-01/xphd7wktdh8z9f5m.png"
                                         alt="Vision Diagram"
+                                        loading="lazy"
+                                        decoding="async"
                                         className="w-full h-auto object-contain"
                                     />
                                 </div>

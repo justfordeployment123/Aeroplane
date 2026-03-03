@@ -338,6 +338,8 @@ export const TrainingCenter = () => {
                                         <img
                                             src={panel.img}
                                             alt={panel.title}
+                                            loading="lazy"
+                                            decoding="async"
                                             className="w-full h-auto rounded-xl"
                                         />
                                     </div>

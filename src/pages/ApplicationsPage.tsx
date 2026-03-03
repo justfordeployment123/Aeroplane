@@ -113,6 +113,8 @@ const ImmersiveScenario = ({ scenario, index }: { scenario: (typeof scenarios)[0
                             <img
                                 src={scenario.img}
                                 alt={scenario.title}
+                                loading="lazy"
+                                decoding="async"
                                 className="w-full h-[400px] lg:h-[500px] object-cover"
                             />
 
