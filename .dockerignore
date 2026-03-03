@@ -3,7 +3,4 @@ dist
 .git
 .gitignore
 *.md
-*.mp4
-*.png
 docker-compose.yml
-nginx.conf
