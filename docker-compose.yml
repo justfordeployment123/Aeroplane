@@ -1,0 +1,10 @@
+services:
+  aeronexus:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: aeronexus:latest
+    container_name: aeronexus
+    ports:
+      - "8080:80"        # Visit http://localhost:8080
+    restart: unless-stopped
