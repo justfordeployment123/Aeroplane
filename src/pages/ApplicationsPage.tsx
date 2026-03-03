@@ -1,19 +1,17 @@
-import { motion } from "framer-motion";
-import { ArrowRight, Package, ShieldAlert, Factory, ChevronRight } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { ArrowRight, Package, ShieldAlert, Factory } from "lucide-react";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 const scenarios = [
     {
         num: "01",
         title: "Civil Logistics",
         label: "Supply Chain Automation",
-        desc: "Revolutionizing the supply chain with autonomous precision. We provide systematic solutions for typical operation scenarios such as trunk logistics, branch logistics, and terminal logistics. Our systems ensure faster, safer, and more cost-effective delivery networks.",
-        img: "https://www.htsdfp.com/UploadFiles/2024-10-10/tsfdemhrijza6ejq.png",
+        desc: "Revolutionizing the supply chain with autonomous precision. We provide systematic solutions for trunk logistics, branch logistics, and terminal logistics — ensuring faster, safer, and more cost-effective delivery networks across vast distances.",
+        img: "/images/applications/civil-logistics.png",
         icon: Package,
         accent: "#00d2ff",
-        gradientFrom: "#00d2ff",
-        gradientTo: "#0ea5e9",
-        glowColor: "rgba(0,210,255,0.15)",
         stats: [
             { value: "3×", label: "Faster Delivery" },
             { value: "60%", label: "Cost Reduction" },
@@ -25,12 +23,9 @@ const scenarios = [
         title: "Emergency Rescue",
         label: "Disaster Response",
         desc: "Innovating the UAV emergency rescue mode. We build an intelligent, three-dimensional rescue system that provides rapid, systematic solutions for disaster scenarios where human access is dangerous or impossible. Time saved is lives saved.",
-        img: "https://www.htsdfp.com/UploadFiles/2024-05-15/wxzhgujhcrs7dwzb.png",
+        img: "/images/applications/emergency-rescue.png",
         icon: ShieldAlert,
-        accent: "#f97316",
-        gradientFrom: "#f97316",
-        gradientTo: "#ef4444",
-        glowColor: "rgba(249,115,22,0.15)",
+        accent: "#ef4444",
         stats: [
             { value: "<5min", label: "Deploy Time" },
             { value: "100km", label: "Response Radius" },
@@ -41,13 +36,10 @@ const scenarios = [
         num: "03",
         title: "Industry Service",
         label: "Enterprise Operations",
-        desc: "A complete, end-to-end operational system for flight carrying. We provide enterprise customers with comprehensive services such as operation, rigorous testing, and the carrying of various specialized models tailored to specific industrial needs.",
-        img: "https://www.htsdfp.com/UploadFiles/2024-05-15/g8shx7utz55qhupr.png",
+        desc: "A complete, end-to-end operational system for flight carrying. We provide enterprise customers with comprehensive services such as operation, rigorous testing, and specialized models tailored to specific industrial needs.",
+        img: "/images/applications/industry-service.png",
         icon: Factory,
-        accent: "#a855f7",
-        gradientFrom: "#a855f7",
-        gradientTo: "#6366f1",
-        glowColor: "rgba(168,85,247,0.15)",
+        accent: "#f59e0b",
         stats: [
             { value: "500+", label: "Enterprise Clients" },
             { value: "99.9%", label: "Uptime SLA" },
@@ -56,200 +48,182 @@ const scenarios = [
     },
 ];
 
-const ScenarioCard = ({ scenario, index }: { scenario: (typeof scenarios)[0]; index: number }) => {
-    const isEven = index % 2 === 0;
+/* ── Immersive Scenario Section with scroll-driven parallax ── */
+const ImmersiveScenario = ({ scenario, index }: { scenario: (typeof scenarios)[0]; index: number }) => {
+    const sectionRef = useRef<HTMLDivElement>(null);
+    const { scrollYProgress } = useScroll({
+        target: sectionRef,
+        offset: ["start end", "end start"],
+    });
+
+    const imgY = useTransform(scrollYProgress, [0, 1], [60, -60]);
+    const textY = useTransform(scrollYProgress, [0, 1], [30, -30]);
+    const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.3, 1, 1, 0.3]);
     const Icon = scenario.icon;
-    const ref = useRef(null);
+    const isEven = index % 2 === 0;
 
     return (
-        <div ref={ref} className="relative">
-            {/* Ghost number watermark */}
+        <motion.div
+            ref={sectionRef}
+            style={{ opacity }}
+            className="relative"
+        >
+            {/* Ghost number */}
             <div
                 className="absolute select-none pointer-events-none font-black leading-none z-0"
                 style={{
-                    fontSize: "clamp(160px, 22vw, 300px)",
-                    color: "rgba(255,255,255,0.025)",
-                    top: "-0.1em",
+                    fontSize: "clamp(180px, 25vw, 350px)",
+                    color: `${scenario.accent}06`,
+                    top: "-0.15em",
                     [isEven ? "left" : "right"]: "-0.05em",
-                    fontVariantNumeric: "tabular-nums",
                 }}
             >
                 {scenario.num}
             </div>
 
-            <div className={`relative z-10 flex flex-col lg:flex-row items-center gap-12 xl:gap-20 ${!isEven ? "lg:flex-row-reverse" : ""}`}>
-                {/* ── Text Side ── */}
+            <div className={`relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${!isEven ? "direction-rtl" : ""}`}>
+                {/* Image */}
                 <motion.div
-                    initial={{ opacity: 0, x: isEven ? -48 : 48 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: "-80px" }}
-                    transition={{ duration: 0.75, ease: "easeOut" }}
-                    className="flex-1 flex flex-col gap-7"
+                    className={`relative ${!isEven ? "lg:order-2" : ""}`}
+                    style={{ y: imgY }}
                 >
-                    {/* label pill + number */}
-                    <div className="flex items-center gap-3">
+                    <div className="relative group" style={{ perspective: "1200px" }}>
+                        {/* Ambient glow */}
+                        <div
+                            className="absolute -inset-8 rounded-[3rem] opacity-30 group-hover:opacity-60 transition-opacity duration-700 blur-[60px] pointer-events-none"
+                            style={{ background: scenario.accent }}
+                        />
+
+                        <motion.div
+                            whileHover={{ rotateY: isEven ? 5 : -5, rotateX: -3, scale: 1.02 }}
+                            transition={{ duration: 0.6 }}
+                            style={{ transformStyle: "preserve-3d" }}
+                            className="relative rounded-3xl overflow-hidden"
+                        >
+                            {/* Border gradient */}
+                            <div
+                                className="absolute inset-0 rounded-3xl z-10 pointer-events-none"
+                                style={{
+                                    border: `1px solid ${scenario.accent}25`,
+                                    boxShadow: `0 40px 80px -20px rgba(0,0,0,0.8), 0 0 60px -10px ${scenario.accent}20`,
+                                }}
+                            />
+
+                            {/* Image */}
+                            <img
+                                src={scenario.img}
+                                alt={scenario.title}
+                                className="w-full h-[400px] lg:h-[500px] object-cover"
+                            />
+
+                            {/* Overlay gradient */}
+                            <div
+                                className="absolute inset-0"
+                                style={{ background: `linear-gradient(to top, ${scenario.accent}15, transparent 50%)` }}
+                            />
+
+                            {/* Corner data points */}
+                            <div className="absolute top-5 left-5 flex items-center gap-2 z-20">
+                                <div className="w-2 h-2 rounded-full animate-pulse" style={{ background: scenario.accent }} />
+                                <span className="text-[10px] font-mono uppercase tracking-widest" style={{ color: scenario.accent }}>
+                                    SCENARIO {scenario.num}
+                                </span>
+                            </div>
+                        </motion.div>
+                    </div>
+                </motion.div>
+
+                {/* Text Content */}
+                <motion.div
+                    className={`flex flex-col gap-8 ${!isEven ? "lg:order-1 lg:text-right lg:items-end" : ""}`}
+                    style={{ y: textY }}
+                >
+                    <motion.div
+                        initial={{ opacity: 0, x: isEven ? -40 : 40 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.7 }}
+                        className="space-y-6"
+                    >
+                        {/* Label */}
                         <span
-                            className="text-[10px] font-black tracking-[0.28em] uppercase px-3 py-1.5 rounded-full"
-                            style={{
-                                color: scenario.accent,
-                                background: `${scenario.accent}12`,
-                                border: `1px solid ${scenario.accent}28`,
-                            }}
+                            className="text-[11px] font-bold tracking-[0.25em] uppercase px-4 py-2 rounded-full inline-block"
+                            style={{ color: scenario.accent, background: `${scenario.accent}10`, border: `1px solid ${scenario.accent}25` }}
                         >
                             {scenario.label}
                         </span>
-                        <span className="text-xs font-bold text-white/20 tracking-widest">{scenario.num}</span>
-                    </div>
 
-                    {/* icon + title */}
-                    <div className="flex items-start gap-5">
-                        <div
-                            className="shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center"
-                            style={{
-                                background: `linear-gradient(135deg, ${scenario.gradientFrom}22, ${scenario.gradientTo}10)`,
-                                border: `1px solid ${scenario.accent}30`,
-                                boxShadow: `0 0 24px ${scenario.accent}18`,
-                            }}
-                        >
-                            <Icon size={24} style={{ color: scenario.accent }} />
+                        {/* Title with icon */}
+                        <div className={`flex items-center gap-4 ${!isEven ? "flex-row-reverse" : ""}`}>
+                            <div
+                                className="w-16 h-16 rounded-2xl flex items-center justify-center shrink-0"
+                                style={{
+                                    background: `linear-gradient(135deg, ${scenario.accent}20, transparent)`,
+                                    border: `1px solid ${scenario.accent}30`,
+                                    boxShadow: `0 0 40px ${scenario.accent}15`,
+                                }}
+                            >
+                                <Icon className="w-8 h-8" style={{ color: scenario.accent }} />
+                            </div>
+                            <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight">{scenario.title}</h2>
                         </div>
-                        <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-tight">{scenario.title}</h2>
-                    </div>
 
-                    {/* gradient rule */}
-                    <div className="h-px w-24 rounded-full" style={{ background: `linear-gradient(to right, ${scenario.accent}, transparent)` }} />
+                        {/* Accent line */}
+                        <div
+                            className={`h-[2px] w-20 rounded-full ${!isEven ? "ml-auto" : ""}`}
+                            style={{ background: `linear-gradient(to right, ${scenario.accent}, transparent)` }}
+                        />
 
-                    {/* description */}
-                    <p className="text-gray-400 text-base leading-relaxed max-w-lg">{scenario.desc}</p>
+                        {/* Description */}
+                        <p className="text-gray-400 text-lg leading-relaxed max-w-lg">{scenario.desc}</p>
+                    </motion.div>
 
-                    {/* stats row */}
-                    <div className="grid grid-cols-3 gap-3">
+                    {/* Stats — 3D layered */}
+                    <div className={`grid grid-cols-3 gap-3 ${!isEven ? "direction-ltr" : ""}`}>
                         {scenario.stats.map((stat, i) => (
                             <motion.div
                                 key={i}
-                                initial={{ opacity: 0, y: 16 }}
-                                whileInView={{ opacity: 1, y: 0 }}
+                                initial={{ opacity: 0, y: 20, rotateX: 15 }}
+                                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: 0.2 + i * 0.08 }}
-                                className="rounded-xl p-3 text-center"
-                                style={{
-                                    background: "rgba(255,255,255,0.025)",
-                                    border: "1px solid rgba(255,255,255,0.07)",
-                                }}
+                                transition={{ delay: 0.3 + i * 0.1 }}
+                                className="relative rounded-xl p-4 text-center overflow-hidden group/stat"
+                                style={{ perspective: "600px" }}
                             >
-                                <div className="text-xl font-black" style={{ color: scenario.accent }}>
-                                    {stat.value}
+                                <div
+                                    className="absolute inset-0 rounded-xl"
+                                    style={{ background: "#0a0a12", border: `1px solid ${scenario.accent}15` }}
+                                />
+                                <div
+                                    className="absolute bottom-0 inset-x-0 h-1/2 opacity-0 group-hover/stat:opacity-100 transition-opacity duration-500"
+                                    style={{ background: `linear-gradient(to top, ${scenario.accent}10, transparent)` }}
+                                />
+                                <div className="relative z-10">
+                                    <div className="text-2xl font-black mb-1" style={{ color: scenario.accent }}>{stat.value}</div>
+                                    <div className="text-[10px] text-gray-600 uppercase tracking-widest font-medium">{stat.label}</div>
                                 </div>
-                                <div className="text-[10px] text-gray-600 uppercase tracking-widest mt-0.5 font-medium">{stat.label}</div>
                             </motion.div>
                         ))}
                     </div>
 
                     {/* CTA */}
-                    <button
-                        className="group w-fit flex items-center gap-3 text-sm font-bold uppercase tracking-widest transition-all duration-200"
+                    <motion.button
+                        whileHover={{ x: isEven ? 5 : -5 }}
+                        className={`group w-fit flex items-center gap-3 text-sm font-bold uppercase tracking-widest ${!isEven ? "flex-row-reverse" : ""}`}
                         style={{ color: scenario.accent }}
                     >
                         <span className="relative">
                             Explore Case Study
                             <span
-                                className="absolute -bottom-0.5 left-0 h-px w-0 group-hover:w-full transition-all duration-300 rounded-full"
+                                className="absolute -bottom-0.5 left-0 h-px w-0 group-hover:w-full transition-all duration-300"
                                 style={{ background: scenario.accent }}
                             />
                         </span>
-                        <div
-                            className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110"
-                            style={{
-                                border: `1px solid ${scenario.accent}40`,
-                                background: `${scenario.accent}10`,
-                            }}
-                        >
-                            <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
-                        </div>
-                    </button>
-                </motion.div>
-
-                {/* ── Image Side ── */}
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.93 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true, margin: "-80px" }}
-                    transition={{ duration: 0.9, ease: "easeOut" }}
-                    className="flex-1 relative group w-full"
-                >
-                    {/* outer glow */}
-                    <div
-                        className="absolute -inset-4 rounded-[2.5rem] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
-                        style={{ background: `radial-gradient(ellipse at 50% 50%, ${scenario.glowColor} 0%, transparent 70%)` }}
-                    />
-
-                    {/* card shell */}
-                    <div
-                        className="relative rounded-3xl overflow-hidden"
-                        style={{
-                            background: "linear-gradient(160deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%)",
-                            border: "1px solid rgba(255,255,255,0.08)",
-                            boxShadow: `0 32px 64px -16px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.06)`,
-                        }}
-                    >
-                        {/* inner glow always present, brighter on hover */}
-                        <div
-                            className="absolute inset-0 opacity-30 group-hover:opacity-70 transition-opacity duration-700 pointer-events-none"
-                            style={{
-                                background: `radial-gradient(ellipse at 50% 90%, ${scenario.glowColor} 0%, transparent 60%)`,
-                            }}
-                        />
-
-                        {/* corner brackets */}
-                        {[
-                            "top-3 left-3 border-t border-l",
-                            "top-3 right-3 border-t border-r",
-                            "bottom-3 left-3 border-b border-l",
-                            "bottom-3 right-3 border-b border-r",
-                        ].map((cls, i) => (
-                            <div
-                                key={i}
-                                className={`absolute w-5 h-5 ${cls} opacity-20 group-hover:opacity-50 transition-opacity duration-500`}
-                                style={{ borderColor: scenario.accent }}
-                            />
-                        ))}
-
-                        {/* image */}
-                        <div className="p-8">
-                            <motion.img
-                                src={scenario.img}
-                                alt={scenario.title}
-                                className="w-full h-auto object-contain rounded-xl drop-shadow-2xl"
-                                whileHover={{ scale: 1.04, y: -4 }}
-                                transition={{ duration: 0.6, ease: "easeOut" }}
-                            />
-                        </div>
-
-                        {/* bottom bar */}
-                        <div
-                            className="px-6 py-3 flex items-center justify-between"
-                            style={{
-                                background: "rgba(0,0,0,0.3)",
-                                borderTop: "1px solid rgba(255,255,255,0.06)",
-                            }}
-                        >
-                            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: scenario.accent }}>
-                                {scenario.title}
-                            </span>
-                            <div className="flex gap-1">
-                                {[0, 1, 2].map((d) => (
-                                    <div
-                                        key={d}
-                                        className="w-1 h-1 rounded-full"
-                                        style={{ background: d === 0 ? scenario.accent : "rgba(255,255,255,0.15)" }}
-                                    />
-                                ))}
-                            </div>
-                        </div>
-                    </div>
+                        <ArrowRight size={16} className={`group-hover:translate-x-1 transition-transform ${!isEven ? "rotate-180 group-hover:-translate-x-1" : ""}`} />
+                    </motion.button>
                 </motion.div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
@@ -257,150 +231,123 @@ export const ApplicationsPage = () => {
     return (
         <div className="min-h-screen text-white font-sans" style={{ background: "#050508" }}>
             {/* ── Hero ── */}
-            <section className="relative h-[55vh] min-h-100 flex items-center justify-center overflow-hidden">
+            <section className="relative h-[65vh] min-h-[520px] flex items-center justify-center overflow-hidden">
                 <div
                     className="absolute inset-0 bg-cover bg-center"
                     style={{
                         backgroundImage: "url('https://www.htsdfp.com/UploadFiles/banner/ban_2.jpg')",
-                        filter: "brightness(0.3) saturate(1.3)",
+                        filter: "brightness(0.25) saturate(1.4)",
                     }}
                 />
-                <div
-                    className="absolute inset-0"
-                    style={{ background: "linear-gradient(to top, #050508 8%, rgba(5,5,8,0.3) 50%, transparent 100%)" }}
-                />
-                <div
-                    className="absolute inset-0"
-                    style={{ background: "radial-gradient(ellipse at 50% 80%, rgba(0,210,255,0.1) 0%, transparent 65%)" }}
-                />
-                {/* grid */}
-                <div
-                    className="absolute inset-0 opacity-[0.03]"
-                    style={{
-                        backgroundImage: "linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px)",
-                        backgroundSize: "52px 52px",
-                    }}
-                />
+                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, #050508 10%, rgba(5,5,8,0.6) 50%, transparent 100%)" }} />
+
+                {/* Animated ring */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]">
+                    <motion.div
+                        className="w-[500px] h-[500px] rounded-full border border-aero-blue/10"
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                    >
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-aero-blue/40 rounded-full" />
+                    </motion.div>
+                </div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]">
+                    <motion.div
+                        className="w-[350px] h-[350px] rounded-full border border-aero-purple/10"
+                        animate={{ rotate: -360 }}
+                        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                    >
+                        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-1.5 h-1.5 bg-aero-purple/40 rounded-full" />
+                    </motion.div>
+                </div>
 
                 <div className="relative z-10 text-center px-6">
-                    <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.85 }}>
-                        <span
-                            className="inline-block text-xs font-black tracking-[0.3em] uppercase mb-5 px-4 py-1.5 rounded-full"
-                            style={{ color: "#00d2ff", background: "rgba(0,210,255,0.08)", border: "1px solid rgba(0,210,255,0.2)" }}
-                        >
+                    <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9 }}>
+                        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-aero-blue/30 bg-black/40 text-aero-blue text-sm font-medium tracking-wide mb-6 backdrop-blur-md">
+                            <span className="w-2 h-2 rounded-full bg-aero-blue animate-pulse" />
                             Global Use Cases
                         </span>
-                        <h1 className="text-5xl md:text-7xl font-black tracking-tight leading-none mb-4">
+                        <h1 className="text-5xl md:text-8xl font-extrabold tracking-tight leading-none mb-4">
                             Application{" "}
-                            <span
-                                style={{
-                                    background: "linear-gradient(135deg, #00d2ff 0%, #a855f7 100%)",
-                                    WebkitBackgroundClip: "text",
-                                    WebkitTextFillColor: "transparent",
-                                }}
-                            >
-                                Scenarios
-                            </span>
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-aero-blue to-aero-purple">Scenarios</span>
                         </h1>
-                        <p className="text-gray-400 text-lg max-w-md mx-auto mt-3">
+                        <p className="text-gray-300 text-lg max-w-lg mx-auto mt-4">
                             From civil logistics to emergency response — built for every critical mission.
                         </p>
                     </motion.div>
+                </div>
 
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 1.1 }}
-                        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-                    >
-                        <div className="w-5 h-8 rounded-full border border-white/20 flex items-start justify-center p-1">
-                            <motion.div
-                                animate={{ y: [0, 10, 0] }}
-                                transition={{ repeat: Infinity, duration: 1.6 }}
-                                className="w-1 h-2 rounded-full bg-white/35"
-                            />
+                <motion.div
+                    className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.5 }}
+                >
+                    <span className="text-[10px] uppercase tracking-[0.3em] text-gray-500">Scroll</span>
+                    <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity }}>
+                        <div className="w-5 h-8 border border-white/20 rounded-full flex justify-center pt-1.5">
+                            <motion.div className="w-1 h-1 bg-aero-blue rounded-full" animate={{ y: [0, 10, 0], opacity: [1, 0.3, 1] }} transition={{ duration: 2, repeat: Infinity }} />
                         </div>
                     </motion.div>
-                </div>
+                </motion.div>
             </section>
 
-            {/* ── Breadcrumb ── */}
-            <div
-                className="sticky top-18 z-40 border-b"
-                style={{
-                    background: "rgba(5,5,8,0.85)",
-                    backdropFilter: "blur(20px)",
-                    borderColor: "rgba(255,255,255,0.06)",
-                    boxShadow: "0 4px 24px rgba(0,0,0,0.4)",
-                }}
-            >
-                <div className="max-w-7xl mx-auto px-6 py-3.5 flex items-center gap-2 text-sm text-gray-500">
-                    <span className="hover:text-white cursor-pointer transition-colors">Home</span>
-                    <ChevronRight size={14} className="opacity-30" />
-                    <span className="text-white font-semibold">Application Scenarios</span>
-                    <div className="ml-auto flex gap-6">
-                        {scenarios.map((s) => (
-                            <button
-                                key={s.num}
-                                onClick={() => {
-                                    const el = document.getElementById(`scenario-${s.num}`);
-                                    if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
-                                }}
-                                className="text-xs font-semibold tracking-wider uppercase transition-colors hover:text-white"
-                                style={{ color: "rgba(255,255,255,0.3)" }}
-                            >
-                                {s.title}
-                            </button>
-                        ))}
-                    </div>
-                </div>
-            </div>
-
-            {/* ── Scenarios ── */}
-            <section className="py-28 overflow-hidden">
+            {/* ── Immersive Scenarios ── */}
+            <section className="py-32 overflow-hidden">
                 <div className="max-w-7xl mx-auto px-6">
-                    <div className="space-y-40">
+                    <div className="space-y-48">
                         {scenarios.map((scenario, index) => (
-                            <div key={scenario.num} id={`scenario-${scenario.num}`} className="scroll-mt-32">
-                                <ScenarioCard scenario={scenario} index={index} />
-                            </div>
+                            <ImmersiveScenario key={scenario.num} scenario={scenario} index={index} />
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* ── CTA Footer ── */}
-            <section className="py-24 relative overflow-hidden border-t" style={{ borderColor: "rgba(255,255,255,0.05)" }}>
-                <div
-                    className="absolute inset-0"
-                    style={{ background: "radial-gradient(ellipse at 50% 100%, rgba(0,210,255,0.07) 0%, transparent 60%)" }}
-                />
+            {/* ── CTA ── */}
+            <section className="py-32 relative overflow-hidden border-t border-white/5">
+                <div className="absolute inset-0">
+                    {/* Cross grid */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px]">
+                        <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-aero-blue/10 to-transparent" />
+                        <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-aero-blue/10 to-transparent" />
+                    </div>
+                </div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-aero-blue/[0.05] rounded-full blur-[200px] pointer-events-none" />
+
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="relative z-10 text-center max-w-2xl mx-auto px-6"
+                    className="relative z-10 text-center max-w-3xl mx-auto px-6"
                 >
-                    <h2 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight">Have a mission in mind?</h2>
-                    <p className="text-gray-500 mb-8">
-                        Our specialists are ready to design a UAV solution tailored to your operational requirements.
+                    <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                        Have a Mission
+                        <br />
+                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-aero-blue to-aero-purple">In Mind?</span>
+                    </h2>
+                    <p className="text-gray-400 text-lg mb-12 max-w-xl mx-auto leading-relaxed">
+                        Our specialists design UAV solutions tailored to your operational requirements.
                     </p>
-                    <div className="flex gap-3 justify-center flex-wrap">
-                        <button
-                            className="px-7 py-3 rounded-xl text-sm font-black text-black transition-all hover:scale-[1.03] active:scale-[0.98]"
-                            style={{
-                                background: "linear-gradient(135deg, #00d2ff, #a855f7)",
-                                boxShadow: "0 0 32px rgba(0,210,255,0.22)",
-                            }}
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.98 }}
+                            className="group px-10 py-4 bg-white text-black font-bold rounded-full hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] transition-all duration-300"
                         >
-                            Discuss Your Scenario
-                        </button>
-                        <button
-                            className="px-7 py-3 rounded-xl text-sm font-bold text-white transition-all hover:border-white/30"
-                            style={{ border: "1px solid rgba(255,255,255,0.11)", background: "rgba(255,255,255,0.04)" }}
-                        >
-                            View All Products
-                        </button>
+                            <span className="flex items-center gap-2">
+                                Discuss Your Scenario
+                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            </span>
+                        </motion.button>
+                        <Link to="/products">
+                            <motion.button
+                                whileHover={{ scale: 1.03 }}
+                                whileTap={{ scale: 0.98 }}
+                                className="px-10 py-4 border border-white/15 text-gray-300 hover:text-white hover:border-white/30 font-medium rounded-full transition-all duration-300"
+                            >
+                                View All Products
+                            </motion.button>
+                        </Link>
                     </div>
                 </motion.div>
             </section>

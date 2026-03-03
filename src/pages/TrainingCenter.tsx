@@ -1,31 +1,13 @@
-import { motion } from "framer-motion";
-import { Calendar, Users, GraduationCap, TrendingUp, ShieldCheck, Award, Clock, CheckCircle2, ChevronRight } from "lucide-react";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { Calendar, Users, GraduationCap, TrendingUp, ShieldCheck, Award, Clock, CheckCircle2, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useRef } from "react";
 
 const features = [
-    {
-        title: "Humanized Course Arrangement",
-        desc: "Off-duty and weekend classes perfectly suited for working professionals — train without disrupting your career.",
-        icon: Calendar,
-        accent: "#00d2ff",
-    },
-    {
-        title: "Class Management System",
-        desc: "A dedicated specialist manages every class, ensuring each student's study and rest schedule is optimally arranged.",
-        icon: Users,
-        accent: "#a855f7",
-    },
-    {
-        title: "Experienced Mentors",
-        desc: "Learn directly from industry veterans through hands-on projects, mastering real-world UAV applications fast.",
-        icon: GraduationCap,
-        accent: "#10b981",
-    },
-    {
-        title: "Elite Pass Rate",
-        desc: "We maintain an extraordinary standard — multi-rotor UAV pilot class pass rate of 88%–90%, industry-leading.",
-        icon: TrendingUp,
-        accent: "#f97316",
-    },
+    { title: "Humanized Course Arrangement", desc: "Off-duty and weekend classes perfectly suited for working professionals — train without disrupting your career.", icon: Calendar, accent: "#00d2ff" },
+    { title: "Class Management System", desc: "A dedicated specialist manages every class, ensuring each student's study and rest schedule is optimally arranged.", icon: Users, accent: "#a855f7" },
+    { title: "Experienced Mentors", desc: "Learn directly from industry veterans through hands-on projects, mastering real-world UAV applications fast.", icon: GraduationCap, accent: "#10b981" },
+    { title: "Elite Pass Rate", desc: "We maintain an extraordinary standard — multi-rotor UAV pilot class pass rate of 88%–90%, industry-leading.", icon: TrendingUp, accent: "#f97316" },
 ];
 
 const stats = [
@@ -36,136 +18,179 @@ const stats = [
 ];
 
 const processSteps = [
-    { step: "01", title: "Register", desc: "Submit application & select your preferred schedule" },
-    { step: "02", title: "Theory", desc: "Complete certified ground school coursework" },
-    { step: "03", title: "Flight", desc: "Hands-on practical flight training with mentors" },
-    { step: "04", title: "Certify", desc: "Pass AOPA examination & receive your license" },
+    { step: "01", title: "Register", desc: "Submit application & select your preferred schedule", color: "#00d2ff" },
+    { step: "02", title: "Theory", desc: "Complete certified ground school coursework", color: "#a855f7" },
+    { step: "03", title: "Flight", desc: "Hands-on practical flight training with mentors", color: "#10b981" },
+    { step: "04", title: "Certify", desc: "Pass AOPA examination & receive your license", color: "#f97316" },
 ];
+
+/* ── 3D Feature Card with mouse tilt ── */
+const FeatureCard3D = ({ feature, idx }: { feature: (typeof features)[number]; idx: number }) => {
+    const ref = useRef<HTMLDivElement>(null);
+    const mouseX = useMotionValue(0);
+    const mouseY = useMotionValue(0);
+    const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [8, -8]), { stiffness: 200, damping: 25 });
+    const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-8, 8]), { stiffness: 200, damping: 25 });
+    const Icon = feature.icon;
+
+    const handleMouse = (e: React.MouseEvent) => {
+        const rect = ref.current?.getBoundingClientRect();
+        if (!rect) return;
+        mouseX.set((e.clientX - rect.left) / rect.width - 0.5);
+        mouseY.set((e.clientY - rect.top) / rect.height - 0.5);
+    };
+
+    const handleLeave = () => { mouseX.set(0); mouseY.set(0); };
+
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 50, rotateX: 10 }}
+            whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: idx * 0.12, duration: 0.7 }}
+            style={{ perspective: "1000px" }}
+        >
+            <motion.div
+                ref={ref}
+                onMouseMove={handleMouse}
+                onMouseLeave={handleLeave}
+                style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+                className="group relative h-full"
+            >
+                <div
+                    className="relative rounded-3xl overflow-hidden h-full"
+                    style={{ background: "#0a0a12", border: `1px solid ${feature.accent}15` }}
+                >
+                    {/* Top accent */}
+                    <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: `linear-gradient(90deg, transparent, ${feature.accent}, transparent)` }} />
+
+                    {/* Floating number at depth */}
+                    <div
+                        className="absolute top-4 right-5 text-[80px] font-black leading-none pointer-events-none select-none"
+                        style={{ color: `${feature.accent}06`, transform: "translateZ(-20px)" }}
+                    >
+                        {String(idx + 1).padStart(2, "0")}
+                    </div>
+
+                    <motion.div className="relative p-8" style={{ transform: "translateZ(20px)" }}>
+                        <div
+                            className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
+                            style={{
+                                background: `linear-gradient(135deg, ${feature.accent}20, ${feature.accent}05)`,
+                                border: `1px solid ${feature.accent}30`,
+                                boxShadow: `0 0 30px ${feature.accent}15`,
+                            }}
+                        >
+                            <Icon className="w-7 h-7" style={{ color: feature.accent }} />
+                        </div>
+
+                        <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
+                        <p className="text-sm text-gray-500 leading-relaxed group-hover:text-gray-400 transition-colors">{feature.desc}</p>
+                    </motion.div>
+                </div>
+            </motion.div>
+        </motion.div>
+    );
+};
 
 export const TrainingCenter = () => {
     return (
         <div className="min-h-screen text-white font-sans" style={{ background: "#050508" }}>
             {/* ── Hero ── */}
-            <section className="relative h-[58vh] min-h-105 flex items-center justify-center overflow-hidden">
+            <section className="relative h-[65vh] min-h-[520px] flex items-center justify-center overflow-hidden">
                 <div
                     className="absolute inset-0 bg-cover bg-center"
                     style={{
                         backgroundImage: "url('https://www.htsdfp.com/UploadFiles/2023-09-26/uzpu69cnkk5w4uf5.png')",
-                        filter: "brightness(0.28) saturate(1.3)",
+                        filter: "brightness(0.22) saturate(1.4)",
                     }}
                 />
-                <div
-                    className="absolute inset-0"
-                    style={{ background: "linear-gradient(to top, #050508 8%, rgba(5,5,8,0.2) 55%, transparent 100%)" }}
-                />
-                <div
-                    className="absolute inset-0"
-                    style={{ background: "radial-gradient(ellipse at 50% 80%, rgba(0,210,255,0.1) 0%, transparent 65%)" }}
-                />
-                <div
-                    className="absolute inset-0 opacity-[0.035]"
-                    style={{
-                        backgroundImage: "linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px)",
-                        backgroundSize: "52px 52px",
-                    }}
-                />
+                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, #050508 10%, rgba(5,5,8,0.6) 55%, transparent 100%)" }} />
+
+                {/* Graduation cap themed elements */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full border border-aero-blue/[0.06] z-[1]" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] rounded-full border border-aero-purple/[0.06] z-[1]" />
+
+                {/* Floating achievement badges */}
+                <div className="absolute inset-0 z-[2] hidden lg:block">
+                    {[
+                        { x: "12%", y: "35%", text: "AOPA", delay: 0 },
+                        { x: "85%", y: "30%", text: "88-90%", delay: 1 },
+                        { x: "78%", y: "65%", text: "500+", delay: 2 },
+                    ].map((badge, i) => (
+                        <motion.div
+                            key={i}
+                            className="absolute px-3 py-1 rounded-full border border-aero-blue/20 bg-black/40 backdrop-blur-sm text-[10px] font-mono text-aero-blue/60"
+                            style={{ left: badge.x, top: badge.y }}
+                            animate={{ y: [0, -10, 0] }}
+                            transition={{ duration: 3, repeat: Infinity, delay: badge.delay }}
+                        >
+                            {badge.text}
+                        </motion.div>
+                    ))}
+                </div>
 
                 <div className="relative z-10 text-center px-6">
-                    <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.85 }}>
-                        <span
-                            className="inline-block text-xs font-black tracking-[0.3em] uppercase mb-5 px-4 py-1.5 rounded-full"
-                            style={{ color: "#00d2ff", background: "rgba(0,210,255,0.08)", border: "1px solid rgba(0,210,255,0.2)" }}
-                        >
-                            AeroNexus Flight Academy
+                    <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.85 }}>
+                        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-aero-blue/30 bg-black/40 text-aero-blue text-sm font-medium tracking-wide mb-6 backdrop-blur-md">
+                            <span className="w-2 h-2 rounded-full bg-aero-blue animate-pulse" />
+                            GADT Flight Academy
                         </span>
-                        <h1 className="text-5xl md:text-7xl font-black tracking-tight leading-none mb-4">
+                        <h1 className="text-5xl md:text-8xl font-extrabold tracking-tight leading-none mb-4">
                             Training{" "}
-                            <span
-                                style={{
-                                    background: "linear-gradient(135deg, #00d2ff 0%, #a855f7 100%)",
-                                    WebkitBackgroundClip: "text",
-                                    WebkitTextFillColor: "transparent",
-                                }}
-                            >
-                                Center
-                            </span>
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-aero-blue to-aero-purple">Center</span>
                         </h1>
-                        <p className="text-gray-400 text-lg max-w-md mx-auto mt-3">
+                        <p className="text-gray-300 text-lg max-w-md mx-auto mt-3">
                             AOPA-certified UAV pilot training for the next generation of aviation professionals.
                         </p>
                     </motion.div>
+                </div>
 
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 1.1 }}
-                        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-                    >
-                        <div className="w-5 h-8 rounded-full border border-white/20 flex items-start justify-center p-1">
-                            <motion.div
-                                animate={{ y: [0, 10, 0] }}
-                                transition={{ repeat: Infinity, duration: 1.6 }}
-                                className="w-1 h-2 rounded-full bg-white/35"
-                            />
+                <motion.div
+                    className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.5 }}
+                >
+                    <span className="text-[10px] uppercase tracking-[0.3em] text-gray-500">Scroll</span>
+                    <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity }}>
+                        <div className="w-5 h-8 border border-white/20 rounded-full flex justify-center pt-1.5">
+                            <motion.div className="w-1 h-1 bg-aero-blue rounded-full" animate={{ y: [0, 10, 0], opacity: [1, 0.3, 1] }} transition={{ duration: 2, repeat: Infinity }} />
                         </div>
                     </motion.div>
-                </div>
+                </motion.div>
             </section>
 
-            {/* ── Sticky Nav ── */}
-            <div
-                className="sticky top-18 z-40 border-b"
-                style={{
-                    background: "rgba(5,5,8,0.88)",
-                    backdropFilter: "blur(20px)",
-                    borderColor: "rgba(255,255,255,0.06)",
-                    boxShadow: "0 4px 24px rgba(0,0,0,0.4)",
-                }}
-            >
-                <div className="max-w-7xl mx-auto px-6 py-0 flex items-center justify-between">
-                    <div className="flex">
-                        {["Training Center", "AOPA Exam"].map((tab, i) => (
-                            <button
-                                key={tab}
-                                className="relative px-5 py-4 text-sm font-semibold transition-colors"
-                                style={{ color: i === 0 ? "#00d2ff" : "rgba(255,255,255,0.35)" }}
-                            >
-                                {tab}
-                                {i === 0 && <div className="absolute bottom-0 left-0 right-0 h-0.5 rounded-full" style={{ background: "#00d2ff" }} />}
-                            </button>
-                        ))}
-                    </div>
-                    <div className="flex items-center gap-2 text-xs text-gray-600">
-                        <span className="hover:text-white cursor-pointer transition-colors">Home</span>
-                        <ChevronRight size={12} className="opacity-40" />
-                        <span className="text-white font-semibold">Training Center</span>
-                    </div>
-                </div>
-            </div>
+            {/* ── Stats with animated reveal ── */}
+            <section className="relative py-16 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-aero-blue/5 via-transparent to-aero-purple/5" />
+                <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-aero-blue/30 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-aero-blue/30 to-transparent" />
 
-            {/* ── Stats Bar ── */}
-            <section className="py-12 border-b" style={{ borderColor: "rgba(255,255,255,0.05)" }}>
-                <div className="max-w-7xl mx-auto px-6">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="relative max-w-7xl mx-auto px-6">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                         {stats.map((stat, i) => {
                             const Icon = stat.icon;
                             return (
                                 <motion.div
                                     key={i}
-                                    initial={{ opacity: 0, y: 16 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
+                                    initial={{ opacity: 0, scale: 0.8, rotateY: -20 }}
+                                    whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
                                     viewport={{ once: true }}
-                                    transition={{ delay: i * 0.08 }}
-                                    className="relative rounded-2xl p-5 text-center group"
-                                    style={{ background: "rgba(255,255,255,0.025)", border: "1px solid rgba(255,255,255,0.07)" }}
+                                    transition={{ delay: i * 0.1, duration: 0.6 }}
+                                    className="text-center group"
+                                    style={{ perspective: "600px" }}
                                 >
-                                    <div
-                                        className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                                        style={{ background: "rgba(0,210,255,0.04)", border: "1px solid rgba(0,210,255,0.15)" }}
-                                    />
-                                    <Icon size={18} className="mx-auto mb-2 opacity-40" style={{ color: "#00d2ff" }} />
-                                    <div className="text-2xl font-black text-white">{stat.value}</div>
-                                    <div className="text-xs text-gray-600 uppercase tracking-widest font-medium mt-0.5">{stat.label}</div>
+                                    <motion.div
+                                        whileHover={{ rotateY: 10, scale: 1.05 }}
+                                        transition={{ duration: 0.3 }}
+                                        className="relative rounded-2xl p-6"
+                                        style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", transformStyle: "preserve-3d" }}
+                                    >
+                                        <Icon size={20} className="mx-auto mb-3 text-aero-blue/60 group-hover:text-aero-blue transition-colors" />
+                                        <div className="text-3xl font-black text-white mb-1">{stat.value}</div>
+                                        <div className="text-[10px] text-gray-600 uppercase tracking-widest font-medium">{stat.label}</div>
+                                    </motion.div>
                                 </motion.div>
                             );
                         })}
@@ -174,282 +199,229 @@ export const TrainingCenter = () => {
             </section>
 
             {/* ── Intro Block ── */}
-            <section className="py-20 relative overflow-hidden">
-                <div
-                    className="absolute top-0 right-1/4 w-125 h-125 rounded-full pointer-events-none"
-                    style={{ background: "radial-gradient(circle, rgba(0,210,255,0.05) 0%, transparent 70%)" }}
-                />
-
+            <section className="py-24 relative overflow-hidden">
                 <div className="max-w-4xl mx-auto px-6 relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="relative rounded-3xl p-10 md:p-14 text-center overflow-hidden"
+                        className="relative rounded-3xl p-10 md:p-16 text-center overflow-hidden"
                         style={{
                             background: "linear-gradient(160deg, rgba(0,210,255,0.06) 0%, rgba(168,85,247,0.04) 100%)",
-                            border: "1px solid rgba(0,210,255,0.15)",
-                            boxShadow: "0 0 60px rgba(0,210,255,0.06), inset 0 1px 0 rgba(255,255,255,0.06)",
+                            border: "1px solid rgba(0,210,255,0.12)",
+                            boxShadow: "0 0 80px rgba(0,210,255,0.05)",
                         }}
                     >
-                        {/* corner brackets */}
-                        {[
-                            "top-4 left-4 border-t border-l",
-                            "top-4 right-4 border-t border-r",
-                            "bottom-4 left-4 border-b border-l",
-                            "bottom-4 right-4 border-b border-r",
-                        ].map((cls, i) => (
-                            <div key={i} className={`absolute w-5 h-5 ${cls}`} style={{ borderColor: "rgba(0,210,255,0.3)" }} />
+                        {["top-5 left-5 border-t-2 border-l-2", "top-5 right-5 border-t-2 border-r-2", "bottom-5 left-5 border-b-2 border-l-2", "bottom-5 right-5 border-b-2 border-r-2"].map((cls, i) => (
+                            <div key={i} className={`absolute w-6 h-6 ${cls} border-aero-blue/30`} />
                         ))}
 
-                        <div
-                            className="inline-flex items-center justify-center w-14 h-14 rounded-2xl mx-auto mb-6"
-                            style={{ background: "rgba(0,210,255,0.1)", border: "1px solid rgba(0,210,255,0.25)" }}
-                        >
-                            <ShieldCheck size={26} style={{ color: "#00d2ff" }} />
+                        <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl mx-auto mb-8 bg-aero-blue/10 border border-aero-blue/25">
+                            <ShieldCheck size={30} className="text-aero-blue" />
                         </div>
 
-                        <p className="text-lg md:text-xl text-gray-300 leading-relaxed font-light">
-                            <span className="text-white font-bold">AeroNexus Co., Ltd.</span> is a premier civil UAV pilot training institution
-                            certified by the{" "}
-                            <span style={{ color: "#00d2ff" }} className="font-semibold">
-                                China Aircraft Owners and Pilots Association (AOPA)
-                            </span>
-                            . We provide elite theoretical and practical training for Class III multi-rotor in-line-of-sight and over-line-of-sight
-                            pilots.
+                        <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+                            A premier civil UAV pilot training institution certified by the{" "}
+                            <span className="text-aero-blue font-semibold">China Aircraft Owners and Pilots Association (AOPA)</span>.
+                            We provide elite theoretical and practical training for Class III multi-rotor in-line-of-sight and over-line-of-sight pilots.
                         </p>
                     </motion.div>
                 </div>
             </section>
 
-            {/* ── Process Steps ── */}
-            <section className="py-8 pb-20">
+            {/* ── Process Steps — Connected 3D Path ── */}
+            <section className="py-24 relative overflow-hidden" style={{ background: "#030306" }}>
                 <div className="max-w-7xl mx-auto px-6">
-                    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12">
-                        <span className="text-xs font-black tracking-[0.25em] uppercase mb-2 block" style={{ color: "#00d2ff" }}>
-                            Your Journey
-                        </span>
-                        <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">How It Works</h2>
-                        <div className="h-px w-16 mt-4 rounded-full" style={{ background: "linear-gradient(to right, #00d2ff, transparent)" }} />
+                    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
+                        <div className="flex items-center gap-3 mb-4">
+                            <div className="h-px w-12 bg-gradient-to-r from-aero-blue to-transparent" />
+                            <span className="text-aero-blue text-xs uppercase tracking-[0.25em] font-semibold">Your Journey</span>
+                        </div>
+                        <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
+                            How It <span className="bg-clip-text text-transparent bg-gradient-to-r from-aero-blue to-aero-purple">Works</span>
+                        </h2>
                     </motion.div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                        {processSteps.map((step, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, y: 24 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.1 }}
-                                className="relative group rounded-2xl p-6 overflow-hidden"
-                                style={{ background: "rgba(255,255,255,0.025)", border: "1px solid rgba(255,255,255,0.07)" }}
-                            >
-                                <div
-                                    className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-400"
-                                    style={{ boxShadow: "inset 0 0 0 1px rgba(0,210,255,0.2)", background: "rgba(0,210,255,0.03)" }}
-                                />
-                                {/* connector line */}
-                                {i < processSteps.length - 1 && (
-                                    <div
-                                        className="hidden lg:block absolute top-8 -right-2 w-4 h-px z-20"
-                                        style={{ background: "rgba(0,210,255,0.3)" }}
-                                    />
-                                )}
-                                <div className="text-4xl font-black mb-4 leading-none" style={{ color: "rgba(0,210,255,0.15)" }}>
-                                    {step.step}
-                                </div>
-                                <h3 className="text-base font-black text-white mb-2">{step.title}</h3>
-                                <p className="text-sm text-gray-500 leading-relaxed">{step.desc}</p>
-                            </motion.div>
-                        ))}
+                    <div className="relative">
+                        {/* Connection line */}
+                        <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-gradient-to-r from-[#00d2ff20] via-[#a855f720] via-[#10b98120] to-[#f9731620] hidden lg:block -translate-y-1/2" />
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            {processSteps.map((step, i) => (
+                                <motion.div
+                                    key={i}
+                                    initial={{ opacity: 0, y: 40, rotateX: 15 }}
+                                    whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: i * 0.15, duration: 0.6 }}
+                                    style={{ perspective: "800px" }}
+                                >
+                                    <motion.div
+                                        whileHover={{ y: -8, rotateY: 5, scale: 1.02 }}
+                                        transition={{ duration: 0.3 }}
+                                        style={{ transformStyle: "preserve-3d" }}
+                                        className="relative rounded-2xl p-7 h-full"
+                                    >
+                                        <div
+                                            className="absolute inset-0 rounded-2xl"
+                                            style={{ background: "#08080e", border: `1px solid ${step.color}15` }}
+                                        />
+
+                                        {/* Step indicator */}
+                                        <div className="relative z-10">
+                                            <div
+                                                className="w-12 h-12 rounded-full flex items-center justify-center mb-5 text-lg font-black"
+                                                style={{
+                                                    background: `${step.color}15`,
+                                                    border: `2px solid ${step.color}40`,
+                                                    color: step.color,
+                                                    boxShadow: `0 0 20px ${step.color}20`,
+                                                }}
+                                            >
+                                                {step.step}
+                                            </div>
+                                            <h3 className="text-lg font-bold text-white mb-2">{step.title}</h3>
+                                            <p className="text-sm text-gray-500 leading-relaxed">{step.desc}</p>
+                                        </div>
+
+                                        {/* Arrow connector */}
+                                        {i < processSteps.length - 1 && (
+                                            <div className="hidden lg:block absolute top-1/2 -right-4 z-20">
+                                                <div className="w-2 h-2 border-t border-r border-white/10 rotate-45" />
+                                            </div>
+                                        )}
+                                    </motion.div>
+                                </motion.div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* ── Visual Panels (Process + Cert) ── */}
-            <section className="py-10 pb-20">
+            {/* ── Visual Panels ── */}
+            <section className="py-24">
                 <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {[
-                        {
-                            title: "Service Process",
-                            sub: "Step-by-step flowchart",
-                            accent: "#00d2ff",
-                            img: "https://www.htsdfp.com/UploadFiles/2024-02-26/xhmubk4wypgpstlx.jpg",
-                            dir: -30,
-                        },
-                        {
-                            title: "Certification",
-                            sub: "AOPA official qualification",
-                            accent: "#a855f7",
-                            img: "https://www.htsdfp.com/UploadFiles/2024-04-07/8islrvytlbjksxkr.jpg",
-                            dir: 30,
-                        },
+                        { title: "Service Process", sub: "Step-by-step flowchart", accent: "#00d2ff", img: "https://www.htsdfp.com/UploadFiles/2024-02-26/xhmubk4wypgpstlx.jpg" },
+                        { title: "Certification", sub: "AOPA official qualification", accent: "#a855f7", img: "https://www.htsdfp.com/UploadFiles/2024-04-07/8islrvytlbjksxkr.jpg" },
                     ].map((panel, i) => (
                         <motion.div
                             key={i}
-                            initial={{ opacity: 0, x: panel.dir }}
-                            whileInView={{ opacity: 1, x: 0 }}
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.65 }}
-                            className="flex flex-col"
+                            transition={{ delay: i * 0.15, duration: 0.7 }}
+                            className="group"
+                            style={{ perspective: "1000px" }}
                         >
-                            <div className="flex items-center gap-4 mb-5">
-                                <div>
-                                    <p className="text-[10px] font-black tracking-[0.22em] uppercase mb-0.5" style={{ color: panel.accent }}>
-                                        {panel.sub}
-                                    </p>
-                                    <h2 className="text-2xl font-black text-white">{panel.title}</h2>
-                                </div>
-                                <div
-                                    className="h-px flex-1 rounded-full"
-                                    style={{ background: `linear-gradient(to right, ${panel.accent}50, transparent)` }}
-                                />
-                            </div>
-
-                            <div
-                                className="group relative flex-1 rounded-3xl overflow-hidden flex items-center justify-center p-6"
-                                style={{
-                                    background: "linear-gradient(160deg, rgba(255,255,255,0.03) 0%, #050508 100%)",
-                                    border: "1px solid rgba(255,255,255,0.07)",
-                                    minHeight: 280,
-                                }}
+                            <motion.div
+                                whileHover={{ rotateY: i === 0 ? 3 : -3, rotateX: -2, scale: 1.01 }}
+                                transition={{ duration: 0.4 }}
+                                style={{ transformStyle: "preserve-3d" }}
                             >
+                                <div className="flex items-center gap-4 mb-5">
+                                    <p className="text-[10px] font-bold tracking-[0.2em] uppercase" style={{ color: panel.accent }}>{panel.sub}</p>
+                                    <div className="h-px flex-1" style={{ background: `linear-gradient(to right, ${panel.accent}40, transparent)` }} />
+                                </div>
+
                                 <div
-                                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-600"
-                                    style={{ background: `radial-gradient(ellipse at 50% 50%, ${panel.accent}10 0%, transparent 65%)` }}
-                                />
-                                <div
-                                    className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-400"
-                                    style={{ boxShadow: `inset 0 0 0 1px ${panel.accent}25` }}
-                                />
-                                {[
-                                    "top-3 left-3 border-t border-l",
-                                    "top-3 right-3 border-t border-r",
-                                    "bottom-3 left-3 border-b border-l",
-                                    "bottom-3 right-3 border-b border-r",
-                                ].map((cls, j) => (
-                                    <div
-                                        key={j}
-                                        className={`absolute w-4 h-4 ${cls} opacity-20 group-hover:opacity-50 transition-opacity`}
-                                        style={{ borderColor: panel.accent }}
-                                    />
-                                ))}
-                                <motion.img
-                                    src={panel.img}
-                                    alt={panel.title}
-                                    className="relative z-10 w-full h-auto rounded-xl drop-shadow-2xl"
-                                    whileHover={{ scale: 1.04 }}
-                                    transition={{ duration: 0.6, ease: "easeOut" }}
-                                />
-                            </div>
+                                    className="relative rounded-3xl overflow-hidden"
+                                    style={{
+                                        border: `1px solid ${panel.accent}15`,
+                                        boxShadow: `0 30px 60px -15px rgba(0,0,0,0.6), 0 0 40px -10px ${panel.accent}10`,
+                                    }}
+                                >
+                                    <div className="absolute top-0 inset-x-0 h-[1px]" style={{ background: `linear-gradient(90deg, transparent, ${panel.accent}40, transparent)` }} />
+
+                                    <div className="p-6 bg-[#08080e]">
+                                        <h2 className="text-2xl font-bold text-white mb-4">{panel.title}</h2>
+                                        <img
+                                            src={panel.img}
+                                            alt={panel.title}
+                                            className="w-full h-auto rounded-xl"
+                                        />
+                                    </div>
+                                </div>
+                            </motion.div>
                         </motion.div>
                     ))}
                 </div>
             </section>
 
-            {/* ── Course Features ── */}
-            <section className="py-20 relative overflow-hidden">
-                <div
-                    className="absolute inset-0 pointer-events-none"
-                    style={{ background: "radial-gradient(ellipse at 50% 100%, rgba(0,210,255,0.04) 0%, transparent 60%)" }}
-                />
+            {/* ── Course Features — 3D Tilt Cards ── */}
+            <section className="py-28 relative overflow-hidden" style={{ background: "#030306" }}>
+                <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0,210,255,0.5) 1px, transparent 0)`, backgroundSize: "40px 40px" }} />
 
                 <div className="max-w-7xl mx-auto px-6 relative z-10">
-                    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14">
-                        <span className="text-xs font-black tracking-[0.25em] uppercase mb-2 block" style={{ color: "#00d2ff" }}>
-                            What Sets Us Apart
-                        </span>
-                        <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Course Features</h2>
-                        <div className="h-px w-16 mt-4 rounded-full" style={{ background: "linear-gradient(to right, #00d2ff, #a855f7)" }} />
+                    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
+                        <div className="flex items-center gap-3 mb-4">
+                            <div className="h-px w-12 bg-gradient-to-r from-aero-blue to-transparent" />
+                            <span className="text-aero-blue text-xs uppercase tracking-[0.25em] font-semibold">What Sets Us Apart</span>
+                        </div>
+                        <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
+                            Course <span className="bg-clip-text text-transparent bg-gradient-to-r from-aero-blue to-aero-purple">Features</span>
+                        </h2>
                     </motion.div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                        {features.map((feature, idx) => {
-                            const Icon = feature.icon;
-                            return (
-                                <motion.div
-                                    key={idx}
-                                    initial={{ opacity: 0, y: 28 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: idx * 0.1 }}
-                                    whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                                    className="group relative rounded-2xl p-7 overflow-hidden"
-                                    style={{
-                                        background: "linear-gradient(160deg, #0e0e14 0%, #08080f 100%)",
-                                        border: "1px solid rgba(255,255,255,0.07)",
-                                    }}
-                                >
-                                    <div
-                                        className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-400"
-                                        style={{ boxShadow: `inset 0 0 0 1px ${feature.accent}35, 0 16px 40px -12px ${feature.accent}20` }}
-                                    />
-
-                                    <div className="flex items-start gap-5">
-                                        <div
-                                            className="shrink-0 w-12 h-12 rounded-xl flex items-center justify-center"
-                                            style={{
-                                                background: `${feature.accent}12`,
-                                                border: `1px solid ${feature.accent}25`,
-                                                boxShadow: `0 0 20px ${feature.accent}15`,
-                                            }}
-                                        >
-                                            <Icon size={22} style={{ color: feature.accent }} />
-                                        </div>
-
-                                        <div className="flex-1">
-                                            <div className="flex items-center gap-3 mb-2">
-                                                <h3 className="text-base font-black text-white">{feature.title}</h3>
-                                                <div
-                                                    className="h-px flex-1"
-                                                    style={{ background: `linear-gradient(to right, ${feature.accent}30, transparent)` }}
-                                                />
-                                            </div>
-                                            <p className="text-sm text-gray-500 leading-relaxed group-hover:text-gray-400 transition-colors">
-                                                {feature.desc}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </motion.div>
-                            );
-                        })}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {features.map((feature, idx) => (
+                            <FeatureCard3D key={idx} feature={feature} idx={idx} />
+                        ))}
                     </div>
                 </div>
             </section>
 
             {/* ── CTA ── */}
-            <section className="py-24 border-t relative overflow-hidden" style={{ borderColor: "rgba(255,255,255,0.05)" }}>
-                <div
-                    className="absolute inset-0"
-                    style={{ background: "radial-gradient(ellipse at 50% 100%, rgba(0,210,255,0.07) 0%, transparent 60%)" }}
-                />
+            <section className="py-32 border-t border-white/5 relative overflow-hidden">
+                <div className="absolute inset-0">
+                    {[300, 500, 700].map((size, i) => (
+                        <motion.div
+                            key={i}
+                            className="absolute top-1/2 left-1/2 rounded-full border border-aero-blue/[0.04]"
+                            style={{ width: size, height: size, transform: "translate(-50%, -50%)" }}
+                            animate={{ scale: [1, 1.08, 1] }}
+                            transition={{ duration: 5 + i * 2, repeat: Infinity, delay: i * 0.8 }}
+                        />
+                    ))}
+                </div>
+
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="relative z-10 text-center max-w-xl mx-auto px-6"
+                    className="relative z-10 text-center max-w-3xl mx-auto px-6"
                 >
-                    <div
-                        className="inline-flex items-center justify-center w-14 h-14 rounded-2xl mx-auto mb-6"
-                        style={{ background: "rgba(0,210,255,0.08)", border: "1px solid rgba(0,210,255,0.2)" }}
-                    >
-                        <GraduationCap size={26} style={{ color: "#00d2ff" }} />
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl mx-auto mb-8 bg-aero-blue/10 border border-aero-blue/25">
+                        <GraduationCap size={30} className="text-aero-blue" />
                     </div>
-                    <h2 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight">Ready to get certified?</h2>
-                    <p className="text-gray-500 mb-8 text-base">Join hundreds of certified UAV pilots trained at our AOPA-approved academy.</p>
-                    <div className="flex gap-3 justify-center flex-wrap">
-                        <button
-                            className="px-7 py-3 rounded-xl text-sm font-black text-black transition-all hover:scale-[1.03] active:scale-[0.98]"
-                            style={{ background: "linear-gradient(135deg, #00d2ff, #a855f7)", boxShadow: "0 0 32px rgba(0,210,255,0.22)" }}
+                    <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                        Ready to Get
+                        <br />
+                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-aero-blue to-aero-purple">Certified?</span>
+                    </h2>
+                    <p className="text-gray-400 text-lg mb-12 max-w-xl mx-auto leading-relaxed">
+                        Join hundreds of certified UAV pilots trained at our AOPA-approved academy.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.98 }}
+                            className="group px-10 py-4 bg-white text-black font-bold rounded-full hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] transition-all duration-300"
                         >
-                            Enroll Now
-                        </button>
-                        <button
-                            className="px-7 py-3 rounded-xl text-sm font-bold text-white transition-all hover:border-white/30"
-                            style={{ border: "1px solid rgba(255,255,255,0.11)", background: "rgba(255,255,255,0.04)" }}
-                        >
-                            Learn About AOPA Exam
-                        </button>
+                            <span className="flex items-center gap-2">
+                                Enroll Now
+                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            </span>
+                        </motion.button>
+                        <Link to="/about">
+                            <motion.button
+                                whileHover={{ scale: 1.03 }}
+                                whileTap={{ scale: 0.98 }}
+                                className="px-10 py-4 border border-white/15 text-gray-300 hover:text-white hover:border-white/30 font-medium rounded-full transition-all duration-300"
+                            >
+                                Learn About AOPA Exam
+                            </motion.button>
+                        </Link>
                     </div>
                 </motion.div>
             </section>
