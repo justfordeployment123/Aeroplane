@@ -66,7 +66,7 @@ export const ProductDetail = ({
                 >
                     <ArrowLeft size={14} /> Back to Products
                 </motion.button>
-                <div
+                {/* <div
                     className="absolute top-10 left-1/2 -translate-x-1/2 z-20 hidden lg:flex items-center gap-2 text-[11px] font-mono"
                     style={{ color: `${accent}50` }}
                 >
@@ -75,7 +75,7 @@ export const ProductDetail = ({
                     <span>{product.categoryTitle}</span>
                     <ChevronRight size={10} />
                     <span style={{ color: accent }}>{product.name}</span>
-                </div>
+                </div> */}
                 <div className="absolute top-28 right-12 text-[10px] font-mono text-right space-y-1 hidden lg:block" style={{ color: `${accent}40` }}>
                     <motion.div animate={{ opacity: [0.3, 1, 0.3] }} transition={{ duration: 2, repeat: Infinity }}>
                         SYS.ACTIVE

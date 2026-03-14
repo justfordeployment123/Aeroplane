@@ -1,15 +1,33 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { VideoOff } from "lucide-react";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export const VideoPlayer = ({ src, accent }: { src: string | null; accent: string }) => {
     const videoRef = useRef<HTMLVideoElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
     const [playing, setPlaying] = useState(false);
     const [progress, setProgress] = useState(0);
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
     const [hovered, setHovered] = useState(false);
     const [muted, setMuted] = useState(false);
+    const [isInView, setIsInView] = useState(false);
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    // Only inject the <video> element once the section scrolls near the viewport
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsInView(true);
+                    observer.disconnect();
+                }
+            },
+            { rootMargin: "200px" }
+        );
+        if (containerRef.current) observer.observe(containerRef.current);
+        return () => observer.disconnect();
+    }, []);
 
     const togglePlay = () => {
         if (!videoRef.current) return;
@@ -109,6 +127,7 @@ export const VideoPlayer = ({ src, accent }: { src: string | null; accent: strin
 
     return (
         <motion.div
+            ref={containerRef}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -131,27 +150,75 @@ export const VideoPlayer = ({ src, accent }: { src: string | null; accent: strin
                 />
             ))}
 
-            {/* Scan line while playing */}
-            {playing && (
-                <motion.div
-                    className="absolute left-0 right-0 h-[1px] z-10 pointer-events-none"
-                    style={{ background: `linear-gradient(90deg, transparent, ${accent}55, transparent)` }}
-                    animate={{ top: ["0%", "100%", "0%"] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+            {/* Shimmer skeleton — visible until video is ready to play */}
+            <AnimatePresence>
+                {!isLoaded && (
+                    <motion.div
+                        key="skeleton"
+                        initial={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.4 }}
+                        className="absolute inset-0 z-[15] flex items-center justify-center aspect-video"
+                        style={{ background: "#08080e" }}
+                    >
+                        {/* Shimmer sweep */}
+                        <motion.div
+                            className="absolute inset-0"
+                            style={{
+                                background: `linear-gradient(105deg, transparent 35%, ${accent}08 50%, transparent 65%)`,
+                                backgroundSize: "200% 100%",
+                            }}
+                            animate={{ backgroundPosition: ["-100% 0", "200% 0"] }}
+                            transition={{ duration: 1.6, repeat: Infinity, ease: "linear" }}
+                        />
+                        {/* Play icon placeholder */}
+                        <div className="relative z-10 flex flex-col items-center gap-3">
+                            <div
+                                className="flex items-center justify-center rounded-full"
+                                style={{
+                                    width: 80,
+                                    height: 80,
+                                    background: `${accent}10`,
+                                    border: `2px solid ${accent}25`,
+                                }}
+                            >
+                                <motion.div
+                                    animate={{ opacity: [0.3, 0.7, 0.3] }}
+                                    transition={{ duration: 1.5, repeat: Infinity }}
+                                >
+                                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+                                        <path d="M8 5.5v13l11-6.5L8 5.5z" fill={accent} opacity="0.5" />
+                                    </svg>
+                                </motion.div>
+                            </div>
+                            <span
+                                className="text-[10px] font-bold tracking-[0.25em] uppercase"
+                                style={{ color: `${accent}50` }}
+                            >
+                                Loading
+                            </span>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
+            {/* Video — only added to DOM when near viewport */}
+            {isInView && (
+                <video
+                    ref={videoRef}
+                    src={src}
+                    className="w-full aspect-video object-cover block cursor-pointer transition-opacity duration-500"
+                    style={{ opacity: isLoaded ? 1 : 0 }}
+                    onTimeUpdate={onTimeUpdate}
+                    onLoadedMetadata={() => setDuration(videoRef.current?.duration || 0)}
+                    onCanPlay={() => setIsLoaded(true)}
+                    onEnded={() => setPlaying(false)}
+                    onClick={togglePlay}
+                    playsInline
+                    preload="metadata"
+                    muted={muted}
                 />
             )}
-
-            <video
-                ref={videoRef}
-                src={src}
-                className="w-full aspect-video object-cover block cursor-pointer"
-                onTimeUpdate={onTimeUpdate}
-                onLoadedMetadata={() => setDuration(videoRef.current?.duration || 0)}
-                onEnded={() => setPlaying(false)}
-                onClick={togglePlay}
-                playsInline
-                muted={muted}
-            />
 
             {/* Overlay */}
             <motion.div
@@ -163,7 +230,7 @@ export const VideoPlayer = ({ src, accent }: { src: string | null; accent: strin
 
             {/* Big play button */}
             <AnimatePresence>
-                {!playing && (
+                {!playing && isLoaded && (
                     <motion.button
                         key="bigplay"
                         initial={{ opacity: 0, scale: 0.75 }}
