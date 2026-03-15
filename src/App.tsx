@@ -10,6 +10,9 @@ import { ApplicationsPage } from "./pages/ApplicationsPage";
 import { ProductsPage } from "./pages/ProductsPage";
 import { TrainingCenter } from "./pages/TrainingCenter";
 
+import { ContactPage } from "./pages/ContactPage";
+import { ScenarioDetail } from "./pages/ScenarioDetail";
+
 function App() {
     const [introComplete, setIntroComplete] = useState(
         () => sessionStorage.getItem("intro-seen") === "true"
@@ -31,8 +34,11 @@ function App() {
                     <Route path="/about" element={<About />} />
                     <Route path="/economy" element={<LowAltitudeEconomy />} />
                     <Route path="/applications" element={<ApplicationsPage />} />
+                    <Route path="/applications/:id" element={<ScenarioDetail />} />
                     <Route path="/products" element={<ProductsPage />} />
                     <Route path="/training" element={<TrainingCenter />} />
+
+                    <Route path="/contact" element={<ContactPage />} />
                 </Routes>
 
                 <Footer />

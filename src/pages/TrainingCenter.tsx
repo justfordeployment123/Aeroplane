@@ -59,7 +59,7 @@ const FeatureCard3D = ({ feature, idx }: { feature: (typeof features)[number]; i
             >
                 <div
                     className="relative rounded-3xl overflow-hidden h-full"
-                    style={{ background: "#0a0a12", border: `1px solid ${feature.accent}15` }}
+                    style={{ background: "#141420", border: `1px solid ${feature.accent}15` }}
                 >
                     {/* Top accent */}
                     <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: `linear-gradient(90deg, transparent, ${feature.accent}, transparent)` }} />
@@ -95,7 +95,7 @@ const FeatureCard3D = ({ feature, idx }: { feature: (typeof features)[number]; i
 
 export const TrainingCenter = () => {
     return (
-        <div className="min-h-screen text-white font-sans" style={{ background: "#050508" }}>
+        <div className="min-h-screen text-white font-sans" style={{ background: "#121218" }}>
             {/* ── Hero ── */}
             <section className="relative h-[65vh] min-h-[520px] flex items-center justify-center overflow-hidden">
                 <div
@@ -105,7 +105,7 @@ export const TrainingCenter = () => {
                         filter: "brightness(0.22) saturate(1.4)",
                     }}
                 />
-                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, #050508 10%, rgba(5,5,8,0.6) 55%, transparent 100%)" }} />
+                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, #121218 10%, rgba(5,5,8,0.6) 55%, transparent 100%)" }} />
 
                 {/* Graduation cap themed elements */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full border border-aero-blue/[0.06] z-[1]" />
@@ -230,12 +230,12 @@ export const TrainingCenter = () => {
             </section>
 
             {/* ── Process Steps — Connected 3D Path ── */}
-            <section className="py-24 relative overflow-hidden" style={{ background: "#030306" }}>
+            <section className="py-24 relative overflow-hidden" style={{ background: "#0e0e14" }}>
                 <div className="max-w-7xl mx-auto px-6">
                     <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
                         <div className="flex items-center gap-3 mb-4">
                             <div className="h-px w-12 bg-gradient-to-r from-aero-blue to-transparent" />
-                            <span className="text-aero-blue text-xs uppercase tracking-[0.25em] font-semibold">Your Journey</span>
+                            <span className="text-aero-blue text-xs uppercase tracking-[0.2em] font-semibold">Your Journey</span>
                         </div>
                         <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
                             How It <span className="bg-clip-text text-transparent bg-gradient-to-r from-aero-blue to-aero-purple">Works</span>
@@ -264,7 +264,7 @@ export const TrainingCenter = () => {
                                     >
                                         <div
                                             className="absolute inset-0 rounded-2xl"
-                                            style={{ background: "#08080e", border: `1px solid ${step.color}15` }}
+                                            style={{ background: "#181820", border: `1px solid ${step.color}15` }}
                                         />
 
                                         {/* Step indicator */}
@@ -333,7 +333,7 @@ export const TrainingCenter = () => {
                                 >
                                     <div className="absolute top-0 inset-x-0 h-[1px]" style={{ background: `linear-gradient(90deg, transparent, ${panel.accent}40, transparent)` }} />
 
-                                    <div className="p-6 bg-[#08080e]">
+                                    <div className="p-6 bg-[#181820]">
                                         <h2 className="text-2xl font-bold text-white mb-4">{panel.title}</h2>
                                         <img
                                             src={panel.img}
@@ -351,14 +351,14 @@ export const TrainingCenter = () => {
             </section>
 
             {/* ── Course Features — 3D Tilt Cards ── */}
-            <section className="py-28 relative overflow-hidden" style={{ background: "#030306" }}>
+            <section className="py-24 relative overflow-hidden" style={{ background: "#0e0e14" }}>
                 <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0,210,255,0.5) 1px, transparent 0)`, backgroundSize: "40px 40px" }} />
 
                 <div className="max-w-7xl mx-auto px-6 relative z-10">
                     <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
                         <div className="flex items-center gap-3 mb-4">
                             <div className="h-px w-12 bg-gradient-to-r from-aero-blue to-transparent" />
-                            <span className="text-aero-blue text-xs uppercase tracking-[0.25em] font-semibold">What Sets Us Apart</span>
+                            <span className="text-aero-blue text-xs uppercase tracking-[0.2em] font-semibold">What Sets Us Apart</span>
                         </div>
                         <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
                             Course <span className="bg-clip-text text-transparent bg-gradient-to-r from-aero-blue to-aero-purple">Features</span>

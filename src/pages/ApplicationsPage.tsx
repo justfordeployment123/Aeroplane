@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 const scenarios = [
     {
+        id: "civil-logistics",
         num: "01",
         title: "Civil Logistics",
         label: "Supply Chain Automation",
@@ -19,6 +20,7 @@ const scenarios = [
         ],
     },
     {
+        id: "emergency-rescue",
         num: "02",
         title: "Emergency Rescue",
         label: "Disaster Response",
@@ -33,6 +35,7 @@ const scenarios = [
         ],
     },
     {
+        id: "industry-service",
         num: "03",
         title: "Industry Service",
         label: "Enterprise Operations",
@@ -194,7 +197,7 @@ const ImmersiveScenario = ({ scenario, index }: { scenario: (typeof scenarios)[0
                             >
                                 <div
                                     className="absolute inset-0 rounded-xl"
-                                    style={{ background: "#0a0a12", border: `1px solid ${scenario.accent}15` }}
+                                    style={{ background: "#141420", border: `1px solid ${scenario.accent}15` }}
                                 />
                                 <div
                                     className="absolute bottom-0 inset-x-0 h-1/2 opacity-0 group-hover/stat:opacity-100 transition-opacity duration-500"
@@ -209,20 +212,22 @@ const ImmersiveScenario = ({ scenario, index }: { scenario: (typeof scenarios)[0
                     </div>
 
                     {/* CTA */}
-                    <motion.button
-                        whileHover={{ x: isEven ? 5 : -5 }}
-                        className={`group w-fit flex items-center gap-3 text-sm font-bold uppercase tracking-widest ${!isEven ? "flex-row-reverse" : ""}`}
-                        style={{ color: scenario.accent }}
-                    >
-                        <span className="relative">
-                            Explore Case Study
-                            <span
-                                className="absolute -bottom-0.5 left-0 h-px w-0 group-hover:w-full transition-all duration-300"
-                                style={{ background: scenario.accent }}
-                            />
-                        </span>
-                        <ArrowRight size={16} className={`group-hover:translate-x-1 transition-transform ${!isEven ? "rotate-180 group-hover:-translate-x-1" : ""}`} />
-                    </motion.button>
+                    <Link to={`/applications/${scenario.id}`}>
+                        <motion.button
+                            whileHover={{ x: isEven ? 5 : -5 }}
+                            className={`group w-fit flex items-center gap-3 text-sm font-bold uppercase tracking-widest ${!isEven ? "flex-row-reverse" : ""}`}
+                            style={{ color: scenario.accent }}
+                        >
+                            <span className="relative">
+                                Explore Case Study
+                                <span
+                                    className="absolute -bottom-0.5 left-0 h-px w-0 group-hover:w-full transition-all duration-300"
+                                    style={{ background: scenario.accent }}
+                                />
+                            </span>
+                            <ArrowRight size={16} className={`group-hover:translate-x-1 transition-transform ${!isEven ? "rotate-180 group-hover:-translate-x-1" : ""}`} />
+                        </motion.button>
+                    </Link>
                 </motion.div>
             </div>
         </motion.div>
@@ -231,7 +236,7 @@ const ImmersiveScenario = ({ scenario, index }: { scenario: (typeof scenarios)[0
 
 export const ApplicationsPage = () => {
     return (
-        <div className="min-h-screen text-white font-sans" style={{ background: "#050508" }}>
+        <div className="min-h-screen text-white font-sans" style={{ background: "#121218" }}>
             {/* ── Hero ── */}
             <section className="relative h-[65vh] min-h-[520px] flex items-center justify-center overflow-hidden">
                 <div
@@ -241,7 +246,7 @@ export const ApplicationsPage = () => {
                         filter: "brightness(0.25) saturate(1.4)",
                     }}
                 />
-                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, #050508 10%, rgba(5,5,8,0.6) 50%, transparent 100%)" }} />
+                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, #121218 10%, rgba(5,5,8,0.6) 50%, transparent 100%)" }} />
 
                 {/* Animated ring */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]">

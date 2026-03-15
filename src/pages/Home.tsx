@@ -4,6 +4,7 @@ import { Hero } from "../components/Hero";
 import { Products } from "../components/Products";
 import { StatsBar } from "../components/StatsBar";
 import { CTASection } from "../components/CTASection";
+import { TrainingPromo } from "../components/TrainingPromo";
 
 const Home = () => (
     <>
@@ -12,6 +13,7 @@ const Home = () => (
         <Products />
         <Applications />
         <CoreAdvantages />
+        <TrainingPromo />
         <CTASection />
     </>
 );

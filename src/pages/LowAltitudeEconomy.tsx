@@ -142,7 +142,7 @@ const PrismCard = ({ pillar, idx }: { pillar: (typeof ecosystemPillars)[0]; idx:
             <div
                 className="relative rounded-3xl p-8 overflow-hidden"
                 style={{
-                    background: "linear-gradient(160deg, #0e0e14 0%, #080810 100%)",
+                    background: "linear-gradient(160deg, #1c1c28 0%, #0e0e14 100%)",
                     border: "1px solid rgba(255,255,255,0.07)",
                     transformStyle: "preserve-3d",
                 }}
@@ -166,7 +166,7 @@ const PrismCard = ({ pillar, idx }: { pillar: (typeof ecosystemPillars)[0]; idx:
                     {String(idx + 1).padStart(2, "0")}
                 </div>
 
-                <div className="flex items-start gap-5" style={{ transform: "translateZ(30px)" }}>
+                <div className="flex items-start gap-5 pb-14" style={{ transform: "translateZ(30px)" }}>
                     <div
                         className="shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center"
                         style={{
@@ -192,14 +192,8 @@ const PrismCard = ({ pillar, idx }: { pillar: (typeof ecosystemPillars)[0]; idx:
                     </div>
                 </div>
 
-                {/* Hover-reveal detail list — slides up from bottom */}
-                <motion.div
-                    className="absolute bottom-0 left-0 right-0 rounded-b-3xl px-8 pb-6 pt-10 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0"
-                    style={{
-                        background: `linear-gradient(to top, ${pillar.accent}18 0%, transparent 100%)`,
-                        transform: "translateZ(40px)",
-                    }}
-                >
+                {/* Detail tags — always visible at bottom */}
+                <div className="absolute bottom-0 left-0 right-0 rounded-b-3xl px-8 pb-6 pt-2" style={{ transform: "translateZ(40px)" }}>
                     <div className="flex flex-wrap gap-2">
                         {pillar.backDetails.map((d, i) => (
                             <span
@@ -211,7 +205,7 @@ const PrismCard = ({ pillar, idx }: { pillar: (typeof ecosystemPillars)[0]; idx:
                             </span>
                         ))}
                     </div>
-                </motion.div>
+                </div>
             </div>
         </motion.div>
     );
@@ -298,7 +292,7 @@ const RadarCard = ({ adv, idx }: { adv: (typeof keyAdvantages)[0]; idx: number }
             whileHover={{ y: -6, transition: { duration: 0.25 } }}
             className="group relative rounded-2xl p-8 overflow-hidden"
             style={{
-                background: "linear-gradient(160deg, #0e0e14 0%, #08080f 100%)",
+                background: "linear-gradient(160deg, #1c1c28 0%, #181820 100%)",
                 border: "1px solid rgba(255,255,255,0.07)",
             }}
         >
@@ -339,11 +333,11 @@ const RadarCard = ({ adv, idx }: { adv: (typeof keyAdvantages)[0]; idx: number }
 
 export const LowAltitudeEconomy = () => {
     return (
-        <div className="min-h-screen text-white font-sans" style={{ background: "#050508" }}>
+        <div className="min-h-screen text-white font-sans" style={{ background: "#121218" }}>
             {/* ─── Hero with 3D altitude layers ─── */}
             <section className="relative h-[70vh] min-h-[520px] flex items-center justify-center overflow-hidden">
                 {/* Background */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black via-[#050510] to-[#050508]" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black via-[#121218] to-[#121218]" />
 
                 {/* 3D Altitude layer visualization */}
                 <div
@@ -447,7 +441,7 @@ export const LowAltitudeEconomy = () => {
             {/* ─── Stats with 3D entrance ─── */}
             <section className="relative py-14 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-aero-blue/10 via-aero-purple/10 to-aero-blue/10" />
-                <div className="absolute inset-0 bg-[#050508]/80 backdrop-blur-sm" />
+                <div className="absolute inset-0 bg-[#121218]/80 backdrop-blur-sm" />
                 <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-aero-blue/30 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-aero-blue/30 to-transparent" />
 
@@ -517,7 +511,7 @@ export const LowAltitudeEconomy = () => {
             </section>
 
             {/* ─── Ecosystem Pillars — 3D Prism Cards ─── */}
-            <section className="py-24 relative overflow-hidden border-t border-white/5" style={{ background: "#030305" }}>
+            <section className="py-24 relative overflow-hidden border-t border-white/5" style={{ background: "#0e0e14" }}>
                 {/* Isometric grid background */}
                 <div
                     className="absolute inset-0 opacity-[0.02]"
@@ -579,7 +573,7 @@ export const LowAltitudeEconomy = () => {
             </section>
 
             {/* ─── Policy Timeline — 3D Depth ─── */}
-            <section className="py-24 relative overflow-hidden border-t border-white/5" style={{ background: "#030305" }}>
+            <section className="py-24 relative overflow-hidden border-t border-white/5" style={{ background: "#0e0e14" }}>
                 <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-aero-purple/5 rounded-full blur-[200px] pointer-events-none" />
 
                 <div className="max-w-4xl mx-auto px-6">
@@ -624,7 +618,7 @@ export const LowAltitudeEconomy = () => {
                         transition={{ duration: 0.6 }}
                         className="group relative rounded-3xl overflow-hidden"
                         style={{
-                            background: "linear-gradient(160deg, #0a0a10 0%, #080810 100%)",
+                            background: "linear-gradient(160deg, #141420 0%, #0e0e14 100%)",
                             border: "1px solid rgba(255,255,255,0.08)",
                             boxShadow: "0 32px 64px -16px rgba(0,0,0,0.6)",
                         }}
@@ -682,8 +676,8 @@ export const LowAltitudeEconomy = () => {
             </section>
 
             {/* ─── CTA ─── */}
-            <section className="py-28 relative overflow-hidden border-t border-white/5">
-                <div className="absolute inset-0 bg-gradient-to-b from-[#060606] via-[#050508] to-[#060606]" />
+            <section className="py-32 relative overflow-hidden border-t border-white/5">
+                <div className="absolute inset-0 bg-gradient-to-b from-[#121218] via-[#121218] to-[#121218]" />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-aero-blue/[0.06] rounded-full blur-[200px] pointer-events-none" />
 
                 {/* Topographic contour lines */}

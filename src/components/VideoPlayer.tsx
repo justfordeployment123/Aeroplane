@@ -75,7 +75,7 @@ export const VideoPlayer = ({ src, accent }: { src: string | null; accent: strin
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 className="relative rounded-2xl overflow-hidden flex flex-col items-center justify-center gap-5 border"
-                style={{ background: "#08080e", borderColor: `${accent}18`, minHeight: "300px" }}
+                style={{ background: "#181820", borderColor: `${accent}18`, minHeight: "300px" }}
             >
                 <div
                     className="absolute inset-0 opacity-[0.025]"
@@ -159,7 +159,7 @@ export const VideoPlayer = ({ src, accent }: { src: string | null; accent: strin
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.4 }}
                         className="absolute inset-0 z-[15] flex items-center justify-center aspect-video"
-                        style={{ background: "#08080e" }}
+                        style={{ background: "#181820" }}
                     >
                         {/* Shimmer sweep */}
                         <motion.div

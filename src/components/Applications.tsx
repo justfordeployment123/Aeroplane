@@ -47,7 +47,7 @@ export const Applications = () => {
 
     return (
         <section className="py-32 relative overflow-hidden bg-aero-dark">
-            <div className="max-w-[1400px] mx-auto px-6 relative">
+            <div className="max-w-7xl mx-auto px-6 relative">
                 {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -55,7 +55,7 @@ export const Applications = () => {
                     viewport={{ once: true }}
                     className="mb-16"
                 >
-                    <span className="text-aero-blue/70 text-[11px] uppercase tracking-[0.2em] mb-4 block font-semibold">Use Cases</span>
+                    <span className="text-aero-blue text-xs uppercase tracking-[0.2em] mb-4 block font-semibold">Use Cases</span>
                     <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
                         <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight">
                             Application Scenarios

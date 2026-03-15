@@ -20,7 +20,7 @@ export const ProductsPage = () => {
                 ([e]) => {
                     if (e.isIntersecting) setActiveSection(cat.id);
                 },
-                { rootMargin: "-40% 0px -55% 0px" },
+                { rootMargin: "-35% 0px -55% 0px" },
             );
             obs.observe(el);
             observers.push(obs);
@@ -47,7 +47,7 @@ export const ProductsPage = () => {
     }
 
     return (
-        <div className="min-h-screen text-white font-sans" style={{ background: "#050508" }}>
+        <div className="min-h-screen text-white font-sans" style={{ background: "#121218" }}>
             {/* Hero */}
             <section className="relative h-[60vh] min-h-[480px] flex items-center justify-center overflow-hidden">
                 <div
@@ -59,7 +59,7 @@ export const ProductsPage = () => {
                 />
                 <div
                     className="absolute inset-0"
-                    style={{ background: "linear-gradient(to top, #050508 8%, rgba(5,5,8,0.7) 50%, transparent 100%)" }}
+                    style={{ background: "linear-gradient(to top, #121218 8%, rgba(18,18,24,0.7) 50%, transparent 100%)" }}
                 />
                 <div className="absolute top-24 left-8 w-20 h-20 border-t border-l border-aero-blue/20 hidden lg:block" />
                 <div className="absolute top-24 right-8 w-20 h-20 border-t border-r border-aero-blue/20 hidden lg:block" />
@@ -119,9 +119,9 @@ export const ProductsPage = () => {
 
             {/* Sticky Nav */}
             <div
-                className="sticky top-18 z-40 border-b"
+                className="sticky top-[72px] z-40 border-b"
                 style={{
-                    background: "rgba(5,5,8,0.85)",
+                    background: "rgba(18,18,24,0.88)",
                     backdropFilter: "blur(20px)",
                     borderColor: "rgba(255,255,255,0.06)",
                     boxShadow: "0 8px 40px rgba(0,0,0,0.4)",
@@ -158,11 +158,11 @@ export const ProductsPage = () => {
 
             {/* Catalog */}
             <section className="py-24 relative overflow-hidden">
-                <div className="max-w-7xl mx-auto px-6 space-y-36">
+                <div className="max-w-7xl mx-auto px-6 space-y-24">
                     {productCategories.map((category) => {
                         const Icon = category.icon;
                         return (
-                            <div key={category.id} id={category.id} className="scroll-mt-40">
+                            <div key={category.id} id={category.id} className="scroll-mt-36">
                                 <motion.div
                                     initial={{ opacity: 0, y: 24 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -188,16 +188,10 @@ export const ProductsPage = () => {
                                             <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">{category.title}</h2>
                                         </div>
                                     </div>
-                                    <div className="flex items-center gap-6">
-                                        <div
-                                            className="h-px flex-1 max-w-20 rounded-full"
-                                            style={{ background: `linear-gradient(to right, ${category.accent}, transparent)` }}
-                                        />
-                                        <p className="text-gray-500 text-sm max-w-xl">{category.description}</p>
-                                    </div>
+                                    <p className="text-gray-500 text-sm max-w-xl mt-4 ml-[76px]">{category.description}</p>
                                 </motion.div>
                                 <div
-                                    className={`grid gap-5 ${category.products.length === 1 ? "grid-cols-1 max-w-sm" : category.products.length === 2 ? "grid-cols-1 sm:grid-cols-2 max-w-2xl" : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"}`}
+                                    className={`grid gap-6 ${category.products.length === 1 ? "grid-cols-1 max-w-sm" : category.products.length === 2 ? "grid-cols-1 sm:grid-cols-2 max-w-2xl" : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"}`}
                                 >
                                     {category.products.map((product, pIdx) => (
                                         <HoloCard

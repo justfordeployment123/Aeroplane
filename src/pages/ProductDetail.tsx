@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, CheckCircle2, ChevronRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react";
 import { useEffect } from "react";
 import { allProducts } from "../data/product";
 import { VideoPlayer } from "../components/VideoPlayer";
@@ -24,7 +24,7 @@ export const ProductDetail = ({
     const accent = product.categoryAccent;
 
     return (
-        <div className="min-h-screen text-white font-sans" style={{ background: "#050508" }}>
+        <div className="min-h-screen text-white font-sans" style={{ background: "#121218" }}>
             {/* Hero */}
             <section className="relative min-h-[72vh] flex items-end overflow-hidden">
                 <div className="absolute inset-0">
@@ -56,7 +56,7 @@ export const ProductDetail = ({
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.3 }}
-                    className="absolute top-8 left-8 z-20 flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium transition-all hover:border-white/30 hover:text-white"
+                    className="absolute top-24 left-8 z-20 flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium transition-all hover:border-white/30 hover:text-white"
                     style={{
                         borderColor: "rgba(255,255,255,0.1)",
                         color: "rgba(255,255,255,0.5)",
@@ -91,7 +91,7 @@ export const ProductDetail = ({
                     transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
                 />
 
-                <div className="relative z-10 w-full max-w-7xl mx-auto px-8 pb-16 pt-36 grid grid-cols-1 lg:grid-cols-2 gap-14 items-end">
+                <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-16 pt-36 grid grid-cols-1 lg:grid-cols-2 gap-14 items-end">
                     <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
                         <motion.span
                             initial={{ opacity: 0, y: 10 }}
@@ -110,11 +110,11 @@ export const ProductDetail = ({
                                 {product.name.split(" ").slice(1).join(" ")}
                             </span>
                         </h1>
-                        <p className="text-gray-400 text-[15px] leading-relaxed max-w-lg mb-8">{product.description}</p>
+                        <p className="text-gray-400 text-sm leading-relaxed max-w-lg mb-8">{product.description}</p>
                         <motion.button
                             whileHover={{ scale: 1.04 }}
                             whileTap={{ scale: 0.97 }}
-                            className="flex items-center gap-2 px-8 py-3.5 rounded-full font-bold text-sm text-black"
+                            className="flex items-center gap-2 px-6 py-3.5 rounded-full font-bold text-sm text-black"
                             style={{ background: `linear-gradient(135deg, ${accent}, ${accent}bb)`, boxShadow: `0 0 30px ${accent}35` }}
                         >
                             Request a Quote <ArrowRight size={16} />
@@ -151,13 +151,13 @@ export const ProductDetail = ({
                 </div>
                 <div
                     className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none"
-                    style={{ background: "linear-gradient(to top, #050508, transparent)" }}
+                    style={{ background: "linear-gradient(to top, #121218, transparent)" }}
                 />
             </section>
 
             {/* Video */}
             <section className="py-16">
-                <div className="max-w-7xl mx-auto px-8">
+                <div className="max-w-7xl mx-auto px-6">
                     <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-8">
                         <p className="text-xs font-bold tracking-[0.2em] uppercase mb-2" style={{ color: accent }}>
                             Product Showcase
@@ -170,7 +170,7 @@ export const ProductDetail = ({
 
             {/* Highlights */}
             <section className="py-12">
-                <div className="max-w-7xl mx-auto px-8">
+                <div className="max-w-7xl mx-auto px-6">
                     <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-8">
                         <p className="text-xs font-bold tracking-[0.2em] uppercase mb-2" style={{ color: accent }}>
                             Core Capabilities
@@ -200,7 +200,7 @@ export const ProductDetail = ({
 
             {/* Specs + Applications */}
             <section className="py-16">
-                <div className="max-w-7xl mx-auto px-8">
+                <div className="max-w-7xl mx-auto px-6">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
                         <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
                             <p className="text-xs font-bold tracking-[0.2em] uppercase mb-2" style={{ color: accent }}>
@@ -245,7 +245,7 @@ export const ProductDetail = ({
                                         viewport={{ once: true }}
                                         transition={{ delay: i * 0.1 }}
                                         className="group relative rounded-2xl p-5 border overflow-hidden cursor-default"
-                                        style={{ background: "#08080e", borderColor: `${accent}15` }}
+                                        style={{ background: "#181820", borderColor: `${accent}15` }}
                                     >
                                         <motion.div
                                             className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
@@ -275,13 +275,13 @@ export const ProductDetail = ({
 
             {product.paramImg && (
                 <section className="py-10">
-                    <div className="max-w-5xl mx-auto px-8">
+                    <div className="max-w-5xl mx-auto px-6">
                         <motion.div
                             initial={{ opacity: 0, y: 24 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             className="rounded-2xl overflow-hidden border p-4"
-                            style={{ borderColor: `${accent}15`, background: "#08080e" }}
+                            style={{ borderColor: `${accent}15`, background: "#181820" }}
                         >
                             <img src={product.paramImg} alt="Performance parameters" className="w-full object-contain rounded-xl" />
                         </motion.div>
@@ -295,7 +295,7 @@ export const ProductDetail = ({
                 if (!related.length) return null;
                 return (
                     <section className="py-16 border-t border-white/[0.04]">
-                        <div className="max-w-7xl mx-auto px-8">
+                        <div className="max-w-7xl mx-auto px-6">
                             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-8">
                                 <p className="text-xs font-bold tracking-[0.2em] uppercase mb-2" style={{ color: accent }}>
                                     Same Series

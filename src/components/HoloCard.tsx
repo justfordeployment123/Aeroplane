@@ -39,7 +39,7 @@ export const HoloCard = ({ product, accent, idx, onClick }: { product: any; acce
             >
                 <div
                     className="relative rounded-2xl overflow-hidden flex flex-col"
-                    style={{ background: "#08080e", border: "1px solid rgba(255,255,255,0.05)" }}
+                    style={{ background: "#181820", border: "1px solid rgba(255,255,255,0.05)" }}
                 >
                     <motion.div
                         className="absolute inset-0 z-20 pointer-events-none rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -83,7 +83,7 @@ export const HoloCard = ({ product, accent, idx, onClick }: { product: any; acce
                     <div className="p-5 flex flex-col gap-3 flex-1 justify-between">
                         <div>
                             <span
-                                className="text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-md inline-block mb-3"
+                                className="text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-full inline-block mb-3"
                                 style={{ color: accent, background: `${accent}12`, border: `1px solid ${accent}20` }}
                             >
                                 {product.tag}
@@ -91,7 +91,7 @@ export const HoloCard = ({ product, accent, idx, onClick }: { product: any; acce
                             <h3 className="text-sm font-bold text-gray-200 group-hover:text-white transition-colors leading-snug">{product.name}</h3>
                         </div>
                         <div className="flex items-center justify-between mt-2">
-                            <span className="text-xs font-medium text-gray-600 group-hover:text-gray-400 transition-colors">View Specs</span>
+                            <span className="text-xs font-medium text-gray-500 group-hover:text-white transition-colors">View Specs</span>
                             <div
                                 className="w-8 h-8 rounded-full flex items-center justify-center border border-white/[0.06] group-hover:border-transparent transition-all"
                                 style={{ background: `linear-gradient(135deg, transparent, ${accent}15)` }}

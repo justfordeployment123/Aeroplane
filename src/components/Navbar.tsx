@@ -10,6 +10,8 @@ const navItems = [
     { label: "Applications", to: "/applications" },
     { label: "Series Products", to: "/products" },
     { label: "Training Center", to: "/training" },
+
+    { label: "Contact Us", to: "/contact" },
 ];
 
 export const Navbar = () => {

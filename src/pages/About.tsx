@@ -139,7 +139,7 @@ const ParallaxImage = ({ src, alt }: { src: string; alt: string }) => {
                 </div>
 
                 {/* Reflection on bottom */}
-                <div className="absolute bottom-0 inset-x-0 h-1/3 bg-gradient-to-t from-[#050508] to-transparent z-10" />
+                <div className="absolute bottom-0 inset-x-0 h-1/3 bg-gradient-to-t from-[#121218] to-transparent z-10" />
             </motion.div>
         </motion.div>
     );
@@ -172,7 +172,7 @@ const FlipCard = ({ cert, idx }: { cert: (typeof certificates)[number]; idx: num
                     className="relative rounded-2xl overflow-hidden"
                     style={{
                         backfaceVisibility: "hidden",
-                        background: "linear-gradient(160deg, #0e0e14 0%, #080810 100%)",
+                        background: "linear-gradient(160deg, #1c1c28 0%, #0e0e14 100%)",
                         border: "1px solid rgba(255,255,255,0.07)",
                     }}
                 >
@@ -185,7 +185,7 @@ const FlipCard = ({ cert, idx }: { cert: (typeof certificates)[number]; idx: num
                             className="max-h-full max-w-full object-contain drop-shadow-md"
                         />
                     </div>
-                    <div className="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-[#0e0e14] to-transparent" />
+                    <div className="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-[#1c1c28] to-transparent" />
                     <div className="absolute bottom-2 inset-x-0 text-center">
                         <span className="text-[10px] text-gray-500 uppercase tracking-wider">Hover to flip</span>
                     </div>
@@ -262,7 +262,7 @@ const IsometricCard = ({ val, idx }: { val: (typeof coreValues)[number]; idx: nu
                 <div
                     className="relative rounded-3xl overflow-hidden h-full"
                     style={{
-                        background: "#0a0a12",
+                        background: "#141420",
                         border: "1px solid rgba(255,255,255,0.06)",
                     }}
                 >
@@ -316,7 +316,7 @@ const IsometricCard = ({ val, idx }: { val: (typeof coreValues)[number]; idx: nu
 
 export const About = () => {
     return (
-        <div className="min-h-screen text-white font-sans" style={{ background: "#050508" }}>
+        <div className="min-h-screen text-white font-sans" style={{ background: "#121218" }}>
             {/* ── Cinematic Hero ── */}
             <section className="relative h-[70vh] min-h-[550px] flex items-center justify-center overflow-hidden">
                 <div
@@ -328,8 +328,8 @@ export const About = () => {
                 />
 
                 {/* Cinematic letterbox bars */}
-                <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-[#050508] to-transparent z-[2]" />
-                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#050508] to-transparent z-[2]" />
+                <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-[#121218] to-transparent z-[2]" />
+                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#121218] to-transparent z-[2]" />
 
                 {/* Anamorphic light flare */}
                 <motion.div
@@ -422,7 +422,7 @@ export const About = () => {
             </section>
 
             {/* ── Company Profile with 3D Parallax Image ── */}
-            <section id="profile" className="py-28 relative overflow-hidden">
+            <section id="profile" className="py-24 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-aero-blue/[0.04] rounded-full blur-[200px] pointer-events-none" />
 
                 <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
@@ -434,7 +434,7 @@ export const About = () => {
                     >
                         <div className="flex items-center gap-3 mb-6">
                             <div className="h-px w-12 bg-gradient-to-r from-aero-blue to-transparent" />
-                            <span className="text-aero-blue text-xs uppercase tracking-[0.25em] font-semibold">Who We Are</span>
+                            <span className="text-aero-blue text-xs uppercase tracking-[0.2em] font-semibold">Who We Are</span>
                         </div>
 
                         <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">
@@ -444,7 +444,7 @@ export const About = () => {
 
                         <div className="space-y-6 text-gray-300 leading-relaxed text-lg">
                             <p>
-                                A cutting-edge aerospace enterprise at the forefront of unmanned aviation technology. We represent the pinnacle of modern aviation innovation, driven by a mission to transform how the world moves.
+                                A mixed-ownership enterprise initiated by <span className="text-aero-blue font-semibold">China Aerospace Science and Technology Corporation (CASC)</span>, established in accordance with the state-owned enterprise reform "Three-Year Action Plan" of the State-owned Assets Supervision and Administration Commission of the State Council.
                             </p>
                             <p>
                                 Our core mission is to leverage advanced unmanned system technology to provide comprehensive, scenario-level solutions for global industry users — driving the evolution of logistics, rescue, and transportation into the autonomous skies of tomorrow.
@@ -489,7 +489,7 @@ export const About = () => {
             </section>
 
             {/* ── Core Values — Isometric 3D Cards ── */}
-            <section id="values" className="py-28 relative overflow-hidden" style={{ background: "#030306" }}>
+            <section id="values" className="py-24 relative overflow-hidden" style={{ background: "#0e0e14" }}>
                 <div className="absolute inset-0">
                     {/* Hex grid pattern */}
                     <div
@@ -508,7 +508,7 @@ export const About = () => {
                         viewport={{ once: true }}
                         className="text-center mb-20"
                     >
-                        <span className="text-aero-blue text-xs uppercase tracking-[0.25em] mb-4 block font-semibold">What Drives Us</span>
+                        <span className="text-aero-blue text-xs uppercase tracking-[0.2em] mb-4 block font-semibold">What Drives Us</span>
                         <h2 className="text-4xl md:text-6xl font-bold text-white mb-5">
                             Core{" "}
                             <span className="bg-clip-text text-transparent bg-gradient-to-r from-aero-blue to-aero-purple">Values</span>
@@ -525,7 +525,7 @@ export const About = () => {
             </section>
 
             {/* ── Qualifications — Split Panel with animated list ── */}
-            <section id="honors" className="py-28 relative overflow-hidden">
+            <section id="honors" className="py-24 relative overflow-hidden">
                 <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-aero-purple/[0.05] rounded-full blur-[200px] pointer-events-none -translate-y-1/2" />
 
                 <div className="max-w-7xl mx-auto px-6">
@@ -537,7 +537,7 @@ export const About = () => {
                     >
                         <div className="flex items-center gap-3 mb-4">
                             <div className="h-px w-12 bg-gradient-to-r from-aero-blue to-transparent" />
-                            <span className="text-aero-blue text-xs uppercase tracking-[0.25em] font-semibold">Recognition</span>
+                            <span className="text-aero-blue text-xs uppercase tracking-[0.2em] font-semibold">Recognition</span>
                         </div>
                         <h2 className="text-4xl md:text-5xl font-bold">
                             Honorary{" "}
@@ -552,7 +552,7 @@ export const About = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             className="relative rounded-3xl p-8 overflow-hidden"
-                            style={{ background: "linear-gradient(160deg, #0a0a12 0%, #060610 100%)", border: "1px solid rgba(0,210,255,0.1)" }}
+                            style={{ background: "linear-gradient(160deg, #141420 0%, #0e0e14 100%)", border: "1px solid rgba(0,210,255,0.1)" }}
                         >
                             <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-aero-blue/40 to-transparent" />
 
@@ -590,7 +590,7 @@ export const About = () => {
                             viewport={{ once: true }}
                             transition={{ delay: 0.15 }}
                             className="relative rounded-3xl p-8 overflow-hidden"
-                            style={{ background: "linear-gradient(160deg, #0a0a12 0%, #060610 100%)", border: "1px solid rgba(168,85,247,0.1)" }}
+                            style={{ background: "linear-gradient(160deg, #141420 0%, #0e0e14 100%)", border: "1px solid rgba(168,85,247,0.1)" }}
                         >
                             <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-aero-purple/40 to-transparent" />
 
@@ -641,8 +641,58 @@ export const About = () => {
                 </div>
             </section>
 
+            {/* ── Academic & Research Affiliations ── */}
+            <section className="py-24 relative overflow-hidden">
+                <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-aero-blue/[0.04] rounded-full blur-[200px] pointer-events-none -translate-y-1/2" />
+
+                <div className="max-w-7xl mx-auto px-6 relative z-10">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="mb-16"
+                    >
+                        <div className="flex items-center gap-3 mb-4">
+                            <div className="h-px w-12 bg-gradient-to-r from-aero-blue to-transparent" />
+                            <span className="text-aero-blue text-xs uppercase tracking-[0.2em] font-semibold">Collaboration</span>
+                        </div>
+                        <h2 className="text-4xl md:text-5xl font-bold">
+                            Academic &{" "}
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-aero-blue to-aero-purple">Research</span>
+                        </h2>
+                    </motion.div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                        {[
+                            { type: "University", name: "Suzhou University", detail: "Master's Degree Graduate Practice Base" },
+                            { type: "University", name: "Southeast University", detail: "Graduate Practice Base" },
+                            { type: "University", name: "Civil Aviation University of China", detail: "Graduate Joint Training Base" },
+                            { type: "University", name: "Harbin Engineering University", detail: "Graduate Practice Education Base" },
+                            { type: "Research Center", name: "Kunshan Advanced Unmanned Transportation System", detail: "Key Laboratory" },
+                            { type: "Research Center", name: "Kunshan Unmanned Systems Engineering", detail: "Technology Research Center" },
+                        ].map((item, idx) => (
+                            <motion.div
+                                key={idx}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: idx * 0.06 }}
+                                className="group rounded-2xl p-6 border border-white/[0.06] hover:border-aero-blue/20 transition-all duration-500"
+                                style={{ background: "linear-gradient(160deg, #181820 0%, #121218 100%)" }}
+                            >
+                                <span className="text-[10px] font-bold tracking-widest uppercase text-aero-blue/60 mb-3 block">
+                                    {item.type}
+                                </span>
+                                <h4 className="text-white font-bold mb-1 group-hover:text-aero-blue transition-colors">{item.name}</h4>
+                                <p className="text-xs text-gray-500">{item.detail}</p>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* ── Vision — Cinematic reveal ── */}
-            <section id="vision" className="py-28 relative overflow-hidden" style={{ background: "#030306" }}>
+            <section id="vision" className="py-24 relative overflow-hidden" style={{ background: "#0e0e14" }}>
                 <div className="absolute inset-0">
                     {/* Radiating lines */}
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px]">
@@ -661,7 +711,7 @@ export const About = () => {
 
                 <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
                     <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
-                        <span className="text-aero-blue text-xs uppercase tracking-[0.25em] mb-4 block font-semibold">Looking Ahead</span>
+                        <span className="text-aero-blue text-xs uppercase tracking-[0.2em] mb-4 block font-semibold">Looking Ahead</span>
                         <h2 className="text-4xl md:text-6xl font-bold mb-4">
                             Our{" "}
                             <span className="bg-clip-text text-transparent bg-gradient-to-r from-aero-blue to-aero-purple">Vision</span>
@@ -690,7 +740,7 @@ export const About = () => {
                                     background: "linear-gradient(135deg, rgba(0,210,255,0.2), rgba(168,85,247,0.1), rgba(0,210,255,0.2))",
                                 }}
                             >
-                                <div className="rounded-[22px] overflow-hidden bg-[#050508]">
+                                <div className="rounded-[22px] overflow-hidden bg-[#121218]">
                                     <img
                                         src="https://www.htsdfp.com/UploadFiles/2024-03-01/xphd7wktdh8z9f5m.png"
                                         alt="Vision Diagram"

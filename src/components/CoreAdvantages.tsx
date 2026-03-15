@@ -94,7 +94,7 @@ export const CoreAdvantages = () => {
     const inView = useInView(sectionRef, { once: true, margin: "-100px" });
 
     return (
-        <section ref={sectionRef} className="py-32 relative overflow-hidden bg-[#060608]">
+        <section ref={sectionRef} className="py-32 relative overflow-hidden bg-[#0e0e14]">
             {/* Background depth */}
             <div className="absolute inset-0">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-white/[0.015]" />
@@ -110,7 +110,7 @@ export const CoreAdvantages = () => {
                     viewport={{ once: true }}
                     className="text-center mb-20"
                 >
-                    <span className="text-aero-blue/70 text-[11px] uppercase tracking-[0.2em] mb-4 block font-semibold">Why Choose Us</span>
+                    <span className="text-aero-blue text-xs uppercase tracking-[0.2em] mb-4 block font-semibold">Why Choose Us</span>
                     <h2 className="text-4xl md:text-6xl font-bold text-white">
                         Core Advantages
                     </h2>
@@ -142,7 +142,7 @@ const AdvCard = ({
     const display = adv.number >= 10000 ? `${Math.floor(count / 1000)}K` : String(count);
 
     return (
-        <div className="group relative h-full rounded-2xl overflow-hidden bg-[#0a0a12] border border-white/[0.06] hover:border-white/[0.12] transition-all duration-500">
+        <div className="group relative h-full rounded-2xl overflow-hidden bg-[#141420] border border-white/[0.06] hover:border-white/[0.12] transition-all duration-500">
             {/* Top gradient line */}
             <div className={`absolute top-0 inset-x-0 h-[2px] bg-linear-to-r ${adv.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
 

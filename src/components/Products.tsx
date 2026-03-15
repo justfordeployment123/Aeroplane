@@ -31,6 +31,24 @@ const products = [
         payload: "10 kg",
         color: "#7b61ff",
     },
+    {
+        title: "Ground Control Station",
+        subtitle: "Command & Control",
+        desc: "Ruggedized control terminals from handheld units to vehicle-mounted command shelters.",
+        img: "https://www.htsdfp.com/UploadFiles/2024-05-15/eghckgxtpuqmwpms.png",
+        range: "Full Range",
+        payload: "Multi-UAV",
+        color: "#06b6d4",
+    },
+    {
+        title: "Operation Control System",
+        subtitle: "Fleet Management",
+        desc: "Integrated operation control systems for autonomous fleet management and mission planning.",
+        img: "https://www.htsdfp.com/UploadFiles/2024-10-10/fj99u6mptthuhapw.png",
+        range: "Unlimited",
+        payload: "Software",
+        color: "#10b981",
+    },
 ];
 
 const ProductCard3D = ({ product, idx }: { product: (typeof products)[number]; idx: number }) => {
@@ -69,7 +87,7 @@ const ProductCard3D = ({ product, idx }: { product: (typeof products)[number]; i
                 className="group relative"
             >
                 <Link to="/products" className="block">
-                    <div className="relative rounded-2xl overflow-hidden bg-[#0c0c14] border border-white/[0.06] hover:border-white/[0.12] transition-colors duration-500">
+                    <div className="relative rounded-2xl overflow-hidden bg-[#121218] border border-white/[0.06] hover:border-white/[0.12] transition-colors duration-500">
                         {/* Reflective top edge */}
                         <div className="absolute top-0 inset-x-0 h-[1px]" style={{ background: `linear-gradient(90deg, transparent, ${product.color}33, transparent)` }} />
 
@@ -82,7 +100,7 @@ const ProductCard3D = ({ product, idx }: { product: (typeof products)[number]; i
                             />
 
                             {/* Reflection surface */}
-                            <div className="absolute bottom-0 inset-x-0 h-20 bg-linear-to-t from-[#0c0c14] to-transparent z-10" />
+                            <div className="absolute bottom-0 inset-x-0 h-20 bg-linear-to-t from-[#121218] to-transparent z-10" />
 
                             <motion.img
                                 src={product.img}
@@ -143,7 +161,7 @@ const ProductCard3D = ({ product, idx }: { product: (typeof products)[number]; i
 
 export const Products = () => {
     return (
-        <section className="py-32 relative overflow-hidden bg-[#060608]">
+        <section className="py-32 relative overflow-hidden bg-[#0e0e14]">
             {/* Deep background layers */}
             <div className="absolute inset-0">
                 <div className="absolute top-[20%] left-[10%] w-[500px] h-[500px] bg-aero-blue/[0.02] rounded-full blur-[200px]" />
@@ -158,7 +176,7 @@ export const Products = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                     >
-                        <span className="text-aero-blue/70 text-[11px] uppercase tracking-[0.2em] mb-4 block font-semibold">Our Fleet</span>
+                        <span className="text-aero-blue text-xs uppercase tracking-[0.2em] mb-4 block font-semibold">Our Fleet</span>
                         <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight">
                             Series Products
                         </h2>
@@ -183,7 +201,7 @@ export const Products = () => {
                 </div>
 
                 {/* 3D Product Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {products.map((product, idx) => (
                         <ProductCard3D key={idx} product={product} idx={idx} />
                     ))}

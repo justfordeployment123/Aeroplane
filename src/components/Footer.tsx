@@ -8,18 +8,22 @@ const navLinks = [
     { label: "Applications", to: "/applications" },
     { label: "Series Products", to: "/products" },
     { label: "Training Center", to: "/training" },
+
+    { label: "Contact Us", to: "/contact" },
 ];
 
 const supportLinks = [
-    { label: "Contact Us" },
+    { label: "Contact Us", to: "/contact" },
     { label: "Technical Support" },
     { label: "Market Cooperation" },
+    { label: "Product Purchase" },
+    { label: "Distribution" },
     { label: "Download Catalog" },
 ];
 
 export const Footer = () => {
     return (
-        <footer className="relative overflow-hidden" style={{ background: "#030305" }}>
+        <footer className="relative overflow-hidden" style={{ background: "#0e0e14" }}>
             <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-aero-blue/20 to-transparent" />
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-aero-blue/[0.03] rounded-full blur-[200px] pointer-events-none" />
 
@@ -103,10 +107,20 @@ export const Footer = () => {
                         <ul className="space-y-3">
                             {supportLinks.map((link) => (
                                 <li key={link.label}>
-                                    <span className="group flex items-center text-sm text-gray-500 hover:text-aero-blue cursor-pointer transition-colors duration-200">
-                                        <span className="w-0 group-hover:w-3 h-px bg-aero-blue mr-0 group-hover:mr-2 transition-all duration-200" />
-                                        {link.label}
-                                    </span>
+                                    {link.to ? (
+                                        <Link
+                                            to={link.to}
+                                            className="group flex items-center text-sm text-gray-500 hover:text-aero-blue transition-colors duration-200"
+                                        >
+                                            <span className="w-0 group-hover:w-3 h-px bg-aero-blue mr-0 group-hover:mr-2 transition-all duration-200" />
+                                            {link.label}
+                                        </Link>
+                                    ) : (
+                                        <span className="group flex items-center text-sm text-gray-500 hover:text-aero-blue cursor-pointer transition-colors duration-200">
+                                            <span className="w-0 group-hover:w-3 h-px bg-aero-blue mr-0 group-hover:mr-2 transition-all duration-200" />
+                                            {link.label}
+                                        </span>
+                                    )}
                                 </li>
                             ))}
                         </ul>
@@ -129,6 +143,26 @@ export const Footer = () => {
                                 <span>contact@aeronexus.com</span>
                             </li>
                         </ul>
+
+                        {/* QR Codes */}
+                        <div className="mt-6 flex gap-4">
+                            <div className="text-center">
+                                <img
+                                    src="https://www.htsdfp.com/UploadFiles/2023-10-26/ns8gaucsyglnup85.png"
+                                    alt="Enterprise WeChat"
+                                    className="w-20 h-20 rounded-lg border border-white/10 bg-white p-1"
+                                />
+                                <span className="text-[9px] text-gray-600 mt-1 block">Enterprise WeChat</span>
+                            </div>
+                            <div className="text-center">
+                                <img
+                                    src="https://www.htsdfp.com/UploadFiles/2023-10-26/mgh1xn3kp9xjqwct.png"
+                                    alt="WeChat"
+                                    className="w-20 h-20 rounded-lg border border-white/10 bg-white p-1"
+                                />
+                                <span className="text-[9px] text-gray-600 mt-1 block">WeChat</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
