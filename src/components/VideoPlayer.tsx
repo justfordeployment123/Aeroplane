@@ -71,9 +71,9 @@ export const VideoPlayer = ({ src, accent }: { src: string | null; accent: strin
     if (!src) {
         return (
             <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                initial={{ y: 20 }}
+                whileInView={{ y: 0 }}
+                viewport={{ once: true, margin: "200px 0px" }}
                 className="relative rounded-2xl overflow-hidden flex flex-col items-center justify-center gap-5 border"
                 style={{ background: "#1c1c2a", borderColor: `${accent}18`, minHeight: "300px" }}
             >
@@ -128,9 +128,9 @@ export const VideoPlayer = ({ src, accent }: { src: string | null; accent: strin
     return (
         <motion.div
             ref={containerRef}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            initial={{ y: 20 }}
+            whileInView={{ y: 0 }}
+            viewport={{ once: true, margin: "200px 0px" }}
             className="relative rounded-2xl overflow-hidden select-none"
             style={{ background: "#000", boxShadow: `0 4px 80px ${accent}18, 0 0 0 1px ${accent}${hovered ? "28" : "16"}` }}
             onMouseEnter={() => setHovered(true)}
@@ -236,9 +236,9 @@ export const VideoPlayer = ({ src, accent }: { src: string | null; accent: strin
                 {!playing && isLoaded && (
                     <motion.button
                         key="bigplay"
-                        initial={{ opacity: 0, scale: 0.75 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.75 }}
+                        initial={{ scale: 0.75 }}
+                        animate={{ scale: 1 }}
+                        exit={{ scale: 0.75 }}
                         transition={{ duration: 0.2 }}
                         onClick={togglePlay}
                         className="absolute inset-0 flex items-center justify-center z-[8]"

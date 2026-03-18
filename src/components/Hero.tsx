@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { ParticleBackground } from "./ParticleBackground";
 
 const wordAnimation = {
-    hidden: { opacity: 0, y: 20, filter: "blur(8px)" },
+    hidden: { y: 20, filter: "blur(8px)" },
     visible: (i: number) => ({
         opacity: 1,
         y: 0,
@@ -75,7 +75,7 @@ export const Hero = () => {
 
             {/* Content - centered over video */}
             <div className="relative z-10 max-w-5xl mx-auto px-6 w-full text-center flex flex-col items-center">
-                <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
+                <motion.div initial={{ y: -20 }} animate={{ y: 0 }} transition={{ duration: 1 }}>
                     <span className="px-4 py-1.5 rounded-full border border-aero-blue/50 bg-aero-blue/10 text-aero-blue text-sm font-medium tracking-wide mb-6 inline-flex items-center gap-2 backdrop-blur-md">
                         <span className="w-2 h-2 rounded-full bg-aero-blue animate-pulse" />
                         Unmanned Transport Aircraft
@@ -91,8 +91,8 @@ export const Hero = () => {
                 </h1>
 
                 <motion.p
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{ y: 30 }}
+                    animate={{ y: 0 }}
                     transition={{ duration: 0.8, delay: 0.8 }}
                     className="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl leading-relaxed drop-shadow-lg"
                 >
@@ -101,8 +101,8 @@ export const Hero = () => {
 
                 {/* Stats row */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{ y: 20 }}
+                    animate={{ y: 0 }}
                     transition={{ duration: 0.8, delay: 0.9 }}
                     className="flex flex-wrap justify-center gap-6 md:gap-8 mb-10"
                 >
@@ -121,8 +121,8 @@ export const Hero = () => {
 
                 {/* Buttons */}
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{ y: 30 }}
+                    animate={{ y: 0 }}
                     transition={{ duration: 0.8, delay: 1.0 }}
                     className="flex flex-wrap justify-center gap-4"
                 >
@@ -158,8 +158,8 @@ export const Hero = () => {
             {/* Scroll indicator */}
             <motion.div
                 className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+               
+               
                 transition={{ delay: 2 }}
             >
                 <span className="text-[10px] uppercase tracking-[0.3em] text-gray-400">Scroll</span>

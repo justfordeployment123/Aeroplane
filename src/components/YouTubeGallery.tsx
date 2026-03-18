@@ -62,9 +62,9 @@ const VideoCard = ({
 
     return (
         <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            initial={{ y: 30 }}
+            whileInView={{ y: 0 }}
+            viewport={{ once: true, margin: "200px 0px" }}
             transition={{ duration: 0.5, delay: index * 0.08 }}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
@@ -181,9 +181,9 @@ export const YouTubeGallery = () => {
                 <div className="relative z-10 max-w-7xl mx-auto px-6">
                     {/* Section header */}
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        initial={{ y: 20 }}
+                        whileInView={{ y: 0 }}
+                        viewport={{ once: true, margin: "200px 0px" }}
                         className="text-center mb-16"
                     >
                         <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-aero-blue/30 bg-black/40 text-aero-blue text-sm font-medium tracking-wide mb-6 backdrop-blur-md">
@@ -214,8 +214,8 @@ export const YouTubeGallery = () => {
             <AnimatePresence>
                 {activeVideoId && (
                     <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
+                       
+                       
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.3 }}
                         className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-8"
@@ -226,9 +226,9 @@ export const YouTubeGallery = () => {
 
                         {/* Close button */}
                         <motion.button
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.8 }}
+                            initial={{ scale: 0.8 }}
+                            animate={{ scale: 1 }}
+                            exit={{ scale: 0.8 }}
                             transition={{ delay: 0.2 }}
                             onClick={() => setActiveVideoId(null)}
                             className="absolute top-6 right-6 z-10 w-12 h-12 rounded-full flex items-center justify-center border border-white/20 bg-white/5 hover:bg-white/10 transition-colors"
@@ -238,9 +238,9 @@ export const YouTubeGallery = () => {
 
                         {/* Video container */}
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                            animate={{ opacity: 1, scale: 1, y: 0 }}
-                            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                            initial={{ scale: 0.9, y: 20 }}
+                            animate={{ scale: 1, y: 0 }}
+                            exit={{ scale: 0.9, y: 20 }}
                             transition={{ duration: 0.4 }}
                             className="relative z-10 w-full max-w-5xl rounded-2xl overflow-hidden"
                             style={{

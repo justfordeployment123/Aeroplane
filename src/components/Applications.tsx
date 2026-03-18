@@ -62,9 +62,9 @@ export const Applications = () => {
             <div className="max-w-7xl mx-auto px-6 relative">
                 {/* Header */}
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    initial={{ y: 30 }}
+                    whileInView={{ y: 0 }}
+                    viewport={{ once: true, margin: "200px 0px" }}
                     className="mb-16"
                 >
                     <span className="text-aero-blue text-xs uppercase tracking-[0.2em] mb-4 block font-semibold">Use Cases</span>
@@ -83,9 +83,9 @@ export const Applications = () => {
 
                 {/* Featured card - first item takes full width */}
                 <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    initial={{ y: 50 }}
+                    whileInView={{ y: 0 }}
+                    viewport={{ once: true, margin: "200px 0px" }}
                     transition={{ duration: 0.8 }}
                     className="mb-6"
                 >
@@ -164,9 +164,9 @@ export const Applications = () => {
                     {apps.slice(1).map((app, idx) => (
                         <motion.div
                             key={idx}
-                            initial={{ opacity: 0, y: 50 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
+                            initial={{ y: 50 }}
+                            whileInView={{ y: 0 }}
+                            viewport={{ once: true, margin: "200px 0px" }}
                             transition={{ delay: idx * 0.15, duration: 0.8 }}
                         >
                             <Link to="/applications" className="block">

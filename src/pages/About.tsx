@@ -162,9 +162,9 @@ const FlipCard = ({ cert, idx }: { cert: (typeof certificates)[number]; idx: num
 
     return (
         <motion.div
-            initial={{ opacity: 0, rotateY: -30 }}
-            whileInView={{ opacity: 1, rotateY: 0 }}
-            viewport={{ once: true }}
+            initial={{ rotateY: -30 }}
+            whileInView={{ rotateY: 0 }}
+            viewport={{ once: true, margin: "200px 0px" }}
             transition={{ delay: idx * 0.1, duration: 0.6 }}
             className="cursor-pointer"
             style={{ perspective: "800px" }}
@@ -247,9 +247,9 @@ const IsometricCard = ({ val, idx }: { val: (typeof coreValues)[number]; idx: nu
 
     return (
         <motion.div
-            initial={{ opacity: 0, y: 60, rotateX: 15 }}
-            whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-            viewport={{ once: true }}
+            initial={{ y: 60, rotateX: 15 }}
+            whileInView={{ y: 0, rotateX: 0 }}
+            viewport={{ once: true, margin: "200px 0px" }}
             transition={{ delay: idx * 0.15, duration: 0.7 }}
             style={{ perspective: "1000px" }}
         >
@@ -372,7 +372,7 @@ export const About = () => {
                 </div>
 
                 <div className="relative z-10 text-center px-6">
-                    <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
+                    <motion.div initial={{ y: 30 }} animate={{ y: 0 }} transition={{ duration: 1 }}>
                         <motion.span
                             className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-aero-blue/30 bg-black/40 text-aero-blue text-sm font-medium tracking-wide mb-8 backdrop-blur-md"
                             initial={{ scale: 0.9, opacity: 0 }}
@@ -386,16 +386,16 @@ export const About = () => {
                         <h1 className="text-5xl md:text-8xl font-extrabold tracking-tight mb-6">
                             <motion.span
                                 className="inline-block"
-                                initial={{ opacity: 0, y: 40 }}
-                                animate={{ opacity: 1, y: 0 }}
+                                initial={{ y: 40 }}
+                                animate={{ y: 0 }}
                                 transition={{ delay: 0.2, duration: 0.8 }}
                             >
                                 About
                             </motion.span>{" "}
                             <motion.span
                                 className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-aero-blue to-aero-purple"
-                                initial={{ opacity: 0, y: 40 }}
-                                animate={{ opacity: 1, y: 0 }}
+                                initial={{ y: 40 }}
+                                animate={{ y: 0 }}
                                 transition={{ delay: 0.4, duration: 0.8 }}
                             >
                                 Us
@@ -403,8 +403,8 @@ export const About = () => {
                         </h1>
                         <motion.p
                             className="text-xl text-gray-300 max-w-2xl mx-auto"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
+                           
+                           
                             transition={{ delay: 0.7 }}
                         >
                             Pioneering the transition from two-dimensional to three-dimensional autonomous transportation.
@@ -415,8 +415,8 @@ export const About = () => {
                 {/* Scroll indicator */}
                 <motion.div
                     className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                   
+                   
                     transition={{ delay: 1.5 }}
                 >
                     <span className="text-[10px] uppercase tracking-[0.3em] text-gray-500">Scroll</span>
@@ -438,9 +438,9 @@ export const About = () => {
 
                 <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
                     <motion.div
-                        initial={{ opacity: 0, x: -40 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
+                        initial={{ x: -40 }}
+                        whileInView={{ x: 0 }}
+                        viewport={{ once: true, margin: "200px 0px" }}
                         transition={{ duration: 0.8 }}
                     >
                         <div className="flex items-center gap-3 mb-6">
@@ -486,9 +486,9 @@ export const About = () => {
                     </motion.div>
 
                     <motion.div
-                        initial={{ opacity: 0, x: 40 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
+                        initial={{ x: 40 }}
+                        whileInView={{ x: 0 }}
+                        viewport={{ once: true, margin: "200px 0px" }}
                         transition={{ duration: 0.8, delay: 0.2 }}
                     >
                         <ParallaxImage
@@ -514,9 +514,9 @@ export const About = () => {
 
                 <div className="max-w-7xl mx-auto px-6 relative z-10">
                     <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        initial={{ y: 30 }}
+                        whileInView={{ y: 0 }}
+                        viewport={{ once: true, margin: "200px 0px" }}
                         className="text-center mb-20"
                     >
                         <span className="text-aero-blue text-xs uppercase tracking-[0.2em] mb-4 block font-semibold">What Drives Us</span>
@@ -541,9 +541,9 @@ export const About = () => {
 
                 <div className="max-w-7xl mx-auto px-6">
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        initial={{ y: 20 }}
+                        whileInView={{ y: 0 }}
+                        viewport={{ once: true, margin: "200px 0px" }}
                         className="mb-16"
                     >
                         <div className="flex items-center gap-3 mb-4">
@@ -559,9 +559,9 @@ export const About = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
                         {/* Qualifications */}
                         <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
+                            initial={{ y: 30 }}
+                            whileInView={{ y: 0 }}
+                            viewport={{ once: true, margin: "200px 0px" }}
                             className="relative rounded-3xl p-8 overflow-hidden"
                             style={{ background: "linear-gradient(160deg, #181826 0%, #111119 100%)", border: "1px solid rgba(0,210,255,0.1)" }}
                         >
@@ -581,9 +581,9 @@ export const About = () => {
                                 {qualifications.map((item, i) => (
                                     <motion.li
                                         key={i}
-                                        initial={{ opacity: 0, x: -20 }}
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        viewport={{ once: true }}
+                                        initial={{ x: -20 }}
+                                        whileInView={{ x: 0 }}
+                                        viewport={{ once: true, margin: "200px 0px" }}
                                         transition={{ delay: i * 0.05 }}
                                         className="flex items-start text-gray-400 text-sm group/item hover:text-gray-200 transition-colors"
                                     >
@@ -596,9 +596,9 @@ export const About = () => {
 
                         {/* Honors */}
                         <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
+                            initial={{ y: 30 }}
+                            whileInView={{ y: 0 }}
+                            viewport={{ once: true, margin: "200px 0px" }}
                             transition={{ delay: 0.15 }}
                             className="relative rounded-3xl p-8 overflow-hidden"
                             style={{ background: "linear-gradient(160deg, #181826 0%, #111119 100%)", border: "1px solid rgba(168,85,247,0.1)" }}
@@ -619,9 +619,9 @@ export const About = () => {
                                 {honors.map((item, i) => (
                                     <motion.li
                                         key={i}
-                                        initial={{ opacity: 0, x: -20 }}
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        viewport={{ once: true }}
+                                        initial={{ x: -20 }}
+                                        whileInView={{ x: 0 }}
+                                        viewport={{ once: true, margin: "200px 0px" }}
                                         transition={{ delay: i * 0.05 }}
                                         className="flex items-start text-gray-400 text-sm group/item hover:text-gray-200 transition-colors"
                                     >
@@ -635,9 +635,9 @@ export const About = () => {
 
                     {/* 3D Flip Certificates */}
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        initial={{ y: 20 }}
+                        whileInView={{ y: 0 }}
+                        viewport={{ once: true, margin: "200px 0px" }}
                         className="mb-8"
                     >
                         <h3 className="text-xl font-bold text-white mb-2">Certifications</h3>
@@ -658,9 +658,9 @@ export const About = () => {
 
                 <div className="max-w-7xl mx-auto px-6 relative z-10">
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        initial={{ y: 20 }}
+                        whileInView={{ y: 0 }}
+                        viewport={{ once: true, margin: "200px 0px" }}
                         className="mb-16"
                     >
                         <div className="flex items-center gap-3 mb-4">
@@ -684,9 +684,9 @@ export const About = () => {
                         ].map((item, idx) => (
                             <motion.div
                                 key={idx}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
+                                initial={{ y: 20 }}
+                                whileInView={{ y: 0 }}
+                                viewport={{ once: true, margin: "200px 0px" }}
                                 transition={{ delay: idx * 0.06 }}
                                 className="group rounded-2xl p-6 border border-white/[0.06] hover:border-aero-blue/20 transition-all duration-500"
                                 style={{ background: "linear-gradient(160deg, #1c1c2a 0%, #161622 100%)" }}
@@ -721,7 +721,7 @@ export const About = () => {
                 </div>
 
                 <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
-                    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
+                    <motion.div initial={{ y: 20 }} whileInView={{ y: 0 }} viewport={{ once: true, margin: "200px 0px" }} className="mb-16">
                         <span className="text-aero-blue text-xs uppercase tracking-[0.2em] mb-4 block font-semibold">Looking Ahead</span>
                         <h2 className="text-4xl md:text-6xl font-bold mb-4">
                             Our{" "}
@@ -730,9 +730,9 @@ export const About = () => {
                     </motion.div>
 
                     <motion.div
-                        initial={{ opacity: 0, y: 60, scale: 0.95 }}
-                        whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                        viewport={{ once: true }}
+                        initial={{ y: 60, scale: 0.95 }}
+                        whileInView={{ y: 0, scale: 1 }}
+                        viewport={{ once: true, margin: "200px 0px" }}
                         transition={{ duration: 1 }}
                         className="relative inline-block max-w-5xl mx-auto"
                         style={{ perspective: "1200px" }}
@@ -786,7 +786,7 @@ export const About = () => {
                 </div>
 
                 <div className="relative max-w-4xl mx-auto px-6 text-center">
-                    <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+                    <motion.div initial={{ y: 30 }} whileInView={{ y: 0 }} viewport={{ once: true, margin: "200px 0px" }} transition={{ duration: 0.8 }}>
                         <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
                             Ready to Partner
                             <br />

@@ -26,9 +26,9 @@ export const CTASection = () => {
 
             <div className="relative max-w-4xl mx-auto px-6 text-center" style={{ perspective: "800px" }}>
                 <motion.div
-                    initial={{ opacity: 0, y: 50, rotateX: 10 }}
-                    whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-                    viewport={{ once: true }}
+                    initial={{ y: 50, rotateX: 10 }}
+                    whileInView={{ y: 0, rotateX: 0 }}
+                    viewport={{ once: true, margin: "200px 0px" }}
                     transition={{ duration: 0.9 }}
                 >
                     <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">

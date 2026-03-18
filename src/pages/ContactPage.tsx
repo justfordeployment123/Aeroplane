@@ -20,13 +20,13 @@ export const ContactPage = () => {
                 <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full blur-[200px] opacity-[0.06] bg-aero-blue pointer-events-none" />
 
                 <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-                    <motion.span initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="text-xs font-bold tracking-[0.25em] uppercase text-aero-blue mb-4 block">
+                    <motion.span initial={{ y: 10 }} animate={{ y: 0 }} className="text-xs font-bold tracking-[0.25em] uppercase text-aero-blue mb-4 block">
                         Get in Touch
                     </motion.span>
-                    <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-4xl md:text-6xl font-black text-white tracking-tight mb-6">
+                    <motion.h1 initial={{ y: 20 }} animate={{ y: 0 }} transition={{ delay: 0.1 }} className="text-4xl md:text-6xl font-black text-white tracking-tight mb-6">
                         Contact Us
                     </motion.h1>
-                    <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-gray-400 max-w-xl mx-auto text-lg">
+                    <motion.p initial={{ y: 20 }} animate={{ y: 0 }} transition={{ delay: 0.2 }} className="text-gray-400 max-w-xl mx-auto text-lg">
                         Reach out for product inquiries, partnership opportunities, or technical support.
                     </motion.p>
                 </div>
@@ -42,9 +42,9 @@ export const ContactPage = () => {
                             return (
                                 <motion.div
                                     key={idx}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
+                                    initial={{ y: 20 }}
+                                    whileInView={{ y: 0 }}
+                                    viewport={{ once: true, margin: "200px 0px" }}
                                     transition={{ delay: idx * 0.08 }}
                                     className="group rounded-2xl p-6 border border-white/[0.06] hover:border-white/[0.12] transition-all"
                                     style={{ background: "#1c1c2a" }}
@@ -64,9 +64,9 @@ export const ContactPage = () => {
 
                     {/* Contact Form */}
                     <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        initial={{ y: 30 }}
+                        whileInView={{ y: 0 }}
+                        viewport={{ once: true, margin: "200px 0px" }}
                         className="max-w-2xl mx-auto rounded-3xl p-8 md:p-12 border border-white/[0.06]"
                         style={{ background: "#1c1c2a" }}
                     >

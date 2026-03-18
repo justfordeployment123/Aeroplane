@@ -63,9 +63,9 @@ const StatItem = ({ stat, idx, inView }: { stat: (typeof stats)[number]; idx: nu
 
     return (
         <motion.div
-            initial={{ opacity: 0, y: 30, rotateX: 15 }}
-            whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-            viewport={{ once: true }}
+            initial={{ y: 30, rotateX: 15 }}
+            whileInView={{ y: 0, rotateX: 0 }}
+            viewport={{ once: true, margin: "200px 0px" }}
             transition={{ delay: idx * 0.12, duration: 0.7 }}
             className="text-center px-6 py-2"
         >

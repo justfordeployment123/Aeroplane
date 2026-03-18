@@ -15,11 +15,11 @@ export const NewsSection = () => {
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">
                 <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16 gap-6">
-                    <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+                    <motion.div initial={{ y: 30 }} whileInView={{ y: 0 }} viewport={{ once: true, margin: "200px 0px" }}>
                         <span className="text-aero-blue/70 text-[11px] uppercase tracking-[0.2em] mb-4 block font-semibold">Latest Updates</span>
                         <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">News & Events</h2>
                     </motion.div>
-                    <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
+                    <motion.div>
                         <Link to="/news">
                             <motion.button
                                 whileHover={{ scale: 1.03 }}
@@ -37,9 +37,9 @@ export const NewsSection = () => {
                     {featured.map((article, idx) => (
                         <motion.article
                             key={article.id}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
+                            initial={{ y: 30 }}
+                            whileInView={{ y: 0 }}
+                            viewport={{ once: true, margin: "200px 0px" }}
                             transition={{ delay: idx * 0.08, duration: 0.5 }}
                             className="group rounded-2xl overflow-hidden border border-white/[0.06] hover:border-white/[0.12] transition-all duration-500 cursor-default"
                             style={{ background: "#1c1c2a" }}

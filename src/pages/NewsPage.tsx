@@ -13,9 +13,9 @@ const categories = [
 
 const NewsCard = ({ article, idx }: { article: NewsArticle; idx: number }) => (
     <motion.article
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        initial={{ y: 30 }}
+        whileInView={{ y: 0 }}
+        viewport={{ once: true, margin: "200px 0px" }}
         transition={{ delay: idx * 0.05, duration: 0.5 }}
         className="group rounded-2xl overflow-hidden border border-white/[0.06] hover:border-white/[0.12] transition-all duration-500 cursor-default"
         style={{ background: "#1c1c2a" }}
@@ -66,23 +66,23 @@ export const NewsPage = () => {
 
                 <div className="relative z-10 max-w-7xl mx-auto px-8 text-center">
                     <motion.span
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        initial={{ y: 10 }}
+                        animate={{ y: 0 }}
                         className="text-xs font-bold tracking-[0.25em] uppercase text-aero-blue mb-4 block"
                     >
                         Latest Updates
                     </motion.span>
                     <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        initial={{ y: 20 }}
+                        animate={{ y: 0 }}
                         transition={{ delay: 0.1 }}
                         className="text-4xl md:text-6xl font-black text-white tracking-tight mb-6"
                     >
                         News & Media
                     </motion.h1>
                     <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        initial={{ y: 20 }}
+                        animate={{ y: 0 }}
                         transition={{ delay: 0.2 }}
                         className="text-gray-400 max-w-xl mx-auto text-lg"
                     >
@@ -96,8 +96,8 @@ export const NewsPage = () => {
                 <div className="max-w-7xl mx-auto px-8">
                     {/* Filters */}
                     <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        initial={{ y: 10 }}
+                        animate={{ y: 0 }}
                         transition={{ delay: 0.3 }}
                         className="flex items-center gap-3 mb-12 flex-wrap"
                     >

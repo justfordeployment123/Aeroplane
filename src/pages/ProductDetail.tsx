@@ -53,8 +53,8 @@ export const ProductDetail = ({
                 <div className="absolute top-24 right-8 w-16 h-16 border-t border-r hidden lg:block" style={{ borderColor: `${accent}25` }} />
                 <motion.button
                     onClick={onBack}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ x: -20 }}
+                    animate={{ x: 0 }}
                     transition={{ delay: 0.3 }}
                     className="absolute top-24 left-8 z-20 flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium transition-all hover:border-white/30 hover:text-white"
                     style={{
@@ -92,10 +92,10 @@ export const ProductDetail = ({
                 />
 
                 <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-16 pt-36 grid grid-cols-1 lg:grid-cols-2 gap-14 items-end">
-                    <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
+                    <motion.div initial={{ x: -30 }} animate={{ x: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
                         <motion.span
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
+                            initial={{ y: 10 }}
+                            animate={{ y: 0 }}
                             transition={{ delay: 0.35 }}
                             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-6"
                             style={{ color: accent, background: `${accent}12`, border: `1px solid ${accent}25` }}
@@ -121,8 +121,8 @@ export const ProductDetail = ({
                         </motion.button>
                     </motion.div>
                     <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        initial={{ y: 30 }}
+                        animate={{ y: 0 }}
                         transition={{ duration: 0.9, delay: 0.3 }}
                         className="relative flex items-center justify-center"
                     >
@@ -158,7 +158,7 @@ export const ProductDetail = ({
             {/* Video */}
             <section className="py-16">
                 <div className="max-w-7xl mx-auto px-6">
-                    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-8">
+                    <motion.div initial={{ y: 20 }} whileInView={{ y: 0 }} viewport={{ once: true, margin: "200px 0px" }} className="mb-8">
                         <p className="text-xs font-bold tracking-[0.2em] uppercase mb-2" style={{ color: accent }}>
                             Product Showcase
                         </p>
@@ -171,7 +171,7 @@ export const ProductDetail = ({
             {/* Highlights */}
             <section className="py-12">
                 <div className="max-w-7xl mx-auto px-6">
-                    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-8">
+                    <motion.div initial={{ y: 20 }} whileInView={{ y: 0 }} viewport={{ once: true, margin: "200px 0px" }} className="mb-8">
                         <p className="text-xs font-bold tracking-[0.2em] uppercase mb-2" style={{ color: accent }}>
                             Core Capabilities
                         </p>
@@ -181,9 +181,9 @@ export const ProductDetail = ({
                         {product.highlights.map((h: string, i: number) => (
                             <motion.div
                                 key={i}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
+                                initial={{ y: 20 }}
+                                whileInView={{ y: 0 }}
+                                viewport={{ once: true, margin: "200px 0px" }}
                                 transition={{ delay: i * 0.055 }}
                                 className="flex items-center gap-3 p-4 rounded-xl border"
                                 style={{ background: `${accent}06`, borderColor: `${accent}15` }}
@@ -202,7 +202,7 @@ export const ProductDetail = ({
             <section className="py-16">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
-                        <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+                        <motion.div initial={{ x: -24 }} whileInView={{ x: 0 }} viewport={{ once: true, margin: "200px 0px" }}>
                             <p className="text-xs font-bold tracking-[0.2em] uppercase mb-2" style={{ color: accent }}>
                                 Technical Data
                             </p>
@@ -218,9 +218,9 @@ export const ProductDetail = ({
                                 {product.specs.map((spec: any, i: number) => (
                                     <motion.div
                                         key={i}
-                                        initial={{ opacity: 0, x: -10 }}
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        viewport={{ once: true }}
+                                        initial={{ x: -10 }}
+                                        whileInView={{ x: 0 }}
+                                        viewport={{ once: true, margin: "200px 0px" }}
                                         transition={{ delay: i * 0.04 }}
                                         className="flex items-center justify-between px-5 py-3.5 border-t transition-colors hover:bg-white/[0.02]"
                                         style={{ borderColor: `${accent}08` }}
@@ -231,7 +231,7 @@ export const ProductDetail = ({
                                 ))}
                             </div>
                         </motion.div>
-                        <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+                        <motion.div initial={{ x: 24 }} whileInView={{ x: 0 }} viewport={{ once: true, margin: "200px 0px" }}>
                             <p className="text-xs font-bold tracking-[0.2em] uppercase mb-2" style={{ color: accent }}>
                                 Use Cases
                             </p>
@@ -240,9 +240,9 @@ export const ProductDetail = ({
                                 {product.applications.map((app: string, i: number) => (
                                     <motion.div
                                         key={i}
-                                        initial={{ opacity: 0, y: 16 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
+                                        initial={{ y: 16 }}
+                                        whileInView={{ y: 0 }}
+                                        viewport={{ once: true, margin: "200px 0px" }}
                                         transition={{ delay: i * 0.1 }}
                                         className="group relative rounded-2xl p-5 border overflow-hidden cursor-default"
                                         style={{ background: "#1c1c2a", borderColor: `${accent}15` }}
@@ -277,9 +277,9 @@ export const ProductDetail = ({
                 <section className="py-10">
                     <div className="max-w-5xl mx-auto px-6">
                         <motion.div
-                            initial={{ opacity: 0, y: 24 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
+                            initial={{ y: 24 }}
+                            whileInView={{ y: 0 }}
+                            viewport={{ once: true, margin: "200px 0px" }}
                             className="rounded-2xl overflow-hidden border p-4"
                             style={{ borderColor: `${accent}15`, background: "#1c1c2a" }}
                         >
@@ -296,7 +296,7 @@ export const ProductDetail = ({
                 return (
                     <section className="py-16 border-t border-white/[0.04]">
                         <div className="max-w-7xl mx-auto px-6">
-                            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-8">
+                            <motion.div initial={{ y: 20 }} whileInView={{ y: 0 }} viewport={{ once: true, margin: "200px 0px" }} className="mb-8">
                                 <p className="text-xs font-bold tracking-[0.2em] uppercase mb-2" style={{ color: accent }}>
                                     Same Series
                                 </p>
@@ -326,9 +326,9 @@ export const ProductDetail = ({
                     style={{ background: `${accent}06` }}
                 />
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    initial={{ y: 20 }}
+                    whileInView={{ y: 0 }}
+                    viewport={{ once: true, margin: "200px 0px" }}
                     className="relative z-10 text-center px-6 max-w-2xl mx-auto"
                 >
                     <h2 className="text-4xl font-bold text-white mb-4">

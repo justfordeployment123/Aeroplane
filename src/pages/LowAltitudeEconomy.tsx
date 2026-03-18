@@ -131,9 +131,9 @@ const PrismCard = ({ pillar, idx }: { pillar: (typeof ecosystemPillars)[0]; idx:
             ref={ref}
             onMouseMove={handleMove}
             onMouseLeave={handleLeave}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            initial={{ y: 50 }}
+            whileInView={{ y: 0 }}
+            viewport={{ once: true, margin: "200px 0px" }}
             transition={{ delay: idx * 0.12, duration: 0.6 }}
             style={{ rotateX: rotX, rotateY: rotY, perspective: 800, transformStyle: "preserve-3d" } as React.CSSProperties}
             className="group relative rounded-3xl cursor-default"
@@ -285,9 +285,9 @@ const RadarCard = ({ adv, idx }: { adv: (typeof keyAdvantages)[0]; idx: number }
     const Icon = adv.icon;
     return (
         <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            initial={{ y: 30 }}
+            whileInView={{ y: 0 }}
+            viewport={{ once: true, margin: "200px 0px" }}
             transition={{ delay: idx * 0.12, duration: 0.5 }}
             whileHover={{ y: -6, transition: { duration: 0.25 } }}
             className="group relative rounded-2xl p-8 overflow-hidden"
@@ -385,7 +385,7 @@ export const LowAltitudeEconomy = () => {
 
                 {/* Content */}
                 <div className="relative z-10 text-center px-6 max-w-4xl">
-                    <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.85 }}>
+                    <motion.div initial={{ y: 28 }} animate={{ y: 0 }} transition={{ duration: 0.85 }}>
                         <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-aero-blue/50 bg-aero-blue/10 text-aero-blue text-sm font-medium tracking-wide mb-6 backdrop-blur-md">
                             <span className="w-2 h-2 rounded-full bg-aero-blue animate-pulse" />
                             National Strategic Initiative
@@ -406,8 +406,8 @@ export const LowAltitudeEconomy = () => {
                     {["300m", "200m", "100m", "Ground"].map((alt, i) => (
                         <motion.div
                             key={alt}
-                            initial={{ opacity: 0, x: 20 }}
-                            animate={{ opacity: 1, x: 0 }}
+                            initial={{ x: 20 }}
+                            animate={{ x: 0 }}
                             transition={{ delay: 1 + i * 0.15 }}
                             className="flex items-center gap-3"
                         >
@@ -420,8 +420,8 @@ export const LowAltitudeEconomy = () => {
                 {/* Scroll hint */}
                 <motion.div
                     className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                   
+                   
                     transition={{ delay: 1.5 }}
                 >
                     <span className="text-[10px] uppercase tracking-[0.3em] text-gray-500">Scroll</span>
@@ -451,9 +451,9 @@ export const LowAltitudeEconomy = () => {
                             return (
                                 <motion.div
                                     key={idx}
-                                    initial={{ opacity: 0, rotateX: -40 }}
-                                    whileInView={{ opacity: 1, rotateX: 0 }}
-                                    viewport={{ once: true }}
+                                    initial={{ rotateX: -40 }}
+                                    whileInView={{ rotateX: 0 }}
+                                    viewport={{ once: true, margin: "200px 0px" }}
                                     transition={{ delay: idx * 0.1, duration: 0.6 }}
                                     whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
                                     className="text-center group"
@@ -479,9 +479,9 @@ export const LowAltitudeEconomy = () => {
 
                 <div className="max-w-4xl mx-auto px-6 relative z-10">
                     <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        initial={{ y: 30 }}
+                        whileInView={{ y: 0 }}
+                        viewport={{ once: true, margin: "200px 0px" }}
                         className="relative rounded-3xl p-10 md:p-16 text-center overflow-hidden"
                         style={{
                             background: "linear-gradient(160deg, rgba(0,210,255,0.06) 0%, rgba(168,85,247,0.04) 100%)",
@@ -521,9 +521,9 @@ export const LowAltitudeEconomy = () => {
 
                 <div className="max-w-7xl mx-auto px-6 relative z-10">
                     <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        initial={{ y: 30 }}
+                        whileInView={{ y: 0 }}
+                        viewport={{ once: true, margin: "200px 0px" }}
                         className="text-center mb-20"
                     >
                         <span className="text-aero-blue text-xs uppercase tracking-[0.2em] mb-4 block font-medium">Core Sectors</span>
@@ -550,9 +550,9 @@ export const LowAltitudeEconomy = () => {
 
                 <div className="max-w-7xl mx-auto px-6">
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        initial={{ y: 20 }}
+                        whileInView={{ y: 0 }}
+                        viewport={{ once: true, margin: "200px 0px" }}
                         className="mb-16"
                     >
                         <span className="text-aero-blue text-xs uppercase tracking-[0.2em] mb-3 block font-medium">Strategic Value</span>
@@ -574,9 +574,9 @@ export const LowAltitudeEconomy = () => {
 
                 <div className="max-w-4xl mx-auto px-6">
                     <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        initial={{ y: 30 }}
+                        whileInView={{ y: 0 }}
+                        viewport={{ once: true, margin: "200px 0px" }}
                         className="text-center mb-20"
                     >
                         <span className="text-aero-blue text-xs uppercase tracking-[0.2em] mb-4 block font-medium">Development Roadmap</span>
@@ -598,9 +598,9 @@ export const LowAltitudeEconomy = () => {
             <section className="py-24 relative overflow-hidden">
                 <div className="max-w-7xl mx-auto px-6">
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        initial={{ y: 20 }}
+                        whileInView={{ y: 0 }}
+                        viewport={{ once: true, margin: "200px 0px" }}
                         className="text-center mb-16"
                     >
                         <h2 className="text-4xl font-bold mb-4">Scenario Application</h2>
@@ -608,9 +608,9 @@ export const LowAltitudeEconomy = () => {
                     </motion.div>
 
                     <motion.div
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        initial={{ y: 40 }}
+                        whileInView={{ y: 0 }}
+                        viewport={{ once: true, margin: "200px 0px" }}
                         transition={{ duration: 0.6 }}
                         className="group relative rounded-3xl overflow-hidden"
                         style={{
@@ -686,7 +686,7 @@ export const LowAltitudeEconomy = () => {
                 </div>
 
                 <div className="relative max-w-4xl mx-auto px-6 text-center">
-                    <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+                    <motion.div initial={{ y: 30 }} whileInView={{ y: 0 }} viewport={{ once: true, margin: "200px 0px" }} transition={{ duration: 0.8 }}>
                         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-aero-blue/30 bg-aero-blue/5 text-aero-blue text-xs uppercase tracking-[0.2em] mb-8">
                             <Globe2 className="w-3.5 h-3.5" />
                             Get Involved

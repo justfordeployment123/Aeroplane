@@ -70,9 +70,9 @@ const TiltCard = ({ children, idx }: { children: ReactNode; idx: number }) => {
 
     return (
         <motion.div
-            initial={{ opacity: 0, y: 50, rotateX: 15 }}
-            whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-            viewport={{ once: true }}
+            initial={{ y: 50, rotateX: 15 }}
+            whileInView={{ y: 0, rotateX: 0 }}
+            viewport={{ once: true, margin: "200px 0px" }}
             transition={{ delay: idx * 0.12, duration: 0.7 }}
             style={{ perspective: "800px" }}
         >
@@ -105,9 +105,9 @@ export const CoreAdvantages = () => {
             <div className="max-w-7xl mx-auto px-6 relative">
                 {/* Header */}
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    initial={{ y: 30 }}
+                    whileInView={{ y: 0 }}
+                    viewport={{ once: true, margin: "200px 0px" }}
                     className="text-center mb-20"
                 >
                     <span className="text-aero-blue text-xs uppercase tracking-[0.2em] mb-4 block font-semibold">Why Choose Us</span>

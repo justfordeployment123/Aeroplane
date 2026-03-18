@@ -20,9 +20,9 @@ export const HoloCard = ({ product, accent, idx, onClick }: { product: any; acce
 
     return (
         <motion.div
-            initial={{ opacity: 0, y: 40, rotateX: 8 }}
-            whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-            viewport={{ once: true }}
+            initial={{ y: 40, rotateX: 8 }}
+            whileInView={{ y: 0, rotateX: 0 }}
+            viewport={{ once: true, margin: "200px 0px" }}
             transition={{ delay: idx * 0.08, duration: 0.6 }}
             style={{ perspective: "1000px" }}
         >

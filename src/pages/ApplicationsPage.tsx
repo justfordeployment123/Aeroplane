@@ -160,9 +160,9 @@ const ImmersiveScenario = ({ scenario, index }: { scenario: (typeof scenarios)[0
                     style={{ y: textY }}
                 >
                     <motion.div
-                        initial={{ opacity: 0, x: isEven ? -40 : 40 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
+                        initial={{ x: isEven ? -40 : 40 }}
+                        whileInView={{ x: 0 }}
+                        viewport={{ once: true, margin: "200px 0px" }}
                         transition={{ duration: 0.7 }}
                         className="space-y-6"
                     >
@@ -204,9 +204,9 @@ const ImmersiveScenario = ({ scenario, index }: { scenario: (typeof scenarios)[0
                         {scenario.stats.map((stat, i) => (
                             <motion.div
                                 key={i}
-                                initial={{ opacity: 0, y: 20, rotateX: 15 }}
-                                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-                                viewport={{ once: true }}
+                                initial={{ y: 20, rotateX: 15 }}
+                                whileInView={{ y: 0, rotateX: 0 }}
+                                viewport={{ once: true, margin: "200px 0px" }}
                                 transition={{ delay: 0.3 + i * 0.1 }}
                                 className="relative rounded-xl p-4 text-center overflow-hidden group/stat"
                                 style={{ perspective: "600px" }}
@@ -285,7 +285,7 @@ export const ApplicationsPage = () => {
                 </div>
 
                 <div className="relative z-10 text-center px-6">
-                    <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9 }}>
+                    <motion.div initial={{ y: 30 }} animate={{ y: 0 }} transition={{ duration: 0.9 }}>
                         <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-aero-blue/30 bg-black/40 text-aero-blue text-sm font-medium tracking-wide mb-6 backdrop-blur-md">
                             <span className="w-2 h-2 rounded-full bg-aero-blue animate-pulse" />
                             Global Use Cases
@@ -302,8 +302,8 @@ export const ApplicationsPage = () => {
 
                 <motion.div
                     className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                   
+                   
                     transition={{ delay: 1.5 }}
                 >
                     <span className="text-[10px] uppercase tracking-[0.3em] text-gray-500">Scroll</span>
@@ -341,9 +341,9 @@ export const ApplicationsPage = () => {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-aero-blue/[0.05] rounded-full blur-[200px] pointer-events-none" />
 
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    initial={{ y: 20 }}
+                    whileInView={{ y: 0 }}
+                    viewport={{ once: true, margin: "200px 0px" }}
                     className="relative z-10 text-center max-w-3xl mx-auto px-6"
                 >
                     <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">

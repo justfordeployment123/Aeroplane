@@ -73,9 +73,9 @@ const ProductCard3D = ({ product, idx }: { product: (typeof products)[number]; i
 
     return (
         <motion.div
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            initial={{ y: 60 }}
+            whileInView={{ y: 0 }}
+            viewport={{ once: true, margin: "200px 0px" }}
             transition={{ delay: idx * 0.2, duration: 0.8 }}
             style={{ perspective: "1200px" }}
         >
@@ -172,9 +172,9 @@ export const Products = () => {
                 {/* Header */}
                 <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-20 gap-6">
                     <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        initial={{ y: 30 }}
+                        whileInView={{ y: 0 }}
+                        viewport={{ once: true, margin: "200px 0px" }}
                     >
                         <span className="text-aero-blue text-xs uppercase tracking-[0.2em] mb-4 block font-semibold">Our Fleet</span>
                         <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight">
@@ -182,9 +182,9 @@ export const Products = () => {
                         </h2>
                     </motion.div>
                     <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
+                       
+                       
+                        viewport={{ once: true, margin: "200px 0px" }}
                         transition={{ delay: 0.2 }}
                     >
                         <Link to="/products">

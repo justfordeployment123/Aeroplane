@@ -44,9 +44,9 @@ const FeatureCard3D = ({ feature, idx }: { feature: (typeof features)[number]; i
 
     return (
         <motion.div
-            initial={{ opacity: 0, y: 50, rotateX: 10 }}
-            whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-            viewport={{ once: true }}
+            initial={{ y: 50, rotateX: 10 }}
+            whileInView={{ y: 0, rotateX: 0 }}
+            viewport={{ once: true, margin: "200px 0px" }}
             transition={{ delay: idx * 0.12, duration: 0.7 }}
             style={{ perspective: "1000px" }}
         >
@@ -131,7 +131,7 @@ export const TrainingCenter = () => {
                 </div>
 
                 <div className="relative z-10 text-center px-6">
-                    <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.85 }}>
+                    <motion.div initial={{ y: 30 }} animate={{ y: 0 }} transition={{ duration: 0.85 }}>
                         <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-aero-blue/30 bg-black/40 text-aero-blue text-sm font-medium tracking-wide mb-6 backdrop-blur-md">
                             <span className="w-2 h-2 rounded-full bg-aero-blue animate-pulse" />
                             GADT Flight Academy
@@ -148,8 +148,8 @@ export const TrainingCenter = () => {
 
                 <motion.div
                     className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                   
+                   
                     transition={{ delay: 1.5 }}
                 >
                     <span className="text-[10px] uppercase tracking-[0.3em] text-gray-500">Scroll</span>
@@ -174,9 +174,9 @@ export const TrainingCenter = () => {
                             return (
                                 <motion.div
                                     key={i}
-                                    initial={{ opacity: 0, scale: 0.8, rotateY: -20 }}
-                                    whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
-                                    viewport={{ once: true }}
+                                    initial={{ scale: 0.8, rotateY: -20 }}
+                                    whileInView={{ scale: 1, rotateY: 0 }}
+                                    viewport={{ once: true, margin: "200px 0px" }}
                                     transition={{ delay: i * 0.1, duration: 0.6 }}
                                     className="text-center group"
                                     style={{ perspective: "600px" }}
@@ -202,9 +202,9 @@ export const TrainingCenter = () => {
             <section className="py-24 relative overflow-hidden">
                 <div className="max-w-4xl mx-auto px-6 relative z-10">
                     <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        initial={{ y: 30 }}
+                        whileInView={{ y: 0 }}
+                        viewport={{ once: true, margin: "200px 0px" }}
                         className="relative rounded-3xl p-10 md:p-16 text-center overflow-hidden"
                         style={{
                             background: "linear-gradient(160deg, rgba(0,210,255,0.06) 0%, rgba(168,85,247,0.04) 100%)",
@@ -232,7 +232,7 @@ export const TrainingCenter = () => {
             {/* ── Process Steps — Connected 3D Path ── */}
             <section className="py-24 relative overflow-hidden" style={{ background: "#111119" }}>
                 <div className="max-w-7xl mx-auto px-6">
-                    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
+                    <motion.div initial={{ y: 20 }} whileInView={{ y: 0 }} viewport={{ once: true, margin: "200px 0px" }} className="mb-16">
                         <div className="flex items-center gap-3 mb-4">
                             <div className="h-px w-12 bg-gradient-to-r from-aero-blue to-transparent" />
                             <span className="text-aero-blue text-xs uppercase tracking-[0.2em] font-semibold">Your Journey</span>
@@ -250,9 +250,9 @@ export const TrainingCenter = () => {
                             {processSteps.map((step, i) => (
                                 <motion.div
                                     key={i}
-                                    initial={{ opacity: 0, y: 40, rotateX: 15 }}
-                                    whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-                                    viewport={{ once: true }}
+                                    initial={{ y: 40, rotateX: 15 }}
+                                    whileInView={{ y: 0, rotateX: 0 }}
+                                    viewport={{ once: true, margin: "200px 0px" }}
                                     transition={{ delay: i * 0.15, duration: 0.6 }}
                                     style={{ perspective: "800px" }}
                                 >
@@ -307,9 +307,9 @@ export const TrainingCenter = () => {
                     ].map((panel, i) => (
                         <motion.div
                             key={i}
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
+                            initial={{ y: 40 }}
+                            whileInView={{ y: 0 }}
+                            viewport={{ once: true, margin: "200px 0px" }}
                             transition={{ delay: i * 0.15, duration: 0.7 }}
                             className="group"
                             style={{ perspective: "1000px" }}
@@ -355,7 +355,7 @@ export const TrainingCenter = () => {
                 <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0,210,255,0.5) 1px, transparent 0)`, backgroundSize: "40px 40px" }} />
 
                 <div className="max-w-7xl mx-auto px-6 relative z-10">
-                    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
+                    <motion.div initial={{ y: 20 }} whileInView={{ y: 0 }} viewport={{ once: true, margin: "200px 0px" }} className="mb-16">
                         <div className="flex items-center gap-3 mb-4">
                             <div className="h-px w-12 bg-gradient-to-r from-aero-blue to-transparent" />
                             <span className="text-aero-blue text-xs uppercase tracking-[0.2em] font-semibold">What Sets Us Apart</span>
@@ -388,9 +388,9 @@ export const TrainingCenter = () => {
                 </div>
 
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    initial={{ y: 20 }}
+                    whileInView={{ y: 0 }}
+                    viewport={{ once: true, margin: "200px 0px" }}
                     className="relative z-10 text-center max-w-3xl mx-auto px-6"
                 >
                     <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl mx-auto mb-8 bg-aero-blue/10 border border-aero-blue/25">

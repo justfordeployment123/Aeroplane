@@ -31,7 +31,7 @@ export const ScenarioDetail = () => {
                 </div>
 
                 <div className="relative z-10 max-w-7xl mx-auto px-6">
-                    <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}>
+                    <motion.div initial={{ y: -10 }} animate={{ y: 0 }}>
                         <Link
                             to="/applications"
                             className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-white transition-colors mb-8"
@@ -41,7 +41,7 @@ export const ScenarioDetail = () => {
                     </motion.div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-                        <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }}>
+                        <motion.div initial={{ x: -30 }} animate={{ x: 0 }} transition={{ duration: 0.7 }}>
                             <span
                                 className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-6"
                                 style={{ color: accent, background: `${accent}15`, border: `1px solid ${accent}25` }}
@@ -54,8 +54,8 @@ export const ScenarioDetail = () => {
                         </motion.div>
 
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            animate={{ opacity: 1, scale: 1 }}
+                            initial={{ scale: 0.95 }}
+                            animate={{ scale: 1 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                             className="relative"
                         >
@@ -79,9 +79,9 @@ export const ScenarioDetail = () => {
             <section className="py-20">
                 <div className="max-w-7xl mx-auto px-6">
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        initial={{ y: 20 }}
+                        whileInView={{ y: 0 }}
+                        viewport={{ once: true, margin: "200px 0px" }}
                         className="text-center mb-16"
                     >
                         <span className="text-xs font-bold tracking-[0.2em] uppercase mb-3 block" style={{ color: accent }}>
@@ -95,9 +95,9 @@ export const ScenarioDetail = () => {
                         {scenario.details.map((detail, idx) => (
                             <motion.div
                                 key={idx}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
+                                initial={{ y: 30 }}
+                                whileInView={{ y: 0 }}
+                                viewport={{ once: true, margin: "200px 0px" }}
                                 transition={{ delay: idx * 0.08, duration: 0.5 }}
                                 className={`grid grid-cols-1 lg:grid-cols-2 gap-8 items-center rounded-3xl overflow-hidden border border-white/[0.06] p-2 ${
                                     idx % 2 === 1 ? "lg:direction-rtl" : ""
@@ -134,7 +134,7 @@ export const ScenarioDetail = () => {
             {/* Other Scenarios */}
             <section className="py-20 border-t border-white/[0.04]">
                 <div className="max-w-7xl mx-auto px-6">
-                    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12">
+                    <motion.div initial={{ y: 20 }} whileInView={{ y: 0 }} viewport={{ once: true, margin: "200px 0px" }} className="mb-12">
                         <span className="text-xs font-bold tracking-[0.2em] uppercase text-aero-blue mb-3 block">Explore More</span>
                         <h2 className="text-3xl font-black text-white">Other Application Scenarios</h2>
                     </motion.div>
@@ -143,9 +143,9 @@ export const ScenarioDetail = () => {
                         {otherScenarios.map((s, idx) => (
                             <Link key={s.id} to={`/applications/${s.id}`}>
                                 <motion.div
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
+                                    initial={{ y: 20 }}
+                                    whileInView={{ y: 0 }}
+                                    viewport={{ once: true, margin: "200px 0px" }}
                                     transition={{ delay: idx * 0.1 }}
                                     whileHover={{ y: -6 }}
                                     className="group relative rounded-2xl overflow-hidden border border-white/[0.06] hover:border-white/[0.12] transition-all h-52"

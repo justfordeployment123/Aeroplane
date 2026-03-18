@@ -9,9 +9,9 @@ export const MediaCenter = () => {
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    initial={{ y: 30 }}
+                    whileInView={{ y: 0 }}
+                    viewport={{ once: true, margin: "200px 0px" }}
                     className="mb-16"
                 >
                     <span className="text-aero-purple/70 text-[11px] uppercase tracking-[0.2em] mb-4 block font-semibold">Press Coverage</span>
@@ -22,9 +22,9 @@ export const MediaCenter = () => {
                     {mediaHighlights.map((item, idx) => (
                         <motion.div
                             key={idx}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
+                            initial={{ y: 20 }}
+                            whileInView={{ y: 0 }}
+                            viewport={{ once: true, margin: "200px 0px" }}
                             transition={{ delay: idx * 0.08 }}
                             whileHover={{ y: -6 }}
                             className="group rounded-2xl overflow-hidden border border-white/[0.06] hover:border-aero-purple/20 transition-all duration-500 cursor-default"

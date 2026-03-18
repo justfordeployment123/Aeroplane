@@ -85,7 +85,7 @@ export const ProductsPage = () => {
                     transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
                 />
                 <div className="relative z-10 text-center px-6">
-                    <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9 }}>
+                    <motion.div initial={{ y: 28 }} animate={{ y: 0 }} transition={{ duration: 0.9 }}>
                         <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-aero-blue/30 bg-black/40 text-aero-blue text-sm font-medium tracking-wide mb-6 backdrop-blur-md">
                             <span className="w-2 h-2 rounded-full bg-aero-blue animate-pulse" />
                             Fleet & Hardware
@@ -100,8 +100,8 @@ export const ProductsPage = () => {
                 </div>
                 <motion.div
                     className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                   
+                   
                     transition={{ delay: 1.5 }}
                 >
                     <span className="text-[10px] uppercase tracking-[0.3em] text-gray-500">Scroll</span>
@@ -164,9 +164,9 @@ export const ProductsPage = () => {
                         return (
                             <div key={category.id} id={category.id} className="scroll-mt-36">
                                 <motion.div
-                                    initial={{ opacity: 0, y: 24 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
+                                    initial={{ y: 24 }}
+                                    whileInView={{ y: 0 }}
+                                    viewport={{ once: true, margin: "200px 0px" }}
                                     transition={{ duration: 0.6 }}
                                     className="mb-14"
                                 >
@@ -220,9 +220,9 @@ export const ProductsPage = () => {
                 />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-aero-blue/[0.05] rounded-full blur-[200px] pointer-events-none" />
                 <motion.div
-                    initial={{ opacity: 0, y: 24 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    initial={{ y: 24 }}
+                    whileInView={{ y: 0 }}
+                    viewport={{ once: true, margin: "200px 0px" }}
                     className="relative z-10 text-center px-6 max-w-3xl mx-auto"
                 >
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">

@@ -10,9 +10,9 @@ export const TrainingPromo = () => {
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    initial={{ y: 30 }}
+                    whileInView={{ y: 0 }}
+                    viewport={{ once: true, margin: "200px 0px" }}
                     className="text-center mb-14"
                 >
                     <span className="text-aero-blue text-xs uppercase tracking-[0.2em] mb-4 block font-semibold">Pilot Training</span>
@@ -25,9 +25,9 @@ export const TrainingPromo = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* Training Center Card */}
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        initial={{ y: 20 }}
+                        whileInView={{ y: 0 }}
+                        viewport={{ once: true, margin: "200px 0px" }}
                         className="group rounded-3xl p-8 border border-white/[0.06] hover:border-aero-blue/20 transition-all duration-500"
                         style={{ background: "linear-gradient(160deg, #1c1c2a 0%, #161622 100%)" }}
                     >
@@ -50,9 +50,9 @@ export const TrainingPromo = () => {
 
                     {/* AOPA Exam Card */}
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        initial={{ y: 20 }}
+                        whileInView={{ y: 0 }}
+                        viewport={{ once: true, margin: "200px 0px" }}
                         transition={{ delay: 0.1 }}
                         className="group rounded-3xl p-8 border border-white/[0.06] hover:border-aero-purple/20 transition-all duration-500"
                         style={{ background: "linear-gradient(160deg, #1c1c2a 0%, #161622 100%)" }}
