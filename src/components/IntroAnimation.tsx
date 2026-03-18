@@ -32,15 +32,18 @@ export const IntroAnimation = ({ onComplete }: IntroAnimationProps) => {
         const video = videoRef.current;
         if (!video) return;
 
-        if (!hasTriggeredBranding.current && video.duration - video.currentTime <= 2.5) {
+        if (!hasTriggeredBranding.current && video.duration - video.currentTime <= 4.5) {
             hasTriggeredBranding.current = true;
             setPhase("branding");
         }
     }, []);
 
     const handleVideoEnd = useCallback(() => {
-        setPhase("fadeout");
-        setTimeout(() => onComplete(), 900);
+        // Hold company name visible for 2.5s after video ends before fading out
+        setTimeout(() => {
+            setPhase("fadeout");
+            setTimeout(() => onComplete(), 900);
+        }, 2500);
     }, [onComplete]);
 
     const handleSkip = useCallback(() => {
@@ -150,7 +153,7 @@ export const IntroAnimation = ({ onComplete }: IntroAnimationProps) => {
                             className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-wider text-center"
                             initial={{ y: 30, opacity: 0 }}
                             animate={phase === "branding" ? { y: 0, opacity: 1 } : {}}
-                            transition={{ duration: 0.8, delay: 0.2 }}
+                            transition={{ duration: 1.2, delay: 0.3 }}
                         >
                             <span className="bg-clip-text text-transparent bg-linear-to-r from-aero-blue to-aero-purple drop-shadow-[0_0_30px_rgba(0,210,255,0.4)]">
                                 GERMAN AVIATION
@@ -160,7 +163,7 @@ export const IntroAnimation = ({ onComplete }: IntroAnimationProps) => {
                             className="text-sm md:text-lg text-gray-300 tracking-[0.4em] mt-3 font-light"
                             initial={{ y: 20, opacity: 0 }}
                             animate={phase === "branding" ? { y: 0, opacity: 1 } : {}}
-                            transition={{ duration: 0.8, delay: 0.5 }}
+                            transition={{ duration: 1.2, delay: 0.7 }}
                         >
                             & DRONE TECHNOLOGY
                         </motion.p>
@@ -169,7 +172,7 @@ export const IntroAnimation = ({ onComplete }: IntroAnimationProps) => {
                             className="mt-6 h-[1px] bg-linear-to-r from-transparent via-aero-blue/50 to-transparent"
                             initial={{ width: 0 }}
                             animate={phase === "branding" ? { width: 200 } : {}}
-                            transition={{ duration: 1, delay: 0.7 }}
+                            transition={{ duration: 1.5, delay: 1.0 }}
                         />
                     </motion.div>
 
