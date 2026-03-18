@@ -22,31 +22,31 @@ const useCounter = (target: number, duration: number, inView: boolean) => {
 const advantages = [
     {
         title: "Systematic Solution",
-        desc: "End-to-end integrated platform covering hardware, software, and ops",
+        desc: "Provide scenario-level solutions for industry users in relevant countries and regions around the world",
         icon: <Layers className="w-7 h-7" />,
         number: 100,
         suffix: "%",
         gradient: "from-cyan-500 to-blue-500",
     },
     {
-        title: "Complete Fleet",
-        desc: "Full product lineup covering trunk, branch, and terminal operations",
+        title: "Complete Product Layout",
+        desc: "Full product lineup of 11+ UAV models covering trunk, branch, and terminal line scenarios",
         icon: <Cuboid className="w-7 h-7" />,
         number: 11,
         suffix: "+",
         gradient: "from-blue-500 to-indigo-500",
     },
     {
-        title: "Flight Hours",
-        desc: "Industry-leading accumulated flight hours with proven reliability",
+        title: "10W+ Flight Time",
+        desc: "Over 100,000 hours of accumulated flight time with proven safety and reliability records",
         icon: <Clock className="w-7 h-7" />,
         number: 100000,
         suffix: "",
         gradient: "from-indigo-500 to-purple-500",
     },
     {
-        title: "Certified",
-        desc: "Full type certification and international airworthiness compliance",
+        title: "Airworthiness Certification",
+        desc: "Full type certificate and airworthiness compliance certification for civil UAV operations",
         icon: <BadgeCheck className="w-7 h-7" />,
         number: 9,
         suffix: "+",
@@ -94,7 +94,7 @@ export const CoreAdvantages = () => {
     const inView = useInView(sectionRef, { once: true, margin: "-100px" });
 
     return (
-        <section ref={sectionRef} className="py-32 relative overflow-hidden bg-[#0e0e14]">
+        <section ref={sectionRef} className="py-32 relative overflow-hidden bg-[#111119]">
             {/* Background depth */}
             <div className="absolute inset-0">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-white/[0.015]" />
@@ -142,7 +142,7 @@ const AdvCard = ({
     const display = adv.number >= 10000 ? `${Math.floor(count / 1000)}K` : String(count);
 
     return (
-        <div className="group relative h-full rounded-2xl overflow-hidden bg-[#141420] border border-white/[0.06] hover:border-white/[0.12] transition-all duration-500">
+        <div className="group relative h-full rounded-2xl overflow-hidden bg-[#181826] border border-white/[0.06] hover:border-white/[0.12] transition-all duration-500">
             {/* Top gradient line */}
             <div className={`absolute top-0 inset-x-0 h-[2px] bg-linear-to-r ${adv.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
 

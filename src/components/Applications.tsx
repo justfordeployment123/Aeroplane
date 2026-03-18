@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Truck, Siren, Wrench } from "lucide-react";
+import { ArrowRight, Truck, Siren, Wrench, TreePine } from "lucide-react";
 import { useState } from "react";
 
 const apps = [
     {
-        title: "Civil Logistics",
-        desc: "Systematic solutions for trunk logistics, branch logistics and terminal logistics — connecting every mile with autonomous precision across smart city networks.",
-        img: "/images/applications/civil-logistics.png",
+        title: "Civil Logistic",
+        desc: "Provides systematic solutions for typical operation scenarios such as trunk logistics, branch logistics and terminal logistics.",
+        img: "/images/applications/civil-logistics.jpg",
         icon: <Truck className="w-5 h-5" />,
         stats: [
             { value: "3-Tier", label: "Network" },
@@ -18,8 +18,8 @@ const apps = [
     },
     {
         title: "Emergency Rescue",
-        desc: "Intelligent three-dimensional rescue system — rapid deployment, real-time thermal assessment, and autonomous life-saving supply delivery to disaster zones.",
-        img: "/images/applications/emergency-rescue.png",
+        desc: "Innovate the UAVs emergency rescue mode. Build an intelligent three-dimensional rescue system. Provide systematic solutions for different disaster scenarios.",
+        img: "/images/applications/emergency-rescue.jpg",
         icon: <Siren className="w-5 h-5" />,
         stats: [
             { value: "<15min", label: "Response" },
@@ -30,8 +30,8 @@ const apps = [
     },
     {
         title: "Industry Service",
-        desc: "Complete operational lifecycle management — from flight operations and diagnostics to maintenance, pilot training and fleet carrying services for all UAV models.",
-        img: "/images/applications/industry-service.png",
+        desc: "A complete operational system for flight carrying. Provide customers with services such as operation, testing, and carrying of various models.",
+        img: "/images/applications/industry-service.jpg",
         icon: <Wrench className="w-5 h-5" />,
         stats: [
             { value: "Full", label: "Lifecycle" },
@@ -39,6 +39,18 @@ const apps = [
             { value: "AOPA", label: "Certified" },
         ],
         color: "#f59e0b",
+    },
+    {
+        title: "Forest & Grassland Fire Prevention",
+        desc: "Comprehensive forest and grassland fire prevention system including daily patrol, fire monitoring, fire scene reconnaissance, and emergency communications support.",
+        img: "/images/applications/forest-fire-prevention.png",
+        icon: <TreePine className="w-5 h-5" />,
+        stats: [
+            { value: "24/7", label: "Patrol" },
+            { value: "Real-time", label: "Monitoring" },
+            { value: "Emergency", label: "Comms" },
+        ],
+        color: "#22c55e",
     },
 ];
 
@@ -148,7 +160,7 @@ export const Applications = () => {
                 </motion.div>
 
                 {/* Two cards side by side */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {apps.slice(1).map((app, idx) => (
                         <motion.div
                             key={idx}

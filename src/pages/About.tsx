@@ -6,68 +6,79 @@ import { useRef, useState } from "react";
 const qualifications = [
     "Training Center for Large Civilian UAV Manipulators",
     "Remotely Piloted Aircraft Systems (RPAS) Air Operator Certificate",
-    "Ministry Of Public Security Safety And Police Electronic Product Certification",
+    "Ministry Of Public Security Safety And Police Electronic Product Quality Testing And Certification",
     "General Aviation Business Operation Certification",
     "Civil UAVs Pilot Training Agency Certification",
-    "China Mobile Industrial Research Institute UAVs 5G Network Certification",
+    "China Mobile (Chengdu) Industrial Research Institute UAVs 5G Network Test Certification",
     "Intellectual Property Management System Certification",
-    "Quality, Environmental, and Occupational Health Management Certification",
+    "Quality Management System Certification",
+    "Environmental Management System Certification",
+    "Occupational Health And Safety Management System Certification",
     "Enterprise AAA Credit Rating Certification",
+    "Credit Rating Certification",
 ];
 
 const honors = [
     "2023 National High-Tech Enterprise",
     "Potential Unicorn Enterprises In Jiangsu Province",
-    "Jiangsu Province Science And Technology SMEs",
+    "Jiangsu Province Science And Technology Small And Medium-Sized Enterprises",
+    "Jiangsu Province Innovative Small And Medium-Sized Enterprises",
+    "Suzhou Unicorn Cultivation Enterprises",
     "Suzhou Low Altitude Economy Leading Enterprises",
+    "2022 Suzhou Digital Economy Enterprise",
     "2023 Dongshahu Venture Capital 'Annual Most Growth Enterprise'",
     "2021 'Kectron China' Leading Technology List",
     "Kunshan Advanced Unmanned Transportation System Key Laboratory",
-    "Civil Aviation UAVs Industry Technology Innovation Strategic Alliance",
+    "Civil Aviation UAVs Industry Technology Innovation Strategic Alliance Unit",
+    "Kunshan Unmanned Systems Engineering Technology Research Center",
     "Suzhou University Master's Degree Graduate Practice Base",
+    "Southeast University Graduate Practice Base",
+    "Civil Aviation University Of China Graduate Joint Training Base",
+    "Harbin Engineering University Graduate Practice Education Base",
+    "Member Unit Of Industry-University Cooperative Education Alliance",
 ];
 
 const certificates = [
-    { title: "National High-Tech Enterprise", img: "https://www.htsdfp.com/UploadFiles/2024-05-06/3y8p4kvlf33blgld.png" },
-    { title: "Training Center for UAV Manipulators", img: "https://www.htsdfp.com/UploadFiles/2024-05-06/khg1eb8l1pmcskkr.png" },
-    { title: "RPAS Air Operator Certificate", img: "https://www.htsdfp.com/UploadFiles/2024-05-06/bciybjpxxqq9a6x1.png" },
-    { title: "Quality Management System Iso9001", img: "https://www.htsdfp.com/UploadFiles/2024-02-28/4shsqlbmmsqhz3xz.jpg" },
-    { title: "Singapore Airshow Participation", img: "https://www.htsdfp.com/UploadFiles/2024-03-06/fwrtqkfpfvx7xvtu.png" },
-    { title: "Civil UAVs Pilot Training Agency", img: "https://www.htsdfp.com/UploadFiles/2024-05-06/t8jkrqf2qngewm79.png" },
+    { title: "National High-Tech Enterprise", img: "/images/about/cert-1.png" },
+    { title: "Training Center for UAV Manipulators", img: "/images/about/cert-2.png" },
+    { title: "RPAS Air Operator Certificate", img: "/images/about/cert-3.png" },
+    { title: "Quality Management System Iso9001", img: "/images/about/cert-4.jpg" },
+    { title: "Singapore Airshow Participation", img: "/images/about/cert-5.png" },
+    { title: "Civil UAVs Pilot Training Agency", img: "/images/about/cert-6.png" },
 ];
 
 const coreValues = [
     {
         icon: Rocket,
-        title: "Innovation First",
-        desc: "Pushing the boundaries of autonomous aviation with cutting-edge AI and advanced engineering.",
+        title: "Systematic Solution",
+        desc: "Provide scenario-level solutions for industry users in relevant countries and regions around the world.",
         accent: "#00d2ff",
-        stat: "100+",
-        statLabel: "Patents Filed",
+        stat: "100%",
+        statLabel: "Coverage",
     },
     {
         icon: Eye,
-        title: "Safety Obsessed",
-        desc: "Triple-redundant flight systems and rigorous testing protocols ensure mission-critical reliability.",
+        title: "Complete Product Layout",
+        desc: "Full product lineup of UAV models covering trunk, branch, and terminal line scenarios.",
         accent: "#10b981",
-        stat: "99.9%",
-        statLabel: "Flight Safety",
+        stat: "11+",
+        statLabel: "UAV Models",
     },
     {
         icon: Users,
-        title: "Customer Driven",
-        desc: "Scenario-level solutions tailored to each client's unique operational requirements and environments.",
+        title: "10W+ Flight Time",
+        desc: "Over 100,000 hours of accumulated flight time with proven safety and reliability records.",
         accent: "#a855f7",
-        stat: "500+",
-        statLabel: "Global Clients",
+        stat: "10W+",
+        statLabel: "Flight Hours",
     },
     {
         icon: Globe2,
-        title: "Global Reach",
-        desc: "Partnerships across 50+ countries, bringing autonomous aviation solutions to every continent.",
+        title: "Airworthiness Certification",
+        desc: "Full type certificate and airworthiness compliance certification for civil UAV operations.",
         accent: "#f97316",
-        stat: "50+",
-        statLabel: "Countries",
+        stat: "TC",
+        statLabel: "Certified",
     },
 ];
 
@@ -139,7 +150,7 @@ const ParallaxImage = ({ src, alt }: { src: string; alt: string }) => {
                 </div>
 
                 {/* Reflection on bottom */}
-                <div className="absolute bottom-0 inset-x-0 h-1/3 bg-gradient-to-t from-[#121218] to-transparent z-10" />
+                <div className="absolute bottom-0 inset-x-0 h-1/3 bg-gradient-to-t from-[#161622] to-transparent z-10" />
             </motion.div>
         </motion.div>
     );
@@ -172,7 +183,7 @@ const FlipCard = ({ cert, idx }: { cert: (typeof certificates)[number]; idx: num
                     className="relative rounded-2xl overflow-hidden"
                     style={{
                         backfaceVisibility: "hidden",
-                        background: "linear-gradient(160deg, #1c1c28 0%, #0e0e14 100%)",
+                        background: "linear-gradient(160deg, #202030 0%, #111119 100%)",
                         border: "1px solid rgba(255,255,255,0.07)",
                     }}
                 >
@@ -185,7 +196,7 @@ const FlipCard = ({ cert, idx }: { cert: (typeof certificates)[number]; idx: num
                             className="max-h-full max-w-full object-contain drop-shadow-md"
                         />
                     </div>
-                    <div className="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-[#1c1c28] to-transparent" />
+                    <div className="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-[#202030] to-transparent" />
                     <div className="absolute bottom-2 inset-x-0 text-center">
                         <span className="text-[10px] text-gray-500 uppercase tracking-wider">Hover to flip</span>
                     </div>
@@ -262,7 +273,7 @@ const IsometricCard = ({ val, idx }: { val: (typeof coreValues)[number]; idx: nu
                 <div
                     className="relative rounded-3xl overflow-hidden h-full"
                     style={{
-                        background: "#141420",
+                        background: "#181826",
                         border: "1px solid rgba(255,255,255,0.06)",
                     }}
                 >
@@ -316,20 +327,20 @@ const IsometricCard = ({ val, idx }: { val: (typeof coreValues)[number]; idx: nu
 
 export const About = () => {
     return (
-        <div className="min-h-screen text-white font-sans" style={{ background: "#121218" }}>
+        <div className="min-h-screen text-white font-sans" style={{ background: "#161622" }}>
             {/* ── Cinematic Hero ── */}
             <section className="relative h-[70vh] min-h-[550px] flex items-center justify-center overflow-hidden">
                 <div
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                     style={{
-                        backgroundImage: "url('https://www.htsdfp.com/UploadFiles/banner/ban_1.jpg')",
+                        backgroundImage: "url('/images/banners/about-hero.jpg')",
                         filter: "brightness(0.25) saturate(1.3)",
                     }}
                 />
 
                 {/* Cinematic letterbox bars */}
-                <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-[#121218] to-transparent z-[2]" />
-                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#121218] to-transparent z-[2]" />
+                <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-[#161622] to-transparent z-[2]" />
+                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#161622] to-transparent z-[2]" />
 
                 {/* Anamorphic light flare */}
                 <motion.div
@@ -444,10 +455,10 @@ export const About = () => {
 
                         <div className="space-y-6 text-gray-300 leading-relaxed text-lg">
                             <p>
-                                A mixed-ownership enterprise initiated by <span className="text-aero-blue font-semibold">China Aerospace Science and Technology Corporation (CASC)</span>, established in accordance with the state-owned enterprise reform "Three-Year Action Plan" of the State-owned Assets Supervision and Administration Commission of the State Council.
+                                Aerospace Times Feipeng Co., Ltd. is a mixed-ownership enterprise initiated by <span className="text-aero-blue font-semibold">China Aerospace Science and Technology Corporation</span>, in accordance with the state-owned enterprise reform "Three-Year Action Plan" of the State-owned Assets Supervision and Administration Commission of the State Council.
                             </p>
                             <p>
-                                Our core mission is to leverage advanced unmanned system technology to provide comprehensive, scenario-level solutions for global industry users — driving the evolution of logistics, rescue, and transportation into the autonomous skies of tomorrow.
+                                Our main mission is to use unmanned system technology to provide scenario-level solutions for industry users in relevant countries and regions around the world, and promote the transformation of transportation mode from two-dimensional to three-dimensional mode. We provide key equipment of unmanned system, and system level solutions.
                             </p>
                         </div>
 
@@ -481,7 +492,7 @@ export const About = () => {
                         transition={{ duration: 0.8, delay: 0.2 }}
                     >
                         <ParallaxImage
-                            src="https://www.htsdfp.com/UploadFiles/2024-04-23/asgfuykn5nfrkksf.png"
+                            src="/images/about/company-profile.png"
                             alt="Company Profile Overview"
                         />
                     </motion.div>
@@ -489,7 +500,7 @@ export const About = () => {
             </section>
 
             {/* ── Core Values — Isometric 3D Cards ── */}
-            <section id="values" className="py-24 relative overflow-hidden" style={{ background: "#0e0e14" }}>
+            <section id="values" className="py-24 relative overflow-hidden" style={{ background: "#111119" }}>
                 <div className="absolute inset-0">
                     {/* Hex grid pattern */}
                     <div
@@ -552,7 +563,7 @@ export const About = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             className="relative rounded-3xl p-8 overflow-hidden"
-                            style={{ background: "linear-gradient(160deg, #141420 0%, #0e0e14 100%)", border: "1px solid rgba(0,210,255,0.1)" }}
+                            style={{ background: "linear-gradient(160deg, #181826 0%, #111119 100%)", border: "1px solid rgba(0,210,255,0.1)" }}
                         >
                             <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-aero-blue/40 to-transparent" />
 
@@ -590,7 +601,7 @@ export const About = () => {
                             viewport={{ once: true }}
                             transition={{ delay: 0.15 }}
                             className="relative rounded-3xl p-8 overflow-hidden"
-                            style={{ background: "linear-gradient(160deg, #141420 0%, #0e0e14 100%)", border: "1px solid rgba(168,85,247,0.1)" }}
+                            style={{ background: "linear-gradient(160deg, #181826 0%, #111119 100%)", border: "1px solid rgba(168,85,247,0.1)" }}
                         >
                             <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-aero-purple/40 to-transparent" />
 
@@ -678,7 +689,7 @@ export const About = () => {
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.06 }}
                                 className="group rounded-2xl p-6 border border-white/[0.06] hover:border-aero-blue/20 transition-all duration-500"
-                                style={{ background: "linear-gradient(160deg, #181820 0%, #121218 100%)" }}
+                                style={{ background: "linear-gradient(160deg, #1c1c2a 0%, #161622 100%)" }}
                             >
                                 <span className="text-[10px] font-bold tracking-widest uppercase text-aero-blue/60 mb-3 block">
                                     {item.type}
@@ -692,7 +703,7 @@ export const About = () => {
             </section>
 
             {/* ── Vision — Cinematic reveal ── */}
-            <section id="vision" className="py-24 relative overflow-hidden" style={{ background: "#0e0e14" }}>
+            <section id="vision" className="py-24 relative overflow-hidden" style={{ background: "#111119" }}>
                 <div className="absolute inset-0">
                     {/* Radiating lines */}
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px]">
@@ -740,9 +751,9 @@ export const About = () => {
                                     background: "linear-gradient(135deg, rgba(0,210,255,0.2), rgba(168,85,247,0.1), rgba(0,210,255,0.2))",
                                 }}
                             >
-                                <div className="rounded-[22px] overflow-hidden bg-[#121218]">
+                                <div className="rounded-[22px] overflow-hidden bg-[#161622]">
                                     <img
-                                        src="https://www.htsdfp.com/UploadFiles/2024-03-01/xphd7wktdh8z9f5m.png"
+                                        src="/images/about/vision.png"
                                         alt="Vision Diagram"
                                         loading="lazy"
                                         decoding="async"

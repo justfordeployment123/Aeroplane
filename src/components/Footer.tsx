@@ -13,17 +13,16 @@ const navLinks = [
 ];
 
 const supportLinks = [
-    { label: "Contact Us", to: "/contact" },
-    { label: "Technical Support" },
-    { label: "Market Cooperation" },
     { label: "Product Purchase" },
-    { label: "Distribution" },
-    { label: "Download Catalog" },
+    { label: "Market Cooperation" },
+    { label: "Authorized Distribution" },
+    { label: "Technical Support" },
+    { label: "Contact Us", to: "/contact" },
 ];
 
 export const Footer = () => {
     return (
-        <footer className="relative overflow-hidden" style={{ background: "#0e0e14" }}>
+        <footer className="relative overflow-hidden" style={{ background: "#111119" }}>
             <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-aero-blue/20 to-transparent" />
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-aero-blue/[0.03] rounded-full blur-[200px] pointer-events-none" />
 
@@ -77,7 +76,7 @@ export const Footer = () => {
                             </span>
                         </Link>
                         <p className="text-sm text-gray-500 mb-6 leading-relaxed max-w-xs">
-                            Aerospace technology makes life better. Leading the low-altitude economy with advanced AI-driven UAV systems.
+                            AEROSPACE TECHNOLOGY MAKES LIFE BETTER
                         </p>
                         <div className="text-3xl font-light text-white mb-1">400-888-2062</div>
                         <p className="text-xs text-gray-600">24/7 Support Hotline</p>
@@ -132,7 +131,11 @@ export const Footer = () => {
                         <ul className="space-y-4">
                             <li className="flex items-start gap-3 text-sm text-gray-500">
                                 <MapPin className="w-4 h-4 text-aero-blue shrink-0 mt-0.5" />
-                                <span>Kunshan City, Jiangsu Province, China</span>
+                                <span>Building A7, International Innovation Port, Huaqiao Economic Development Zone, Kunshan City, Jiangsu Province</span>
+                            </li>
+                            <li className="flex items-start gap-3 text-sm text-gray-500">
+                                <MapPin className="w-4 h-4 text-aero-blue shrink-0 mt-0.5" />
+                                <span>Beijing R&D: 9F, Building 2, No. 55 Zique Road, Haidian District, Beijing</span>
                             </li>
                             <li className="flex items-center gap-3 text-sm text-gray-500">
                                 <Phone className="w-4 h-4 text-aero-blue shrink-0" />
@@ -140,7 +143,7 @@ export const Footer = () => {
                             </li>
                             <li className="flex items-center gap-3 text-sm text-gray-500">
                                 <Mail className="w-4 h-4 text-aero-blue shrink-0" />
-                                <span>contact@aeronexus.com</span>
+                                <span>marketing@htsdfp.com</span>
                             </li>
                         </ul>
 
@@ -148,7 +151,7 @@ export const Footer = () => {
                         <div className="mt-6 flex gap-4">
                             <div className="text-center">
                                 <img
-                                    src="https://www.htsdfp.com/UploadFiles/2023-10-26/ns8gaucsyglnup85.png"
+                                    src="/images/footer/qr-enterprise.png"
                                     alt="Enterprise WeChat"
                                     className="w-20 h-20 rounded-lg border border-white/10 bg-white p-1"
                                 />
@@ -156,7 +159,7 @@ export const Footer = () => {
                             </div>
                             <div className="text-center">
                                 <img
-                                    src="https://www.htsdfp.com/UploadFiles/2023-10-26/mgh1xn3kp9xjqwct.png"
+                                    src="/images/footer/qr-wechat.png"
                                     alt="WeChat"
                                     className="w-20 h-20 rounded-lg border border-white/10 bg-white p-1"
                                 />
@@ -170,11 +173,10 @@ export const Footer = () => {
             {/* Bottom bar */}
             <div className="relative border-t border-white/5">
                 <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-xs text-gray-600">&copy; {new Date().getFullYear()} AeroNexus Co., Ltd. All Rights Reserved.</p>
+                    <p className="text-xs text-gray-600">&copy; {new Date().getFullYear()} Aerospace Times Feipeng Co., Ltd. All Rights Reserved.</p>
                     <div className="flex items-center gap-6">
-                        <span className="text-xs text-gray-600 hover:text-gray-400 cursor-pointer transition-colors">Disclaimer</span>
-                        <span className="text-xs text-gray-600 hover:text-gray-400 cursor-pointer transition-colors">Privacy Policy</span>
-                        <span className="text-xs text-gray-600 hover:text-gray-400 cursor-pointer transition-colors">Terms of Service</span>
+                        <span className="text-xs text-gray-600 hover:text-gray-400 cursor-pointer transition-colors">Disclaimers</span>
+                        <span className="text-xs text-gray-600 hover:text-gray-400 cursor-pointer transition-colors">Copyright Notice</span>
                     </div>
                 </div>
             </div>

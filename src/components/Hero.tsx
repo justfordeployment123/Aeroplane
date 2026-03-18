@@ -3,28 +3,28 @@ import { ArrowRight, Shield, Zap, Navigation } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ParticleBackground } from "./ParticleBackground";
 
-const letterAnimation = {
+const wordAnimation = {
     hidden: { opacity: 0, y: 20, filter: "blur(8px)" },
     visible: (i: number) => ({
         opacity: 1,
         y: 0,
         filter: "blur(0px)",
-        transition: { delay: 0.4 + i * 0.03, duration: 0.5, ease: "easeOut" as const },
+        transition: { delay: 0.4 + i * 0.1, duration: 0.5, ease: "easeOut" as const },
     }),
 };
 
 const AnimatedText = ({ text, className }: { text: string; className?: string }) => (
     <span className={className}>
-        {text.split("").map((char, i) => (
+        {text.split(" ").map((word, i) => (
             <motion.span
                 key={i}
                 custom={i}
-                variants={letterAnimation}
+                variants={wordAnimation}
                 initial="hidden"
                 animate="visible"
-                className="inline-block"
+                className="inline-block mr-[0.3em]"
             >
-                {char === " " ? "\u00A0" : char}
+                {word}
             </motion.span>
         ))}
     </span>
@@ -45,6 +45,7 @@ export const Hero = () => {
                 muted
                 loop
                 playsInline
+                preload="metadata"
                 className="absolute inset-0 w-full h-full object-cover z-0"
             >
                 <source src="/videos/hero-bg.mp4" type="video/mp4" />
@@ -77,7 +78,7 @@ export const Hero = () => {
                 <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
                     <span className="px-4 py-1.5 rounded-full border border-aero-blue/50 bg-aero-blue/10 text-aero-blue text-sm font-medium tracking-wide mb-6 inline-flex items-center gap-2 backdrop-blur-md">
                         <span className="w-2 h-2 rounded-full bg-aero-blue animate-pulse" />
-                        Next-Generation Autonomous Aviation
+                        Unmanned Transport Aircraft
                     </span>
                 </motion.div>
 
@@ -95,7 +96,7 @@ export const Hero = () => {
                     transition={{ duration: 0.8, delay: 0.8 }}
                     className="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl leading-relaxed drop-shadow-lg"
                 >
-                    Redefining trunk line logistics, emergency rescue, and low-altitude economy with state-of-the-art AI flight systems.
+                    Double 1000, Double 100, Double 10 Unmanned Transport Aircraft Products for trunk, branch, and terminal line scenarios.
                 </motion.p>
 
                 {/* Stats row */}

@@ -1,16 +1,16 @@
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 
 const contactInfo = [
     { icon: Phone, label: "Hotline", value: "400-888-2062", accent: "#00d2ff" },
-    { icon: Mail, label: "Email", value: "contact@aeronexus.com", accent: "#a855f7" },
-    { icon: MapPin, label: "Address", value: "Kunshan City, Jiangsu Province, China", accent: "#10b981" },
-    { icon: Clock, label: "Hours", value: "Mon – Fri, 9:00 – 18:00 CST", accent: "#f59e0b" },
+    { icon: Mail, label: "Email", value: "marketing@htsdfp.com", accent: "#a855f7" },
+    { icon: MapPin, label: "Headquarters", value: "Building A7, International Innovation Port, Huaqiao Economic Development Zone, Kunshan City, Jiangsu Province", accent: "#10b981" },
+    { icon: MapPin, label: "Beijing R&D Branch Center", value: "9F, Building 2, No. 55 Zique Road, Haidian District, Beijing", accent: "#f59e0b" },
 ];
 
 export const ContactPage = () => {
     return (
-        <div className="min-h-screen" style={{ background: "#121218" }}>
+        <div className="min-h-screen" style={{ background: "#161622" }}>
             {/* Hero */}
             <section className="relative pt-32 pb-20 overflow-hidden">
                 <div className="absolute inset-0 opacity-[0.02]" style={{
@@ -47,7 +47,7 @@ export const ContactPage = () => {
                                     viewport={{ once: true }}
                                     transition={{ delay: idx * 0.08 }}
                                     className="group rounded-2xl p-6 border border-white/[0.06] hover:border-white/[0.12] transition-all"
-                                    style={{ background: "#181820" }}
+                                    style={{ background: "#1c1c2a" }}
                                 >
                                     <div
                                         className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
@@ -68,7 +68,7 @@ export const ContactPage = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         className="max-w-2xl mx-auto rounded-3xl p-8 md:p-12 border border-white/[0.06]"
-                        style={{ background: "#181820" }}
+                        style={{ background: "#1c1c2a" }}
                     >
                         <h2 className="text-2xl font-bold text-white mb-2">Send us a message</h2>
                         <p className="text-sm text-gray-500 mb-8">We'll get back to you within 24 hours.</p>
@@ -77,23 +77,35 @@ export const ContactPage = () => {
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                 <input
                                     type="text"
-                                    placeholder="Your Name"
+                                    placeholder="Name"
                                     className="w-full px-5 py-3.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-white text-sm placeholder-gray-600 outline-none focus:border-aero-blue/50 transition-colors"
                                 />
                                 <input
                                     type="email"
-                                    placeholder="Email Address"
+                                    placeholder="EMail"
+                                    className="w-full px-5 py-3.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-white text-sm placeholder-gray-600 outline-none focus:border-aero-blue/50 transition-colors"
+                                />
+                            </div>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <input
+                                    type="tel"
+                                    placeholder="Phone"
+                                    className="w-full px-5 py-3.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-white text-sm placeholder-gray-600 outline-none focus:border-aero-blue/50 transition-colors"
+                                />
+                                <input
+                                    type="text"
+                                    placeholder="CompanyName"
                                     className="w-full px-5 py-3.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-white text-sm placeholder-gray-600 outline-none focus:border-aero-blue/50 transition-colors"
                                 />
                             </div>
                             <input
                                 type="text"
-                                placeholder="Subject"
+                                placeholder="Address"
                                 className="w-full px-5 py-3.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-white text-sm placeholder-gray-600 outline-none focus:border-aero-blue/50 transition-colors"
                             />
                             <textarea
                                 rows={5}
-                                placeholder="Your Message"
+                                placeholder="Message"
                                 className="w-full px-5 py-3.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-white text-sm placeholder-gray-600 outline-none focus:border-aero-blue/50 transition-colors resize-none"
                             />
                             <motion.button

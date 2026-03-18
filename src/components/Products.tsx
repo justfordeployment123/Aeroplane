@@ -7,8 +7,8 @@ const products = [
     {
         title: "Double 1000 Series",
         subtitle: "Trunk Line",
-        desc: "Long-range heavy-duty UAV for trunk logistics connecting major hubs across vast distances.",
-        img: "https://www.htsdfp.com/UploadFiles/2024-10-10/gbm3aqgufndmem5n.png",
+        desc: "Drone Systems for Trunk Line Scenarios with 1000 km Range and 1000 kg Load.",
+        img: "/images/products/double-1000.png",
         range: "1,000 km",
         payload: "1,000 kg",
         color: "#00d2ff",
@@ -16,8 +16,8 @@ const products = [
     {
         title: "Double 100 Series",
         subtitle: "Branch Line",
-        desc: "Mid-range versatile UAV bridging regional distribution with precision delivery.",
-        img: "https://www.htsdfp.com/UploadFiles/2024-10-10/qm2fdjkspstmse7r.png",
+        desc: "Drone Systems for Branch Line Scenarios with 100 km Range and 100 kg Load.",
+        img: "/images/products/double-100.png",
         range: "100 km",
         payload: "100 kg",
         color: "#4d8eff",
@@ -25,8 +25,8 @@ const products = [
     {
         title: "Double 10 Series",
         subtitle: "Terminal Line",
-        desc: "Compact last-mile delivery UAV enabling door-to-door autonomous operations.",
-        img: "https://www.htsdfp.com/UploadFiles/2024-06-18/ceqz12usfnsnru3e.png",
+        desc: "Drone Systems for Terminal Line Scenarios with 10 km Range and 10 kg Load.",
+        img: "/images/products/double-10.png",
         range: "10 km",
         payload: "10 kg",
         color: "#7b61ff",
@@ -34,8 +34,8 @@ const products = [
     {
         title: "Ground Control Station",
         subtitle: "Command & Control",
-        desc: "Ruggedized control terminals from handheld units to vehicle-mounted command shelters.",
-        img: "https://www.htsdfp.com/UploadFiles/2024-05-15/eghckgxtpuqmwpms.png",
+        desc: "The Ground Control Station processes tasks through a control console, data link, or satellite communication. Include handheld control terminal, portable control terminal, shelter control station, etc.",
+        img: "/images/products/ground-control.png",
         range: "Full Range",
         payload: "Multi-UAV",
         color: "#06b6d4",
@@ -43,8 +43,8 @@ const products = [
     {
         title: "Operation Control System",
         subtitle: "Fleet Management",
-        desc: "Integrated operation control systems for autonomous fleet management and mission planning.",
-        img: "https://www.htsdfp.com/UploadFiles/2024-10-10/fj99u6mptthuhapw.png",
+        desc: "The Operation Control System can provide real-time data such as drone nameplates, situational information, and flight status, and perform artificial control operations such as airspace application and flight mission execution.",
+        img: "/images/products/control-system.png",
         range: "Unlimited",
         payload: "Software",
         color: "#10b981",
@@ -87,7 +87,7 @@ const ProductCard3D = ({ product, idx }: { product: (typeof products)[number]; i
                 className="group relative"
             >
                 <Link to="/products" className="block">
-                    <div className="relative rounded-2xl overflow-hidden bg-[#121218] border border-white/[0.06] hover:border-white/[0.12] transition-colors duration-500">
+                    <div className="relative rounded-2xl overflow-hidden bg-[#161622] border border-white/[0.06] hover:border-white/[0.12] transition-colors duration-500">
                         {/* Reflective top edge */}
                         <div className="absolute top-0 inset-x-0 h-[1px]" style={{ background: `linear-gradient(90deg, transparent, ${product.color}33, transparent)` }} />
 
@@ -100,7 +100,7 @@ const ProductCard3D = ({ product, idx }: { product: (typeof products)[number]; i
                             />
 
                             {/* Reflection surface */}
-                            <div className="absolute bottom-0 inset-x-0 h-20 bg-linear-to-t from-[#121218] to-transparent z-10" />
+                            <div className="absolute bottom-0 inset-x-0 h-20 bg-linear-to-t from-[#161622] to-transparent z-10" />
 
                             <motion.img
                                 src={product.img}
@@ -161,7 +161,7 @@ const ProductCard3D = ({ product, idx }: { product: (typeof products)[number]; i
 
 export const Products = () => {
     return (
-        <section className="py-32 relative overflow-hidden bg-[#0e0e14]">
+        <section className="py-32 relative overflow-hidden bg-[#111119]">
             {/* Deep background layers */}
             <div className="absolute inset-0">
                 <div className="absolute top-[20%] left-[10%] w-[500px] h-[500px] bg-aero-blue/[0.02] rounded-full blur-[200px]" />

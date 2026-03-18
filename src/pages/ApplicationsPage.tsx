@@ -1,52 +1,68 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Package, ShieldAlert, Factory } from "lucide-react";
+import { ArrowRight, Package, ShieldAlert, Factory, TreePine } from "lucide-react";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+import { YouTubeGallery } from "../components/YouTubeGallery";
 
 const scenarios = [
     {
         id: "civil-logistics",
         num: "01",
-        title: "Civil Logistics",
-        label: "Supply Chain Automation",
-        desc: "Revolutionizing the supply chain with autonomous precision. We provide systematic solutions for trunk logistics, branch logistics, and terminal logistics — ensuring faster, safer, and more cost-effective delivery networks across vast distances.",
-        img: "/images/applications/civil-logistics.png",
+        title: "Civil Logistic",
+        label: "Civil Logistic",
+        desc: "Provides systematic solutions for typical operation scenarios such as trunk logistics, branch logistics and terminal logistics.",
+        img: "/images/applications/civil-logistics.jpg",
         icon: Package,
         accent: "#00d2ff",
         stats: [
-            { value: "3×", label: "Faster Delivery" },
-            { value: "60%", label: "Cost Reduction" },
+            { value: "3-Tier", label: "Network" },
             { value: "24/7", label: "Operation" },
+            { value: "99.8%", label: "Delivery Rate" },
         ],
     },
     {
         id: "emergency-rescue",
         num: "02",
         title: "Emergency Rescue",
-        label: "Disaster Response",
-        desc: "Innovating the UAV emergency rescue mode. We build an intelligent, three-dimensional rescue system that provides rapid, systematic solutions for disaster scenarios where human access is dangerous or impossible. Time saved is lives saved.",
-        img: "/images/applications/emergency-rescue.png",
+        label: "Emergency Rescue",
+        desc: "Innovate the UAVs emergency rescue mode. Build an intelligent three-dimensional rescue system. Provide systematic solutions for different disaster scenarios.",
+        img: "/images/applications/emergency-rescue.jpg",
         icon: ShieldAlert,
         accent: "#ef4444",
         stats: [
-            { value: "<5min", label: "Deploy Time" },
-            { value: "100km", label: "Response Radius" },
-            { value: "0°C", label: "All Weather" },
+            { value: "<15min", label: "Response" },
+            { value: "3D", label: "Mapping" },
+            { value: "500km", label: "Coverage" },
         ],
     },
     {
         id: "industry-service",
         num: "03",
         title: "Industry Service",
-        label: "Enterprise Operations",
-        desc: "A complete, end-to-end operational system for flight carrying. We provide enterprise customers with comprehensive services such as operation, rigorous testing, and specialized models tailored to specific industrial needs.",
-        img: "/images/applications/industry-service.png",
+        label: "Industry Service",
+        desc: "A complete operational system for flight carrying. Provide customers with services such as operation, testing, and carrying of various models.",
+        img: "/images/applications/industry-service.jpg",
         icon: Factory,
         accent: "#f59e0b",
         stats: [
-            { value: "500+", label: "Enterprise Clients" },
-            { value: "99.9%", label: "Uptime SLA" },
-            { value: "ISO", label: "Certified" },
+            { value: "Full", label: "Lifecycle" },
+            { value: "11+", label: "Models" },
+            { value: "AOPA", label: "Certified" },
+        ],
+    },
+    {
+        id: "forest-fire-prevention",
+        num: "04",
+        title: "Forest & Grassland Fire Prevention",
+        label: "Fire Prevention",
+        desc: "Comprehensive forest and grassland fire prevention system including daily patrol, fire monitoring, fire scene reconnaissance, and emergency communications support.",
+        img: "/images/applications/forest-fire-prevention.png",
+        icon: TreePine,
+        accent: "#22c55e",
+        stats: [
+            { value: "24/7", label: "Patrol" },
+            { value: "Real-time", label: "Monitoring" },
+            { value: "Emergency", label: "Comms" },
         ],
     },
 ];
@@ -197,7 +213,7 @@ const ImmersiveScenario = ({ scenario, index }: { scenario: (typeof scenarios)[0
                             >
                                 <div
                                     className="absolute inset-0 rounded-xl"
-                                    style={{ background: "#141420", border: `1px solid ${scenario.accent}15` }}
+                                    style={{ background: "#181826", border: `1px solid ${scenario.accent}15` }}
                                 />
                                 <div
                                     className="absolute bottom-0 inset-x-0 h-1/2 opacity-0 group-hover/stat:opacity-100 transition-opacity duration-500"
@@ -236,17 +252,17 @@ const ImmersiveScenario = ({ scenario, index }: { scenario: (typeof scenarios)[0
 
 export const ApplicationsPage = () => {
     return (
-        <div className="min-h-screen text-white font-sans" style={{ background: "#121218" }}>
+        <div className="min-h-screen text-white font-sans" style={{ background: "#161622" }}>
             {/* ── Hero ── */}
             <section className="relative h-[65vh] min-h-[520px] flex items-center justify-center overflow-hidden">
                 <div
                     className="absolute inset-0 bg-cover bg-center"
                     style={{
-                        backgroundImage: "url('https://www.htsdfp.com/UploadFiles/banner/ban_2.jpg')",
+                        backgroundImage: "url('/images/banners/applications-hero.jpg')",
                         filter: "brightness(0.25) saturate(1.4)",
                     }}
                 />
-                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, #121218 10%, rgba(5,5,8,0.6) 50%, transparent 100%)" }} />
+                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, #161622 10%, rgba(12,12,18,0.6) 50%, transparent 100%)" }} />
 
                 {/* Animated ring */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]">
@@ -309,6 +325,9 @@ export const ApplicationsPage = () => {
                     </div>
                 </div>
             </section>
+
+            {/* ── Video Gallery ── */}
+            <YouTubeGallery />
 
             {/* ── CTA ── */}
             <section className="py-32 relative overflow-hidden border-t border-white/5">

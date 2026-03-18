@@ -4,7 +4,7 @@ import { mediaHighlights } from "../data/news";
 
 export const MediaCenter = () => {
     return (
-        <section className="py-24 relative overflow-hidden" style={{ background: "#121218" }}>
+        <section className="py-24 relative overflow-hidden" style={{ background: "#161622" }}>
             <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-aero-purple/[0.04] rounded-full blur-[200px] pointer-events-none -translate-y-1/2" />
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -28,7 +28,7 @@ export const MediaCenter = () => {
                             transition={{ delay: idx * 0.08 }}
                             whileHover={{ y: -6 }}
                             className="group rounded-2xl overflow-hidden border border-white/[0.06] hover:border-aero-purple/20 transition-all duration-500 cursor-default"
-                            style={{ background: "#181820" }}
+                            style={{ background: "#1c1c2a" }}
                         >
                             <div className="relative h-36 overflow-hidden">
                                 <motion.img
@@ -38,7 +38,7 @@ export const MediaCenter = () => {
                                     whileHover={{ scale: 1.08 }}
                                     transition={{ duration: 0.6 }}
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#181820] via-transparent to-transparent" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#1c1c2a] via-transparent to-transparent" />
                             </div>
                             <div className="p-4">
                                 <div className="flex items-center gap-2 mb-2">

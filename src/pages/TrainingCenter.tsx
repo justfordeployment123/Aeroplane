@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import { useRef } from "react";
 
 const features = [
-    { title: "Humanized Course Arrangement", desc: "Off-duty and weekend classes perfectly suited for working professionals — train without disrupting your career.", icon: Calendar, accent: "#00d2ff" },
-    { title: "Class Management System", desc: "A dedicated specialist manages every class, ensuring each student's study and rest schedule is optimally arranged.", icon: Users, accent: "#a855f7" },
-    { title: "Experienced Mentors", desc: "Learn directly from industry veterans through hands-on projects, mastering real-world UAV applications fast.", icon: GraduationCap, accent: "#10b981" },
-    { title: "Elite Pass Rate", desc: "We maintain an extraordinary standard — multi-rotor UAV pilot class pass rate of 88%–90%, industry-leading.", icon: TrendingUp, accent: "#f97316" },
+    { title: "Humanized Course Arrangement", desc: "With off duty classes and weekend classes, suitable for different working groups to register.", icon: Calendar, accent: "#00d2ff" },
+    { title: "Class Management System", desc: "Where each class is managed by a dedicated person and each student's study and rest time is reasonably arranged.", icon: Users, accent: "#a855f7" },
+    { title: "Experienced Mentors in Practical Projects", desc: "Allowing students to quickly understand the application of UAVs in practical projects.", icon: GraduationCap, accent: "#10b981" },
+    { title: "High Pass Rate", desc: "With a multi rotor UAVs pilot class pass rate of 88%–90%.", icon: TrendingUp, accent: "#f97316" },
 ];
 
 const stats = [
@@ -59,7 +59,7 @@ const FeatureCard3D = ({ feature, idx }: { feature: (typeof features)[number]; i
             >
                 <div
                     className="relative rounded-3xl overflow-hidden h-full"
-                    style={{ background: "#141420", border: `1px solid ${feature.accent}15` }}
+                    style={{ background: "#181826", border: `1px solid ${feature.accent}15` }}
                 >
                     {/* Top accent */}
                     <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: `linear-gradient(90deg, transparent, ${feature.accent}, transparent)` }} />
@@ -95,17 +95,17 @@ const FeatureCard3D = ({ feature, idx }: { feature: (typeof features)[number]; i
 
 export const TrainingCenter = () => {
     return (
-        <div className="min-h-screen text-white font-sans" style={{ background: "#121218" }}>
+        <div className="min-h-screen text-white font-sans" style={{ background: "#161622" }}>
             {/* ── Hero ── */}
             <section className="relative h-[65vh] min-h-[520px] flex items-center justify-center overflow-hidden">
                 <div
                     className="absolute inset-0 bg-cover bg-center"
                     style={{
-                        backgroundImage: "url('https://www.htsdfp.com/UploadFiles/2023-09-26/uzpu69cnkk5w4uf5.png')",
+                        backgroundImage: "url('/images/banners/training-hero.png')",
                         filter: "brightness(0.22) saturate(1.4)",
                     }}
                 />
-                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, #121218 10%, rgba(5,5,8,0.6) 55%, transparent 100%)" }} />
+                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, #161622 10%, rgba(12,12,18,0.6) 55%, transparent 100%)" }} />
 
                 {/* Graduation cap themed elements */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full border border-aero-blue/[0.06] z-[1]" />
@@ -140,8 +140,8 @@ export const TrainingCenter = () => {
                             Training{" "}
                             <span className="bg-clip-text text-transparent bg-gradient-to-r from-aero-blue to-aero-purple">Center</span>
                         </h1>
-                        <p className="text-gray-300 text-lg max-w-md mx-auto mt-3">
-                            AOPA-certified UAV pilot training for the next generation of aviation professionals.
+                        <p className="text-gray-300 text-lg max-w-2xl mx-auto mt-3">
+                            Aerospace Times Feipeng Co., Ltd. is a civil UAVs pilot training institution certified by the China Aircraft Owners and Pilots Association (AOPA), which can provide theoretical and practical training for multi rotor in line of sight pilots and multi rotor over line of sight pilots.
                         </p>
                     </motion.div>
                 </div>
@@ -230,7 +230,7 @@ export const TrainingCenter = () => {
             </section>
 
             {/* ── Process Steps — Connected 3D Path ── */}
-            <section className="py-24 relative overflow-hidden" style={{ background: "#0e0e14" }}>
+            <section className="py-24 relative overflow-hidden" style={{ background: "#111119" }}>
                 <div className="max-w-7xl mx-auto px-6">
                     <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
                         <div className="flex items-center gap-3 mb-4">
@@ -264,7 +264,7 @@ export const TrainingCenter = () => {
                                     >
                                         <div
                                             className="absolute inset-0 rounded-2xl"
-                                            style={{ background: "#181820", border: `1px solid ${step.color}15` }}
+                                            style={{ background: "#1c1c2a", border: `1px solid ${step.color}15` }}
                                         />
 
                                         {/* Step indicator */}
@@ -302,8 +302,8 @@ export const TrainingCenter = () => {
             <section className="py-24">
                 <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {[
-                        { title: "Service Process", sub: "Step-by-step flowchart", accent: "#00d2ff", img: "https://www.htsdfp.com/UploadFiles/2024-02-26/xhmubk4wypgpstlx.jpg" },
-                        { title: "Certification", sub: "AOPA official qualification", accent: "#a855f7", img: "https://www.htsdfp.com/UploadFiles/2024-04-07/8islrvytlbjksxkr.jpg" },
+                        { title: "Service Process", sub: "Step-by-step flowchart", accent: "#00d2ff", img: "/images/training/service-process.jpg" },
+                        { title: "Certification", sub: "AOPA official qualification", accent: "#a855f7", img: "/images/training/certification.jpg" },
                     ].map((panel, i) => (
                         <motion.div
                             key={i}
@@ -333,7 +333,7 @@ export const TrainingCenter = () => {
                                 >
                                     <div className="absolute top-0 inset-x-0 h-[1px]" style={{ background: `linear-gradient(90deg, transparent, ${panel.accent}40, transparent)` }} />
 
-                                    <div className="p-6 bg-[#181820]">
+                                    <div className="p-6 bg-[#1c1c2a]">
                                         <h2 className="text-2xl font-bold text-white mb-4">{panel.title}</h2>
                                         <img
                                             src={panel.img}
@@ -351,7 +351,7 @@ export const TrainingCenter = () => {
             </section>
 
             {/* ── Course Features — 3D Tilt Cards ── */}
-            <section className="py-24 relative overflow-hidden" style={{ background: "#0e0e14" }}>
+            <section className="py-24 relative overflow-hidden" style={{ background: "#111119" }}>
                 <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0,210,255,0.5) 1px, transparent 0)`, backgroundSize: "40px 40px" }} />
 
                 <div className="max-w-7xl mx-auto px-6 relative z-10">

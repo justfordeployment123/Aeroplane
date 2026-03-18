@@ -10,8 +10,8 @@ const Home = () => (
     <>
         <Hero />
         <StatsBar />
-        <Products />
         <Applications />
+        <Products />
         <CoreAdvantages />
         <TrainingPromo />
         <CTASection />

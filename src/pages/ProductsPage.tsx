@@ -47,19 +47,19 @@ export const ProductsPage = () => {
     }
 
     return (
-        <div className="min-h-screen text-white font-sans" style={{ background: "#121218" }}>
+        <div className="min-h-screen text-white font-sans" style={{ background: "#161622" }}>
             {/* Hero */}
             <section className="relative h-[60vh] min-h-[480px] flex items-center justify-center overflow-hidden">
                 <div
                     className="absolute inset-0 bg-cover bg-center"
                     style={{
-                        backgroundImage: "url('https://www.htsdfp.com/UploadFiles/2024-10-30/hz7kcrbdstehju8t.png')",
+                        backgroundImage: "url('/images/banners/products-hero.jpg')",
                         filter: "brightness(0.25) saturate(1.4)",
                     }}
                 />
                 <div
                     className="absolute inset-0"
-                    style={{ background: "linear-gradient(to top, #121218 8%, rgba(18,18,24,0.7) 50%, transparent 100%)" }}
+                    style={{ background: "linear-gradient(to top, #161622 8%, rgba(22,22,34,0.7) 50%, transparent 100%)" }}
                 />
                 <div className="absolute top-24 left-8 w-20 h-20 border-t border-l border-aero-blue/20 hidden lg:block" />
                 <div className="absolute top-24 right-8 w-20 h-20 border-t border-r border-aero-blue/20 hidden lg:block" />
@@ -121,7 +121,7 @@ export const ProductsPage = () => {
             <div
                 className="sticky top-[72px] z-40 border-b"
                 style={{
-                    background: "rgba(18,18,24,0.88)",
+                    background: "rgba(22,22,34,0.88)",
                     backdropFilter: "blur(20px)",
                     borderColor: "rgba(255,255,255,0.06)",
                     boxShadow: "0 8px 40px rgba(0,0,0,0.4)",

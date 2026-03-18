@@ -21,87 +21,87 @@ import { Link } from "react-router-dom";
 const ecosystemPillars = [
     {
         icon: Truck,
-        title: "Smart Logistics",
-        desc: "Autonomous aerial corridors connecting major distribution hubs with branch and terminal delivery networks.",
+        title: "Civil Logistic",
+        desc: "Provides systematic solutions for typical operation scenarios such as trunk logistics, branch logistics and terminal logistics.",
         accent: "#00d2ff",
-        stat: "60%",
-        statLabel: "Cost Reduction",
-        backDetails: ["Automated route planning", "Real-time fleet tracking", "Weather-adaptive corridors", "Cross-border logistics"],
+        stat: "3-Tier",
+        statLabel: "Network",
+        backDetails: ["Trunk logistics", "Branch logistics", "Terminal logistics", "Systematic solutions"],
     },
     {
         icon: Shield,
-        title: "Emergency Response",
-        desc: "Rapid-deployment UAV systems for disaster relief, medical supply delivery, and search & rescue operations.",
+        title: "Emergency Rescue",
+        desc: "Innovate the UAVs emergency rescue mode. Build an intelligent three-dimensional rescue system. Provide systematic solutions for different disaster scenarios.",
         accent: "#f97316",
-        stat: "<5min",
-        statLabel: "Deploy Time",
-        backDetails: ["Medical payload delivery", "Thermal search & rescue", "Disaster zone mapping", "Emergency broadcast relay"],
+        stat: "3D",
+        statLabel: "Rescue System",
+        backDetails: ["Disaster reconnaissance", "Emergency delivery", "Search & rescue", "Communications relay"],
     },
     {
         icon: Building2,
-        title: "Urban Air Mobility",
-        desc: "Integrating low-altitude flight paths into urban infrastructure for passenger and cargo transport.",
+        title: "Industry Service",
+        desc: "A complete operational system for flight carrying. Provide customers with services such as operation, testing, and carrying of various models.",
         accent: "#a855f7",
-        stat: "3D",
-        statLabel: "Transport Grid",
-        backDetails: ["Vertiport network design", "Air traffic management", "Noise-optimized routes", "Multi-modal integration"],
+        stat: "11+",
+        statLabel: "UAV Models",
+        backDetails: ["Flight operations", "Testing services", "Carrying services", "AOPA training"],
     },
     {
         icon: Globe2,
-        title: "Agricultural Aviation",
-        desc: "Precision agriculture with autonomous spraying, seeding, and crop monitoring across vast farmlands.",
+        title: "Forest & Grassland Fire Prevention",
+        desc: "Comprehensive forest and grassland fire prevention system including daily patrol, fire monitoring, fire scene reconnaissance, and emergency communications support.",
         accent: "#10b981",
-        stat: "10x",
-        statLabel: "Efficiency Gain",
-        backDetails: ["Precision spraying systems", "Crop health monitoring", "Autonomous seeding", "Yield prediction analytics"],
+        stat: "24/7",
+        statLabel: "Monitoring",
+        backDetails: ["Forest patrol", "Fire monitoring", "Scene reconnaissance", "Emergency communications"],
     },
 ];
 
 const policyTimeline = [
     {
-        year: "2021",
-        title: "National Strategic Priority",
-        desc: "Low-altitude economy formally included in the national strategic economic development framework.",
-    },
-    {
         year: "2023",
-        title: "Airspace Reform",
-        desc: "Comprehensive reforms to low-altitude airspace management enabling commercial UAV operations at scale.",
+        title: "National High-Tech Enterprise",
+        desc: "Company certified as 2023 National High-Tech Enterprise and selected as Jiangsu Potential Unicorn Enterprise.",
     },
     {
         year: "2024",
-        title: "Infrastructure Build-out",
-        desc: "Nationwide deployment of UAV takeoff/landing sites, vertiports, and air traffic management systems.",
+        title: "FP-98 Type Certificate (TC)",
+        desc: "FP-98 UAV system obtains Type Certificate (TC), opening a new era of low altitude economy for large UAV transport.",
     },
     {
-        year: "2025",
-        title: "Trillion-Yuan Market",
-        desc: "Low-altitude economy projected to surpass ¥1.5 trillion, driving manufacturing, services, and logistics.",
+        year: "2024",
+        title: "Red Dot Design Award",
+        desc: "FP-981C Sagittarius wins the 2024 German Red Dot Design Award for outstanding product design.",
+    },
+    {
+        year: "2024",
+        title: "Cross-Sea Logistics Mission",
+        desc: "FP-98 large UAV executes first cross-sea branch logistics transport mission after TC certification.",
     },
 ];
 
 const stats = [
-    { value: "¥1.5T", label: "Market Size by 2025", icon: TrendingUp },
-    { value: "120+", label: "Approved Air Routes", icon: Plane },
-    { value: "50+", label: "Pilot Cities", icon: Building2 },
-    { value: "1M+", label: "Projected UAV Fleet", icon: Network },
+    { value: "1000km", label: "Max Range", icon: TrendingUp },
+    { value: "1000kg", label: "Max Payload", icon: Plane },
+    { value: "10W+", label: "Flight Hours", icon: Building2 },
+    { value: "TC", label: "Airworthiness Certified", icon: Network },
 ];
 
 const keyAdvantages = [
     {
         icon: Zap,
-        title: "Transportation Efficiency",
-        desc: "Reduce logistics time by up to 70% through direct aerial corridors, bypassing ground congestion entirely.",
+        title: "Systematic Solution",
+        desc: "Provide scenario-level solutions for industry users in relevant countries and regions around the world.",
     },
     {
         icon: Target,
-        title: "Precision Operations",
-        desc: "AI-powered navigation and mission planning ensure centimeter-level accuracy in all flight operations.",
+        title: "Complete Product Layout",
+        desc: "Full product lineup of 11+ UAV models covering trunk, branch, and terminal line scenarios.",
     },
     {
         icon: BarChart3,
-        title: "Economic Impact",
-        desc: "Every ¥1 invested in low-altitude infrastructure generates ¥3-5 in downstream economic activity.",
+        title: "Airworthiness Certification",
+        desc: "Full type certificate and airworthiness compliance certification for civil UAV operations.",
     },
 ];
 
@@ -142,7 +142,7 @@ const PrismCard = ({ pillar, idx }: { pillar: (typeof ecosystemPillars)[0]; idx:
             <div
                 className="relative rounded-3xl p-8 overflow-hidden"
                 style={{
-                    background: "linear-gradient(160deg, #1c1c28 0%, #0e0e14 100%)",
+                    background: "linear-gradient(160deg, #202030 0%, #111119 100%)",
                     border: "1px solid rgba(255,255,255,0.07)",
                     transformStyle: "preserve-3d",
                 }}
@@ -292,7 +292,7 @@ const RadarCard = ({ adv, idx }: { adv: (typeof keyAdvantages)[0]; idx: number }
             whileHover={{ y: -6, transition: { duration: 0.25 } }}
             className="group relative rounded-2xl p-8 overflow-hidden"
             style={{
-                background: "linear-gradient(160deg, #1c1c28 0%, #181820 100%)",
+                background: "linear-gradient(160deg, #202030 0%, #1c1c2a 100%)",
                 border: "1px solid rgba(255,255,255,0.07)",
             }}
         >
@@ -333,11 +333,11 @@ const RadarCard = ({ adv, idx }: { adv: (typeof keyAdvantages)[0]; idx: number }
 
 export const LowAltitudeEconomy = () => {
     return (
-        <div className="min-h-screen text-white font-sans" style={{ background: "#121218" }}>
+        <div className="min-h-screen text-white font-sans" style={{ background: "#161622" }}>
             {/* ─── Hero with 3D altitude layers ─── */}
             <section className="relative h-[70vh] min-h-[520px] flex items-center justify-center overflow-hidden">
                 {/* Background */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black via-[#121218] to-[#121218]" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black via-[#161622] to-[#161622]" />
 
                 {/* 3D Altitude layer visualization */}
                 <div
@@ -396,8 +396,7 @@ export const LowAltitudeEconomy = () => {
                             <span className="bg-clip-text text-transparent bg-gradient-to-r from-aero-blue to-aero-purple">Economy</span>
                         </h1>
                         <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
-                            The next frontier of transportation — integrating autonomous aviation into the fabric of national
-                            infrastructure to build a three-dimensional economy above ground level.
+                            The development of the low altitude economic industrial system will significantly promote the integration of national transportation strategies, and help build a strong country in science and technology and transportation.
                         </p>
                     </motion.div>
                 </div>
@@ -441,7 +440,7 @@ export const LowAltitudeEconomy = () => {
             {/* ─── Stats with 3D entrance ─── */}
             <section className="relative py-14 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-aero-blue/10 via-aero-purple/10 to-aero-blue/10" />
-                <div className="absolute inset-0 bg-[#121218]/80 backdrop-blur-sm" />
+                <div className="absolute inset-0 bg-[#161622]/80 backdrop-blur-sm" />
                 <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-aero-blue/30 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-aero-blue/30 to-transparent" />
 
@@ -501,17 +500,14 @@ export const LowAltitudeEconomy = () => {
                         <h2 className="text-3xl md:text-4xl font-bold mb-6">Application Overview</h2>
                         <div className="h-1 w-16 bg-gradient-to-r from-aero-blue to-aero-purple mx-auto rounded-full mb-8" />
                         <p className="text-lg text-gray-300 leading-loose">
-                            Through the continuous development of the low altitude economy, it is possible to achieve the convenience
-                            and intelligence of air transportation, improve transportation efficiency, reduce traffic congestion, reduce
-                            energy consumption, and provide revolutionary new solutions for emergency rescue, logistics distribution,
-                            and advanced industrial fields.
+                            Through the continuous development of low altitude economy, it is possible to achieve the convenience and intelligence of air transportation, improve transportation efficiency, reduce traffic congestion, reduce energy consumption, and provide new solutions for emergency rescue, logistics distribution, and other fields.
                         </p>
                     </motion.div>
                 </div>
             </section>
 
             {/* ─── Ecosystem Pillars — 3D Prism Cards ─── */}
-            <section className="py-24 relative overflow-hidden border-t border-white/5" style={{ background: "#0e0e14" }}>
+            <section className="py-24 relative overflow-hidden border-t border-white/5" style={{ background: "#111119" }}>
                 {/* Isometric grid background */}
                 <div
                     className="absolute inset-0 opacity-[0.02]"
@@ -573,7 +569,7 @@ export const LowAltitudeEconomy = () => {
             </section>
 
             {/* ─── Policy Timeline — 3D Depth ─── */}
-            <section className="py-24 relative overflow-hidden border-t border-white/5" style={{ background: "#0e0e14" }}>
+            <section className="py-24 relative overflow-hidden border-t border-white/5" style={{ background: "#111119" }}>
                 <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-aero-purple/5 rounded-full blur-[200px] pointer-events-none" />
 
                 <div className="max-w-4xl mx-auto px-6">
@@ -618,7 +614,7 @@ export const LowAltitudeEconomy = () => {
                         transition={{ duration: 0.6 }}
                         className="group relative rounded-3xl overflow-hidden"
                         style={{
-                            background: "linear-gradient(160deg, #141420 0%, #0e0e14 100%)",
+                            background: "linear-gradient(160deg, #181826 0%, #111119 100%)",
                             border: "1px solid rgba(255,255,255,0.08)",
                             boxShadow: "0 32px 64px -16px rgba(0,0,0,0.6)",
                         }}
@@ -635,7 +631,7 @@ export const LowAltitudeEconomy = () => {
                                     <div key={i} className={`absolute w-5 h-5 ${cls} border-aero-blue/20 opacity-30 group-hover:opacity-60 transition-opacity`} />
                                 ))}
                                 <motion.img
-                                    src="https://www.htsdfp.com/UploadFiles/2024-02-28/beycmwcwnwhjfx6p.png"
+                                    src="/images/economy/whitepaper.png"
                                     alt="Low Altitude Economic Industry White Paper"
                                     className="relative z-10 w-full max-w-sm object-contain drop-shadow-[0_10px_30px_rgba(0,210,255,0.15)]"
                                     whileHover={{ scale: 1.05, rotateY: 5 }}
@@ -656,9 +652,7 @@ export const LowAltitudeEconomy = () => {
                                 </h3>
 
                                 <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                                    The low-altitude economic industrial system provides solutions around the radius of human life and
-                                    work, integrating the results of various scientific and technological revolutions. It is characterized
-                                    by advanced technology, high industrial level, huge scale, and a remarkable driving effect.
+                                    Low-altitude economic industrial system, this low-altitude utilization solution around the radius of human life and work, integrates the results of various scientific and technological revolution and industrial change. It is characterized by advanced technology, high industrial level, huge scale, abundant employment opportunities and remarkable driving effect. Focusing on the development of low-altitude economic industrial system will play a key role and have a long-term impact on improving the national transportation strategy, building science and technology and transportation power.
                                 </p>
 
                                 <motion.button
@@ -677,7 +671,7 @@ export const LowAltitudeEconomy = () => {
 
             {/* ─── CTA ─── */}
             <section className="py-32 relative overflow-hidden border-t border-white/5">
-                <div className="absolute inset-0 bg-gradient-to-b from-[#121218] via-[#121218] to-[#121218]" />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#161622] via-[#161622] to-[#161622]" />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-aero-blue/[0.06] rounded-full blur-[200px] pointer-events-none" />
 
                 {/* Topographic contour lines */}

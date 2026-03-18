@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const TrainingPromo = () => {
     return (
-        <section className="py-24 relative overflow-hidden" style={{ background: "#0e0e14" }}>
+        <section className="py-24 relative overflow-hidden" style={{ background: "#111119" }}>
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-aero-blue/[0.04] rounded-full blur-[200px] pointer-events-none" />
 
@@ -18,7 +18,7 @@ export const TrainingPromo = () => {
                     <span className="text-aero-blue text-xs uppercase tracking-[0.2em] mb-4 block font-semibold">Pilot Training</span>
                     <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">Training Center</h2>
                     <p className="text-gray-500 mt-4 max-w-xl mx-auto">
-                        AOPA-certified training institution offering comprehensive UAV pilot certification programs.
+                        Civil UAV pilot training institution certified by the China Association of Aircraft Owners and Pilots (AOPA).
                     </p>
                 </motion.div>
 
@@ -29,14 +29,14 @@ export const TrainingPromo = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         className="group rounded-3xl p-8 border border-white/[0.06] hover:border-aero-blue/20 transition-all duration-500"
-                        style={{ background: "linear-gradient(160deg, #181820 0%, #121218 100%)" }}
+                        style={{ background: "linear-gradient(160deg, #1c1c2a 0%, #161622 100%)" }}
                     >
                         <div className="w-14 h-14 rounded-2xl bg-aero-blue/10 border border-aero-blue/25 flex items-center justify-center mb-6">
                             <GraduationCap className="w-7 h-7 text-aero-blue" />
                         </div>
                         <h3 className="text-xl font-bold text-white mb-3">Pilot Training Center</h3>
                         <p className="text-sm text-gray-400 leading-relaxed mb-6">
-                            Civil unmanned aerial vehicle pilot training institution certified by AOPA. Offers theoretical and practical instruction for Class III multi-rotor line-of-sight and beyond-line-of-sight pilots.
+                            A civil unmanned aerial vehicle pilot training institution (Class III multi rotor) certified by the China Association of Aircraft Owners and Pilots (AOPA) can provide theoretical and practical training for Class III multi rotor in line of sight pilots and Class III multi rotor over line of sight pilots.
                         </p>
                         <Link to="/training">
                             <motion.button
@@ -55,14 +55,14 @@ export const TrainingPromo = () => {
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
                         className="group rounded-3xl p-8 border border-white/[0.06] hover:border-aero-purple/20 transition-all duration-500"
-                        style={{ background: "linear-gradient(160deg, #181820 0%, #121218 100%)" }}
+                        style={{ background: "linear-gradient(160deg, #1c1c2a 0%, #161622 100%)" }}
                     >
                         <div className="w-14 h-14 rounded-2xl bg-aero-purple/10 border border-aero-purple/25 flex items-center justify-center mb-6">
                             <Award className="w-7 h-7 text-aero-purple" />
                         </div>
                         <h3 className="text-xl font-bold text-white mb-3">AOPA Certification Exam</h3>
                         <p className="text-sm text-gray-400 leading-relaxed mb-6">
-                            Flexible scheduling accommodates diverse work arrangements. Dedicated class management with personalized student oversight. Experienced mentors guide practical project comprehension. Maintains 88–90% pass rate.
+                            Humanized course arrangement, with off duty classes and weekend classes, suitable for different working groups to register. Class management system, where each class is managed by a dedicated person and each student's study and rest time is reasonably arranged. Experienced mentors in practical projects, allowing students to quickly understand the application of drones in practical projects. High pass rate, with a multi rotor drone pilot class pass rate of 88%-90%.
                         </p>
                         <Link to="/training">
                             <motion.button

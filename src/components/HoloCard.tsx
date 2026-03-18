@@ -39,7 +39,7 @@ export const HoloCard = ({ product, accent, idx, onClick }: { product: any; acce
             >
                 <div
                     className="relative rounded-2xl overflow-hidden flex flex-col"
-                    style={{ background: "#181820", border: "1px solid rgba(255,255,255,0.05)" }}
+                    style={{ background: "#1c1c2a", border: "1px solid rgba(255,255,255,0.05)" }}
                 >
                     <motion.div
                         className="absolute inset-0 z-20 pointer-events-none rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"

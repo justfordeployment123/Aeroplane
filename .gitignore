@@ -23,3 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 oldSite/
+
+# Large video files
+public/images/products/videos/

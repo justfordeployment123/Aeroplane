@@ -18,7 +18,7 @@ const NewsCard = ({ article, idx }: { article: NewsArticle; idx: number }) => (
         viewport={{ once: true }}
         transition={{ delay: idx * 0.05, duration: 0.5 }}
         className="group rounded-2xl overflow-hidden border border-white/[0.06] hover:border-white/[0.12] transition-all duration-500 cursor-default"
-        style={{ background: "#181820" }}
+        style={{ background: "#1c1c2a" }}
     >
         <div className="relative h-48 overflow-hidden">
             <motion.img
@@ -28,7 +28,7 @@ const NewsCard = ({ article, idx }: { article: NewsArticle; idx: number }) => (
                 whileHover={{ scale: 1.06 }}
                 transition={{ duration: 0.6 }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#181820] via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#1c1c2a] via-transparent to-transparent" />
             <span className="absolute top-3 left-3 text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-full bg-aero-blue/15 text-aero-blue border border-aero-blue/20">
                 {article.category}
             </span>
@@ -55,7 +55,7 @@ export const NewsPage = () => {
     const filtered = filter === "all" ? newsArticles : newsArticles.filter((a) => a.category === filter);
 
     return (
-        <div className="min-h-screen" style={{ background: "#121218" }}>
+        <div className="min-h-screen" style={{ background: "#161622" }}>
             {/* Hero */}
             <section className="relative pt-32 pb-20 overflow-hidden">
                 <div className="absolute inset-0 opacity-[0.02]" style={{

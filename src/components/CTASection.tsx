@@ -32,13 +32,13 @@ export const CTASection = () => {
                     transition={{ duration: 0.9 }}
                 >
                     <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                        Ready to Transform
+                        Aerospace Technology
                         <br />
-                        Your Operations?
+                        Makes Life Better
                     </h2>
                     <p className="text-gray-500 text-lg max-w-xl mx-auto mb-14 leading-relaxed">
-                        Discover how our autonomous aviation systems can revolutionize your logistics,
-                        rescue operations, and industrial services.
+                        Providing scenario-level solutions for industry users with unmanned system technology,
+                        promoting the transformation of transportation from two-dimensional to three-dimensional mode.
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

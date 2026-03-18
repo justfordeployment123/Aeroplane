@@ -24,7 +24,7 @@ export const ProductDetail = ({
     const accent = product.categoryAccent;
 
     return (
-        <div className="min-h-screen text-white font-sans" style={{ background: "#121218" }}>
+        <div className="min-h-screen text-white font-sans" style={{ background: "#161622" }}>
             {/* Hero */}
             <section className="relative min-h-[72vh] flex items-end overflow-hidden">
                 <div className="absolute inset-0">
@@ -151,7 +151,7 @@ export const ProductDetail = ({
                 </div>
                 <div
                     className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none"
-                    style={{ background: "linear-gradient(to top, #121218, transparent)" }}
+                    style={{ background: "linear-gradient(to top, #161622, transparent)" }}
                 />
             </section>
 
@@ -245,7 +245,7 @@ export const ProductDetail = ({
                                         viewport={{ once: true }}
                                         transition={{ delay: i * 0.1 }}
                                         className="group relative rounded-2xl p-5 border overflow-hidden cursor-default"
-                                        style={{ background: "#181820", borderColor: `${accent}15` }}
+                                        style={{ background: "#1c1c2a", borderColor: `${accent}15` }}
                                     >
                                         <motion.div
                                             className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
@@ -281,9 +281,9 @@ export const ProductDetail = ({
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             className="rounded-2xl overflow-hidden border p-4"
-                            style={{ borderColor: `${accent}15`, background: "#181820" }}
+                            style={{ borderColor: `${accent}15`, background: "#1c1c2a" }}
                         >
-                            <img src={product.paramImg} alt="Performance parameters" className="w-full object-contain rounded-xl" />
+                            <img src={product.paramImg} alt="Performance parameters" loading="lazy" decoding="async" className="w-full object-contain rounded-xl" />
                         </motion.div>
                     </div>
                 </section>

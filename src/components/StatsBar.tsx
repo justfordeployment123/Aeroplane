@@ -33,7 +33,7 @@ export const StatsBar = () => {
         <section ref={ref} className="relative py-0 overflow-hidden">
             {/* 3D perspective wrapper */}
             <div className="relative" style={{ perspective: "1000px" }}>
-                <div className="relative bg-[#0e0e14] border-y border-white/[0.04]">
+                <div className="relative bg-[#111119] border-y border-white/[0.04]">
                     {/* Layered depth background */}
                     <div className="absolute inset-0 bg-linear-to-r from-aero-blue/[0.03] via-transparent to-aero-purple/[0.03]" />
 

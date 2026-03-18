@@ -2,17 +2,17 @@
 
 /* ── Design Tokens ──────────────────────────────────────────
  * Unified dark palette — 4 levels only:
- *   aero-dark      #121218   page background
- *   aero-darker    #0e0e14   alternate / inset sections
- *   aero-card      #181820   cards, panels, inputs
- *   aero-card-alt  #141420   card interior gradients
+ *   aero-dark      #161622   page background
+ *   aero-darker    #111119   alternate / inset sections
+ *   aero-card      #1c1c2a   cards, panels, inputs
+ *   aero-card-alt  #181826   card interior gradients
  *   aero-panel     white/4%  glass panels
  */
 @theme {
-    --color-aero-dark: #121218;
-    --color-aero-darker: #0e0e14;
-    --color-aero-card: #181820;
-    --color-aero-card-alt: #141420;
+    --color-aero-dark: #161622;
+    --color-aero-darker: #111119;
+    --color-aero-card: #1c1c2a;
+    --color-aero-card-alt: #181826;
     --color-aero-blue: #00d2ff;
     --color-aero-purple: #3a7bd5;
     --color-aero-panel: rgba(255, 255, 255, 0.04);

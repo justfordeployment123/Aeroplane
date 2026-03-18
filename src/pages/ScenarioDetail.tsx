@@ -13,7 +13,7 @@ export const ScenarioDetail = () => {
     const otherScenarios = scenarios.filter((s) => s.id !== scenario.id);
 
     return (
-        <div className="min-h-screen text-white" style={{ background: "#121218" }}>
+        <div className="min-h-screen text-white" style={{ background: "#161622" }}>
             {/* Hero */}
             <section className="relative pt-28 pb-20 overflow-hidden">
                 <div className="absolute inset-0">
@@ -66,6 +66,8 @@ export const ScenarioDetail = () => {
                             <img
                                 src={scenario.heroImg}
                                 alt={scenario.title}
+                                loading="lazy"
+                                decoding="async"
                                 className="relative z-10 w-full rounded-2xl object-cover max-h-[400px]"
                             />
                         </motion.div>
@@ -100,11 +102,11 @@ export const ScenarioDetail = () => {
                                 className={`grid grid-cols-1 lg:grid-cols-2 gap-8 items-center rounded-3xl overflow-hidden border border-white/[0.06] p-2 ${
                                     idx % 2 === 1 ? "lg:direction-rtl" : ""
                                 }`}
-                                style={{ background: "#181820" }}
+                                style={{ background: "#1c1c2a" }}
                             >
                                 <div className={`${idx % 2 === 1 ? "lg:order-2" : ""}`}>
                                     <div className="relative rounded-2xl overflow-hidden h-64 lg:h-80">
-                                        <img src={detail.img} alt={detail.title} className="w-full h-full object-cover" />
+                                        <img src={detail.img} alt={detail.title} loading="lazy" decoding="async" className="w-full h-full object-cover" />
                                         <div
                                             className="absolute inset-0"
                                             style={{ background: `linear-gradient(to top, ${accent}10, transparent)` }}
@@ -149,7 +151,7 @@ export const ScenarioDetail = () => {
                                     className="group relative rounded-2xl overflow-hidden border border-white/[0.06] hover:border-white/[0.12] transition-all h-52"
                                 >
                                     <img src={s.heroImg} alt={s.title} className="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity" />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-[#121218] via-[#121218]/70 to-transparent" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#161622] via-[#161622]/70 to-transparent" />
                                     <div className="relative z-10 h-full flex flex-col justify-end p-8">
                                         <span className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: s.accent }}>
                                             {s.subtitle}
