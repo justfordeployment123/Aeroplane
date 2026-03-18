@@ -45,16 +45,16 @@ export const Hero = () => {
                 muted
                 loop
                 playsInline
-                preload="metadata"
+                preload="auto"
                 className="absolute inset-0 w-full h-full object-cover z-0"
             >
                 <source src="/videos/hero-bg.mp4" type="video/mp4" />
             </video>
 
             {/* Dark overlays for text readability */}
-            <div className="absolute inset-0 bg-black/50 z-[1]" />
-            <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/40 to-black/30 z-[1]" />
-            <div className="absolute inset-0 bg-linear-to-t from-aero-dark via-transparent to-aero-dark/40 z-[1]" />
+            <div className="absolute inset-0 bg-black/20 z-[1]" />
+            <div className="absolute inset-0 bg-linear-to-r from-black/50 via-black/20 to-transparent z-[1]" />
+            <div className="absolute inset-0 bg-linear-to-t from-aero-dark/80 via-transparent to-transparent z-[1]" />
 
             {/* Particle Network */}
             <div className="absolute inset-0 z-[2]">

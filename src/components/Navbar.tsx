@@ -43,7 +43,7 @@ export const Navbar = () => {
                             <Plane className="w-4 h-4 text-white" />
                         </div>
                         <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-aero-blue to-aero-purple tracking-tighter">
-                            AERONEXUS
+                            GAADT
                         </span>
                     </Link>
 

@@ -72,7 +72,7 @@ export const Footer = () => {
                                 <Plane className="w-4 h-4 text-white" />
                             </div>
                             <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-aero-blue to-aero-purple tracking-tighter">
-                                AERONEXUS
+                                GAADT
                             </span>
                         </Link>
                         <p className="text-sm text-gray-500 mb-6 leading-relaxed max-w-xs">
