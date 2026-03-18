@@ -1,33 +1,17 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { VideoOff } from "lucide-react";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 
 export const VideoPlayer = ({ src, accent }: { src: string | null; accent: string }) => {
     const videoRef = useRef<HTMLVideoElement>(null);
-    const containerRef = useRef<HTMLDivElement>(null);
     const [playing, setPlaying] = useState(false);
     const [progress, setProgress] = useState(0);
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
     const [hovered, setHovered] = useState(false);
     const [muted, setMuted] = useState(false);
-    const [isInView, setIsInView] = useState(false);
     const [isLoaded, setIsLoaded] = useState(false);
-
-    // Only inject the <video> element once the section scrolls near the viewport
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsInView(true);
-                    observer.disconnect();
-                }
-            },
-            { rootMargin: "200px" }
-        );
-        if (containerRef.current) observer.observe(containerRef.current);
-        return () => observer.disconnect();
-    }, []);
+    const [hasError, setHasError] = useState(false);
 
     const togglePlay = () => {
         if (!videoRef.current) return;
@@ -68,7 +52,7 @@ export const VideoPlayer = ({ src, accent }: { src: string | null; accent: strin
             .padStart(2, "0")}`;
     };
 
-    if (!src) {
+    if (!src || hasError) {
         return (
             <motion.div
                 initial={{ y: 20 }}
@@ -127,7 +111,6 @@ export const VideoPlayer = ({ src, accent }: { src: string | null; accent: strin
 
     return (
         <motion.div
-            ref={containerRef}
             initial={{ y: 20 }}
             whileInView={{ y: 0 }}
             viewport={{ once: true, margin: "200px 0px" }}
@@ -202,26 +185,25 @@ export const VideoPlayer = ({ src, accent }: { src: string | null; accent: strin
                 )}
             </AnimatePresence>
 
-            {/* Video — only added to DOM when near viewport */}
-            {isInView && (
-                <video
-                    ref={videoRef}
-                    src={src}
-                    className="w-full aspect-video object-cover block cursor-pointer transition-opacity duration-500"
-                    style={{ opacity: isLoaded ? 1 : 0 }}
-                    onTimeUpdate={onTimeUpdate}
-                    onLoadedMetadata={() => {
-                        setDuration(videoRef.current?.duration || 0);
-                        setIsLoaded(true);
-                    }}
-                    onCanPlay={() => setIsLoaded(true)}
-                    onEnded={() => setPlaying(false)}
-                    onClick={togglePlay}
-                    playsInline
-                    preload="auto"
-                    muted={muted}
-                />
-            )}
+            {/* Video */}
+            <video
+                ref={videoRef}
+                src={src}
+                className="w-full aspect-video object-cover block cursor-pointer transition-opacity duration-500"
+                style={{ opacity: isLoaded && !hasError ? 1 : 0 }}
+                onTimeUpdate={onTimeUpdate}
+                onLoadedMetadata={() => {
+                    setDuration(videoRef.current?.duration || 0);
+                    setIsLoaded(true);
+                }}
+                onCanPlay={() => setIsLoaded(true)}
+                onEnded={() => setPlaying(false)}
+                onError={() => setHasError(true)}
+                onClick={togglePlay}
+                playsInline
+                preload="auto"
+                muted={muted}
+            />
 
             {/* Overlay */}
             <motion.div
