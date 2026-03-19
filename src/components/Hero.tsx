@@ -52,7 +52,7 @@ export const Hero = () => {
             </video>
 
             {/* Dark overlays for text readability */}
-            <div className="absolute inset-0 bg-black/20 z-[1]" />
+            <div className="absolute inset-0 bg-aero-darker/30 z-[1]" />
             <div className="absolute inset-0 bg-linear-to-r from-black/50 via-black/20 to-transparent z-[1]" />
             <div className="absolute inset-0 bg-linear-to-t from-aero-dark/80 via-transparent to-transparent z-[1]" />
 
@@ -107,7 +107,7 @@ export const Hero = () => {
                     className="flex flex-wrap justify-center gap-6 md:gap-8 mb-10"
                 >
                     {stats.map((stat, i) => (
-                        <div key={i} className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-black/30 backdrop-blur-sm border border-white/[0.08]">
+                        <div key={i} className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-aero-card/80 backdrop-blur-sm border border-white/[0.08]">
                             <div className="w-8 h-8 rounded-lg bg-aero-blue/10 border border-aero-blue/20 flex items-center justify-center text-aero-blue">
                                 {stat.icon}
                             </div>

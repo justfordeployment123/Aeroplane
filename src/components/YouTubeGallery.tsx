@@ -186,7 +186,7 @@ export const YouTubeGallery = () => {
                         viewport={{ once: true, margin: "200px 0px" }}
                         className="text-center mb-16"
                     >
-                        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-aero-blue/30 bg-black/40 text-aero-blue text-sm font-medium tracking-wide mb-6 backdrop-blur-md">
+                        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-aero-blue/30 bg-aero-card/80 text-aero-blue text-sm font-medium tracking-wide mb-6 backdrop-blur-md">
                             <span className="w-2 h-2 rounded-full bg-aero-blue animate-pulse" />
                             Video Gallery
                         </span>
@@ -222,7 +222,7 @@ export const YouTubeGallery = () => {
                         onClick={() => setActiveVideoId(null)}
                     >
                         {/* Backdrop */}
-                        <div className="absolute inset-0 bg-black/90 backdrop-blur-md" />
+                        <div className="absolute inset-0 bg-aero-darker/95 backdrop-blur-md" />
 
                         {/* Close button */}
                         <motion.button

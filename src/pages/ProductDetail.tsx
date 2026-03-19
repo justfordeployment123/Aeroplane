@@ -30,7 +30,7 @@ export const ProductDetail = ({
                 <div className="absolute inset-0">
                     <div
                         className="absolute inset-0"
-                        style={{ background: `radial-gradient(ellipse 80% 60% at 60% 40%, ${accent}08 0%, transparent 70%)` }}
+                        style={{ background: `radial-gradient(ellipse 80% 60% at 60% 40%, ${accent}18 0%, transparent 70%)` }}
                     />
                     <div
                         className="absolute inset-0 opacity-[0.015]"
@@ -126,16 +126,28 @@ export const ProductDetail = ({
                         transition={{ duration: 0.9, delay: 0.3 }}
                         className="relative flex items-center justify-center"
                     >
+                        {/* Large soft glow behind drone */}
                         <div
                             className="absolute inset-0 rounded-3xl"
-                            style={{ background: `radial-gradient(ellipse at center, ${accent}12 0%, transparent 70%)` }}
+                            style={{ background: `radial-gradient(ellipse at center, ${accent}40 0%, ${accent}15 40%, transparent 70%)` }}
                         />
+                        {/* Bottom reflection glow */}
                         <div
-                            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[70%] h-[30%] rounded-full blur-[80px]"
-                            style={{ background: `${accent}18` }}
+                            className="absolute bottom-[-10%] left-1/2 -translate-x-1/2 w-[90%] h-[50%] rounded-full blur-[50px]"
+                            style={{ background: `${accent}50` }}
+                        />
+                        {/* Center bright halo */}
+                        <div
+                            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50%] h-[50%] rounded-full blur-[60px]"
+                            style={{ background: `${accent}30` }}
+                        />
+                        {/* Subtle light backdrop panel so dark drone has contrast */}
+                        <div
+                            className="absolute top-[15%] left-[10%] right-[10%] bottom-[15%] rounded-2xl"
+                            style={{ background: `radial-gradient(ellipse at center, rgba(255,255,255,0.06) 0%, transparent 70%)` }}
                         />
                         <motion.div
-                            className="absolute inset-0 m-12 rounded-full border opacity-[0.07]"
+                            className="absolute inset-0 m-12 rounded-full border opacity-[0.15]"
                             style={{ borderColor: accent }}
                             animate={{ rotate: 360 }}
                             transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
@@ -143,7 +155,10 @@ export const ProductDetail = ({
                         <motion.img
                             src={product.img}
                             alt={product.name}
-                            className="relative z-10 max-h-80 max-w-full object-contain drop-shadow-[0_20px_60px_rgba(0,0,0,0.9)]"
+                            className="relative z-10 max-h-80 max-w-full object-contain"
+                            style={{
+                                filter: `drop-shadow(0 0 25px ${accent}) drop-shadow(0 0 50px ${accent}99) drop-shadow(0 0 80px ${accent}55) brightness(1.6) contrast(1.15)`,
+                            }}
                             animate={{ y: [0, -14, 0] }}
                             transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
                         />

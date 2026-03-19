@@ -86,7 +86,7 @@ export const ProductsPage = () => {
                 />
                 <div className="relative z-10 text-center px-6">
                     <motion.div initial={{ y: 28 }} animate={{ y: 0 }} transition={{ duration: 0.9 }}>
-                        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-aero-blue/30 bg-black/40 text-aero-blue text-sm font-medium tracking-wide mb-6 backdrop-blur-md">
+                        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-aero-blue/30 bg-aero-card/80 text-aero-blue text-sm font-medium tracking-wide mb-6 backdrop-blur-md">
                             <span className="w-2 h-2 rounded-full bg-aero-blue animate-pulse" />
                             Fleet & Hardware
                         </span>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, MapPin, Phone, Mail, Plane } from "lucide-react";
+import { ArrowRight, MapPin, Phone, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const navLinks = [
@@ -67,10 +67,8 @@ export const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                     {/* Brand column */}
                     <div className="lg:col-span-1">
-                        <Link to="/" className="inline-flex items-center gap-2 mb-5">
-                            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-aero-blue to-aero-purple flex items-center justify-center">
-                                <Plane className="w-4 h-4 text-white" />
-                            </div>
+                        <Link to="/" className="inline-flex items-center gap-3 mb-5">
+                            <img src="/drone_logo.png" alt="GAADT" className="h-14 w-auto object-contain" />
                             <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-aero-blue to-aero-purple tracking-tighter">
                                 GAADT
                             </span>

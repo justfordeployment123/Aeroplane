@@ -374,7 +374,7 @@ export const About = () => {
                 <div className="relative z-10 text-center px-6">
                     <motion.div initial={{ y: 30 }} animate={{ y: 0 }} transition={{ duration: 1 }}>
                         <motion.span
-                            className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-aero-blue/30 bg-black/40 text-aero-blue text-sm font-medium tracking-wide mb-8 backdrop-blur-md"
+                            className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-aero-blue/30 bg-aero-card/80 text-aero-blue text-sm font-medium tracking-wide mb-8 backdrop-blur-md"
                             initial={{ scale: 0.9, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             transition={{ delay: 0.3 }}

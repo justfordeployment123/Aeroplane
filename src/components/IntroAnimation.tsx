@@ -60,7 +60,7 @@ export const IntroAnimation = ({ onComplete }: IntroAnimationProps) => {
                     key="intro"
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="fixed inset-0 z-[9999] bg-black overflow-hidden cursor-pointer"
+                    className="fixed inset-0 z-[9999] bg-aero-darker overflow-hidden cursor-pointer"
                     onClick={handleSkip}
                 >
                     {/* ── Loading state: instant CSS animation while video buffers ── */}

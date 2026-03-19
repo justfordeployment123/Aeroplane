@@ -114,7 +114,7 @@ export const VideoPlayer = ({ src, accent }: { src: string | null; accent: strin
             whileInView={{ y: 0 }}
             viewport={{ once: true, margin: "200px 0px" }}
             className="relative rounded-2xl overflow-hidden select-none"
-            style={{ background: "#000", boxShadow: `0 4px 80px ${accent}18, 0 0 0 1px ${accent}${hovered ? "28" : "16"}` }}
+            style={{ background: "#111119", boxShadow: `0 4px 80px ${accent}18, 0 0 0 1px ${accent}${hovered ? "28" : "16"}` }}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
         >
@@ -153,7 +153,7 @@ export const VideoPlayer = ({ src, accent }: { src: string | null; accent: strin
                 className="absolute inset-0 pointer-events-none z-[5]"
                 animate={{ opacity: playing && !hovered ? 0 : 0.6 }}
                 transition={{ duration: 0.4 }}
-                style={{ background: "linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.25) 40%, transparent 70%)" }}
+                style={{ background: "linear-gradient(to top, rgba(17,17,25,0.95) 0%, rgba(17,17,25,0.4) 40%, transparent 70%)" }}
             />
 
             {/* Big play button */}
@@ -194,7 +194,7 @@ export const VideoPlayer = ({ src, accent }: { src: string | null; accent: strin
                 className="absolute bottom-0 left-0 right-0 z-[9] px-5 pt-10 pb-4"
                 animate={{ opacity: !playing || hovered ? 1 : 0 }}
                 transition={{ duration: 0.3 }}
-                style={{ background: "linear-gradient(to top, rgba(0,0,0,0.9), transparent)" }}
+                style={{ background: "linear-gradient(to top, rgba(17,17,25,0.92), transparent)" }}
             >
                 {/* Scrubber */}
                 <div

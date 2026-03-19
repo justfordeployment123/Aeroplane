@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Search, Globe, Plane } from "lucide-react";
+import { Menu, X, Search, Globe } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 const navItems = [
@@ -35,13 +35,11 @@ export const Navbar = () => {
                 initial={{ y: -100 }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "bg-black/70 backdrop-blur-lg border-b border-white/10 py-4" : "bg-transparent py-6"}`}
+                className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "bg-aero-darker/90 backdrop-blur-lg border-b border-white/10 py-4" : "bg-transparent py-6"}`}
             >
                 <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-                    <Link to="/" className="flex items-center gap-2">
-                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-aero-blue to-aero-purple flex items-center justify-center">
-                            <Plane className="w-4 h-4 text-white" />
-                        </div>
+                    <Link to="/" className="flex items-center gap-3">
+                        <img src="/drone_logo.png" alt="GAADT" className="h-14 w-auto object-contain" />
                         <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-aero-blue to-aero-purple tracking-tighter">
                             GAADT
                         </span>
@@ -88,7 +86,7 @@ export const Navbar = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
                         transition={{ duration: 0.3 }}
-                        className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl pt-24 px-6 md:hidden"
+                        className="fixed inset-0 z-40 bg-aero-darker/95 backdrop-blur-xl pt-24 px-6 md:hidden"
                     >
                         <ul className="space-y-1">
                             {navItems.map((item, idx) => (

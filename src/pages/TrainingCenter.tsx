@@ -105,7 +105,7 @@ export const TrainingCenter = () => {
                         filter: "brightness(0.22) saturate(1.4)",
                     }}
                 />
-                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, #161622 10%, rgba(12,12,18,0.6) 55%, transparent 100%)" }} />
+                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, #161622 10%, rgba(22,22,34,0.7) 55%, transparent 100%)" }} />
 
                 {/* Graduation cap themed elements */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full border border-aero-blue/[0.06] z-[1]" />
@@ -120,7 +120,7 @@ export const TrainingCenter = () => {
                     ].map((badge, i) => (
                         <motion.div
                             key={i}
-                            className="absolute px-3 py-1 rounded-full border border-aero-blue/20 bg-black/40 backdrop-blur-sm text-[10px] font-mono text-aero-blue/60"
+                            className="absolute px-3 py-1 rounded-full border border-aero-blue/20 bg-aero-card/80 backdrop-blur-sm text-[10px] font-mono text-aero-blue/60"
                             style={{ left: badge.x, top: badge.y }}
                             animate={{ y: [0, -10, 0] }}
                             transition={{ duration: 3, repeat: Infinity, delay: badge.delay }}
@@ -132,7 +132,7 @@ export const TrainingCenter = () => {
 
                 <div className="relative z-10 text-center px-6">
                     <motion.div initial={{ y: 30 }} animate={{ y: 0 }} transition={{ duration: 0.85 }}>
-                        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-aero-blue/30 bg-black/40 text-aero-blue text-sm font-medium tracking-wide mb-6 backdrop-blur-md">
+                        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-aero-blue/30 bg-aero-card/80 text-aero-blue text-sm font-medium tracking-wide mb-6 backdrop-blur-md">
                             <span className="w-2 h-2 rounded-full bg-aero-blue animate-pulse" />
                             GADT Flight Academy
                         </span>

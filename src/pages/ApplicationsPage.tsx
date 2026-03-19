@@ -262,7 +262,7 @@ export const ApplicationsPage = () => {
                         filter: "brightness(0.25) saturate(1.4)",
                     }}
                 />
-                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, #161622 10%, rgba(12,12,18,0.6) 50%, transparent 100%)" }} />
+                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, #161622 10%, rgba(22,22,34,0.7) 50%, transparent 100%)" }} />
 
                 {/* Animated ring */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]">
@@ -286,7 +286,7 @@ export const ApplicationsPage = () => {
 
                 <div className="relative z-10 text-center px-6">
                     <motion.div initial={{ y: 30 }} animate={{ y: 0 }} transition={{ duration: 0.9 }}>
-                        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-aero-blue/30 bg-black/40 text-aero-blue text-sm font-medium tracking-wide mb-6 backdrop-blur-md">
+                        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-aero-blue/30 bg-aero-card/80 text-aero-blue text-sm font-medium tracking-wide mb-6 backdrop-blur-md">
                             <span className="w-2 h-2 rounded-full bg-aero-blue animate-pulse" />
                             Global Use Cases
                         </span>

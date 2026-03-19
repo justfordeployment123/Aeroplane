@@ -58,7 +58,7 @@ export const HoloCard = ({ product, accent, idx, onClick }: { product: any; acce
                     />
                     <div className="relative h-56 flex items-center justify-center p-6 overflow-hidden">
                         <div
-                            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[60%] h-[40%] rounded-full blur-[60px] opacity-0 group-hover:opacity-30 transition-opacity duration-700"
+                            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[60%] h-[40%] rounded-full blur-[60px] opacity-20 group-hover:opacity-50 transition-opacity duration-700"
                             style={{ background: accent }}
                         />
                         <div
@@ -73,8 +73,8 @@ export const HoloCard = ({ product, accent, idx, onClick }: { product: any; acce
                         <motion.img
                             src={product.img}
                             alt={product.name}
-                            className="relative z-10 max-h-full max-w-full object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.3)]"
-                            style={{ transform: "translateZ(30px)", filter: "brightness(1.15) contrast(1.05)" }}
+                            className="relative z-10 max-h-full max-w-full object-contain"
+                            style={{ transform: "translateZ(30px)", filter: `drop-shadow(0 0 20px ${accent}60) brightness(1.3) contrast(1.1)` }}
                             whileHover={{ scale: 1.1, y: -8 }}
                             transition={{ type: "spring", stiffness: 200, damping: 20 }}
                         />

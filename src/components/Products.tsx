@@ -95,7 +95,12 @@ const ProductCard3D = ({ product, idx }: { product: (typeof products)[number]; i
                         <div className="relative h-64 overflow-hidden bg-linear-to-b from-white/[0.02] to-transparent flex items-center justify-center">
                             {/* Radial glow behind product */}
                             <div
-                                className="absolute bottom-1/4 left-1/2 -translate-x-1/2 w-[70%] h-[50%] rounded-full blur-[80px] opacity-20 group-hover:opacity-40 transition-opacity duration-700"
+                                className="absolute bottom-1/4 left-1/2 -translate-x-1/2 w-[70%] h-[50%] rounded-full blur-[60px] opacity-30 group-hover:opacity-60 transition-opacity duration-700"
+                                style={{ background: product.color }}
+                            />
+                            {/* Center halo for dark images */}
+                            <div
+                                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50%] h-[50%] rounded-full blur-[50px] opacity-15"
                                 style={{ background: product.color }}
                             />
 
@@ -105,8 +110,12 @@ const ProductCard3D = ({ product, idx }: { product: (typeof products)[number]; i
                             <motion.img
                                 src={product.img}
                                 alt={product.title}
-                                className="w-[75%] h-[70%] object-contain relative z-[5] drop-shadow-2xl"
-                                style={{ transform: "translateZ(40px)", transformStyle: "preserve-3d" }}
+                                className="w-[75%] h-[70%] object-contain relative z-[5]"
+                                style={{
+                                    transform: "translateZ(40px)",
+                                    transformStyle: "preserve-3d",
+                                    filter: `drop-shadow(0 0 20px ${product.color}88) brightness(1.4) contrast(1.1)`,
+                                }}
                                 whileHover={{ scale: 1.08, y: -8 }}
                                 transition={{ type: "spring", stiffness: 200, damping: 20 }}
                             />
