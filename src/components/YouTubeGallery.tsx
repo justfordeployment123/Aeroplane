@@ -201,6 +201,35 @@ export const YouTubeGallery = () => {
                         </p>
                     </motion.div>
 
+                    {/* Featured highlight — local showcase video */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 28 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-60px" }}
+                        transition={{ duration: 0.65 }}
+                        className="mb-16 max-w-5xl mx-auto"
+                    >
+                        <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_60px_rgba(0,210,255,0.1)] bg-aero-darker aspect-video">
+                            <div
+                                className="absolute inset-0 bg-gradient-to-t from-aero-darker/40 via-transparent to-transparent pointer-events-none z-[1]"
+                                aria-hidden
+                            />
+                            <video
+                                className="absolute inset-0 w-full h-full object-cover"
+                                src="/videos/125412.mp4"
+                                controls
+                                playsInline
+                                preload="metadata"
+                                poster="/images/banners/applications-hero.jpg"
+                            >
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <p className="text-center text-xs text-gray-500 mt-3 tracking-wide uppercase">
+                            Featured highlight
+                        </p>
+                    </motion.div>
+
                     {/* Video grid */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {videos.map((video, i) => (
@@ -214,8 +243,8 @@ export const YouTubeGallery = () => {
             <AnimatePresence>
                 {activeVideoId && (
                     <motion.div
-                       
-                       
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.3 }}
                         className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-8"
