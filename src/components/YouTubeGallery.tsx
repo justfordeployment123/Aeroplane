@@ -215,7 +215,7 @@ export const YouTubeGallery = () => {
                                 aria-hidden
                             />
                             <video
-                                className="absolute inset-0 w-full h-full object-cover"
+                                className="absolute inset-0 w-full h-full object-contain bg-black"
                                 src="/videos/125412.mp4"
                                 controls
                                 playsInline

@@ -137,7 +137,7 @@ export const VideoPlayer = ({ src, accent }: { src: string | null; accent: strin
             <video
                 ref={videoRef}
                 src={src}
-                className="w-full aspect-video object-cover block cursor-pointer"
+                className="w-full aspect-video object-contain block cursor-pointer bg-black"
                 onTimeUpdate={onTimeUpdate}
                 onLoadedMetadata={() => setDuration(videoRef.current?.duration || 0)}
                 onEnded={() => setPlaying(false)}
