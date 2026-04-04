@@ -1,0 +1,62 @@
+{
+    "hero": {
+        "badge": "Global Use Cases",
+        "title1": "Application",
+        "title2": "Scenarios",
+        "subtitle": "From civil logistics to emergency response — built for every critical mission.",
+        "scroll": "Scroll"
+    },
+    "scenariosData": {
+        "scenarioText": "SCENARIO",
+        "exploreText": "Explore Case Study",
+        "items": {
+            "civil-logistics": {
+                "title": "Civil Logistic",
+                "label": "Civil Logistic",
+                "desc": "Provides systematic solutions for typical operation scenarios such as trunk logistics, branch logistics and terminal logistics.",
+                "stats": [
+                    { "value": "3-Tier", "label": "Network" },
+                    { "value": "24/7", "label": "Operation" },
+                    { "value": "99.8%", "label": "Delivery Rate" }
+                ]
+            },
+            "emergency-rescue": {
+                "title": "Emergency Rescue",
+                "label": "Emergency Rescue",
+                "desc": "Innovate the UAVs emergency rescue mode. Build an intelligent three-dimensional rescue system. Provide systematic solutions for different disaster scenarios.",
+                "stats": [
+                    { "value": "<15min", "label": "Response" },
+                    { "value": "3D", "label": "Mapping" },
+                    { "value": "500km", "label": "Coverage" }
+                ]
+            },
+            "industry-service": {
+                "title": "Industry Service",
+                "label": "Industry Service",
+                "desc": "A complete operational system for flight carrying. Provide customers with services such as operation, testing, and carrying of various models.",
+                "stats": [
+                    { "value": "Full", "label": "Lifecycle" },
+                    { "value": "11+", "label": "Models" },
+                    { "value": "AOPA", "label": "Certified" }
+                ]
+            },
+            "forest-fire-prevention": {
+                "title": "Forest & Grassland Fire Prevention",
+                "label": "Fire Prevention",
+                "desc": "Comprehensive forest and grassland fire prevention system including daily patrol, fire monitoring, fire scene reconnaissance, and emergency communications support.",
+                "stats": [
+                    { "value": "24/7", "label": "Patrol" },
+                    { "value": "Real-time", "label": "Monitoring" },
+                    { "value": "Emergency", "label": "Comms" }
+                ]
+            }
+        }
+    },
+    "cta": {
+        "title1": "Have a Mission",
+        "title2": "In Mind?",
+        "subtitle": "Our specialists design UAV solutions tailored to your operational requirements.",
+        "btnDiscuss": "Discuss Your Scenario",
+        "btnProducts": "View All Products"
+    }
+}
