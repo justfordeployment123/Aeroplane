@@ -1,0 +1,38 @@
+{
+    "hero": {
+        "tag": "Get in Touch",
+        "title": "Contact Us",
+        "subtitle": "Reach out for product inquiries, partnership opportunities, or technical support."
+    },
+    "info": {
+        "hotline": {
+            "label": "Hotline",
+            "value": "400-888-2062"
+        },
+        "email": {
+            "label": "Email",
+            "value": "marketing@htsdfp.com"
+        },
+        "hq": {
+            "label": "Headquarters",
+            "value": "Building A7, International Innovation Port, Huaqiao Economic Development Zone, Kunshan City, Jiangsu Province"
+        },
+        "beijing": {
+            "label": "Beijing R&D Branch Center",
+            "value": "9F, Building 2, No. 55 Zique Road, Haidian District, Beijing"
+        }
+    },
+    "form": {
+        "title": "Send us a message",
+        "subtitle": "We'll get back to you within 24 hours.",
+        "placeholders": {
+            "name": "Name",
+            "email": "Email",
+            "phone": "Phone",
+            "company": "Company Name",
+            "address": "Address",
+            "message": "Message"
+        },
+        "submit": "Send Message"
+    }
+}
