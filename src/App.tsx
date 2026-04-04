@@ -1,5 +1,6 @@
 import { useState, useCallback, useEffect } from "react";
-import { HashRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { IntroAnimation } from "./components/IntroAnimation";
@@ -22,9 +23,7 @@ const ScrollToTop = () => {
 };
 
 function App() {
-    const [introComplete, setIntroComplete] = useState(
-        () => sessionStorage.getItem("intro-seen") === "true"
-    );
+    const [introComplete, setIntroComplete] = useState(() => sessionStorage.getItem("intro-seen") === "true");
 
     const handleIntroComplete = useCallback(() => {
         sessionStorage.setItem("intro-seen", "true");
