@@ -2,18 +2,10 @@ import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react";
 import { useEffect } from "react";
 import { allProducts } from "../data/product";
-import { VideoPlayer } from "../components/VideoPlayer";
-import { HoloCard } from "../components/HoloCard";
+import { VideoPlayer } from "../components/products/VideoPlayer";
+import { HoloCard } from "../components/products/HoloCard";
 
-export const ProductDetail = ({
-    productId,
-    onBack,
-    onNavigate,
-}: {
-    productId: string;
-    onBack: () => void;
-    onNavigate?: (id: string) => void;
-}) => {
+export const ProductDetail = ({ productId, onBack, onNavigate }: { productId: string; onBack: () => void; onNavigate?: (id: string) => void }) => {
     const product = allProducts.find((p) => p.id === productId);
 
     useEffect(() => {
@@ -298,7 +290,13 @@ export const ProductDetail = ({
                             className="rounded-2xl overflow-hidden border p-4"
                             style={{ borderColor: `${accent}15`, background: "#1c1c2a" }}
                         >
-                            <img src={product.paramImg} alt="Performance parameters" loading="lazy" decoding="async" className="w-full object-contain rounded-xl" />
+                            <img
+                                src={product.paramImg}
+                                alt="Performance parameters"
+                                loading="lazy"
+                                decoding="async"
+                                className="w-full object-contain rounded-xl"
+                            />
                         </motion.div>
                     </div>
                 </section>
@@ -376,4 +374,3 @@ export const ProductDetail = ({
         </div>
     );
 };
-

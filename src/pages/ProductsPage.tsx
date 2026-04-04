@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { productCategories } from "../data/product";
-import { HoloCard } from "../components/HoloCard";
+import { HoloCard } from "../components/products/HoloCard";
 import { ProductDetail } from "./ProductDetail";
 
 export const ProductsPage = () => {
@@ -98,12 +98,7 @@ export const ProductsPage = () => {
                         </p>
                     </motion.div>
                 </div>
-                <motion.div
-                    className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
-                   
-                   
-                    transition={{ delay: 1.5 }}
-                >
+                <motion.div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2" transition={{ delay: 1.5 }}>
                     <span className="text-[10px] uppercase tracking-[0.3em] text-gray-500">Scroll</span>
                     <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity }}>
                         <div className="w-5 h-8 border border-white/20 rounded-full flex justify-center pt-1.5">

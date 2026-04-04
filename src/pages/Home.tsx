@@ -1,10 +1,10 @@
-import { Applications } from "../components/Applications";
-import { CoreAdvantages } from "../components/CoreAdvantages";
-import { Hero } from "../components/Hero";
-import { Products } from "../components/Products";
-import { StatsBar } from "../components/StatsBar";
-import { CTASection } from "../components/CTASection";
-import { TrainingPromo } from "../components/TrainingPromo";
+import { Applications } from "../components/home/Applications";
+import { CoreAdvantages } from "../components/home/CoreAdvantages";
+import { Hero } from "../components/home/Hero";
+import { Products } from "../components/home/Products";
+import { StatsBar } from "../components/home/StatsBar";
+import { CTASection } from "../components/home/CTASection";
+import { TrainingPromo } from "../components/home/TrainingPromo";
 
 const Home = () => (
     <>

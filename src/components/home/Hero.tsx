@@ -16,14 +16,7 @@ const wordAnimation = {
 const AnimatedText = ({ text, className }: { text: string; className?: string }) => (
     <span className={className}>
         {text.split(" ").map((word, i) => (
-            <motion.span
-                key={i}
-                custom={i}
-                variants={wordAnimation}
-                initial="hidden"
-                animate="visible"
-                className="inline-block mr-[0.3em]"
-            >
+            <motion.span key={i} custom={i} variants={wordAnimation} initial="hidden" animate="visible" className="inline-block mr-[0.3em]">
                 {word}
             </motion.span>
         ))}
@@ -40,14 +33,7 @@ export const Hero = () => {
     return (
         <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
             {/* Video Background - loops continuously */}
-            <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="auto"
-                className="absolute inset-0 w-full h-full object-cover z-0"
-            >
+            <video autoPlay muted loop playsInline preload="auto" className="absolute inset-0 w-full h-full object-cover z-0">
                 <source src="/videos/hero-bg.mp4" type="video/mp4" />
             </video>
 
@@ -66,10 +52,11 @@ export const Hero = () => {
             <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-aero-purple/8 rounded-full blur-[180px] pointer-events-none z-[1]" />
 
             {/* Grid overlay */}
-            <div className="absolute inset-0 z-[2] opacity-[0.03]"
+            <div
+                className="absolute inset-0 z-[2] opacity-[0.03]"
                 style={{
                     backgroundImage: `linear-gradient(rgba(0,210,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(0,210,255,0.3) 1px, transparent 1px)`,
-                    backgroundSize: '60px 60px',
+                    backgroundSize: "60px 60px",
                 }}
             />
 
@@ -107,7 +94,10 @@ export const Hero = () => {
                     className="flex flex-wrap justify-center gap-6 md:gap-8 mb-10"
                 >
                     {stats.map((stat, i) => (
-                        <div key={i} className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-aero-card/80 backdrop-blur-sm border border-white/[0.08]">
+                        <div
+                            key={i}
+                            className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-aero-card/80 backdrop-blur-sm border border-white/[0.08]"
+                        >
                             <div className="w-8 h-8 rounded-lg bg-aero-blue/10 border border-aero-blue/20 flex items-center justify-center text-aero-blue">
                                 {stat.icon}
                             </div>
@@ -156,12 +146,7 @@ export const Hero = () => {
             </div>
 
             {/* Scroll indicator */}
-            <motion.div
-                className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
-               
-               
-                transition={{ delay: 2 }}
-            >
+            <motion.div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2" transition={{ delay: 2 }}>
                 <span className="text-[10px] uppercase tracking-[0.3em] text-gray-400">Scroll</span>
                 <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity }}>
                     <div className="w-5 h-8 border border-white/20 rounded-full flex justify-center pt-1.5">

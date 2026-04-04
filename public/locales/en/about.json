@@ -1,0 +1,133 @@
+{
+    "hero": {
+        "badge": "Established 2013",
+        "title1": "About",
+        "title2": "Us",
+        "subtitle": "Pioneering the transition from two-dimensional to three-dimensional autonomous transportation.",
+        "scroll": "Scroll"
+    },
+    "profile": {
+        "tag": "Who We Are",
+        "title1": "Company",
+        "title2": "Profile",
+        "p1_start": "Aerospace Times Feipeng Co., Ltd. is a mixed-ownership enterprise initiated by ",
+        "p1_highlight": "China Aerospace Science and Technology Corporation",
+        "p1_end": ", in accordance with the state-owned enterprise reform \"Three-Year Action Plan\" of the State-owned Assets Supervision and Administration Commission of the State Council.",
+        "p2": "Our main mission is to use unmanned system technology to provide scenario-level solutions for industry users in relevant countries and regions around the world, and promote the transformation of transportation mode from two-dimensional to three-dimensional mode. We provide key equipment of unmanned system, and system level solutions.",
+        "btnProducts": "Our Products",
+        "btnApps": "Applications"
+    },
+    "values": {
+        "tag": "What Drives Us",
+        "title1": "Core",
+        "title2": "Values",
+        "subtitle": "The principles that guide every decision, every flight, every innovation.",
+        "items": {
+            "sys": {
+                "title": "Systematic Solution",
+                "desc": "Provide scenario-level solutions for industry users in relevant countries and regions around the world.",
+                "statLabel": "Coverage"
+            },
+            "layout": {
+                "title": "Complete Product Layout",
+                "desc": "Full product lineup of UAV models covering trunk, branch, and terminal line scenarios.",
+                "statLabel": "UAV Models"
+            },
+            "time": {
+                "title": "10W+ Flight Time",
+                "desc": "Over 100,000 hours of accumulated flight time with proven safety and reliability records.",
+                "statLabel": "Flight Hours"
+            },
+            "cert": {
+                "title": "Airworthiness Certification",
+                "desc": "Full type certificate and airworthiness compliance certification for civil UAV operations.",
+                "statLabel": "Certified"
+            }
+        }
+    },
+    "recognition": {
+        "tag": "Recognition",
+        "title1": "Honorary",
+        "title2": "Qualifications",
+        "industry": {
+            "title": "Industry Qualifications",
+            "subtitle": "certifications"
+        },
+        "enterprise": {
+            "title": "Enterprise Honors",
+            "subtitle": "awards"
+        },
+        "certs": {
+            "title": "Certifications",
+            "subtitle": "Hover to reveal details",
+            "hoverText": "Hover to flip",
+            "verified": "Verified",
+            "items": {
+                "cert1": "National High-Tech Enterprise",
+                "cert2": "Training Center for UAV Manipulators",
+                "cert3": "RPAS Air Operator Certificate",
+                "cert4": "Quality Management System Iso9001",
+                "cert5": "Singapore Airshow Participation",
+                "cert6": "Civil UAVs Pilot Training Agency"
+            }
+        }
+    },
+    "qualifications": [
+        "Training Center for Large Civilian UAV Manipulators",
+        "Remotely Piloted Aircraft Systems (RPAS) Air Operator Certificate",
+        "Ministry Of Public Security Safety And Police Electronic Product Quality Testing And Certification",
+        "General Aviation Business Operation Certification",
+        "Civil UAVs Pilot Training Agency Certification",
+        "China Mobile (Chengdu) Industrial Research Institute UAVs 5G Network Test Certification",
+        "Intellectual Property Management System Certification",
+        "Quality Management System Certification",
+        "Environmental Management System Certification",
+        "Occupational Health And Safety Management System Certification",
+        "Enterprise AAA Credit Rating Certification",
+        "Credit Rating Certification"
+    ],
+    "honorsList": [
+        "2023 National High-Tech Enterprise",
+        "Potential Unicorn Enterprises In Jiangsu Province",
+        "Jiangsu Province Science And Technology Small And Medium-Sized Enterprises",
+        "Jiangsu Province Innovative Small And Medium-Sized Enterprises",
+        "Suzhou Unicorn Cultivation Enterprises",
+        "Suzhou Low Altitude Economy Leading Enterprises",
+        "2022 Suzhou Digital Economy Enterprise",
+        "2023 Dongshahu Venture Capital 'Annual Most Growth Enterprise'",
+        "2021 'Kectron China' Leading Technology List",
+        "Kunshan Advanced Unmanned Transportation System Key Laboratory",
+        "Civil Aviation UAVs Industry Technology Innovation Strategic Alliance Unit",
+        "Kunshan Unmanned Systems Engineering Technology Research Center",
+        "Suzhou University Master's Degree Graduate Practice Base",
+        "Southeast University Graduate Practice Base",
+        "Civil Aviation University Of China Graduate Joint Training Base",
+        "Harbin Engineering University Graduate Practice Education Base",
+        "Member Unit Of Industry-University Cooperative Education Alliance"
+    ],
+    "academic": {
+        "tag": "Collaboration",
+        "title1": "Academic &",
+        "title2": "Research",
+        "items": [
+            { "type": "University", "name": "Suzhou University", "detail": "Master's Degree Graduate Practice Base" },
+            { "type": "University", "name": "Southeast University", "detail": "Graduate Practice Base" },
+            { "type": "University", "name": "Civil Aviation University of China", "detail": "Graduate Joint Training Base" },
+            { "type": "University", "name": "Harbin Engineering University", "detail": "Graduate Practice Education Base" },
+            { "type": "Research Center", "name": "Kunshan Advanced Unmanned Transportation System", "detail": "Key Laboratory" },
+            { "type": "Research Center", "name": "Kunshan Unmanned Systems Engineering", "detail": "Technology Research Center" }
+        ]
+    },
+    "vision": {
+        "tag": "Looking Ahead",
+        "title1": "Our",
+        "title2": "Vision"
+    },
+    "cta": {
+        "title1": "Ready to Partner",
+        "title2": "With Us?",
+        "subtitle": "Join the next generation of autonomous aviation. Let's build the future of transportation together.",
+        "btnProducts": "Explore Products",
+        "btnTraining": "Training Center"
+    }
+}

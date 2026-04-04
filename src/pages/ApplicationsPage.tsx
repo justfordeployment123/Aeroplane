@@ -2,7 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Package, ShieldAlert, Factory, TreePine } from "lucide-react";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import { YouTubeGallery } from "../components/YouTubeGallery";
+import { YouTubeGallery } from "../components/application/YouTubeGallery";
 
 const scenarios = [
     {
