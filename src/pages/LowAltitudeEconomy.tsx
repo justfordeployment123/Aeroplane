@@ -1,115 +1,38 @@
-import { useRef } from "react";
+import { useRef, useMemo } from "react";
 import { motion, useMotionValue, useSpring, useTransform, useScroll } from "framer-motion";
 import {
-    FileText,
-    ArrowRight,
-    Globe2,
-    TrendingUp,
-    Truck,
-    Building2,
-    Plane,
-    Shield,
-    Zap,
-    Network,
-    Target,
-    BarChart3,
+    FileText, ArrowRight, Globe2, TrendingUp, Truck, Building2,
+    Plane, Shield, Zap, Network, Target, BarChart3
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
-/* ── Data ────────────────────────────────────────────────── */
+/* ── Types ────────────────────────────────────────────────── */
+interface Pillar {
+    icon: LucideIcon;
+    title: string;
+    desc: string;
+    accent: string;
+    stat: string;
+    statLabel: string;
+    backDetails: string[];
+}
 
-const ecosystemPillars = [
-    {
-        icon: Truck,
-        title: "Civil Logistic",
-        desc: "Provides systematic solutions for typical operation scenarios such as trunk logistics, branch logistics and terminal logistics.",
-        accent: "#00d2ff",
-        stat: "3-Tier",
-        statLabel: "Network",
-        backDetails: ["Trunk logistics", "Branch logistics", "Terminal logistics", "Systematic solutions"],
-    },
-    {
-        icon: Shield,
-        title: "Emergency Rescue",
-        desc: "Innovate the UAVs emergency rescue mode. Build an intelligent three-dimensional rescue system. Provide systematic solutions for different disaster scenarios.",
-        accent: "#f97316",
-        stat: "3D",
-        statLabel: "Rescue System",
-        backDetails: ["Disaster reconnaissance", "Emergency delivery", "Search & rescue", "Communications relay"],
-    },
-    {
-        icon: Building2,
-        title: "Industry Service",
-        desc: "A complete operational system for flight carrying. Provide customers with services such as operation, testing, and carrying of various models.",
-        accent: "#a855f7",
-        stat: "11+",
-        statLabel: "UAV Models",
-        backDetails: ["Flight operations", "Testing services", "Carrying services", "AOPA training"],
-    },
-    {
-        icon: Globe2,
-        title: "Forest & Grassland Fire Prevention",
-        desc: "Comprehensive forest and grassland fire prevention system including daily patrol, fire monitoring, fire scene reconnaissance, and emergency communications support.",
-        accent: "#10b981",
-        stat: "24/7",
-        statLabel: "Monitoring",
-        backDetails: ["Forest patrol", "Fire monitoring", "Scene reconnaissance", "Emergency communications"],
-    },
-];
+interface TimelineItemType {
+    year: string;
+    title: string;
+    desc: string;
+}
 
-const policyTimeline = [
-    {
-        year: "2023",
-        title: "National High-Tech Enterprise",
-        desc: "Company certified as 2023 National High-Tech Enterprise and selected as Jiangsu Potential Unicorn Enterprise.",
-    },
-    {
-        year: "2024",
-        title: "FP-98 Type Certificate (TC)",
-        desc: "FP-98 UAV system obtains Type Certificate (TC), opening a new era of low altitude economy for large UAV transport.",
-    },
-    {
-        year: "2024",
-        title: "Red Dot Design Award",
-        desc: "FP-981C Sagittarius wins the 2024 German Red Dot Design Award for outstanding product design.",
-    },
-    {
-        year: "2024",
-        title: "Cross-Sea Logistics Mission",
-        desc: "FP-98 large UAV executes first cross-sea branch logistics transport mission after TC certification.",
-    },
-];
-
-const stats = [
-    { value: "1000km", label: "Max Range", icon: TrendingUp },
-    { value: "1000kg", label: "Max Payload", icon: Plane },
-    { value: "10W+", label: "Flight Hours", icon: Building2 },
-    { value: "TC", label: "Airworthiness Certified", icon: Network },
-];
-
-const keyAdvantages = [
-    {
-        icon: Zap,
-        title: "Systematic Solution",
-        desc: "Provide scenario-level solutions for industry users in relevant countries and regions around the world.",
-    },
-    {
-        icon: Target,
-        title: "Complete Product Layout",
-        desc: "Full product lineup of 11+ UAV models covering trunk, branch, and terminal line scenarios.",
-    },
-    {
-        icon: BarChart3,
-        title: "Airworthiness Certification",
-        desc: "Full type certificate and airworthiness compliance certification for civil UAV operations.",
-    },
-];
+interface Advantage {
+    icon: LucideIcon;
+    title: string;
+    desc: string;
+}
 
 /* ── 3D Prism Card ───────────────────────────────────────── */
-/* Each pillar card is a 3D prism that tilts toward the mouse
-   and reveals a secondary face on hover with extra details   */
-
-const PrismCard = ({ pillar, idx }: { pillar: (typeof ecosystemPillars)[0]; idx: number }) => {
+const PrismCard = ({ pillar, idx }: { pillar: Pillar; idx: number }) => {
     const ref = useRef<HTMLDivElement>(null);
     const mx = useMotionValue(0);
     const my = useMotionValue(0);
@@ -138,7 +61,6 @@ const PrismCard = ({ pillar, idx }: { pillar: (typeof ecosystemPillars)[0]; idx:
             style={{ rotateX: rotX, rotateY: rotY, perspective: 800, transformStyle: "preserve-3d" } as React.CSSProperties}
             className="group relative rounded-3xl cursor-default"
         >
-            {/* Main face */}
             <div
                 className="relative rounded-3xl p-8 overflow-hidden"
                 style={{
@@ -147,18 +69,15 @@ const PrismCard = ({ pillar, idx }: { pillar: (typeof ecosystemPillars)[0]; idx:
                     transformStyle: "preserve-3d",
                 }}
             >
-                {/* Depth glow on hover */}
                 <div
                     className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                     style={{ boxShadow: `inset 0 0 0 1px ${pillar.accent}40, 0 20px 60px -15px ${pillar.accent}25` }}
                 />
-                {/* Top edge light */}
                 <div
                     className="absolute top-0 left-0 right-0 h-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                     style={{ background: `linear-gradient(to right, transparent, ${pillar.accent}, transparent)` }}
                 />
 
-                {/* Ghost number at depth */}
                 <div
                     className="absolute top-2 right-4 text-[90px] font-black leading-none pointer-events-none text-white/[0.02] group-hover:text-white/[0.05] transition-colors duration-700"
                     style={{ transform: "translateZ(20px)" }}
@@ -192,7 +111,6 @@ const PrismCard = ({ pillar, idx }: { pillar: (typeof ecosystemPillars)[0]; idx:
                     </div>
                 </div>
 
-                {/* Detail tags — always visible at bottom */}
                 <div className="absolute bottom-0 left-0 right-0 rounded-b-3xl px-8 pb-6 pt-2" style={{ transform: "translateZ(40px)" }}>
                     <div className="flex flex-wrap gap-2">
                         {pillar.backDetails.map((d, i) => (
@@ -212,10 +130,7 @@ const PrismCard = ({ pillar, idx }: { pillar: (typeof ecosystemPillars)[0]; idx:
 };
 
 /* ── 3D Depth Timeline ───────────────────────────────────── */
-/* Items float at staggered Z-depths with perspective,
-   creating a corridor-like 3D feel on scroll              */
-
-const DepthTimelineItem = ({ item, idx }: { item: (typeof policyTimeline)[0]; idx: number }) => {
+const DepthTimelineItem = ({ item, idx, isLast }: { item: TimelineItemType; idx: number; isLast: boolean }) => {
     const ref = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "center center"] });
     const scale = useTransform(scrollYProgress, [0, 1], [0.85, 1]);
@@ -229,7 +144,6 @@ const DepthTimelineItem = ({ item, idx }: { item: (typeof policyTimeline)[0]; id
             className="relative"
         >
             <div className="flex items-center gap-6 md:gap-10">
-                {/* Year orb */}
                 <div className="relative shrink-0">
                     <motion.div
                         className="w-20 h-20 rounded-full flex items-center justify-center relative"
@@ -241,20 +155,17 @@ const DepthTimelineItem = ({ item, idx }: { item: (typeof policyTimeline)[0]; id
                         whileHover={{ rotateY: 180, transition: { duration: 0.6 } }}
                     >
                         <span className="text-lg font-black text-aero-blue">{item.year}</span>
-                        {/* Pulsing ring */}
                         <motion.div
                             className="absolute inset-0 rounded-full border border-aero-blue/20"
                             animate={{ scale: [1, 1.4, 1.4], opacity: [0.5, 0, 0] }}
                             transition={{ duration: 2, repeat: Infinity, delay: idx * 0.3 }}
                         />
                     </motion.div>
-                    {/* Connector line */}
-                    {idx < policyTimeline.length - 1 && (
+                    {!isLast && (
                         <div className="absolute top-full left-1/2 -translate-x-1/2 w-px h-16 md:h-20 bg-gradient-to-b from-aero-blue/30 to-transparent" />
                     )}
                 </div>
 
-                {/* Content card */}
                 <motion.div
                     whileHover={{ x: 8, transition: { duration: 0.25 } }}
                     className="flex-1 group rounded-2xl p-6 md:p-8 relative overflow-hidden"
@@ -263,7 +174,6 @@ const DepthTimelineItem = ({ item, idx }: { item: (typeof policyTimeline)[0]; id
                         border: "1px solid rgba(255,255,255,0.07)",
                     }}
                 >
-                    {/* Hover border glow */}
                     <div
                         className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none"
                         style={{ boxShadow: "inset 0 0 0 1px rgba(0,210,255,0.25)" }}
@@ -279,9 +189,7 @@ const DepthTimelineItem = ({ item, idx }: { item: (typeof policyTimeline)[0]; id
 };
 
 /* ── Radar Advantage Card ────────────────────────────────── */
-/* Cards with a sonar/radar ring pulse behind the icon      */
-
-const RadarCard = ({ adv, idx }: { adv: (typeof keyAdvantages)[0]; idx: number }) => {
+const RadarCard = ({ adv, idx }: { adv: Advantage; idx: number }) => {
     const Icon = adv.icon;
     return (
         <motion.div
@@ -301,7 +209,6 @@ const RadarCard = ({ adv, idx }: { adv: (typeof keyAdvantages)[0]; idx: number }
                 style={{ boxShadow: "inset 0 0 0 1px rgba(0,210,255,0.25), 0 16px 40px -12px rgba(0,210,255,0.15)" }}
             />
 
-            {/* Radar pulse behind icon */}
             <div className="relative w-14 h-14 mb-6">
                 {[0, 0.6, 1.2].map((delay, i) => (
                     <motion.div
@@ -330,16 +237,63 @@ const RadarCard = ({ adv, idx }: { adv: (typeof keyAdvantages)[0]; idx: number }
 };
 
 /* ── Main Page ───────────────────────────────────────────── */
-
 export const LowAltitudeEconomy = () => {
+    const { t } = useTranslation('economy');
+
+    // Fetch and validate array translations
+    const rawAltitudes = t('hero.altitudes', { returnObjects: true });
+    const altitudes = Array.isArray(rawAltitudes) ? rawAltitudes : [];
+
+    const rawStats = t('statsData', { returnObjects: true });
+    const statsData = Array.isArray(rawStats) ? rawStats : [];
+
+    // Combine static icons/accents with dynamic text
+    const ecosystemPillars: Pillar[] = useMemo(() => {
+        const rawItems = t('pillars.items', { returnObjects: true });
+        const items = Array.isArray(rawItems) ? rawItems : [];
+        const icons = [Truck, Shield, Building2, Globe2];
+        const accents = ["#00d2ff", "#f97316", "#a855f7", "#10b981"];
+        const statsTags = ["3-Tier", "3D", "11+", "24/7"];
+
+        return items.map((item: any, idx: number) => ({
+            ...item,
+            icon: icons[idx % icons.length],
+            accent: accents[idx % accents.length],
+            stat: statsTags[idx % statsTags.length],
+            backDetails: Array.isArray(item.backDetails) ? item.backDetails : [],
+        }));
+    }, [t]);
+
+    const stats = useMemo(() => {
+        const icons = [TrendingUp, Plane, Building2, Network];
+        return statsData.map((stat: any, idx: number) => ({
+            ...stat,
+            icon: icons[idx % icons.length],
+        }));
+    }, [statsData]);
+
+    const keyAdvantages: Advantage[] = useMemo(() => {
+        const rawItems = t('advantages.items', { returnObjects: true });
+        const items = Array.isArray(rawItems) ? rawItems : [];
+        const icons = [Zap, Target, BarChart3];
+        return items.map((item: any, idx: number) => ({
+            ...item,
+            icon: icons[idx % icons.length],
+        }));
+    }, [t]);
+
+    const policyTimeline: TimelineItemType[] = useMemo(() => {
+        const rawItems = t('timeline.items', { returnObjects: true });
+        return Array.isArray(rawItems) ? rawItems : [];
+    }, [t]);
+
+
     return (
         <div className="min-h-screen text-white font-sans" style={{ background: "#161622" }}>
-            {/* ─── Hero with 3D altitude layers ─── */}
+            {/* ─── Hero ─── */}
             <section className="relative h-[70vh] min-h-[520px] flex items-center justify-center overflow-hidden">
-                {/* Background */}
                 <div className="absolute inset-0 bg-gradient-to-b from-black via-[#161622] to-[#161622]" />
 
-                {/* 3D Altitude layer visualization */}
                 <div
                     className="absolute inset-0 flex items-center justify-center pointer-events-none"
                     style={{ perspective: "800px" }}
@@ -359,7 +313,6 @@ export const LowAltitudeEconomy = () => {
                             transition={{ duration: 3 + i * 0.5, repeat: Infinity, delay: i * 0.4 }}
                         />
                     ))}
-                    {/* Moving dots on layers — simulating air traffic */}
                     {[0, 1, 2].map((i) => (
                         <motion.div
                             key={`dot-${i}`}
@@ -374,7 +327,6 @@ export const LowAltitudeEconomy = () => {
                     ))}
                 </div>
 
-                {/* Hex grid overlay */}
                 <div
                     className="absolute inset-0 opacity-[0.025]"
                     style={{
@@ -383,27 +335,25 @@ export const LowAltitudeEconomy = () => {
                     }}
                 />
 
-                {/* Content */}
                 <div className="relative z-10 text-center px-6 max-w-4xl">
                     <motion.div initial={{ y: 28 }} animate={{ y: 0 }} transition={{ duration: 0.85 }}>
                         <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-aero-blue/50 bg-aero-blue/10 text-aero-blue text-sm font-medium tracking-wide mb-6 backdrop-blur-md">
                             <span className="w-2 h-2 rounded-full bg-aero-blue animate-pulse" />
-                            National Strategic Initiative
+                            {t('hero.badge')}
                         </span>
 
                         <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
-                            Low Altitude{" "}
-                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-aero-blue to-aero-purple">Economy</span>
+                            {t('hero.title1')}{" "}
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-aero-blue to-aero-purple">{t('hero.title2')}</span>
                         </h1>
                         <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
-                            The development of the low altitude economic industrial system will significantly promote the integration of national transportation strategies, and help build a strong country in science and technology and transportation.
+                            {t('hero.subtitle')}
                         </p>
                     </motion.div>
                 </div>
 
-                {/* Altitude labels on right edge */}
                 <div className="absolute right-6 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-end gap-12 text-[10px] uppercase tracking-[0.3em] text-gray-600 pointer-events-none">
-                    {["300m", "200m", "100m", "Ground"].map((alt, i) => (
+                    {altitudes.map((alt: string, i: number) => (
                         <motion.div
                             key={alt}
                             initial={{ x: 20 }}
@@ -417,14 +367,13 @@ export const LowAltitudeEconomy = () => {
                     ))}
                 </div>
 
-                {/* Scroll hint */}
                 <motion.div
                     className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
-                   
-                   
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
                     transition={{ delay: 1.5 }}
                 >
-                    <span className="text-[10px] uppercase tracking-[0.3em] text-gray-500">Scroll</span>
+                    <span className="text-[10px] uppercase tracking-[0.3em] text-gray-500">{t('hero.scroll')}</span>
                     <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity }}>
                         <div className="w-5 h-8 border border-white/20 rounded-full flex justify-center pt-1.5">
                             <motion.div
@@ -437,7 +386,7 @@ export const LowAltitudeEconomy = () => {
                 </motion.div>
             </section>
 
-            {/* ─── Stats with 3D entrance ─── */}
+            {/* ─── Stats ─── */}
             <section className="relative py-14 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-aero-blue/10 via-aero-purple/10 to-aero-blue/10" />
                 <div className="absolute inset-0 bg-[#161622]/80 backdrop-blur-sm" />
@@ -473,7 +422,7 @@ export const LowAltitudeEconomy = () => {
                 </div>
             </section>
 
-            {/* ─── Application Overview with corner brackets ─── */}
+            {/* ─── Application Overview ─── */}
             <section className="py-24 relative overflow-hidden">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-aero-blue/5 rounded-full blur-[200px] pointer-events-none" />
 
@@ -497,23 +446,21 @@ export const LowAltitudeEconomy = () => {
                             <Globe2 className="w-7 h-7 text-aero-blue" />
                         </div>
 
-                        <h2 className="text-3xl md:text-4xl font-bold mb-6">Application Overview</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold mb-6">{t('overview.title')}</h2>
                         <div className="h-1 w-16 bg-gradient-to-r from-aero-blue to-aero-purple mx-auto rounded-full mb-8" />
                         <p className="text-lg text-gray-300 leading-loose">
-                            Through the continuous development of low altitude economy, it is possible to achieve the convenience and intelligence of air transportation, improve transportation efficiency, reduce traffic congestion, reduce energy consumption, and provide new solutions for emergency rescue, logistics distribution, and other fields.
+                            {t('overview.desc')}
                         </p>
                     </motion.div>
                 </div>
             </section>
 
-            {/* ─── Ecosystem Pillars — 3D Prism Cards ─── */}
+            {/* ─── Ecosystem Pillars ─── */}
             <section className="py-24 relative overflow-hidden border-t border-white/5" style={{ background: "#111119" }}>
-                {/* Isometric grid background */}
                 <div
                     className="absolute inset-0 opacity-[0.02]"
                     style={{
-                        backgroundImage:
-                            "linear-gradient(30deg, rgba(0,210,255,0.5) 1px, transparent 1px), linear-gradient(150deg, rgba(0,210,255,0.5) 1px, transparent 1px)",
+                        backgroundImage: "linear-gradient(30deg, rgba(0,210,255,0.5) 1px, transparent 1px), linear-gradient(150deg, rgba(0,210,255,0.5) 1px, transparent 1px)",
                         backgroundSize: "60px 35px",
                     }}
                 />
@@ -526,13 +473,13 @@ export const LowAltitudeEconomy = () => {
                         viewport={{ once: true, margin: "200px 0px" }}
                         className="text-center mb-20"
                     >
-                        <span className="text-aero-blue text-xs uppercase tracking-[0.2em] mb-4 block font-medium">Core Sectors</span>
+                        <span className="text-aero-blue text-xs uppercase tracking-[0.2em] mb-4 block font-medium">{t('pillars.tag')}</span>
                         <h2 className="text-4xl md:text-5xl font-bold text-white mb-5">
-                            Ecosystem{" "}
-                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-aero-blue to-aero-purple">Pillars</span>
+                            {t('pillars.title1')}{" "}
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-aero-blue to-aero-purple">{t('pillars.title2')}</span>
                         </h2>
                         <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-                            Four interconnected sectors driving the low-altitude economic revolution.
+                            {t('pillars.subtitle')}
                         </p>
                     </motion.div>
 
@@ -544,7 +491,7 @@ export const LowAltitudeEconomy = () => {
                 </div>
             </section>
 
-            {/* ─── Key Advantages — Radar Cards ─── */}
+            {/* ─── Key Advantages ─── */}
             <section className="py-24 relative overflow-hidden">
                 <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-aero-blue/5 rounded-full blur-[180px] pointer-events-none" />
 
@@ -555,8 +502,8 @@ export const LowAltitudeEconomy = () => {
                         viewport={{ once: true, margin: "200px 0px" }}
                         className="mb-16"
                     >
-                        <span className="text-aero-blue text-xs uppercase tracking-[0.2em] mb-3 block font-medium">Strategic Value</span>
-                        <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">Key Advantages</h2>
+                        <span className="text-aero-blue text-xs uppercase tracking-[0.2em] mb-3 block font-medium">{t('advantages.tag')}</span>
+                        <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">{t('advantages.title')}</h2>
                         <div className="h-px w-16 mt-4 rounded-full bg-gradient-to-r from-aero-blue to-transparent" />
                     </motion.div>
 
@@ -568,7 +515,7 @@ export const LowAltitudeEconomy = () => {
                 </div>
             </section>
 
-            {/* ─── Policy Timeline — 3D Depth ─── */}
+            {/* ─── Policy Timeline ─── */}
             <section className="py-24 relative overflow-hidden border-t border-white/5" style={{ background: "#111119" }}>
                 <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-aero-purple/5 rounded-full blur-[200px] pointer-events-none" />
 
@@ -579,16 +526,16 @@ export const LowAltitudeEconomy = () => {
                         viewport={{ once: true, margin: "200px 0px" }}
                         className="text-center mb-20"
                     >
-                        <span className="text-aero-blue text-xs uppercase tracking-[0.2em] mb-4 block font-medium">Development Roadmap</span>
+                        <span className="text-aero-blue text-xs uppercase tracking-[0.2em] mb-4 block font-medium">{t('timeline.tag')}</span>
                         <h2 className="text-4xl md:text-5xl font-bold text-white mb-5">
-                            Policy{" "}
-                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-aero-blue to-aero-purple">Timeline</span>
+                            {t('timeline.title1')}{" "}
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-aero-blue to-aero-purple">{t('timeline.title2')}</span>
                         </h2>
                     </motion.div>
 
                     <div className="space-y-12">
                         {policyTimeline.map((item, idx) => (
-                            <DepthTimelineItem key={idx} item={item} idx={idx} />
+                            <DepthTimelineItem key={idx} item={item} idx={idx} isLast={idx === policyTimeline.length - 1} />
                         ))}
                     </div>
                 </div>
@@ -603,7 +550,7 @@ export const LowAltitudeEconomy = () => {
                         viewport={{ once: true, margin: "200px 0px" }}
                         className="text-center mb-16"
                     >
-                        <h2 className="text-4xl font-bold mb-4">Scenario Application</h2>
+                        <h2 className="text-4xl font-bold mb-4">{t('whitepaper.tag')}</h2>
                         <div className="h-1 w-24 bg-gradient-to-r from-aero-blue to-aero-purple mx-auto rounded-full" />
                     </motion.div>
 
@@ -632,7 +579,7 @@ export const LowAltitudeEconomy = () => {
                                 ))}
                                 <motion.img
                                     src="/images/economy/whitepaper.png"
-                                    alt="Low Altitude Economic Industry White Paper"
+                                    alt={t('whitepaper.title')}
                                     className="relative z-10 w-full max-w-sm object-contain drop-shadow-[0_10px_30px_rgba(0,210,255,0.15)]"
                                     whileHover={{ scale: 1.05, rotateY: 5 }}
                                     transition={{ duration: 0.6, ease: "easeOut" }}
@@ -644,15 +591,15 @@ export const LowAltitudeEconomy = () => {
 
                                 <div className="flex items-center text-aero-blue mb-4">
                                     <FileText className="w-6 h-6 mr-2" />
-                                    <span className="text-sm font-semibold tracking-wider uppercase">Official Publication</span>
+                                    <span className="text-sm font-semibold tracking-wider uppercase">{t('whitepaper.badge')}</span>
                                 </div>
 
                                 <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
-                                    Low Altitude Economic Industry White Paper
+                                    {t('whitepaper.title')}
                                 </h3>
 
                                 <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                                    Low-altitude economic industrial system, this low-altitude utilization solution around the radius of human life and work, integrates the results of various scientific and technological revolution and industrial change. It is characterized by advanced technology, high industrial level, huge scale, abundant employment opportunities and remarkable driving effect. Focusing on the development of low-altitude economic industrial system will play a key role and have a long-term impact on improving the national transportation strategy, building science and technology and transportation power.
+                                    {t('whitepaper.desc')}
                                 </p>
 
                                 <motion.button
@@ -660,7 +607,7 @@ export const LowAltitudeEconomy = () => {
                                     whileTap={{ scale: 0.98 }}
                                     className="inline-flex items-center w-fit px-6 py-3 rounded-full font-medium text-white border border-aero-blue/40 bg-aero-blue/10 hover:bg-aero-blue hover:text-black transition-all duration-300 group/btn shadow-[0_0_20px_rgba(0,210,255,0.15)] hover:shadow-[0_0_30px_rgba(0,210,255,0.3)]"
                                 >
-                                    Read White Paper
+                                    {t('whitepaper.btnRead')}
                                     <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                                 </motion.button>
                             </div>
@@ -674,7 +621,6 @@ export const LowAltitudeEconomy = () => {
                 <div className="absolute inset-0 bg-gradient-to-b from-[#161622] via-[#161622] to-[#161622]" />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-aero-blue/[0.06] rounded-full blur-[200px] pointer-events-none" />
 
-                {/* Topographic contour lines */}
                 <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-[0.04]">
                     {[0, 1, 2, 3].map((i) => (
                         <div
@@ -689,18 +635,18 @@ export const LowAltitudeEconomy = () => {
                     <motion.div initial={{ y: 30 }} whileInView={{ y: 0 }} viewport={{ once: true, margin: "200px 0px" }} transition={{ duration: 0.8 }}>
                         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-aero-blue/30 bg-aero-blue/5 text-aero-blue text-xs uppercase tracking-[0.2em] mb-8">
                             <Globe2 className="w-3.5 h-3.5" />
-                            Get Involved
+                            {t('cta.tag')}
                         </div>
 
                         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                            Shape the Future of
+                            {t('cta.title1')}
                             <br />
                             <span className="bg-clip-text text-transparent bg-gradient-to-r from-aero-blue to-aero-purple">
-                                Low Altitude Aviation
+                                {t('cta.title2')}
                             </span>
                         </h2>
                         <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
-                            Unlock the trillion-yuan low-altitude economy and transform transportation infrastructure for the next generation.
+                            {t('cta.subtitle')}
                         </p>
 
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -711,7 +657,7 @@ export const LowAltitudeEconomy = () => {
                                     className="px-10 py-4 bg-white text-black font-bold rounded-full hover:bg-gray-100 transition-colors duration-300"
                                 >
                                     <span className="flex items-center gap-2">
-                                        Explore Products
+                                        {t('cta.btnProducts')}
                                         <ArrowRight className="w-5 h-5" />
                                     </span>
                                 </motion.button>
@@ -722,7 +668,7 @@ export const LowAltitudeEconomy = () => {
                                     whileTap={{ scale: 0.98 }}
                                     className="px-10 py-4 border border-white/15 text-gray-300 hover:text-white hover:border-white/30 font-medium rounded-full transition-all duration-300"
                                 >
-                                    View Applications
+                                    {t('cta.btnApps')}
                                 </motion.button>
                             </Link>
                         </div>
@@ -732,3 +678,5 @@ export const LowAltitudeEconomy = () => {
         </div>
     );
 };
+
+export default LowAltitudeEconomy;

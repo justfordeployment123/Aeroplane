@@ -1,0 +1,112 @@
+{
+    "hero": {
+        "badge": "National Strategic Initiative",
+        "title1": "Low Altitude",
+        "title2": "Economy",
+        "subtitle": "The development of the low altitude economic industrial system will significantly promote the integration of national transportation strategies, and help build a strong country in science and technology and transportation.",
+        "altitudes": ["300m", "200m", "100m", "Ground"],
+        "scroll": "Scroll"
+    },
+    "statsData": [
+        { "value": "1000km", "label": "Max Range" },
+        { "value": "1000kg", "label": "Max Payload" },
+        { "value": "10W+", "label": "Flight Hours" },
+        { "value": "TC", "label": "Airworthiness Certified" }
+    ],
+    "overview": {
+        "title": "Application Overview",
+        "desc": "Through the continuous development of low altitude economy, it is possible to achieve the convenience and intelligence of air transportation, improve transportation efficiency, reduce traffic congestion, reduce energy consumption, and provide new solutions for emergency rescue, logistics distribution, and other fields."
+    },
+    "pillars": {
+        "tag": "Core Sectors",
+        "title1": "Ecosystem",
+        "title2": "Pillars",
+        "subtitle": "Four interconnected sectors driving the low-altitude economic revolution.",
+        "items": [
+            {
+                "title": "Civil Logistic",
+                "desc": "Provides systematic solutions for typical operation scenarios such as trunk logistics, branch logistics and terminal logistics.",
+                "statLabel": "Network",
+                "backDetails": ["Trunk logistics", "Branch logistics", "Terminal logistics", "Systematic solutions"]
+            },
+            {
+                "title": "Emergency Rescue",
+                "desc": "Innovate the UAVs emergency rescue mode. Build an intelligent three-dimensional rescue system. Provide systematic solutions for different disaster scenarios.",
+                "statLabel": "Rescue System",
+                "backDetails": ["Disaster reconnaissance", "Emergency delivery", "Search & rescue", "Communications relay"]
+            },
+            {
+                "title": "Industry Service",
+                "desc": "A complete operational system for flight carrying. Provide customers with services such as operation, testing, and carrying of various models.",
+                "statLabel": "UAV Models",
+                "backDetails": ["Flight operations", "Testing services", "Carrying services", "AOPA training"]
+            },
+            {
+                "title": "Forest & Grassland Fire Prevention",
+                "desc": "Comprehensive forest and grassland fire prevention system including daily patrol, fire monitoring, fire scene reconnaissance, and emergency communications support.",
+                "statLabel": "Monitoring",
+                "backDetails": ["Forest patrol", "Fire monitoring", "Scene reconnaissance", "Emergency communications"]
+            }
+        ]
+    },
+    "advantages": {
+        "tag": "Strategic Value",
+        "title": "Key Advantages",
+        "items": [
+            {
+                "title": "Systematic Solution",
+                "desc": "Provide scenario-level solutions for industry users in relevant countries and regions around the world."
+            },
+            {
+                "title": "Complete Product Layout",
+                "desc": "Full product lineup of 11+ UAV models covering trunk, branch, and terminal line scenarios."
+            },
+            {
+                "title": "Airworthiness Certification",
+                "desc": "Full type certificate and airworthiness compliance certification for civil UAV operations."
+            }
+        ]
+    },
+    "timeline": {
+        "tag": "Development Roadmap",
+        "title1": "Policy",
+        "title2": "Timeline",
+        "items": [
+            {
+                "year": "2023",
+                "title": "National High-Tech Enterprise",
+                "desc": "Company certified as 2023 National High-Tech Enterprise and selected as Jiangsu Potential Unicorn Enterprise."
+            },
+            {
+                "year": "2024",
+                "title": "FP-98 Type Certificate (TC)",
+                "desc": "FP-98 UAV system obtains Type Certificate (TC), opening a new era of low altitude economy for large UAV transport."
+            },
+            {
+                "year": "2024",
+                "title": "Red Dot Design Award",
+                "desc": "FP-981C Sagittarius wins the 2024 German Red Dot Design Award for outstanding product design."
+            },
+            {
+                "year": "2024",
+                "title": "Cross-Sea Logistics Mission",
+                "desc": "FP-98 large UAV executes first cross-sea branch logistics transport mission after TC certification."
+            }
+        ]
+    },
+    "whitepaper": {
+        "tag": "Scenario Application",
+        "badge": "Official Publication",
+        "title": "Low Altitude Economic Industry White Paper",
+        "desc": "Low-altitude economic industrial system, this low-altitude utilization solution around the radius of human life and work, integrates the results of various scientific and technological revolution and industrial change. It is characterized by advanced technology, high industrial level, huge scale, abundant employment opportunities and remarkable driving effect. Focusing on the development of low-altitude economic industrial system will play a key role and have a long-term impact on improving the national transportation strategy, building science and technology and transportation power.",
+        "btnRead": "Read White Paper"
+    },
+    "cta": {
+        "tag": "Get Involved",
+        "title1": "Shape the Future of",
+        "title2": "Low Altitude Aviation",
+        "subtitle": "Unlock the trillion-yuan low-altitude economy and transform transportation infrastructure for the next generation.",
+        "btnProducts": "Explore Products",
+        "btnApps": "View Applications"
+    }
+}
