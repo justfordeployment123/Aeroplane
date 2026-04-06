@@ -34,7 +34,7 @@ export const productCategories = [
                 ],
                 applications: ["Special Test Platform", "Emergency Rescue", "Island Transport", "Branch Logistics"],
                 paramImg: "/images/products/fp-98-params.png",
-                video: "https://www.htsdfp.com/UploadFiles/2024-04-22/41wt9dr1i4bekn9v.mp4",
+                video: "/videos/1.mp4",
             },
             {
                 id: "fp-985",
@@ -61,7 +61,7 @@ export const productCategories = [
                 ],
                 applications: ["Civil Logistic", "Emergency Rescue", "Industry Service"],
                 paramImg: null,
-                video: "https://www.htsdfp.com/UploadFiles/2024-09-02/5utkpqgcrbftcyja.mp4",
+                video: "/videos/2.mp4",
             },
             {
                 id: "fp-981c",
@@ -91,7 +91,7 @@ export const productCategories = [
                 ],
                 applications: ["Civil Logistic", "Emergency Rescue", "Industry Service"],
                 paramImg: null,
-                video: "https://www.htsdfp.com/UploadFiles/2024-12-16/fjpitfws8rbr5cxa.mp4",
+                video: "/videos/3.mp4",
             },
             {
                 id: "fp-981a",
@@ -118,7 +118,7 @@ export const productCategories = [
                 ],
                 applications: ["Emergency Fire Fighting", "Urban Logistics", "Medical Assistance", "Cultural Tourist"],
                 paramImg: null,
-                video: "https://www.htsdfp.com/UploadFiles/2024-02-29/xgzmyg4xwcc4ucaa.mp4",
+                video: "/videos/4.mp4",
             },
             {
                 id: "fp-980-7b",
@@ -145,7 +145,7 @@ export const productCategories = [
                 ],
                 applications: ["Civil Logistic", "Emergency Rescue", "Industry Service"],
                 paramImg: null,
-                video: "https://www.htsdfp.com/UploadFiles/2024-02-29/uclgax1ljhl3gy83.mp4",
+                video: "/videos/5.mp4",
             },
         ],
     },
