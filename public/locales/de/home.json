@@ -1,0 +1,166 @@
+{
+    "hero": {
+        "badge": "Unbemanntes Transportflugzeug",
+        "title": "FP-98 Großes Starrflügel-UAV",
+        "subtitle": "Unbemannte Transportflugzeuge der Kategorien Doppel 1000, Doppel 100 und Doppel 10 für Hauptstrecken-, Neben- und Endstreckenszenarios.",
+        "stats": {
+            "range": { "value": "1000 km", "label": "Max. Reichweite" },
+            "payload": { "value": "1000 kg", "label": "Nutzlast" },
+            "flightHours": { "value": "10W+", "label": "Flugstunden" }
+        },
+        "cta": {
+            "explore": "Systeme Entdecken",
+            "about": "Über Uns"
+        },
+        "scroll": "Scrollen"
+    },
+    "stats": {
+        "items": [
+            { "prefix": "FP-", "value": 98, "suffix": "", "label": "Typzertifiziertes Luftfahrzeug" },
+            { "prefix": "", "value": 500, "suffix": "+", "label": "Zertifizierte Piloten" },
+            { "prefix": "", "value": 50, "suffix": "+", "label": "Globale Partner" },
+            { "prefix": "", "value": 2024, "suffix": "", "label": "Red Dot Design Award" }
+        ]
+    },
+    "applications": {
+        "tag": "Anwendungsfälle",
+        "title": "Anwendungsszenarien",
+        "viewAll": "Alle Szenarien anzeigen",
+        "featured": "Empfohlen",
+        "items": [
+            {
+                "title": "Zivillogistik",
+                "desc": "Bietet systematische Lösungen für typische Betriebsszenarien wie Hauptstrecken-, Nebenstrecken- und Endstreckenlogistik.",
+                "stats": [
+                    { "value": "3-stufig", "label": "Netzwerk" },
+                    { "value": "24/7", "label": "Betrieb" },
+                    { "value": "99,8 %", "label": "Lieferquote" }
+                ]
+            },
+            {
+                "title": "Notfallrettung",
+                "desc": "Innovativer UAV-Notfallrettungsmodus. Aufbau eines intelligenten dreidimensionalen Rettungssystems. Systematische Lösungen für verschiedene Katastrophenszenarien.",
+                "stats": [
+                    { "value": "<15 min", "label": "Reaktionszeit" },
+                    { "value": "3D", "label": "Kartierung" },
+                    { "value": "500 km", "label": "Abdeckung" }
+                ]
+            },
+            {
+                "title": "Industrieservice",
+                "desc": "Ein vollständiges Betriebssystem für Lufttransporte. Bietet Kunden Dienstleistungen wie Betrieb, Tests und Transport verschiedener Modelle.",
+                "stats": [
+                    { "value": "Vollständig", "label": "Lebenszyklus" },
+                    { "value": "11+", "label": "Modelle" },
+                    { "value": "AOPA", "label": "Zertifiziert" }
+                ]
+            },
+            {
+                "title": "Waldbrand- und Graslandschutz",
+                "desc": "Umfassendes System zur Waldbrand- und Graslandprävention, einschließlich täglicher Patrouille, Brandüberwachung, Erkundung der Brandstelle und Notfallkommunikationsunterstützung.",
+                "stats": [
+                    { "value": "24/7", "label": "Patrouille" },
+                    { "value": "Echtzeit", "label": "Überwachung" },
+                    { "value": "Notfall", "label": "Kommunikation" }
+                ]
+            }
+        ]
+    },
+    "products": {
+        "tag": "Unsere Flotte",
+        "title": "Serienprodukte",
+        "viewAll": "Alle Anzeigen",
+        "specs": {
+            "range": "Reichweite",
+            "payload": "Nutzlast"
+        },
+        "viewDetails": "Details Anzeigen",
+        "items": [
+            {
+                "title": "Doppel-1000-Serie",
+                "subtitle": "Hauptstrecke",
+                "desc": "Drohnensysteme für Hauptstreckenszenarios mit 1000 km Reichweite und 1000 kg Nutzlast.",
+                "range": "1.000 km",
+                "payload": "1.000 kg"
+            },
+            {
+                "title": "Doppel-100-Serie",
+                "subtitle": "Nebenstrecke",
+                "desc": "Drohnensysteme für Nebenstreckenszenarios mit 100 km Reichweite und 100 kg Nutzlast.",
+                "range": "100 km",
+                "payload": "100 kg"
+            },
+            {
+                "title": "Doppel-10-Serie",
+                "subtitle": "Endstrecke",
+                "desc": "Drohnensysteme für Endstreckenszenarios mit 10 km Reichweite und 10 kg Nutzlast.",
+                "range": "10 km",
+                "payload": "10 kg"
+            },
+            {
+                "title": "Bodenstation",
+                "subtitle": "Führung & Kontrolle",
+                "desc": "Die Bodenstation verarbeitet Aufgaben über eine Steuerkonsole, einen Datenlink oder Satellitenkommunikation. Umfasst Handsteuergerät, tragbares Steuergerät, Container-Kontrollstation usw.",
+                "range": "Volle Reichweite",
+                "payload": "Multi-UAV"
+            },
+            {
+                "title": "Betriebskontrollsystem",
+                "subtitle": "Flottenmanagement",
+                "desc": "Das Betriebskontrollsystem liefert Echtzeitdaten wie Drohnen-Kennzeichenschilder, Lageeinformationen und Flugstatus und führt manuelle Steueroperationen wie Luftraumanträge und Flugmissionsausführung durch.",
+                "range": "Unbegrenzt",
+                "payload": "Software"
+            }
+        ]
+    },
+    "advantages": {
+        "tag": "Warum Uns Wählen",
+        "title": "Kernvorteile",
+        "items": [
+            {
+                "title": "Systematische Lösung",
+                "desc": "Bietet szenariobasierte Lösungen für Industrienutzer in relevanten Ländern und Regionen weltweit",
+                "number": 100,
+                "suffix": "%"
+            },
+            {
+                "title": "Vollständiges Produktportfolio",
+                "desc": "Vollständige Produktpalette mit 11+ UAV-Modellen für Haupt-, Neben- und Endstreckenszenarios",
+                "number": 11,
+                "suffix": "+"
+            },
+            {
+                "title": "Über 10W Flugstunden",
+                "desc": "Über 100.000 akkumulierte Flugstunden mit nachgewiesenen Sicherheits- und Zuverlässigkeitsnachweisen",
+                "number": 100000,
+                "suffix": ""
+            },
+            {
+                "title": "Lufttüchtigkeitszertifizierung",
+                "desc": "Vollständiges Musterzulassung und Lufttüchtigkeits-Konformitätszertifizierung für zivile UAV-Operationen",
+                "number": 9,
+                "suffix": "+"
+            }
+        ]
+    },
+    "training": {
+        "tag": "Pilotenausbildung",
+        "title": "Trainingszentrum",
+        "subtitle": "Zivile UAV-Pilotenausbildungseinrichtung, zertifiziert von der China Association of Aircraft Owners and Pilots (AOPA).",
+        "learnMore": "Mehr erfahren",
+        "pilotCenter": {
+            "title": "Pilotenausbildungszentrum",
+            "desc": "Eine zivile Ausbildungseinrichtung für unbemannte Luftfahrzeugpiloten (Multikopter Klasse III), zertifiziert von der AOPA China, die theoretische und praktische Ausbildung für Klasse-III-Multikopter-Piloten im Sichtflug und über Sichtweite anbietet."
+        },
+        "aopa": {
+            "title": "AOPA-Zertifizierungsprüfung",
+            "desc": "Menschenorientierte Kursorganisation mit Kursen außerhalb der Arbeitszeiten und an Wochenenden, geeignet für verschiedene Berufsgruppen. Klassenmanagementsystem, bei dem jede Klasse von einer dedizierten Person betreut wird. Erfahrene Mentoren in praktischen Projekten. Hohe Bestehensquote von 88%–90% für Multikopterpilotenkurse."
+        }
+    },
+    "cta": {
+        "title": "Luft- und Raumfahrttechnologie\nMacht das Leben Besser",
+        "subtitle": "Szenariobasierte Lösungen für Industrienutzer mit unbemannter Systemtechnologie, die den Wandel des Transports vom zweidimensionalen zum dreidimensionalen Modus vorantreibt.",
+        "exploreProducts": "Produkte Entdecken",
+        "trainingCenter": "Trainingszentrum"
+    }
+}

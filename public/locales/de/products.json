@@ -1,0 +1,306 @@
+{
+    "hero": {
+        "tag": "Flotte & Hardware",
+        "title": "Serienprodukte",
+        "subtitle": "Ein vollständiges Ökosystem aus UAVs, Bodenstationen und intelligenten Systemen."
+    },
+    "cta": {
+        "title": "Bereit zum Einsatz\nIhrer Flotte?",
+        "subtitle": "Kontaktieren Sie unsere Spezialisten für maßgeschneiderte Konfigurationen und Unternehmenslösungen.",
+        "requestQuote": "Angebot Anfordern",
+        "viewApplications": "Anwendungen Anzeigen"
+    },
+    "filters": {
+        "all": "Alle Produkte"
+    },
+    "categories": {
+        "uav": {
+            "title": "UAV",
+            "subtitle": "Unbemannte Luftfahrzeuge",
+            "description": "Hochleistungs-Starrflügel- und Multikopter-Plattformen für präzise Logistik."
+        },
+        "special": {
+            "title": "Spezialluftfahrzeuge",
+            "subtitle": "Missionskritische Plattformen",
+            "description": "Spezialisierte Verbundflügel-Luftfahrzeuge für anspruchsvolle Einsatzbedingungen."
+        },
+        "ground-station": {
+            "title": "Bodenstation",
+            "subtitle": "Führungs- und Kontroll-Hardware",
+            "description": "Die Bodenstation verarbeitet Aufgaben über eine Steuerkonsole, einen Datenlink oder Satellitenkommunikation."
+        },
+        "control-system": {
+            "title": "UAV-Kontrollsystem",
+            "subtitle": "Intelligente Flugsoftware",
+            "description": "Das Betriebskontrollsystem liefert Echtzeitdaten wie Drohnen-Kennzeichenschilder, Lageeinformationen und Flugstatus und führt manuelle Steueroperationen wie Luftraumanträge und Flugmissionsausführung durch."
+        }
+    },
+    "products": {
+        "fp-98": {
+            "name": "FP-98 Großes Starrflügel-UAV",
+            "tag": "Starrflügel",
+            "description": "Der FP-98 ist Chinas erstes großes unbemanntes Transportsystem, das den Bedarf an Langstreckenmaterialtransport und -lieferung in komplexen Umgebungen decken kann. Sicher und zuverlässig, kurze Start- und Landeentfernung, große Frachtkapazität, hohe Effizienz, hohe Intelligenz, einfache Bedienung. Kann sicheres Starten und Landen unter Klasse-A-Flughafen-Landebahn-Bedingungen von 800 m erreichen. Das System umfasst UAVs, Datenlinks und Bodenstationen für Transportlieferung, Notabwurf, Kommunikationsrelais und spezielle Testabhol-Szenarien.",
+            "highlights": [
+                "Lange Reichweite / Große Frachtkapazität",
+                "Ausgereifte Technologie / Einfache Wartung",
+                "Kontinuierlicher präziser Abwurf",
+                "Kurzstart und -landung auf Piste"
+            ],
+            "specs": [
+                { "label": "Max. Startgewicht", "value": "≥ 100 kg" },
+                { "label": "Nutzlastkapazität", "value": "≥ 25 kg" },
+                { "label": "Max. Reichweite", "value": "≥ 1500 km" },
+                { "label": "Reisegeschwindigkeit", "value": "160–200 km/h" },
+                { "label": "Max. Flughöhe", "value": "5000 m" },
+                { "label": "Startentfernung", "value": "≤ 800 m (Klasse A)" },
+                { "label": "Datenlink", "value": "Doppelt redundant" },
+                { "label": "Ausdauer", "value": "≥ 10 h" }
+            ],
+            "applications": ["Spezielle Testplattform", "Notfallrettung", "Inselversorgung", "Nebenstreckengistik"]
+        },
+        "fp-985": {
+            "name": "FP-985 Großes Starrflügel-UAV",
+            "tag": "Starrflügel",
+            "description": "Das FP-985-System kann den Bedarf an Fernlieferung von schwer beladenen Materialien in komplexen Geländebedingungen wie Hochplateaus, Kältezonen, Inseln und Salzgischt decken. Das System besteht aus UAV, Datenkette und Bodenstation und kann auf Standard-Flughäfen oder Pisten starten und landen. Das System ist gegen Vereisung, Blitzschlag und starken Wind geschützt und kann bei widrigen Wetterbedingungen Allwetter-Flüge gewährleisten.",
+            "highlights": [
+                "Missionsfähigkeit unter komplexen Bedingungen",
+                "Lebenslange Zustandserkennung",
+                "Kontinuierlicher präziser Abwurf",
+                "Kurzstart und -landung auf Piste"
+            ],
+            "specs": [
+                { "label": "Max. Startgewicht", "value": "≥ 120 kg" },
+                { "label": "Nutzlastkapazität", "value": "≥ 30 kg" },
+                { "label": "Max. Reichweite", "value": "≥ 1800 km" },
+                { "label": "Reisegeschwindigkeit", "value": "170–210 km/h" },
+                { "label": "Max. Flughöhe", "value": "5500 m" },
+                { "label": "Ausdauer", "value": "≥ 12 h" },
+                { "label": "Datenlink", "value": "Doppelt redundant" },
+                { "label": "Navigation", "value": "Dual GPS / GLONASS" }
+            ],
+            "applications": ["Zivillogistik", "Notfallrettung", "Industrieservice"]
+        },
+        "fp-981c": {
+            "name": "FP-981C VTOL-Verbundflügel-UAV",
+            "tag": "VTOL",
+            "description": "Der FP-981C hat die Eigenschaften, keinen Landeplatz zu benötigen, niedrige Betriebskosten, Schwarmbetrieb usw. und kann in den Bereichen Waldbrandschutz, Notversorgungslieferung nach Katastrophen, Support und anderen Bereichen eingesetzt werden.",
+            "highlights": [
+                "Senkrechtstarten und -landen",
+                "Hochplatean-Anwendung",
+                "Modularisierung",
+                "Expressabwicklung",
+                "Multi-Flugzeug-Netzwerk",
+                "Flottenbetrieb",
+                "Intelligente Routenplanung"
+            ],
+            "specs": [
+                { "label": "Spannweite", "value": "≥ 3 m" },
+                { "label": "Nutzlastkapazität", "value": "≥ 6 kg" },
+                { "label": "Max. Reichweite", "value": "≥ 300 km" },
+                { "label": "Reisegeschwindigkeit", "value": "100–130 km/h" },
+                { "label": "Max. Flughöhe", "value": "4000 m" },
+                { "label": "Ausdauer", "value": "≥ 3 h" },
+                { "label": "Startmodus", "value": "VTOL / Kurzlauf" },
+                { "label": "Windwiderstand", "value": "Stufe 6" }
+            ],
+            "applications": ["Zivillogistik", "Notfallrettung", "Industrieservice"]
+        },
+        "fp-981a": {
+            "name": "FP-981A Multikopter-UAV",
+            "tag": "Multikopter",
+            "description": "Der FP-981A, eigenständig entwickelt von Aerospace Times Feipeng Co., LTD., hat die Eigenschaften große Frachtkapazität, hohe Zuverlässigkeit, hohe Intelligenz, umfangreiche Erweiterungsmöglichkeiten usw. und hat vielfältige Einsatzgebiete in der zivilen Logistik, im städtischen Brandschutz, in der Notkommunikation, in der Inspektion und Überwachung, in der Notfallrettung und anderen Bereichen.",
+            "highlights": [
+                "Standardlager / Expressabwicklung",
+                "Schwebeflug / Präzisionsflugsteuerung",
+                "Redundante Avionik / Multimode-Kommunikationsausrüstung",
+                "Mehrere Stationen und mehrere UAVs / Kooperative Formation"
+            ],
+            "specs": [
+                { "label": "Konfiguration", "value": "Oktorotor" },
+                { "label": "Nutzlastkapazität", "value": "≥ 10 kg" },
+                { "label": "Max. Reichweite", "value": "≥ 50 km" },
+                { "label": "Höchstgeschwindigkeit", "value": "80 km/h" },
+                { "label": "Schwebegenauigkeit", "value": "±0,1 m (RTK)" },
+                { "label": "Ausdauer", "value": "≥ 45 min" },
+                { "label": "Windwiderstand", "value": "Stufe 5" },
+                { "label": "IP-Schutzart", "value": "IP54" }
+            ],
+            "applications": ["Notfallbrandbekämpfung", "Stadtlogistik", "Medizinische Hilfe", "Kulturtourismus"]
+        },
+        "fp-980-7b": {
+            "name": "FP-980-7B Automatischer Terminal-Flughafen",
+            "tag": "Infrastruktur",
+            "description": "Der FP-980-7B ist ein Gerät, das sich an kleine Multikopter-UAVs anpassen und die automatische Be- und Entladefunktion von UAVs durch das interne Deckelverschlussgerät, das Zentriergerät und den internen Hubmechanismus realisieren kann. Kunden können Waren abholen, indem sie die letzten vier Ziffern der Mobiltelefonnummer im Bedienfeld des Schranks eingeben.",
+            "highlights": [
+                "Unbemannt",
+                "Autonomes Starten und Landen",
+                "Vollzeit-Überwachung",
+                "Automatisches Be- und Entladen"
+            ],
+            "specs": [
+                { "label": "Kompatible UAVs", "value": "FP-981A / FP-981C" },
+                { "label": "Batteriewechselzeit", "value": "≤ 5 min" },
+                { "label": "Frachtkapazität", "value": "≤ 10 kg pro Mission" },
+                { "label": "Stromversorgung", "value": "Netz / Solar hybrid" },
+                { "label": "Kommunikation", "value": "4G / 5G / Satellit" },
+                { "label": "Betriebstemperatur", "value": "-20°C ~ +55°C" },
+                { "label": "IP-Schutzart", "value": "IP55" },
+                { "label": "Grundfläche", "value": "6 m × 6 m" }
+            ],
+            "applications": ["Zivillogistik", "Notfallrettung", "Industrieservice"]
+        },
+        "fp-981cs": {
+            "name": "FP-981CS VTOL-Verbundflügel-UAV",
+            "tag": "Spezialoperationen",
+            "description": "Der FP-981CS hat die Eigenschaften langer Ausdauer, großer Aktionsreichweite, niedriger Anforderungen an Landeplätze und kann in den Bereichen maritime Such- und Rettungsaktionen, Wald- und Graslandpatrouille, Such- und Rettungsaktionen nach Katastrophen, Grenzpatrouille, Kommunikationsrelais und anderen Bereichen eingesetzt werden.",
+            "highlights": [
+                "Lange Ausdauer",
+                "Erweiterte Last",
+                "Großer Betriebsbereich",
+                "Senkrechtstarten und -landen"
+            ],
+            "specs": [
+                { "label": "Spannweite", "value": "≥ 3,2 m" },
+                { "label": "Nutzlastkapazität", "value": "≥ 8 kg" },
+                { "label": "Max. Reichweite", "value": "≥ 500 km" },
+                { "label": "Reisegeschwindigkeit", "value": "110–140 km/h" },
+                { "label": "Max. Flughöhe", "value": "5000 m" },
+                { "label": "Ausdauer", "value": "≥ 5 h" },
+                { "label": "Startmodus", "value": "VTOL" },
+                { "label": "Windwiderstand", "value": "Stufe 7" }
+            ],
+            "applications": ["Schlüsselgebietspatrouille", "Forstwirtschaft und Pflanzenschutz", "Sicherheitsunterstützung", "Meerespatrouille"]
+        },
+        "fp-980-1": {
+            "name": "FP-980-1 Handheld-Steuerungsterminal",
+            "tag": "Tragbar",
+            "description": "Das FP-980-1 ist ein Gerät, das von Bedienern zur Steuerung von UAVs am Boden für Flugsteuerung und -management verwendet werden kann, um den Flugstatus von UAVs zeitnah und genau wahrzunehmen und Bedarfssteuerung und Notfallreaktion von UAVs zu realisieren. Als tragbares Ladeterminal, das ein Industriecomputersystem und ein integriertes Link-Fernsteuerungssystem integriert, verfügt es über leistungsstarke Rechen- und Verarbeitungsfähigkeiten.",
+            "highlights": [
+                "Hochintegriert",
+                "Unterstützung der Erweiterungssuite",
+                "Leichtgewichtiger Körper aus Luftfahrtaluminium",
+                "Individuelle Kommunikationslinks"
+            ],
+            "specs": [
+                { "label": "Gewicht", "value": "≤ 2,5 kg" },
+                { "label": "Bildschirm", "value": "7\" hochhell" },
+                { "label": "Akkulaufzeit", "value": "≥ 4 h" },
+                { "label": "Kommunikation", "value": "Doppelfrequenz-Funk" },
+                { "label": "Steuerungsreichweite", "value": "≥ 50 km (LOS)" },
+                { "label": "Betriebstemperatur", "value": "-20°C ~ +55°C" },
+                { "label": "IP-Schutzart", "value": "IP54" },
+                { "label": "GPS", "value": "Integriert" }
+            ],
+            "applications": ["Zivillogistik", "Notfallrettung", "Industrieservice"]
+        },
+        "fp-980-2": {
+            "name": "FP-980-2 Tragbares Steuerungsterminal",
+            "tag": "Tragbar",
+            "description": "Das FP-980-2 wurde von Aerospace Times Feipeng Co., LTD. entwickelt. Es verwendet einen leistungsstarken verstärkten Drei-Bildschirm-Laptop, integriert digitale Kommunikationsausrüstung, Satellitennavigationsausrüstung, 5G-Kommunikationsmodul, Stromversorgungs- und Verteilungsverwaltungsmodul und verschiedene externe Erweiterungsschnittstellen usw. Es hat die Eigenschaften kleiner Größe, hoher Integration, starker Erweiterungsfähigkeit, einfacher Bedienung und guter Tragbarkeit.",
+            "highlights": [
+                "Doppelstations-Redundanz-Backup-Design",
+                "Eingebauter Großkapazitäts-Lithium-Akku Austauschbares Design mit Ersatz-8000-mAh-Lithium-Akku",
+                "Echtzeitüberwachung der internen Temperatur des Geräts",
+                "Unterstützung 3G/4G/5G, SIM-Karten-Internetzugang"
+            ],
+            "specs": [
+                { "label": "Gewicht", "value": "≤ 8 kg (Transportkoffer)" },
+                { "label": "Bildschirm", "value": "15\" Multitouch" },
+                { "label": "Akkulaufzeit", "value": "≥ 6 h" },
+                { "label": "Gleichzeitige UAVs", "value": "Bis zu 3" },
+                { "label": "Steuerungsreichweite", "value": "≥ 100 km" },
+                { "label": "Betriebstemperatur", "value": "-20°C ~ +60°C" },
+                { "label": "IP-Schutzart", "value": "IP55" },
+                { "label": "Datenaufzeichnung", "value": "512-GB-SSD" }
+            ],
+            "applications": ["Zivillogistik", "Notfallrettung", "Industrieservice"]
+        },
+        "fp-980-3b": {
+            "name": "FP-980-3B Verstärkte Container-Kontrollstation",
+            "tag": "Container",
+            "description": "Die FP-980-3B besteht hauptsächlich aus dem Containerkörper, Stromversorgungsausrüstung, Befehls- und Kontrollausrüstung sowie Mess- und Kontroll-Kommunikationsausrüstung, die eine bequeme Innenkontrollumgebung für UAV-Bodenbediener bietet. Der Container ist mit 3 Sitzen (2 Ladesitze und 1 Überwachungssitz) ausgestattet.",
+            "highlights": [
+                "Mobilität: Zivilfahrgestell-Transport",
+                "Komfort: Vollständige Wohneinrichtungen",
+                "Sicherheit: Notfallunterstützungsausrüstung",
+                "Skalierbarkeit: Reservierte Raumschnittstelle"
+            ],
+            "specs": [
+                { "label": "Container-Typ", "value": "Standard-20-Fuß-Container" },
+                { "label": "Arbeitsstationen", "value": "3 Sitze (2 Laden + 1 Überwachung)" },
+                { "label": "Gleichzeitige UAVs", "value": "Bis zu 10" },
+                { "label": "Stromversorgung", "value": "Landstrom / Generator" },
+                { "label": "Klimaanlage", "value": "Integriertes HVAC" },
+                { "label": "Kommunikation", "value": "Satellit / 4G / 5G / VHF / UHF" },
+                { "label": "Datenspeicher", "value": "RAID NAS 10 TB" },
+                { "label": "Betriebstemperatur", "value": "-30°C ~ +50°C (intern)" }
+            ],
+            "applications": ["Zivillogistik", "Notfallrettung", "Industrieservice"]
+        },
+        "fp-980-3c": {
+            "name": "FP-980-3C Fahrzeugmontierte Container-Kontrollstation",
+            "tag": "Fahrzeug",
+            "description": "Die FP-980-3C ist auf Basis des Fahrgestells eines allradgetriebenen Geländefahrzeugs modifiziert und das gesamte Fahrzeug ist in eine Dachbox und eine Fahrgestellplattform unterteilt. Das Fahrzeug umfasst Fahrzeugplattformsystem, Stromversorgungs- und Verteilungssystem, Befehls- und Kontrollsystem, Mess- und Kontroll-Kommunikationssystem und umfassendes Unterstützungssystem.",
+            "highlights": [
+                "Schnelle Bodenmobilität",
+                "Schneller Einsatz",
+                "Leicht und Flexibel",
+                "Fahrertyp: Führerschein Klasse C1"
+            ],
+            "specs": [
+                { "label": "Fahrzeugbasis", "value": "4×4 Geländefahrgestell" },
+                { "label": "Einsatzzeit", "value": "≤ 30 min" },
+                { "label": "Arbeitsstationen", "value": "3 Bedienpositionen" },
+                { "label": "Gleichzeitige UAVs", "value": "Bis zu 6" },
+                { "label": "Generator", "value": "Integriert 15 kVA" },
+                { "label": "Kommunikation", "value": "Satellit / 4G / VHF / UHF" },
+                { "label": "Gelände", "value": "Allrad 4×4" },
+                { "label": "Betriebstemperatur", "value": "-40°C ~ +55°C" }
+            ],
+            "applications": ["Zivillogistik", "Notfallrettung", "Industrieservice"]
+        },
+        "uav-ocs": {
+            "name": "UAV-Betriebskontrollsystem",
+            "tag": "Software",
+            "description": "Das UAV-Betriebskontrollsystem ist darauf ausgerichtet, umfassende und effiziente Kontrolllösungen sowie umfassendes Situationsverfolgung und dynamische Informationsanzeige bereitzustellen.",
+            "highlights": [
+                "Echtzeit-Situationsanzeige",
+                "Start- und Landekontrolle",
+                "Risikowarnung",
+                "Flusskontrolle"
+            ],
+            "specs": [
+                { "label": "Flottenkapazität", "value": "Unbegrenzte UAVs" },
+                { "label": "Gleichzeitige Missionen", "value": "100+" },
+                { "label": "Routenoptimierung", "value": "KI-gestützt" },
+                { "label": "Kartenintegration", "value": "Multi-Source-GIS" },
+                { "label": "Daten-Aktualisierungsrate", "value": "Echtzeit (< 1 s)" },
+                { "label": "API-Integration", "value": "RESTful / SDK" },
+                { "label": "Bereitstellung", "value": "Cloud / Lokal" },
+                { "label": "Verfügbarkeits-SLA", "value": "99,9 %" }
+            ],
+            "applications": ["Zivillogistik", "Notfallrettung", "Industrieservice"]
+        }
+    },
+    "card": {
+        "viewSpecs": "Spezifikationen Anzeigen"
+    },
+    "detail": {
+        "back": "Zurück zu Produkten",
+        "systemActive": "SYS.AKTIV",
+        "showcase": "Produktpräsentation",
+        "liveDemo": "Live-Demonstration",
+        "coreCapabilities": "Kernfähigkeiten",
+        "keyFeatures": "Hauptmerkmale",
+        "technicalData": "Technische Daten",
+        "mainPerformance": "Hauptleistungsparameter",
+        "useCases": "Anwendungsfälle",
+        "applicationScenarios": "Anwendungsszenarien",
+        "sameSeries": "Gleiche Serie",
+        "relatedProducts": "Verwandte Produkte",
+        "readyToDeploy": "Bereit zum Einsatz von",
+        "ctaSubtitle": "Kontaktieren Sie unsere Spezialisten für individuelle Konfigurationen und Unternehmenslösungen, die auf Ihr Missionsprofil zugeschnitten sind.",
+        "requestQuote": "Angebot Anfordern",
+        "browseAll": "Alle Produkte Durchsuchen"
+    }
+}

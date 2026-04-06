@@ -1,0 +1,71 @@
+{
+    "hero": {
+        "badge": "Globale Anwendungsfälle",
+        "title1": "Anwendungs-",
+        "title2": "Szenarien",
+        "subtitle": "Von der Zivillogistik bis zur Notfallreaktion – entwickelt für jede kritische Mission.",
+        "scroll": "Scrollen"
+    },
+    "scenariosData": {
+        "scenarioText": "SZENARIO",
+        "exploreText": "Fallstudie Erkunden",
+        "items": {
+            "civil-logistics": {
+                "title": "Zivillogistik",
+                "label": "Zivillogistik",
+                "desc": "Bietet systematische Lösungen für typische Betriebsszenarien wie Hauptstrecken-, Nebenstrecken- und Endstreckenlogistik.",
+                "stats": [
+                    { "value": "3-stufig", "label": "Netzwerk" },
+                    { "value": "24/7", "label": "Betrieb" },
+                    { "value": "99,8 %", "label": "Lieferquote" }
+                ]
+            },
+            "emergency-rescue": {
+                "title": "Notfallrettung",
+                "label": "Notfallrettung",
+                "desc": "Innovativer UAV-Notfallrettungsmodus. Aufbau eines intelligenten dreidimensionalen Rettungssystems. Systematische Lösungen für verschiedene Katastrophenszenarien.",
+                "stats": [
+                    { "value": "<15 min", "label": "Reaktionszeit" },
+                    { "value": "3D", "label": "Kartierung" },
+                    { "value": "500 km", "label": "Abdeckung" }
+                ]
+            },
+            "industry-service": {
+                "title": "Industrieservice",
+                "label": "Industrieservice",
+                "desc": "Ein vollständiges Betriebssystem für Lufttransporte. Bietet Kunden Dienstleistungen wie Betrieb, Tests und Transport verschiedener Modelle.",
+                "stats": [
+                    { "value": "Vollständig", "label": "Lebenszyklus" },
+                    { "value": "11+", "label": "Modelle" },
+                    { "value": "AOPA", "label": "Zertifiziert" }
+                ]
+            },
+            "forest-fire-prevention": {
+                "title": "Waldbrand- und Graslandschutz",
+                "label": "Brandschutz",
+                "desc": "Umfassendes System zur Waldbrand- und Graslandprävention, einschließlich täglicher Patrouille, Brandüberwachung, Erkundung der Brandstelle und Notfallkommunikationsunterstützung.",
+                "stats": [
+                    { "value": "24/7", "label": "Patrouille" },
+                    { "value": "Echtzeit", "label": "Überwachung" },
+                    { "value": "Notfall", "label": "Kommunikation" }
+                ]
+            }
+        }
+    },
+    "cta": {
+        "title1": "Haben Sie eine",
+        "title2": "Mission?",
+        "subtitle": "Unsere Spezialisten entwickeln UAV-Lösungen, die auf Ihre betrieblichen Anforderungen zugeschnitten sind.",
+        "btnDiscuss": "Szenario Besprechen",
+        "btnProducts": "Alle Produkte Anzeigen"
+    },
+    "scenarioDetail": {
+        "back": "Zurück zu Anwendungen",
+        "badge": "Anwendungsszenario",
+        "operationalCapabilities": "Betriebliche Fähigkeiten",
+        "detailedSolutions": "Detaillierte Lösungen",
+        "exploreMore": "Mehr Entdecken",
+        "otherScenarios": "Andere Anwendungsszenarien",
+        "viewDetails": "Details Anzeigen"
+    }
+}

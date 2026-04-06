@@ -1,0 +1,48 @@
+{
+    "nav": {
+        "home": "Startseite",
+        "about": "Über Uns",
+        "economy": "Tiefflugwirtschaft",
+        "applications": "Anwendungen",
+        "products": "Serienprodukte",
+        "training": "Trainingszentrum",
+        "contact": "Kontakt"
+    },
+    "footer": {
+        "tagline": "LUFT- UND RAUMFAHRTTECHNOLOGIE MACHT DAS LEBEN BESSER",
+        "hotlineLabel": "24/7 Support-Hotline",
+        "newsletter": {
+            "title": "Immer einen Schritt voraus",
+            "subtitle": "Erhalten Sie die neuesten Updates zur autonomen Luftfahrt und Tiefflugwirtschaft.",
+            "placeholder": "E-Mail-Adresse eingeben",
+            "subscribe": "Abonnieren"
+        },
+        "nav": {
+            "title": "Navigation"
+        },
+        "support": {
+            "title": "Support",
+            "links": [
+                { "label": "Produktkauf" },
+                { "label": "Marktkooperation" },
+                { "label": "Autorisierter Vertrieb" },
+                { "label": "Technischer Support" },
+                { "label": "Kontakt", "to": "/contact" }
+            ]
+        },
+        "contact": {
+            "title": "Kontakt",
+            "hq": "Gebäude A7, Internationaler Innovationshafen, Wirtschaftsentwicklungszone Huaqiao, Stadt Kunshan, Provinz Jiangsu",
+            "beijing": "Peking F&E: 9. OG, Gebäude 2, Nr. 55 Zique-Straße, Bezirk Haidian, Peking",
+            "phone": "400-888-2062",
+            "email": "marketing@htsdfp.com",
+            "qrEnterprise": "WeChat Unternehmen",
+            "qrWechat": "WeChat"
+        },
+        "bottom": {
+            "copyright": "© {{year}} Aerospace Times Feipeng Co., Ltd. Alle Rechte vorbehalten.",
+            "disclaimers": "Haftungsausschluss",
+            "copyright_notice": "Urheberrechtshinweis"
+        }
+    }
+}

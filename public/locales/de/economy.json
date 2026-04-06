@@ -1,0 +1,112 @@
+{
+    "hero": {
+        "badge": "Nationale Strategische Initiative",
+        "title1": "Tiefflug-",
+        "title2": "wirtschaft",
+        "subtitle": "Die Entwicklung des industriellen Systems der Tiefflugwirtschaft wird die Integration nationaler Transportstrategien erheblich fördern und dabei helfen, ein starkes Land in Wissenschaft, Technologie und Transport aufzubauen.",
+        "altitudes": ["300 m", "200 m", "100 m", "Boden"],
+        "scroll": "Scrollen"
+    },
+    "statsData": [
+        { "value": "1000 km", "label": "Max. Reichweite" },
+        { "value": "1000 kg", "label": "Max. Nutzlast" },
+        { "value": "10W+", "label": "Flugstunden" },
+        { "value": "TC", "label": "Lufttüchtigkeitszertifiziert" }
+    ],
+    "overview": {
+        "title": "Anwendungsübersicht",
+        "desc": "Durch die kontinuierliche Entwicklung der Tiefflugwirtschaft ist es möglich, den Komfort und die Intelligenz des Lufttransports zu erreichen, die Transporteffizienz zu verbessern, Verkehrsstaus zu reduzieren, den Energieverbrauch zu senken und neue Lösungen für Notfallrettung, Logistikverteilung und andere Bereiche bereitzustellen."
+    },
+    "pillars": {
+        "tag": "Kernsektoren",
+        "title1": "Ökosystem-",
+        "title2": "Säulen",
+        "subtitle": "Vier miteinander verbundene Sektoren, die die Revolution der Tiefflugwirtschaft vorantreiben.",
+        "items": [
+            {
+                "title": "Zivillogistik",
+                "desc": "Bietet systematische Lösungen für typische Betriebsszenarien wie Hauptstrecken-, Nebenstrecken- und Endstreckenlogistik.",
+                "statLabel": "Netzwerk",
+                "backDetails": ["Hauptstreckenlogistik", "Nebenstrecktenlogistik", "Endstreckenlogistik", "Systematische Lösungen"]
+            },
+            {
+                "title": "Notfallrettung",
+                "desc": "Innovativer UAV-Notfallrettungsmodus. Aufbau eines intelligenten dreidimensionalen Rettungssystems. Systematische Lösungen für verschiedene Katastrophenszenarien.",
+                "statLabel": "Rettungssystem",
+                "backDetails": ["Katastrophenerkundung", "Notlieferung", "Suche & Rettung", "Kommunikationsrelais"]
+            },
+            {
+                "title": "Industrieservice",
+                "desc": "Ein vollständiges Betriebssystem für Lufttransporte. Bietet Kunden Dienstleistungen wie Betrieb, Tests und Transport verschiedener Modelle.",
+                "statLabel": "UAV-Modelle",
+                "backDetails": ["Flugbetrieb", "Testservices", "Transportservices", "AOPA-Ausbildung"]
+            },
+            {
+                "title": "Waldbrand- und Graslandschutz",
+                "desc": "Umfassendes System zur Waldbrand- und Graslandprävention, einschließlich täglicher Patrouille, Brandüberwachung, Erkundung der Brandstelle und Notfallkommunikationsunterstützung.",
+                "statLabel": "Überwachung",
+                "backDetails": ["Waldpatrouille", "Brandüberwachung", "Szenenerkundung", "Notfallkommunikation"]
+            }
+        ]
+    },
+    "advantages": {
+        "tag": "Strategischer Wert",
+        "title": "Hauptvorteile",
+        "items": [
+            {
+                "title": "Systematische Lösung",
+                "desc": "Bietet szenariobasierte Lösungen für Industrienutzer in relevanten Ländern und Regionen weltweit."
+            },
+            {
+                "title": "Vollständiges Produktportfolio",
+                "desc": "Vollständige Produktpalette mit 11+ UAV-Modellen für Haupt-, Neben- und Endstreckenszenarios."
+            },
+            {
+                "title": "Lufttüchtigkeitszertifizierung",
+                "desc": "Vollständige Musterzulassung und Lufttüchtigkeits-Konformitätszertifizierung für zivile UAV-Operationen."
+            }
+        ]
+    },
+    "timeline": {
+        "tag": "Entwicklungsfahrplan",
+        "title1": "Politik-",
+        "title2": "Zeitstrahl",
+        "items": [
+            {
+                "year": "2023",
+                "title": "Nationales Hightech-Unternehmen",
+                "desc": "Das Unternehmen wurde als nationales Hightech-Unternehmen 2023 zertifiziert und als potenzielles Einhorn-Unternehmen in Jiangsu ausgewählt."
+            },
+            {
+                "year": "2024",
+                "title": "FP-98 Musterzulassung (TC)",
+                "desc": "Das FP-98-UAV-System erhält die Musterzulassung (TC) und eröffnet damit eine neue Ära der Tiefflugwirtschaft für den Transport großer UAVs."
+            },
+            {
+                "year": "2024",
+                "title": "Red Dot Design Award",
+                "desc": "Der FP-981C Sagittarius gewinnt den deutschen Red Dot Design Award 2024 für herausragendes Produktdesign."
+            },
+            {
+                "year": "2024",
+                "title": "Transozeanische Logistikmission",
+                "desc": "Das große FP-98-UAV führt nach TC-Zertifizierung die erste transozeanische Nebenstreckentransportlogistikmission durch."
+            }
+        ]
+    },
+    "whitepaper": {
+        "tag": "Szenarioanwendung",
+        "badge": "Offizielle Publikation",
+        "title": "Weißbuch zur Industrie der Tiefflugwirtschaft",
+        "desc": "Das industrielle System der Tiefflugwirtschaft, diese Lösung zur Nutzung geringer Höhen rund um den Radius des menschlichen Lebens und Arbeitens, integriert die Ergebnisse verschiedener wissenschaftlich-technologischer Revolutionen und industrieller Veränderungen. Es zeichnet sich durch fortschrittliche Technologie, hohes Industrieniveau, enormen Umfang, reichliche Beschäftigungsmöglichkeiten und bemerkenswerte Antriebswirkung aus. Die Fokussierung auf die Entwicklung des industriellen Systems der Tiefflugwirtschaft wird eine Schlüsselrolle spielen und langfristige Auswirkungen auf die Verbesserung der nationalen Transportstrategie und den Aufbau von Wissenschaft, Technologie und Transportmacht haben.",
+        "btnRead": "Weißbuch Lesen"
+    },
+    "cta": {
+        "tag": "Mitmachen",
+        "title1": "Gestalten Sie die Zukunft der",
+        "title2": "Tiefflugaviation",
+        "subtitle": "Erschließen Sie die Billionen-Yuan-Tiefflugwirtschaft und transformieren Sie die Transportinfrastruktur für die nächste Generation.",
+        "btnProducts": "Produkte Entdecken",
+        "btnApps": "Anwendungen Anzeigen"
+    }
+}

@@ -1,0 +1,166 @@
+{
+    "hero": {
+        "badge": "Aeronave de Transporte No Tripulada",
+        "title": "FP-98 UAV de Ala Fija de Gran Tamaño",
+        "subtitle": "Productos de aeronaves no tripuladas de transporte Doble 1000, Doble 100 y Doble 10 para escenarios de línea troncal, ramificada y terminal.",
+        "stats": {
+            "range": { "value": "1000 km", "label": "Alcance Máx." },
+            "payload": { "value": "1000 kg", "label": "Carga Útil" },
+            "flightHours": { "value": "10W+", "label": "Horas de Vuelo" }
+        },
+        "cta": {
+            "explore": "Explorar Sistemas",
+            "about": "Quiénes Somos"
+        },
+        "scroll": "Desplazar"
+    },
+    "stats": {
+        "items": [
+            { "prefix": "FP-", "value": 98, "suffix": "", "label": "Aeronave con Certificado de Tipo" },
+            { "prefix": "", "value": 500, "suffix": "+", "label": "Pilotos Certificados" },
+            { "prefix": "", "value": 50, "suffix": "+", "label": "Socios Globales" },
+            { "prefix": "", "value": 2024, "suffix": "", "label": "Premio Red Dot de Diseño" }
+        ]
+    },
+    "applications": {
+        "tag": "Casos de Uso",
+        "title": "Escenarios de Aplicación",
+        "viewAll": "Ver todos los escenarios",
+        "featured": "Destacado",
+        "items": [
+            {
+                "title": "Logística Civil",
+                "desc": "Proporciona soluciones sistemáticas para escenarios operativos típicos como logística troncal, logística de ramificación y logística terminal.",
+                "stats": [
+                    { "value": "3 Niveles", "label": "Red" },
+                    { "value": "24/7", "label": "Operación" },
+                    { "value": "99.8%", "label": "Tasa de Entrega" }
+                ]
+            },
+            {
+                "title": "Rescate de Emergencia",
+                "desc": "Innova el modo de rescate de emergencia con UAVs. Construye un sistema de rescate tridimensional inteligente. Proporciona soluciones sistemáticas para diferentes escenarios de desastre.",
+                "stats": [
+                    { "value": "<15 min", "label": "Respuesta" },
+                    { "value": "3D", "label": "Mapeo" },
+                    { "value": "500 km", "label": "Cobertura" }
+                ]
+            },
+            {
+                "title": "Servicio Industrial",
+                "desc": "Un sistema operativo completo para el transporte aéreo. Proporciona a los clientes servicios de operación, pruebas y transporte de varios modelos.",
+                "stats": [
+                    { "value": "Completo", "label": "Ciclo de Vida" },
+                    { "value": "11+", "label": "Modelos" },
+                    { "value": "AOPA", "label": "Certificado" }
+                ]
+            },
+            {
+                "title": "Prevención de Incendios en Bosques y Pastizales",
+                "desc": "Sistema integral de prevención de incendios forestales y de pastizales que incluye patrulla diaria, monitoreo de incendios, reconocimiento de la escena del incendio y apoyo de comunicaciones de emergencia.",
+                "stats": [
+                    { "value": "24/7", "label": "Patrulla" },
+                    { "value": "Tiempo Real", "label": "Monitoreo" },
+                    { "value": "Emergencia", "label": "Comunicaciones" }
+                ]
+            }
+        ]
+    },
+    "products": {
+        "tag": "Nuestra Flota",
+        "title": "Productos de la Serie",
+        "viewAll": "Ver Todos",
+        "specs": {
+            "range": "Alcance",
+            "payload": "Carga Útil"
+        },
+        "viewDetails": "Ver Detalles",
+        "items": [
+            {
+                "title": "Serie Doble 1000",
+                "subtitle": "Línea Troncal",
+                "desc": "Sistemas de drones para escenarios de línea troncal con 1000 km de alcance y 1000 kg de carga.",
+                "range": "1.000 km",
+                "payload": "1.000 kg"
+            },
+            {
+                "title": "Serie Doble 100",
+                "subtitle": "Línea de Ramificación",
+                "desc": "Sistemas de drones para escenarios de línea de ramificación con 100 km de alcance y 100 kg de carga.",
+                "range": "100 km",
+                "payload": "100 kg"
+            },
+            {
+                "title": "Serie Doble 10",
+                "subtitle": "Línea Terminal",
+                "desc": "Sistemas de drones para escenarios de línea terminal con 10 km de alcance y 10 kg de carga.",
+                "range": "10 km",
+                "payload": "10 kg"
+            },
+            {
+                "title": "Estación de Control Terrestre",
+                "subtitle": "Mando y Control",
+                "desc": "La Estación de Control Terrestre procesa tareas a través de una consola de control, enlace de datos o comunicación satelital. Incluye terminal de control manual, terminal de control portátil, estación de control en abrigo, etc.",
+                "range": "Alcance Total",
+                "payload": "Multi-UAV"
+            },
+            {
+                "title": "Sistema de Control Operativo",
+                "subtitle": "Gestión de Flota",
+                "desc": "El Sistema de Control Operativo puede proporcionar datos en tiempo real como placas de identificación de drones, información de situación y estado de vuelo, y realizar operaciones de control manual como solicitud de espacio aéreo y ejecución de misiones de vuelo.",
+                "range": "Ilimitado",
+                "payload": "Software"
+            }
+        ]
+    },
+    "advantages": {
+        "tag": "Por Qué Elegirnos",
+        "title": "Ventajas Principales",
+        "items": [
+            {
+                "title": "Solución Sistemática",
+                "desc": "Proporciona soluciones a nivel de escenario para usuarios industriales en países y regiones relevantes de todo el mundo",
+                "number": 100,
+                "suffix": "%"
+            },
+            {
+                "title": "Línea de Productos Completa",
+                "desc": "Gama completa de más de 11 modelos de UAV para escenarios de línea troncal, ramificada y terminal",
+                "number": 11,
+                "suffix": "+"
+            },
+            {
+                "title": "Más de 10W Horas de Vuelo",
+                "desc": "Más de 100.000 horas de vuelo acumuladas con registros de seguridad y fiabilidad probados",
+                "number": 100000,
+                "suffix": ""
+            },
+            {
+                "title": "Certificación de Aeronavegabilidad",
+                "desc": "Certificado de tipo completo y certificación de cumplimiento de aeronavegabilidad para operaciones civiles de UAV",
+                "number": 9,
+                "suffix": "+"
+            }
+        ]
+    },
+    "training": {
+        "tag": "Formación de Pilotos",
+        "title": "Centro de Formación",
+        "subtitle": "Institución de formación de pilotos de UAV civiles certificada por la Asociación China de Propietarios y Pilotos de Aeronaves (AOPA).",
+        "learnMore": "Más información",
+        "pilotCenter": {
+            "title": "Centro de Formación de Pilotos",
+            "desc": "Una institución de formación de pilotos de vehículos aéreos no tripulados civiles (multirrotor Clase III) certificada por la Asociación China de Propietarios y Pilotos de Aeronaves (AOPA) que puede proporcionar formación teórica y práctica para pilotos de multirrotor Clase III en línea de visión y más allá de la línea de visión."
+        },
+        "aopa": {
+            "title": "Examen de Certificación AOPA",
+            "desc": "Organización humanizada del curso, con clases fuera del horario laboral y fines de semana, adecuada para diferentes grupos de trabajo. Sistema de gestión de clases donde cada clase es administrada por una persona dedicada y el tiempo de estudio y descanso de cada estudiante está razonablemente organizado. Mentores experimentados en proyectos prácticos que permiten a los estudiantes comprender rápidamente la aplicación de los drones. Alta tasa de aprobación, con una tasa de aprobación del 88%-90% para la clase de pilotos de drones multirrotor."
+        }
+    },
+    "cta": {
+        "title": "Tecnología Aeroespacial\nHace la Vida Mejor",
+        "subtitle": "Proporcionando soluciones a nivel de escenario para usuarios industriales con tecnología de sistemas no tripulados, promoviendo la transformación del transporte del modo bidimensional al tridimensional.",
+        "exploreProducts": "Explorar Productos",
+        "trainingCenter": "Centro de Formación"
+    }
+}

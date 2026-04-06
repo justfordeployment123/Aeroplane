@@ -1,0 +1,48 @@
+{
+    "nav": {
+        "home": "Inicio",
+        "about": "Quiénes Somos",
+        "economy": "Economía de Baja Altitud",
+        "applications": "Aplicaciones",
+        "products": "Productos de la Serie",
+        "training": "Centro de Formación",
+        "contact": "Contáctenos"
+    },
+    "footer": {
+        "tagline": "LA TECNOLOGÍA AEROESPACIAL HACE LA VIDA MEJOR",
+        "hotlineLabel": "Línea de Atención 24/7",
+        "newsletter": {
+            "title": "Mantente a la vanguardia",
+            "subtitle": "Recibe las últimas novedades sobre aviación autónoma y la economía de baja altitud.",
+            "placeholder": "Ingresa tu correo electrónico",
+            "subscribe": "Suscribirse"
+        },
+        "nav": {
+            "title": "Navegación"
+        },
+        "support": {
+            "title": "Soporte",
+            "links": [
+                { "label": "Compra de Productos" },
+                { "label": "Cooperación Comercial" },
+                { "label": "Distribución Autorizada" },
+                { "label": "Soporte Técnico" },
+                { "label": "Contáctenos", "to": "/contact" }
+            ]
+        },
+        "contact": {
+            "title": "Contacto",
+            "hq": "Edificio A7, Puerto de Innovación Internacional, Zona de Desarrollo Económico de Huaqiao, Ciudad de Kunshan, Provincia de Jiangsu",
+            "beijing": "I+D Pekín: Piso 9F, Edificio 2, N.º 55 Calle Zique, Distrito Haidian, Pekín",
+            "phone": "400-888-2062",
+            "email": "marketing@htsdfp.com",
+            "qrEnterprise": "WeChat Empresarial",
+            "qrWechat": "WeChat"
+        },
+        "bottom": {
+            "copyright": "© {{year}} Aerospace Times Feipeng Co., Ltd. Todos los derechos reservados.",
+            "disclaimers": "Avisos Legales",
+            "copyright_notice": "Aviso de Derechos de Autor"
+        }
+    }
+}

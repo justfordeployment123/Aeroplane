@@ -1,0 +1,38 @@
+{
+    "hero": {
+        "tag": "Ponte en Contacto",
+        "title": "Contáctenos",
+        "subtitle": "Comuníquese para consultas sobre productos, oportunidades de asociación o soporte técnico."
+    },
+    "info": {
+        "hotline": {
+            "label": "Línea Directa",
+            "value": "400-888-2062"
+        },
+        "email": {
+            "label": "Correo Electrónico",
+            "value": "marketing@htsdfp.com"
+        },
+        "hq": {
+            "label": "Sede Central",
+            "value": "Edificio A7, Puerto de Innovación Internacional, Zona de Desarrollo Económico de Huaqiao, Ciudad de Kunshan, Provincia de Jiangsu"
+        },
+        "beijing": {
+            "label": "Centro de I+D de Pekín",
+            "value": "Piso 9F, Edificio 2, N.º 55 Calle Zique, Distrito Haidian, Pekín"
+        }
+    },
+    "form": {
+        "title": "Envíenos un mensaje",
+        "subtitle": "Le responderemos en un plazo de 24 horas.",
+        "placeholders": {
+            "name": "Nombre",
+            "email": "Correo Electrónico",
+            "phone": "Teléfono",
+            "company": "Nombre de la Empresa",
+            "address": "Dirección",
+            "message": "Mensaje"
+        },
+        "submit": "Enviar Mensaje"
+    }
+}

@@ -1,0 +1,112 @@
+{
+    "hero": {
+        "badge": "Iniciativa Estratégica Nacional",
+        "title1": "Economía de",
+        "title2": "Baja Altitud",
+        "subtitle": "El desarrollo del sistema industrial de economía de baja altitud promoverá significativamente la integración de las estrategias de transporte nacionales y ayudará a construir un país fuerte en ciencia, tecnología y transporte.",
+        "altitudes": ["300 m", "200 m", "100 m", "Suelo"],
+        "scroll": "Desplazar"
+    },
+    "statsData": [
+        { "value": "1000 km", "label": "Alcance Máx." },
+        { "value": "1000 kg", "label": "Carga Útil Máx." },
+        { "value": "10W+", "label": "Horas de Vuelo" },
+        { "value": "TC", "label": "Aeronavegabilidad Certificada" }
+    ],
+    "overview": {
+        "title": "Visión General de la Aplicación",
+        "desc": "A través del desarrollo continuo de la economía de baja altitud, es posible lograr la comodidad e inteligencia del transporte aéreo, mejorar la eficiencia del transporte, reducir la congestión del tráfico, disminuir el consumo de energía y proporcionar nuevas soluciones para el rescate de emergencia, la distribución logística y otros campos."
+    },
+    "pillars": {
+        "tag": "Sectores Principales",
+        "title1": "Pilares del",
+        "title2": "Ecosistema",
+        "subtitle": "Cuatro sectores interconectados que impulsan la revolución económica de baja altitud.",
+        "items": [
+            {
+                "title": "Logística Civil",
+                "desc": "Proporciona soluciones sistemáticas para escenarios operativos típicos como logística troncal, logística de ramificación y logística terminal.",
+                "statLabel": "Red",
+                "backDetails": ["Logística troncal", "Logística de ramificación", "Logística terminal", "Soluciones sistemáticas"]
+            },
+            {
+                "title": "Rescate de Emergencia",
+                "desc": "Innova el modo de rescate de emergencia con UAVs. Construye un sistema de rescate tridimensional inteligente. Proporciona soluciones sistemáticas para diferentes escenarios de desastre.",
+                "statLabel": "Sistema de Rescate",
+                "backDetails": ["Reconocimiento de desastres", "Entrega de emergencia", "Búsqueda y rescate", "Repetidor de comunicaciones"]
+            },
+            {
+                "title": "Servicio Industrial",
+                "desc": "Un sistema operativo completo para el transporte aéreo. Proporciona a los clientes servicios de operación, pruebas y transporte de varios modelos.",
+                "statLabel": "Modelos de UAV",
+                "backDetails": ["Operaciones de vuelo", "Servicios de prueba", "Servicios de transporte", "Formación AOPA"]
+            },
+            {
+                "title": "Prevención de Incendios en Bosques y Pastizales",
+                "desc": "Sistema integral de prevención de incendios forestales y de pastizales que incluye patrulla diaria, monitoreo de incendios, reconocimiento de la escena del incendio y apoyo de comunicaciones de emergencia.",
+                "statLabel": "Monitoreo",
+                "backDetails": ["Patrulla forestal", "Monitoreo de incendios", "Reconocimiento de la escena", "Comunicaciones de emergencia"]
+            }
+        ]
+    },
+    "advantages": {
+        "tag": "Valor Estratégico",
+        "title": "Ventajas Clave",
+        "items": [
+            {
+                "title": "Solución Sistemática",
+                "desc": "Proporciona soluciones a nivel de escenario para usuarios industriales en países y regiones relevantes de todo el mundo."
+            },
+            {
+                "title": "Línea de Productos Completa",
+                "desc": "Gama completa de más de 11 modelos de UAV para escenarios de línea troncal, ramificada y terminal."
+            },
+            {
+                "title": "Certificación de Aeronavegabilidad",
+                "desc": "Certificado de tipo completo y certificación de cumplimiento de aeronavegabilidad para operaciones civiles de UAV."
+            }
+        ]
+    },
+    "timeline": {
+        "tag": "Hoja de Ruta de Desarrollo",
+        "title1": "Cronología de",
+        "title2": "Políticas",
+        "items": [
+            {
+                "year": "2023",
+                "title": "Empresa Nacional de Alta Tecnología",
+                "desc": "La empresa fue certificada como Empresa Nacional de Alta Tecnología 2023 y seleccionada como Empresa Unicornio Potencial de Jiangsu."
+            },
+            {
+                "year": "2024",
+                "title": "Certificado de Tipo FP-98 (CT)",
+                "desc": "El sistema UAV FP-98 obtiene el Certificado de Tipo (CT), abriendo una nueva era de economía de baja altitud para el transporte de grandes UAV."
+            },
+            {
+                "year": "2024",
+                "title": "Premio Red Dot de Diseño",
+                "desc": "El FP-981C Sagitario gana el Premio Red Dot de Diseño Alemán 2024 por su diseño de producto sobresaliente."
+            },
+            {
+                "year": "2024",
+                "title": "Misión Logística Transoceánica",
+                "desc": "El gran UAV FP-98 ejecuta la primera misión de transporte logístico de ramificación transoceánica tras obtener la certificación CT."
+            }
+        ]
+    },
+    "whitepaper": {
+        "tag": "Aplicación de Escenario",
+        "badge": "Publicación Oficial",
+        "title": "Libro Blanco de la Industria de Economía de Baja Altitud",
+        "desc": "El sistema industrial de economía de baja altitud, esta solución de utilización de baja altitud en torno al radio de vida y trabajo humano, integra los resultados de varias revoluciones científicas y tecnológicas y cambios industriales. Se caracteriza por su tecnología avanzada, alto nivel industrial, escala enorme, abundantes oportunidades de empleo y notable efecto impulsor. Centrarse en el desarrollo del sistema industrial de economía de baja altitud desempeñará un papel clave y tendrá un impacto a largo plazo en la mejora de la estrategia de transporte nacional y en la construcción de ciencia, tecnología y potencia de transporte.",
+        "btnRead": "Leer el Libro Blanco"
+    },
+    "cta": {
+        "tag": "Participa",
+        "title1": "Da Forma al Futuro de la",
+        "title2": "Aviación de Baja Altitud",
+        "subtitle": "Desbloquea la economía de baja altitud de billones de yuanes y transforma la infraestructura de transporte para la próxima generación.",
+        "btnProducts": "Explorar Productos",
+        "btnApps": "Ver Aplicaciones"
+    }
+}

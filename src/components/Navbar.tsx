@@ -15,8 +15,10 @@ const navRoutes = [
 ];
 
 const languages = [
-    { code: "en", label: "EN", full: "English" },
-    { code: "zh", label: "中文", full: "中文" },
+    { code: "en", label: "EN",  full: "English"  },
+    // { code: "zh", label: "中文", full: "中文"      },
+    { code: "es", label: "ES",  full: "Español"  },
+    { code: "de", label: "DE",  full: "Deutsch"  },
 ];
 
 export const Navbar = () => {

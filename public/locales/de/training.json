@@ -1,0 +1,62 @@
+{
+    "hero": {
+        "badge": "GADT Flugakademie",
+        "title": "Trainingszentrum",
+        "subtitle": "Aerospace Times Feipeng Co., Ltd. ist eine von der China Aircraft Owners and Pilots Association (AOPA) zertifizierte zivile UAV-Pilotenausbildungseinrichtung, die theoretische und praktische Ausbildung für Multikopter-Piloten im Sichtflug und über Sichtweite anbietet.",
+        "scroll": "Scrollen"
+    },
+    "stats": [
+        { "value": "88–90 %", "label": "Bestehensquote" },
+        { "value": "500+", "label": "Zertifizierte Piloten" },
+        { "value": "AOPA", "label": "Zertifizierte Einrichtung" },
+        { "value": "10+", "label": "Jahre Erfahrung" }
+    ],
+    "intro": {
+        "body": "Eine erstklassige zivile UAV-Pilotenausbildungseinrichtung, zertifiziert von der <highlight>China Aircraft Owners and Pilots Association (AOPA)</highlight>. Wir bieten hochwertige theoretische und praktische Ausbildung für Klasse-III-Multikopter-Piloten im Sichtflug und über Sichtweite an."
+    },
+    "process": {
+        "tag": "Ihr Weg",
+        "title": "So",
+        "titleHighlight": "Funktioniert Es",
+        "steps": [
+            { "step": "01", "title": "Anmelden", "desc": "Antrag einreichen und bevorzugten Zeitplan auswählen" },
+            { "step": "02", "title": "Theorie", "desc": "Zertifizierten Bodenschulungskurs absolvieren" },
+            { "step": "03", "title": "Flug", "desc": "Praktische Flugausbildung mit erfahrenen Mentoren" },
+            { "step": "04", "title": "Zertifizieren", "desc": "AOPA-Prüfung bestehen und Lizenz erhalten" }
+        ]
+    },
+    "panels": [
+        { "title": "Serviceprozess", "sub": "Schritt-für-Schritt-Ablaufdiagramm" },
+        { "title": "Zertifizierung", "sub": "Offizielle AOPA-Qualifikation" }
+    ],
+    "features": {
+        "tag": "Was Uns Auszeichnet",
+        "title": "Kurs-",
+        "titleHighlight": "Merkmale",
+        "items": [
+            {
+                "title": "Menschenorientierte Kursorganisation",
+                "desc": "Mit Kursen außerhalb der Arbeitszeiten und an Wochenenden, geeignet für verschiedene Berufsgruppen."
+            },
+            {
+                "title": "Klassenmanagementsystem",
+                "desc": "Jede Klasse wird von einer dedizierten Person betreut und die Lern- und Ruhezeiten jedes Studierenden werden sinnvoll geplant."
+            },
+            {
+                "title": "Erfahrene Mentoren in Praxisprojekten",
+                "desc": "Ermöglichen Studierenden, die Anwendung von UAVs in Praxisprojekten schnell zu verstehen."
+            },
+            {
+                "title": "Hohe Bestehensquote",
+                "desc": "Mit einer Bestehensquote von 88%–90% im Multikopter-UAV-Pilotenkurs."
+            }
+        ]
+    },
+    "cta": {
+        "title": "Bereit zur",
+        "titleHighlight": "Zertifizierung?",
+        "subtitle": "Schließen Sie sich Hunderten zertifizierter UAV-Piloten an, die an unserer AOPA-akkreditierten Akademie ausgebildet wurden.",
+        "enroll": "Jetzt Anmelden",
+        "learnAopa": "Mehr über die AOPA-Prüfung"
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "header": {
+        "badge": "Video Gallery",
+        "title1": "See Our UAVs",
+        "title2": "In Action"
+    },
+    "featured": {
+        "caption": "Featured highlight"
+    },
+    "card": {
+        "watchDemo": "Watch Demo"
+    },
+    "videos": {
+        "cluster-flight": "Cluster Flight of FEIPENG UAV",
+        "shore-to-ship": "FP-981A Shore-to-Ship Cargo Delivery",
+        "firefighting": "Urban High-Rise Firefighting Scenarios",
+        "blood-transport": "City Blood Transport Scenarios",
+        "maritime-rescue": "FP-981A & FP-981AS Maritime Search and Rescue",
+        "tethered-uav": "Tethered UAV on Board"
+    }
+}

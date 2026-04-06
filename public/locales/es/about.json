@@ -1,0 +1,133 @@
+{
+    "hero": {
+        "badge": "Fundada en 2013",
+        "title1": "Quiénes",
+        "title2": "Somos",
+        "subtitle": "Pioneros en la transición del transporte autónomo bidimensional al tridimensional.",
+        "scroll": "Desplazar"
+    },
+    "profile": {
+        "tag": "Quiénes Somos",
+        "title1": "Perfil de la",
+        "title2": "Empresa",
+        "p1_start": "Aerospace Times Feipeng Co., Ltd. es una empresa de propiedad mixta iniciada por ",
+        "p1_highlight": "China Aerospace Science and Technology Corporation",
+        "p1_end": ", de acuerdo con el «Plan de Acción Trienal» de reforma de las empresas estatales de la Comisión de Supervisión y Administración de Activos Estatales del Consejo de Estado.",
+        "p2": "Nuestra misión principal es utilizar la tecnología de sistemas no tripulados para proporcionar soluciones a nivel de escenario para usuarios industriales en países y regiones relevantes de todo el mundo, y promover la transformación del modo de transporte del modo bidimensional al tridimensional. Proporcionamos equipos clave de sistemas no tripulados y soluciones a nivel de sistema.",
+        "btnProducts": "Nuestros Productos",
+        "btnApps": "Aplicaciones"
+    },
+    "values": {
+        "tag": "Lo Que Nos Impulsa",
+        "title1": "Valores",
+        "title2": "Fundamentales",
+        "subtitle": "Los principios que guían cada decisión, cada vuelo, cada innovación.",
+        "items": {
+            "sys": {
+                "title": "Solución Sistemática",
+                "desc": "Proporciona soluciones a nivel de escenario para usuarios industriales en países y regiones relevantes de todo el mundo.",
+                "statLabel": "Cobertura"
+            },
+            "layout": {
+                "title": "Línea de Productos Completa",
+                "desc": "Gama completa de modelos de UAV para escenarios de línea troncal, ramificada y terminal.",
+                "statLabel": "Modelos de UAV"
+            },
+            "time": {
+                "title": "Más de 10W Horas de Vuelo",
+                "desc": "Más de 100.000 horas de vuelo acumuladas con registros de seguridad y fiabilidad probados.",
+                "statLabel": "Horas de Vuelo"
+            },
+            "cert": {
+                "title": "Certificación de Aeronavegabilidad",
+                "desc": "Certificado de tipo completo y certificación de cumplimiento de aeronavegabilidad para operaciones civiles de UAV.",
+                "statLabel": "Certificado"
+            }
+        }
+    },
+    "recognition": {
+        "tag": "Reconocimientos",
+        "title1": "Calificaciones",
+        "title2": "Honoríficas",
+        "industry": {
+            "title": "Calificaciones de la Industria",
+            "subtitle": "certificaciones"
+        },
+        "enterprise": {
+            "title": "Premios Empresariales",
+            "subtitle": "galardones"
+        },
+        "certs": {
+            "title": "Certificaciones",
+            "subtitle": "Pasa el cursor para ver detalles",
+            "hoverText": "Pasa el cursor para voltear",
+            "verified": "Verificado",
+            "items": {
+                "cert1": "Empresa Nacional de Alta Tecnología",
+                "cert2": "Centro de Formación para Operadores de UAV",
+                "cert3": "Certificado de Operador Aéreo de RPAS",
+                "cert4": "Sistema de Gestión de Calidad ISO 9001",
+                "cert5": "Participación en el Salón Aeronáutico de Singapur",
+                "cert6": "Agencia de Formación de Pilotos de UAV Civiles"
+            }
+        }
+    },
+    "qualifications": [
+        "Centro de Formación para Operadores de UAV Civiles de Gran Tamaño",
+        "Certificado de Operador Aéreo de Sistemas de Aeronaves Pilotadas de Forma Remota (RPAS)",
+        "Certificación y Prueba de Calidad de Productos Electrónicos Policiales y de Seguridad del Ministerio de Seguridad Pública",
+        "Certificación de Operación Comercial de Aviación General",
+        "Certificación de Agencia de Formación de Pilotos de UAV Civiles",
+        "Certificación de Prueba de Red 5G de UAV del Instituto de Investigación Industrial de China Mobile (Chengdu)",
+        "Certificación del Sistema de Gestión de Propiedad Intelectual",
+        "Certificación del Sistema de Gestión de Calidad",
+        "Certificación del Sistema de Gestión Ambiental",
+        "Certificación del Sistema de Gestión de Salud y Seguridad Ocupacional",
+        "Certificación de Calificación Crediticia AAA Empresarial",
+        "Certificación de Calificación Crediticia"
+    ],
+    "honorsList": [
+        "Empresa Nacional de Alta Tecnología 2023",
+        "Empresas Unicornio Potencial en la Provincia de Jiangsu",
+        "Pequeñas y Medianas Empresas de Ciencia y Tecnología de la Provincia de Jiangsu",
+        "Pequeñas y Medianas Empresas Innovadoras de la Provincia de Jiangsu",
+        "Empresas en Cultivo Unicornio de Suzhou",
+        "Empresas Líderes en Economía de Baja Altitud de Suzhou",
+        "Empresa de Economía Digital de Suzhou 2022",
+        "2023 Dongshahu Capital de Riesgo 'Empresa de Mayor Crecimiento Anual'",
+        "2021 Lista de Tecnología Líder 'Kectron China'",
+        "Laboratorio Clave del Sistema de Transporte No Tripulado Avanzado de Kunshan",
+        "Unidad de la Alianza Estratégica de Innovación Tecnológica de la Industria de UAV de Aviación Civil",
+        "Centro de Investigación de Tecnología de Ingeniería de Sistemas No Tripulados de Kunshan",
+        "Base de Práctica de Posgrado de la Universidad de Suzhou",
+        "Base de Práctica de Posgrado de la Universidad del Sureste",
+        "Base de Formación Conjunta de Posgrado de la Universidad de Aviación Civil de China",
+        "Base de Práctica de Educación de Posgrado de la Universidad de Ingeniería de Harbin",
+        "Unidad Miembro de la Alianza de Educación Cooperativa entre Industria y Universidad"
+    ],
+    "academic": {
+        "tag": "Colaboración",
+        "title1": "Académica e",
+        "title2": "Investigación",
+        "items": [
+            { "type": "Universidad", "name": "Universidad de Suzhou", "detail": "Base de Práctica de Máster" },
+            { "type": "Universidad", "name": "Universidad del Sureste", "detail": "Base de Práctica de Posgrado" },
+            { "type": "Universidad", "name": "Universidad de Aviación Civil de China", "detail": "Base de Formación Conjunta de Posgrado" },
+            { "type": "Universidad", "name": "Universidad de Ingeniería de Harbin", "detail": "Base de Práctica de Educación de Posgrado" },
+            { "type": "Centro de Investigación", "name": "Sistema de Transporte No Tripulado Avanzado de Kunshan", "detail": "Laboratorio Clave" },
+            { "type": "Centro de Investigación", "name": "Ingeniería de Sistemas No Tripulados de Kunshan", "detail": "Centro de Investigación Tecnológica" }
+        ]
+    },
+    "vision": {
+        "tag": "Mirando al Futuro",
+        "title1": "Nuestra",
+        "title2": "Visión"
+    },
+    "cta": {
+        "title1": "¿Listo para Asociarse",
+        "title2": "con Nosotros?",
+        "subtitle": "Únase a la próxima generación de aviación autónoma. Construyamos juntos el futuro del transporte.",
+        "btnProducts": "Explorar Productos",
+        "btnTraining": "Centro de Formación"
+    }
+}

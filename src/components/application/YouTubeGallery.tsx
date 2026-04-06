@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 
 interface YouTubeVideo {
     id: string;
@@ -9,52 +10,15 @@ interface YouTubeVideo {
     accent: string;
 }
 
-const videos: YouTubeVideo[] = [
-    {
-        id: "cluster-flight",
-        title: "Cluster Flight of FEIPENG UAV",
-        youtubeId: "gGFPBUKCZJc",
-        accent: "#a855f7",
-    },
-    {
-        id: "shore-to-ship",
-        title: "FP-981A Shore-to-Ship Cargo Delivery",
-        youtubeId: "RbpTye5I1iA",
-        accent: "#06b6d4",
-    },
-    {
-        id: "firefighting",
-        title: "Urban High-Rise Firefighting Scenarios",
-        youtubeId: "HjHNnHjEXOI",
-        accent: "#ef4444",
-    },
-    {
-        id: "blood-transport",
-        title: "City Blood Transport Scenarios",
-        youtubeId: "MMYdsLAhr6k",
-        accent: "#10b981",
-    },
-    {
-        id: "maritime-rescue",
-        title: "FP-981A & FP-981AS Maritime Search and Rescue",
-        youtubeId: "7i0_KVfvQKc",
-        accent: "#f59e0b",
-    },
-    {
-        id: "tethered-uav",
-        title: "Tethered UAV on Board",
-        youtubeId: "TfLvaJ-PwdA",
-        accent: "#ec4899",
-    },
-];
-
 const VideoCard = ({
     video,
     index,
+    watchText,
     onPlay,
 }: {
     video: YouTubeVideo;
     index: number;
+    watchText: string;
     onPlay: (youtubeId: string) => void;
 }) => {
     const [hovered, setHovered] = useState(false);
@@ -150,7 +114,7 @@ const VideoCard = ({
                         style={{ background: hovered ? video.accent : "rgba(255,255,255,0.3)" }}
                     />
                     <span className="text-[10px] tracking-widest uppercase" style={{ color: `${video.accent}80` }}>
-                        Watch Demo
+                        {watchText}
                     </span>
                 </div>
             </div>
@@ -159,7 +123,48 @@ const VideoCard = ({
 };
 
 export const YouTubeGallery = () => {
+    const { t, i18n } = useTranslation('gallery');
     const [activeVideoId, setActiveVideoId] = useState<string | null>(null);
+
+    // Dynamic video array using translations
+    const videos: YouTubeVideo[] = useMemo(() => [
+        {
+            id: "cluster-flight",
+            title: t('videos.cluster-flight'),
+            youtubeId: "gGFPBUKCZJc",
+            accent: "#a855f7",
+        },
+        {
+            id: "shore-to-ship",
+            title: t('videos.shore-to-ship'),
+            youtubeId: "RbpTye5I1iA",
+            accent: "#06b6d4",
+        },
+        {
+            id: "firefighting",
+            title: t('videos.firefighting'),
+            youtubeId: "HjHNnHjEXOI",
+            accent: "#ef4444",
+        },
+        {
+            id: "blood-transport",
+            title: t('videos.blood-transport'),
+            youtubeId: "MMYdsLAhr6k",
+            accent: "#10b981",
+        },
+        {
+            id: "maritime-rescue",
+            title: t('videos.maritime-rescue'),
+            youtubeId: "7i0_KVfvQKc",
+            accent: "#f59e0b",
+        },
+        {
+            id: "tethered-uav",
+            title: t('videos.tethered-uav'),
+            youtubeId: "TfLvaJ-PwdA",
+            accent: "#ec4899",
+        },
+    ], [t]);
 
     return (
         <>
@@ -188,17 +193,14 @@ export const YouTubeGallery = () => {
                     >
                         <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-aero-blue/30 bg-aero-card/80 text-aero-blue text-sm font-medium tracking-wide mb-6 backdrop-blur-md">
                             <span className="w-2 h-2 rounded-full bg-aero-blue animate-pulse" />
-                            Video Gallery
+                            {t('header.badge')}
                         </span>
                         <h2 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-4">
-                            See Our UAVs{" "}
+                            {t('header.title1')}{" "}
                             <span className="bg-clip-text text-transparent bg-gradient-to-r from-aero-blue to-aero-purple">
-                                In Action
+                                {t('header.title2')}
                             </span>
                         </h2>
-                        <p className="text-gray-400 text-lg max-w-xl mx-auto">
-                            Watch real-world demonstrations of our unmanned aerial systems across diverse operational scenarios.
-                        </p>
                     </motion.div>
 
                     {/* Featured highlight — local showcase video */}
@@ -226,14 +228,20 @@ export const YouTubeGallery = () => {
                             </video>
                         </div>
                         <p className="text-center text-xs text-gray-500 mt-3 tracking-wide uppercase">
-                            Featured highlight
+                            {t('featured.caption')}
                         </p>
                     </motion.div>
 
                     {/* Video grid */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {videos.map((video, i) => (
-                            <VideoCard key={video.id} video={video} index={i} onPlay={setActiveVideoId} />
+                            <VideoCard 
+                                key={video.id} 
+                                video={video} 
+                                index={i} 
+                                watchText={t('card.watchDemo')}
+                                onPlay={setActiveVideoId} 
+                            />
                         ))}
                     </div>
                 </div>
@@ -280,7 +288,7 @@ export const YouTubeGallery = () => {
                             <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
                                 <iframe
                                     className="absolute inset-0 w-full h-full"
-                                    src={`https://www.youtube-nocookie.com/embed/${activeVideoId}?autoplay=1&rel=0&modestbranding=1&hl=en&cc_lang_pref=en`}
+                                    src={`https://www.youtube-nocookie.com/embed/${activeVideoId}?autoplay=1&rel=0&modestbranding=1&hl=${i18n.language}&cc_lang_pref=${i18n.language}`}
                                     title="Video Player"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowFullScreen

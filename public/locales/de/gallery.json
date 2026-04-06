@@ -1,0 +1,21 @@
+{
+  "header": {
+    "badge": "Videogalerie",
+    "title1": "Sehen Sie unsere Drohnen",
+    "title2": "In Aktion"
+  },
+  "featured": {
+    "caption": "Besonderes Highlight"
+  },
+  "card": {
+    "watchDemo": "Demo ansehen"
+  },
+  "videos": {
+    "cluster-flight": "Schwarmflug der FEIPENG-Drohne",
+    "shore-to-ship": "FP-981A Frachtlieferung von der Küste zum Schiff",
+    "firefighting": "Brandbekämpfungsszenarien in städtischen Hochhäusern",
+    "blood-transport": "Bluttransportszenarien in der Stadt",
+    "maritime-rescue": "FP-981A & FP-981AS Maritime Suche und Rettung",
+    "tethered-uav": "Angebundene Drohne an Bord"
+  }
+}

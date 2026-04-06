@@ -1,0 +1,38 @@
+{
+    "hero": {
+        "tag": "Kontakt Aufnehmen",
+        "title": "Kontaktieren Sie Uns",
+        "subtitle": "Nehmen Sie Kontakt auf für Produktanfragen, Partnerschaftsmöglichkeiten oder technischen Support."
+    },
+    "info": {
+        "hotline": {
+            "label": "Hotline",
+            "value": "400-888-2062"
+        },
+        "email": {
+            "label": "E-Mail",
+            "value": "marketing@htsdfp.com"
+        },
+        "hq": {
+            "label": "Hauptsitz",
+            "value": "Gebäude A7, Internationaler Innovationshafen, Wirtschaftsentwicklungszone Huaqiao, Stadt Kunshan, Provinz Jiangsu"
+        },
+        "beijing": {
+            "label": "Pekinger F&E-Zweigstelle",
+            "value": "9. OG, Gebäude 2, Nr. 55 Zique-Straße, Bezirk Haidian, Peking"
+        }
+    },
+    "form": {
+        "title": "Schreiben Sie uns",
+        "subtitle": "Wir antworten Ihnen innerhalb von 24 Stunden.",
+        "placeholders": {
+            "name": "Name",
+            "email": "E-Mail",
+            "phone": "Telefon",
+            "company": "Firmenname",
+            "address": "Adresse",
+            "message": "Nachricht"
+        },
+        "submit": "Nachricht Senden"
+    }
+}

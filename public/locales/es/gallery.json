@@ -1,0 +1,21 @@
+{
+    "header": {
+        "badge": "Galería de Videos",
+        "title1": "Vea Nuestros UAV",
+        "title2": "En Acción"
+    },
+    "featured": {
+        "caption": "Destacado principal"
+    },
+    "card": {
+        "watchDemo": "Ver Demostración"
+    },
+    "videos": {
+        "cluster-flight": "Vuelo en Enjambre del UAV FEIPENG",
+        "shore-to-ship": "Entrega de Carga Costa a Barco FP-981A",
+        "firefighting": "Escenarios de Extinción de Incendios en Edificios Urbanos",
+        "blood-transport": "Escenarios de Transporte de Sangre en la Ciudad",
+        "maritime-rescue": "Búsqueda y Rescate Marítimo FP-981A y FP-981AS",
+        "tethered-uav": "UAV Cautivo a Bordo"
+    }
+}

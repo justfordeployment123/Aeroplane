@@ -1,0 +1,133 @@
+{
+    "hero": {
+        "badge": "Gegründet 2013",
+        "title1": "Über",
+        "title2": "Uns",
+        "subtitle": "Pioniere beim Übergang vom zweidimensionalen zum dreidimensionalen autonomen Transport.",
+        "scroll": "Scrollen"
+    },
+    "profile": {
+        "tag": "Wer Wir Sind",
+        "title1": "Unternehmens-",
+        "title2": "Profil",
+        "p1_start": "Aerospace Times Feipeng Co., Ltd. ist ein gemischtes Unternehmen, das von der ",
+        "p1_highlight": "China Aerospace Science and Technology Corporation",
+        "p1_end": " gemäß dem „Dreijahres-Aktionsplan" zur Reform staatlicher Unternehmen der Kommission für die Aufsicht und Verwaltung staatlicher Vermögenswerte des Staatsrats initiiert wurde.",
+        "p2": "Unsere Hauptaufgabe besteht darin, mit Hilfe unbemannter Systemtechnologie szenariobasierte Lösungen für Industrienutzer in relevanten Ländern und Regionen weltweit bereitzustellen und die Transformation des Transportmodus vom zweidimensionalen zum dreidimensionalen Modus voranzutreiben. Wir liefern Schlüsselausrüstungen für unbemannte Systeme und Lösungen auf Systemebene.",
+        "btnProducts": "Unsere Produkte",
+        "btnApps": "Anwendungen"
+    },
+    "values": {
+        "tag": "Was Uns Antreibt",
+        "title1": "Kern-",
+        "title2": "Werte",
+        "subtitle": "Die Prinzipien, die jede Entscheidung, jeden Flug und jede Innovation leiten.",
+        "items": {
+            "sys": {
+                "title": "Systematische Lösung",
+                "desc": "Bietet szenariobasierte Lösungen für Industrienutzer in relevanten Ländern und Regionen weltweit.",
+                "statLabel": "Abdeckung"
+            },
+            "layout": {
+                "title": "Vollständiges Produktportfolio",
+                "desc": "Vollständige Produktpalette mit UAV-Modellen für Haupt-, Neben- und Endstreckenszenarios.",
+                "statLabel": "UAV-Modelle"
+            },
+            "time": {
+                "title": "Über 10W Flugstunden",
+                "desc": "Über 100.000 akkumulierte Flugstunden mit nachgewiesenen Sicherheits- und Zuverlässigkeitsnachweisen.",
+                "statLabel": "Flugstunden"
+            },
+            "cert": {
+                "title": "Lufttüchtigkeitszertifizierung",
+                "desc": "Vollständige Musterzulassung und Lufttüchtigkeits-Konformitätszertifizierung für zivile UAV-Operationen.",
+                "statLabel": "Zertifiziert"
+            }
+        }
+    },
+    "recognition": {
+        "tag": "Anerkennung",
+        "title1": "Ehrenwerte",
+        "title2": "Qualifikationen",
+        "industry": {
+            "title": "Branchenqualifikationen",
+            "subtitle": "Zertifizierungen"
+        },
+        "enterprise": {
+            "title": "Unternehmensauszeichnungen",
+            "subtitle": "Auszeichnungen"
+        },
+        "certs": {
+            "title": "Zertifizierungen",
+            "subtitle": "Hover für Details",
+            "hoverText": "Hover zum Umdrehen",
+            "verified": "Verifiziert",
+            "items": {
+                "cert1": "Nationales Hightech-Unternehmen",
+                "cert2": "Ausbildungszentrum für UAV-Bediener",
+                "cert3": "RPAS-Luftfahrtbetreiberzeugnis",
+                "cert4": "Qualitätsmanagementsystem ISO 9001",
+                "cert5": "Teilnahme an der Singapore Airshow",
+                "cert6": "Zivile UAV-Pilotenausbildungsagentur"
+            }
+        }
+    },
+    "qualifications": [
+        "Ausbildungszentrum für große zivile UAV-Bediener",
+        "Luftfahrtbetreiberzeugnis für ferngesteuerte Luftfahrzeugsysteme (RPAS)",
+        "Qualitätsprüfungs- und Zertifizierung für Sicherheits- und Polizeielektronikprodukte des Ministeriums für öffentliche Sicherheit",
+        "Zertifizierung für den allgemeinen Luftfahrtgeschäftsbetrieb",
+        "Zertifizierung als Agentur für die Ausbildung ziviler UAV-Piloten",
+        "Zertifizierung für UAV-5G-Netzwerktests des China Mobile Industrial Research Institute (Chengdu)",
+        "Zertifizierung des Managementsystems für geistiges Eigentum",
+        "Qualitätsmanagementsystemzertifizierung",
+        "Umweltmanagementsystemzertifizierung",
+        "Zertifizierung des Managementsystems für Arbeitssicherheit und Gesundheitsschutz",
+        "AAA-Kreditratings-Zertifizierung für Unternehmen",
+        "Kreditratings-Zertifizierung"
+    ],
+    "honorsList": [
+        "Nationales Hightech-Unternehmen 2023",
+        "Potenzielle Einhorn-Unternehmen in der Provinz Jiangsu",
+        "Kleine und mittlere Wissenschafts- und Technologieunternehmen der Provinz Jiangsu",
+        "Innovative kleine und mittlere Unternehmen der Provinz Jiangsu",
+        "Suzhou Einhorn-Kultivierungsunternehmen",
+        "Suzhou Führende Unternehmen der Tiefflugwirtschaft",
+        "Suzhou Digitalwirtschaftsunternehmen 2022",
+        "2023 Dongshahu Risikokapital 'Jährlich wachstumsst arkst es Unternehmen'",
+        "2021 'Kectron China' Führende Technologieliste",
+        "Kunshan Key Laboratory für fortgeschrittene unbemannte Transportsysteme",
+        "Strategische Innovationsallianz der UAV-Industrie der Zivilluftfahrt",
+        "Kunshan Engineering Technology Research Center für unbemannte Systeme",
+        "Master-Abschluss-Praxisbasis der Universität Suzhou",
+        "Postgraduierten-Praxisbasis der Südost-Universität",
+        "Gemeinsame Postgraduiertenausbildungsbasis der Zivilluftfahrtuniversität China",
+        "Postgraduierten-Ausbildungspraxisbasis der Harbin Engineering University",
+        "Mitgliedseinheit der Allianz für kooperative Bildung zwischen Industrie und Universitäten"
+    ],
+    "academic": {
+        "tag": "Zusammenarbeit",
+        "title1": "Akademische &",
+        "title2": "Forschung",
+        "items": [
+            { "type": "Universität", "name": "Universität Suzhou", "detail": "Master-Abschluss-Praxisbasis" },
+            { "type": "Universität", "name": "Südost-Universität", "detail": "Postgraduierten-Praxisbasis" },
+            { "type": "Universität", "name": "Zivilluftfahrtuniversität China", "detail": "Gemeinsame Postgraduiertenausbildungsbasis" },
+            { "type": "Universität", "name": "Harbin Engineering University", "detail": "Postgraduierten-Ausbildungspraxisbasis" },
+            { "type": "Forschungszentrum", "name": "Fortgeschrittenes unbemanntes Transportsystem Kunshan", "detail": "Schlüssellabor" },
+            { "type": "Forschungszentrum", "name": "Unbemannte Systemtechnik Kunshan", "detail": "Technologieforschungszentrum" }
+        ]
+    },
+    "vision": {
+        "tag": "In die Zukunft Blicken",
+        "title1": "Unsere",
+        "title2": "Vision"
+    },
+    "cta": {
+        "title1": "Bereit für eine",
+        "title2": "Partnerschaft?",
+        "subtitle": "Treten Sie der nächsten Generation autonomer Luftfahrt bei. Lassen Sie uns gemeinsam die Zukunft des Transports gestalten.",
+        "btnProducts": "Produkte Entdecken",
+        "btnTraining": "Trainingszentrum"
+    }
+}

@@ -1,0 +1,62 @@
+{
+    "hero": {
+        "badge": "Academia de Vuelo GADT",
+        "title": "Centro de Formación",
+        "subtitle": "Aerospace Times Feipeng Co., Ltd. es una institución de formación de pilotos de UAV civiles certificada por la Asociación China de Propietarios y Pilotos de Aeronaves (AOPA), que puede proporcionar formación teórica y práctica para pilotos de multirrotor en línea de visión y más allá de la línea de visión.",
+        "scroll": "Desplazar"
+    },
+    "stats": [
+        { "value": "88–90%", "label": "Tasa de Aprobación" },
+        { "value": "500+", "label": "Pilotos Certificados" },
+        { "value": "AOPA", "label": "Institución Certificada" },
+        { "value": "10+", "label": "Años de Experiencia" }
+    ],
+    "intro": {
+        "body": "Una institución de formación de pilotos de UAV civiles de primer nivel certificada por la <highlight>Asociación China de Propietarios y Pilotos de Aeronaves (AOPA)</highlight>. Ofrecemos formación teórica y práctica de élite para pilotos de multirrotor Clase III en línea de visión y más allá de la línea de visión."
+    },
+    "process": {
+        "tag": "Tu Trayectoria",
+        "title": "Cómo",
+        "titleHighlight": "Funciona",
+        "steps": [
+            { "step": "01", "title": "Registrarse", "desc": "Envía tu solicitud y selecciona tu horario preferido" },
+            { "step": "02", "title": "Teoría", "desc": "Completa el curso de formación terrestre certificado" },
+            { "step": "03", "title": "Vuelo", "desc": "Formación práctica de vuelo con mentores experimentados" },
+            { "step": "04", "title": "Certificarse", "desc": "Supera el examen AOPA y obtén tu licencia" }
+        ]
+    },
+    "panels": [
+        { "title": "Proceso de Servicio", "sub": "Diagrama de flujo paso a paso" },
+        { "title": "Certificación", "sub": "Cualificación oficial AOPA" }
+    ],
+    "features": {
+        "tag": "Lo Que Nos Diferencia",
+        "title": "Características del",
+        "titleHighlight": "Curso",
+        "items": [
+            {
+                "title": "Organización Humanizada del Curso",
+                "desc": "Con clases fuera del horario laboral y fines de semana, adecuada para diferentes grupos de trabajo."
+            },
+            {
+                "title": "Sistema de Gestión de Clases",
+                "desc": "Donde cada clase es gestionada por una persona dedicada y el tiempo de estudio y descanso de cada estudiante está razonablemente organizado."
+            },
+            {
+                "title": "Mentores Experimentados en Proyectos Prácticos",
+                "desc": "Permiten a los estudiantes comprender rápidamente la aplicación de los UAVs en proyectos reales."
+            },
+            {
+                "title": "Alta Tasa de Aprobación",
+                "desc": "Con una tasa de aprobación del 88%–90% en el curso de pilotos de UAV multirrotor."
+            }
+        ]
+    },
+    "cta": {
+        "title": "¿Listo para",
+        "titleHighlight": "Certificarte?",
+        "subtitle": "Únete a cientos de pilotos de UAV certificados formados en nuestra academia aprobada por AOPA.",
+        "enroll": "Inscribirse Ahora",
+        "learnAopa": "Más Información sobre el Examen AOPA"
+    }
+}

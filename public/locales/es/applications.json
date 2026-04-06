@@ -1,0 +1,71 @@
+{
+    "hero": {
+        "badge": "Casos de Uso Globales",
+        "title1": "Escenarios de",
+        "title2": "Aplicación",
+        "subtitle": "Desde logística civil hasta respuesta de emergencia: diseñado para cada misión crítica.",
+        "scroll": "Desplazar"
+    },
+    "scenariosData": {
+        "scenarioText": "ESCENARIO",
+        "exploreText": "Explorar Caso de Estudio",
+        "items": {
+            "civil-logistics": {
+                "title": "Logística Civil",
+                "label": "Logística Civil",
+                "desc": "Proporciona soluciones sistemáticas para escenarios operativos típicos como logística troncal, logística de ramificación y logística terminal.",
+                "stats": [
+                    { "value": "3 Niveles", "label": "Red" },
+                    { "value": "24/7", "label": "Operación" },
+                    { "value": "99,8%", "label": "Tasa de Entrega" }
+                ]
+            },
+            "emergency-rescue": {
+                "title": "Rescate de Emergencia",
+                "label": "Rescate de Emergencia",
+                "desc": "Innova el modo de rescate de emergencia con UAVs. Construye un sistema de rescate tridimensional inteligente. Proporciona soluciones sistemáticas para diferentes escenarios de desastre.",
+                "stats": [
+                    { "value": "<15 min", "label": "Respuesta" },
+                    { "value": "3D", "label": "Mapeo" },
+                    { "value": "500 km", "label": "Cobertura" }
+                ]
+            },
+            "industry-service": {
+                "title": "Servicio Industrial",
+                "label": "Servicio Industrial",
+                "desc": "Un sistema operativo completo para el transporte aéreo. Proporciona a los clientes servicios de operación, pruebas y transporte de varios modelos.",
+                "stats": [
+                    { "value": "Completo", "label": "Ciclo de Vida" },
+                    { "value": "11+", "label": "Modelos" },
+                    { "value": "AOPA", "label": "Certificado" }
+                ]
+            },
+            "forest-fire-prevention": {
+                "title": "Prevención de Incendios en Bosques y Pastizales",
+                "label": "Prevención de Incendios",
+                "desc": "Sistema integral de prevención de incendios forestales y de pastizales que incluye patrulla diaria, monitoreo de incendios, reconocimiento de la escena del incendio y apoyo de comunicaciones de emergencia.",
+                "stats": [
+                    { "value": "24/7", "label": "Patrulla" },
+                    { "value": "Tiempo Real", "label": "Monitoreo" },
+                    { "value": "Emergencia", "label": "Comunicaciones" }
+                ]
+            }
+        }
+    },
+    "cta": {
+        "title1": "¿Tienes una Misión",
+        "title2": "en Mente?",
+        "subtitle": "Nuestros especialistas diseñan soluciones de UAV adaptadas a sus requisitos operativos.",
+        "btnDiscuss": "Discutir su Escenario",
+        "btnProducts": "Ver Todos los Productos"
+    },
+    "scenarioDetail": {
+        "back": "Volver a Aplicaciones",
+        "badge": "Escenario de Aplicación",
+        "operationalCapabilities": "Capacidades Operativas",
+        "detailedSolutions": "Soluciones Detalladas",
+        "exploreMore": "Explorar Más",
+        "otherScenarios": "Otros Escenarios de Aplicación",
+        "viewDetails": "Ver Detalles"
+    }
+}

@@ -1,0 +1,306 @@
+{
+    "hero": {
+        "tag": "Flota y Hardware",
+        "title": "Productos de la Serie",
+        "subtitle": "Un ecosistema completo de UAVs, estaciones de control y sistemas inteligentes."
+    },
+    "cta": {
+        "title": "¿Listo para Desplegar\nSu Flota?",
+        "subtitle": "Contacte a nuestros especialistas para configuraciones personalizadas y soluciones empresariales.",
+        "requestQuote": "Solicitar Presupuesto",
+        "viewApplications": "Ver Aplicaciones"
+    },
+    "filters": {
+        "all": "Todos los Productos"
+    },
+    "categories": {
+        "uav": {
+            "title": "UAV",
+            "subtitle": "Vehículos Aéreos No Tripulados",
+            "description": "Plataformas de ala fija y multirrotor de alto rendimiento diseñadas para logística de precisión."
+        },
+        "special": {
+            "title": "Aeronaves Especiales",
+            "subtitle": "Plataformas de Misión Crítica",
+            "description": "Aeronaves de ala compuesta especializadas diseñadas para entornos operativos exigentes."
+        },
+        "ground-station": {
+            "title": "Estación de Control Terrestre",
+            "subtitle": "Hardware de Mando y Control",
+            "description": "La Estación de Control Terrestre procesa tareas a través de una consola de control, enlace de datos o comunicación satelital."
+        },
+        "control-system": {
+            "title": "Sistema de Control de UAVs",
+            "subtitle": "Software de Vuelo Inteligente",
+            "description": "El Sistema de Control Operativo puede proporcionar datos en tiempo real como placas de identificación de drones, información de situación y estado de vuelo, y realizar operaciones de control manual como solicitud de espacio aéreo y ejecución de misiones de vuelo."
+        }
+    },
+    "products": {
+        "fp-98": {
+            "name": "FP-98 UAVs de Ala Fija de Gran Tamaño",
+            "tag": "Ala Fija",
+            "description": "El FP-98 es el primer sistema de transporte no tripulado de gran tamaño de China, que puede satisfacer las necesidades de transporte y entrega de materiales a larga distancia en entornos complejos. Seguro y fiable, corta distancia de despegue y aterrizaje, gran capacidad de carga, alta eficiencia, alta inteligencia, fácil operación. Puede lograr despegue y aterrizaje seguros utilizando condiciones de pista de aeropuerto navegable Clase A de 800 m. El sistema comprende UAVs, enlaces de datos y estaciones de control terrestre para entrega de transporte, lanzamiento de emergencia, retransmisión de comunicaciones y escenarios de recogida de pruebas especiales.",
+            "highlights": [
+                "Largo Alcance / Gran Capacidad de Carga",
+                "Tecnología Madura / Fácil Mantenimiento",
+                "Lanzamiento Preciso Continuo",
+                "Despegue y Aterrizaje Corto en Pista"
+            ],
+            "specs": [
+                { "label": "Peso Máximo de Despegue", "value": "≥ 100 kg" },
+                { "label": "Capacidad de Carga Útil", "value": "≥ 25 kg" },
+                { "label": "Alcance Máximo", "value": "≥ 1500 km" },
+                { "label": "Velocidad de Crucero", "value": "160–200 km/h" },
+                { "label": "Altitud Máxima", "value": "5000 m" },
+                { "label": "Distancia de Despegue", "value": "≤ 800 m (Clase A)" },
+                { "label": "Enlace de Datos", "value": "Doble redundancia" },
+                { "label": "Autonomía", "value": "≥ 10 h" }
+            ],
+            "applications": ["Plataforma de Pruebas Especiales", "Rescate de Emergencia", "Transporte Insular", "Logística de Ramificación"]
+        },
+        "fp-985": {
+            "name": "FP-985 UAVs de Ala Fija de Gran Tamaño",
+            "tag": "Ala Fija",
+            "description": "El sistema de aeronave no tripulada de ala fija grande FP-985 puede satisfacer la demanda de entrega remota de materiales de gran carga en condiciones de terreno complejo como mesetas y frío extremo, islas y salpicaduras de sal. El sistema consta de UAV, cadena de datos y estación de control terrestre, que puede despegar y aterrizar en aeropuertos o pistas estándar, y está equipado con dispositivo de entrega continua y precisa. El sistema es resistente a la descongelación, rayos y vientos fuertes en el aire, lo que puede garantizar el vuelo en todo tipo de clima bajo condiciones meteorológicas adversas.",
+            "highlights": [
+                "Capacidad de Misión en Condiciones Complejas",
+                "Detección de Condición de Vida Completa",
+                "Lanzamiento Preciso Continuo",
+                "Despegue y Aterrizaje Corto en Pista"
+            ],
+            "specs": [
+                { "label": "Peso Máximo de Despegue", "value": "≥ 120 kg" },
+                { "label": "Capacidad de Carga Útil", "value": "≥ 30 kg" },
+                { "label": "Alcance Máximo", "value": "≥ 1800 km" },
+                { "label": "Velocidad de Crucero", "value": "170–210 km/h" },
+                { "label": "Altitud Máxima", "value": "5500 m" },
+                { "label": "Autonomía", "value": "≥ 12 h" },
+                { "label": "Enlace de Datos", "value": "Doble redundancia" },
+                { "label": "Navegación", "value": "GPS dual / GLONASS" }
+            ],
+            "applications": ["Logística Civil", "Rescate de Emergencia", "Servicio Industrial"]
+        },
+        "fp-981c": {
+            "name": "FP-981C UAVs de Ala Compuesta VTOL",
+            "tag": "VTOL",
+            "description": "El FP-981C tiene las características de no requerir sitio de aterrizaje, bajo costo operativo, operación en enjambre, etc., y puede expandirse en el campo de la protección contra incendios forestales, entrega de suministros de emergencia post-desastre, soporte y otros campos.",
+            "highlights": [
+                "Despegue y Aterrizaje Vertical",
+                "Aplicación en Meseta",
+                "Modularización",
+                "Manejo Exprés",
+                "Red Multi-Aeronave",
+                "Operación en Flota",
+                "Planificación Inteligente de Rutas"
+            ],
+            "specs": [
+                { "label": "Envergadura", "value": "≥ 3 m" },
+                { "label": "Capacidad de Carga Útil", "value": "≥ 6 kg" },
+                { "label": "Alcance Máximo", "value": "≥ 300 km" },
+                { "label": "Velocidad de Crucero", "value": "100–130 km/h" },
+                { "label": "Altitud Máxima", "value": "4000 m" },
+                { "label": "Autonomía", "value": "≥ 3 h" },
+                { "label": "Modo de Despegue", "value": "VTOL / Carrera corta" },
+                { "label": "Resistencia al Viento", "value": "Nivel 6" }
+            ],
+            "applications": ["Logística Civil", "Rescate de Emergencia", "Servicio Industrial"]
+        },
+        "fp-981a": {
+            "name": "FP-981A UAVs Multirrotor",
+            "tag": "Multirrotor",
+            "description": "El FP-981A, desarrollado de forma independiente por Aerospace Times Feipeng Co., LTD., tiene las características de gran capacidad de carga, alta fiabilidad, alta inteligencia, ricas capacidades de expansión, etc., y tiene una amplia gama de usos en transporte logístico civil, protección contra incendios urbanos, comunicaciones de emergencia, inspección y vigilancia, rescate de emergencia y otros campos.",
+            "highlights": [
+                "Almacenamiento Estándar / Manejo Exprés",
+                "Hover en Punto / Control de Vuelo de Precisión",
+                "Aviónica Redundante / Equipo de Comunicación Multimodo",
+                "Múltiples Estaciones y Múltiples UAVs / Formación Cooperativa"
+            ],
+            "specs": [
+                { "label": "Configuración", "value": "Octorrotor" },
+                { "label": "Capacidad de Carga Útil", "value": "≥ 10 kg" },
+                { "label": "Alcance Máximo", "value": "≥ 50 km" },
+                { "label": "Velocidad Máxima", "value": "80 km/h" },
+                { "label": "Precisión de Hover", "value": "±0,1 m (RTK)" },
+                { "label": "Autonomía", "value": "≥ 45 min" },
+                { "label": "Resistencia al Viento", "value": "Nivel 5" },
+                { "label": "Clasificación IP", "value": "IP54" }
+            ],
+            "applications": ["Combate contra Incendios de Emergencia", "Logística Urbana", "Asistencia Médica", "Turismo Cultural"]
+        },
+        "fp-980-7b": {
+            "name": "FP-980-7B Aeropuerto Automático de Estación Terminal",
+            "tag": "Infraestructura",
+            "description": "El FP-980-7B es un dispositivo que puede adaptarse a pequeños UAVs multirrotor y realizar la función de carga y descarga automática de UAVs a través del dispositivo de apertura y cierre de la cubierta superior interna, el dispositivo de centrado y el mecanismo de elevación interno. Al mismo tiempo, los clientes pueden recoger mercancías introduciendo los últimos cuatro dígitos del número de teléfono móvil en el panel de operación del armario, mejorando aún más el grado no tripulado de la logística terminal.",
+            "highlights": [
+                "Sin Asistencia",
+                "Despegue y Aterrizaje Autónomos",
+                "Monitoreo a Tiempo Completo",
+                "Carga y Descarga Automáticas"
+            ],
+            "specs": [
+                { "label": "UAVs Compatibles", "value": "FP-981A / FP-981C" },
+                { "label": "Tiempo de Cambio de Batería", "value": "≤ 5 min" },
+                { "label": "Capacidad de Carga", "value": "≤ 10 kg por misión" },
+                { "label": "Suministro de Energía", "value": "Red / Solar híbrido" },
+                { "label": "Comunicación", "value": "4G / 5G / Satélite" },
+                { "label": "Temperatura Operativa", "value": "-20°C ~ +55°C" },
+                { "label": "Clasificación IP", "value": "IP55" },
+                { "label": "Huella", "value": "6 m × 6 m" }
+            ],
+            "applications": ["Logística Civil", "Rescate de Emergencia", "Servicio Industrial"]
+        },
+        "fp-981cs": {
+            "name": "FP-981CS UAVs de Ala Compuesta VTOL",
+            "tag": "Ops. Especiales",
+            "description": "El FP-981CS tiene las características de larga autonomía, amplio rango de acción, bajos requisitos para los sitios de aterrizaje, y puede expandirse en los campos de búsqueda y rescate marítimo, patrulla forestal y de pastizales, búsqueda y rescate post-desastre, patrulla fronteriza, retransmisión de comunicaciones y otros campos.",
+            "highlights": [
+                "Larga Autonomía",
+                "Carga Extendida",
+                "Amplio Rango Operativo",
+                "Despegue y Aterrizaje Vertical"
+            ],
+            "specs": [
+                { "label": "Envergadura", "value": "≥ 3,2 m" },
+                { "label": "Capacidad de Carga Útil", "value": "≥ 8 kg" },
+                { "label": "Alcance Máximo", "value": "≥ 500 km" },
+                { "label": "Velocidad de Crucero", "value": "110–140 km/h" },
+                { "label": "Altitud Máxima", "value": "5000 m" },
+                { "label": "Autonomía", "value": "≥ 5 h" },
+                { "label": "Modo de Despegue", "value": "VTOL" },
+                { "label": "Resistencia al Viento", "value": "Nivel 7" }
+            ],
+            "applications": ["Patrulla de Áreas Clave", "Silvicultura y Protección de Plantas", "Seguridad de Apoyo", "Patrulla Marina"]
+        },
+        "fp-980-1": {
+            "name": "FP-980-1 Terminal de Control Portátil",
+            "tag": "Portátil",
+            "description": "El FP-980-1 es un dispositivo que los operadores pueden usar para controlar UAVs en tierra para el control y gestión de vuelo, percibir de manera oportuna y precisa el estado de vuelo de los UAVs, y realizar el control de demanda y la respuesta de emergencia de los UAVs. Como terminal de carga portátil que integra sistema de computadora industrial y sistema de control remoto de enlace integrado, tiene potentes capacidades de computación y procesamiento.",
+            "highlights": [
+                "Altamente Integrado",
+                "Soporte de Suite de Expansión",
+                "Cuerpo de Aluminio de Aviación Todo Ligero",
+                "Enlaces de Comunicación Personalizados"
+            ],
+            "specs": [
+                { "label": "Peso", "value": "≤ 2,5 kg" },
+                { "label": "Pantalla", "value": "7\" alta luminosidad" },
+                { "label": "Duración de Batería", "value": "≥ 4 h" },
+                { "label": "Comunicación", "value": "Radio de doble frecuencia" },
+                { "label": "Rango de Control", "value": "≥ 50 km (LOS)" },
+                { "label": "Temperatura Operativa", "value": "-20°C ~ +55°C" },
+                { "label": "Clasificación IP", "value": "IP54" },
+                { "label": "GPS", "value": "Integrado" }
+            ],
+            "applications": ["Logística Civil", "Rescate de Emergencia", "Servicio Industrial"]
+        },
+        "fp-980-2": {
+            "name": "FP-980-2 Terminal de Control Portátil",
+            "tag": "Portátil",
+            "description": "El FP-980-2 fue diseñado y desarrollado por Aerospace Times Feipeng Co., LTD. Adopta una computadora portátil reforzada de alto rendimiento con tres pantallas, integra equipo de comunicación digital, equipo de navegación satelital, módulo de comunicación 5G, módulo de gestión de distribución y suministro de energía y varias interfaces de expansión externas, etc. Tiene las características de tamaño pequeño, alta integración, fuerte capacidad de expansión, fácil operación y buena portabilidad.",
+            "highlights": [
+                "Diseño de Respaldo de Redundancia de Doble Estación",
+                "Batería de Litio de Gran Capacidad Integrada Diseño Extraíble con Batería de Litio de Repuesto de 8000 mAh",
+                "Monitoreo en Tiempo Real de la Temperatura Interna del Equipo",
+                "Soporte 3G/4G/5G, Acceso a Internet con Tarjeta SIM"
+            ],
+            "specs": [
+                { "label": "Peso", "value": "≤ 8 kg (maletín)" },
+                { "label": "Pantalla", "value": "15\" multitáctil" },
+                { "label": "Duración de Batería", "value": "≥ 6 h" },
+                { "label": "UAVs Simultáneos", "value": "Hasta 3" },
+                { "label": "Rango de Control", "value": "≥ 100 km" },
+                { "label": "Temperatura Operativa", "value": "-20°C ~ +60°C" },
+                { "label": "Clasificación IP", "value": "IP55" },
+                { "label": "Grabación de Datos", "value": "SSD de 512 GB" }
+            ],
+            "applications": ["Logística Civil", "Rescate de Emergencia", "Servicio Industrial"]
+        },
+        "fp-980-3b": {
+            "name": "FP-980-3B Estación de Control en Abrigo Mejorado",
+            "tag": "Abrigo",
+            "description": "La FP-980-3B está compuesta principalmente por el cuerpo del abrigo, equipos de soporte de suministro de energía, equipos de mando y control, y equipos de comunicación de medición y control, que proporcionan un conveniente entorno de control interior para los operadores terrestres de UAVs. El abrigo está equipado con 3 asientos (2 asientos de carga y 1 asiento de monitoreo), y el gabinete de equipos integra equipos de soporte de suministro de energía, equipos de mando y control y equipos de comunicación de medición y control.",
+            "highlights": [
+                "Movilidad: Transporte de Chasis Civil",
+                "Confort: Instalaciones de Vida Completas",
+                "Seguridad: Equipo de Soporte de Emergencia",
+                "Escalabilidad: Interfaz de Espacio Reservado"
+            ],
+            "specs": [
+                { "label": "Tipo de Abrigo", "value": "Abrigo estándar de 20 pies" },
+                { "label": "Estaciones de Trabajo", "value": "3 asientos (2 carga + 1 monitoreo)" },
+                { "label": "UAVs Simultáneos", "value": "Hasta 10" },
+                { "label": "Suministro de Energía", "value": "Corriente de orilla / Generador" },
+                { "label": "Sistema A/C", "value": "HVAC Integrado" },
+                { "label": "Comunicaciones", "value": "Satélite / 4G / 5G / VHF / UHF" },
+                { "label": "Almacenamiento de Datos", "value": "RAID NAS 10 TB" },
+                { "label": "Temperatura Operativa", "value": "-30°C ~ +50°C (interior)" }
+            ],
+            "applications": ["Logística Civil", "Rescate de Emergencia", "Servicio Industrial"]
+        },
+        "fp-980-3c": {
+            "name": "FP-980-3C Estación de Control en Abrigo Montada en Vehículo",
+            "tag": "Vehículo",
+            "description": "La FP-980-3C está modificada basada en el chasis de un vehículo todoterreno de tracción en las cuatro ruedas, y todo el vehículo se divide en una caja superior y una plataforma de chasis. El vehículo incluye sistema de plataforma de vehículo, sistema de distribución y suministro de energía, sistema de mando y control, sistema de comunicación de medición y control, y sistema de soporte integral y otras cinco partes.",
+            "highlights": [
+                "Movilidad Terrestre Rápida",
+                "Despliegue Rápido",
+                "Ligero y Flexible",
+                "Tipo de Conductor: Licencia de Conducir C1"
+            ],
+            "specs": [
+                { "label": "Base del Vehículo", "value": "Chasis todoterreno 4×4" },
+                { "label": "Tiempo de Despliegue", "value": "≤ 30 min" },
+                { "label": "Estaciones de Trabajo", "value": "3 posiciones de operador" },
+                { "label": "UAVs Simultáneos", "value": "Hasta 6" },
+                { "label": "Generador", "value": "15 kVA integrado" },
+                { "label": "Comunicaciones", "value": "Satélite / 4G / VHF / UHF" },
+                { "label": "Terreno", "value": "Todoterreno 4×4" },
+                { "label": "Temperatura Operativa", "value": "-40°C ~ +55°C" }
+            ],
+            "applications": ["Logística Civil", "Rescate de Emergencia", "Servicio Industrial"]
+        },
+        "uav-ocs": {
+            "name": "Sistema de Control Operativo de UAVs",
+            "tag": "Software",
+            "description": "El Sistema de Control Operativo de UAVs está dedicado a proporcionar soluciones de control integrales y eficientes, así como seguimiento de situación integral y visualización de información dinámica.",
+            "highlights": [
+                "Visualización de Situación en Tiempo Real",
+                "Control de Despegue y Aterrizaje",
+                "Advertencia de Riesgos",
+                "Control de Flujo"
+            ],
+            "specs": [
+                { "label": "Capacidad de Flota", "value": "UAVs ilimitados" },
+                { "label": "Misiones Concurrentes", "value": "100+" },
+                { "label": "Optimización de Rutas", "value": "Con IA" },
+                { "label": "Integración de Mapas", "value": "GIS multi-fuente" },
+                { "label": "Tasa de Actualización de Datos", "value": "Tiempo real (< 1 s)" },
+                { "label": "Integración API", "value": "RESTful / SDK" },
+                { "label": "Despliegue", "value": "Nube / Local" },
+                { "label": "SLA de Disponibilidad", "value": "99,9%" }
+            ],
+            "applications": ["Logística Civil", "Rescate de Emergencia", "Servicio Industrial"]
+        }
+    },
+    "card": {
+        "viewSpecs": "Ver Especificaciones"
+    },
+    "detail": {
+        "back": "Volver a Productos",
+        "systemActive": "SIS.ACTIVO",
+        "showcase": "Presentación del Producto",
+        "liveDemo": "Demostración en Vivo",
+        "coreCapabilities": "Capacidades Principales",
+        "keyFeatures": "Características Clave",
+        "technicalData": "Datos Técnicos",
+        "mainPerformance": "Parámetros de Rendimiento Principales",
+        "useCases": "Casos de Uso",
+        "applicationScenarios": "Escenarios de Aplicación",
+        "sameSeries": "Misma Serie",
+        "relatedProducts": "Productos Relacionados",
+        "readyToDeploy": "¿Listo para desplegar",
+        "ctaSubtitle": "Contacte a nuestros especialistas para configuraciones personalizadas y soluciones empresariales adaptadas a su perfil de misión.",
+        "requestQuote": "Solicitar Presupuesto",
+        "browseAll": "Ver Todos los Productos"
+    }
+}
