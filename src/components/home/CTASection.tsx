@@ -1,11 +1,16 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export const CTASection = () => {
+    const { t } = useTranslation("home");
+
+    // JSON uses \n to split the two-line heading
+    const [titleLine1, titleLine2] = t("cta.title").split("\n");
+
     return (
         <section className="py-32 relative overflow-hidden bg-aero-dark">
-            {/* 3D depth rings */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <motion.div
                     className="w-[900px] h-[900px] rounded-full border border-white/[0.015]"
@@ -32,13 +37,12 @@ export const CTASection = () => {
                     transition={{ duration: 0.9 }}
                 >
                     <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                        Aerospace Technology
+                        {titleLine1}
                         <br />
-                        Makes Life Better
+                        {titleLine2}
                     </h2>
                     <p className="text-gray-500 text-lg max-w-xl mx-auto mb-14 leading-relaxed">
-                        Providing scenario-level solutions for industry users with unmanned system technology,
-                        promoting the transformation of transportation from two-dimensional to three-dimensional mode.
+                        {t("cta.subtitle")}
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -49,7 +53,7 @@ export const CTASection = () => {
                                 className="group relative px-10 py-4.5 bg-white text-black font-bold rounded-full overflow-hidden shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:shadow-[0_0_60px_rgba(255,255,255,0.2)] transition-shadow duration-500"
                             >
                                 <span className="relative flex items-center gap-2 text-base">
-                                    Explore Products
+                                    {t("cta.exploreProducts")}
                                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                 </span>
                             </motion.button>
@@ -60,7 +64,7 @@ export const CTASection = () => {
                                 whileTap={{ scale: 0.97 }}
                                 className="px-10 py-4.5 border border-white/10 text-gray-400 hover:text-white hover:border-white/25 font-medium rounded-full transition-all duration-300 text-base"
                             >
-                                Training Center
+                                {t("cta.trainingCenter")}
                             </motion.button>
                         </Link>
                     </div>

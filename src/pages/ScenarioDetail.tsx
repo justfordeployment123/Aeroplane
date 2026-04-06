@@ -1,10 +1,12 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { getScenarioById, scenarios } from "../data/scenarios";
 
 export const ScenarioDetail = () => {
     const { id } = useParams<{ id: string }>();
+    const { t } = useTranslation("application");
     const scenario = id ? getScenarioById(id) : undefined;
 
     if (!scenario) return <Navigate to="/applications" replace />;
@@ -36,7 +38,7 @@ export const ScenarioDetail = () => {
                             to="/applications"
                             className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-white transition-colors mb-8"
                         >
-                            <ArrowLeft size={14} /> Back to Applications
+                            <ArrowLeft size={14} /> {t("scenarioDetail.back")}
                         </Link>
                     </motion.div>
 
@@ -46,7 +48,7 @@ export const ScenarioDetail = () => {
                                 className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-6"
                                 style={{ color: accent, background: `${accent}15`, border: `1px solid ${accent}25` }}
                             >
-                                Application Scenario
+                                {t("scenarioDetail.badge")}
                             </span>
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-4">{scenario.title}</h1>
                             <p className="text-xl text-gray-400 font-medium mb-6">{scenario.subtitle}</p>
@@ -85,9 +87,9 @@ export const ScenarioDetail = () => {
                         className="text-center mb-16"
                     >
                         <span className="text-xs font-bold tracking-[0.2em] uppercase mb-3 block" style={{ color: accent }}>
-                            Operational Capabilities
+                            {t("scenarioDetail.operationalCapabilities")}
                         </span>
-                        <h2 className="text-3xl md:text-4xl font-black text-white">Detailed Solutions</h2>
+                        <h2 className="text-3xl md:text-4xl font-black text-white">{t("scenarioDetail.detailedSolutions")}</h2>
                         <div className="h-px w-16 mt-4 mx-auto" style={{ background: `linear-gradient(to right, transparent, ${accent}, transparent)` }} />
                     </motion.div>
 
@@ -135,8 +137,10 @@ export const ScenarioDetail = () => {
             <section className="py-20 border-t border-white/[0.04]">
                 <div className="max-w-7xl mx-auto px-6">
                     <motion.div initial={{ y: 20 }} whileInView={{ y: 0 }} viewport={{ once: true, margin: "200px 0px" }} className="mb-12">
-                        <span className="text-xs font-bold tracking-[0.2em] uppercase text-aero-blue mb-3 block">Explore More</span>
-                        <h2 className="text-3xl font-black text-white">Other Application Scenarios</h2>
+                        <span className="text-xs font-bold tracking-[0.2em] uppercase text-aero-blue mb-3 block">
+                            {t("scenarioDetail.exploreMore")}
+                        </span>
+                        <h2 className="text-3xl font-black text-white">{t("scenarioDetail.otherScenarios")}</h2>
                     </motion.div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -158,7 +162,7 @@ export const ScenarioDetail = () => {
                                         </span>
                                         <h3 className="text-2xl font-bold text-white mb-1">{s.title}</h3>
                                         <span className="flex items-center gap-1 text-xs font-semibold text-gray-400 group-hover:text-white transition-colors">
-                                            View Details <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                                            {t("scenarioDetail.viewDetails")} <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
                                         </span>
                                     </div>
                                 </motion.div>

@@ -1,0 +1,48 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "About Us",
+        "economy": "Low Altitude Economy",
+        "applications": "Applications",
+        "products": "Series Products",
+        "training": "Training Center",
+        "contact": "Contact Us"
+    },
+    "footer": {
+        "tagline": "AEROSPACE TECHNOLOGY MAKES LIFE BETTER",
+        "hotlineLabel": "24/7 Support Hotline",
+        "newsletter": {
+            "title": "Stay ahead of the curve",
+            "subtitle": "Get the latest updates on autonomous aviation and low-altitude economy.",
+            "placeholder": "Enter your email",
+            "subscribe": "Subscribe"
+        },
+        "nav": {
+            "title": "Navigation"
+        },
+        "support": {
+            "title": "Support",
+            "links": [
+                { "label": "Product Purchase" },
+                { "label": "Market Cooperation" },
+                { "label": "Authorized Distribution" },
+                { "label": "Technical Support" },
+                { "label": "Contact Us", "to": "/contact" }
+            ]
+        },
+        "contact": {
+            "title": "Contact",
+            "hq": "Building A7, International Innovation Port, Huaqiao Economic Development Zone, Kunshan City, Jiangsu Province",
+            "beijing": "Beijing R&D: 9F, Building 2, No. 55 Zique Road, Haidian District, Beijing",
+            "phone": "400-888-2062",
+            "email": "marketing@htsdfp.com",
+            "qrEnterprise": "Enterprise WeChat",
+            "qrWechat": "WeChat"
+        },
+        "bottom": {
+            "copyright": "© {{year}} Aerospace Times Feipeng Co., Ltd. All Rights Reserved.",
+            "disclaimers": "Disclaimers",
+            "copyright_notice": "Copyright Notice"
+        }
+    }
+}

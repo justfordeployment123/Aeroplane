@@ -1,0 +1,62 @@
+{
+    "hero": {
+        "badge": "GADT Flight Academy",
+        "title": "Training Center",
+        "subtitle": "Aerospace Times Feipeng Co., Ltd. is a civil UAVs pilot training institution certified by the China Aircraft Owners and Pilots Association (AOPA), which can provide theoretical and practical training for multi rotor in line of sight pilots and multi rotor over line of sight pilots.",
+        "scroll": "Scroll"
+    },
+    "stats": [
+        { "value": "88–90%", "label": "Exam Pass Rate" },
+        { "value": "500+", "label": "Certified Pilots" },
+        { "value": "AOPA", "label": "Certified Institution" },
+        { "value": "10+", "label": "Years Experience" }
+    ],
+    "intro": {
+        "body": "A premier civil UAV pilot training institution certified by the <highlight>China Aircraft Owners and Pilots Association (AOPA)</highlight>. We provide elite theoretical and practical training for Class III multi-rotor in-line-of-sight and over-line-of-sight pilots."
+    },
+    "process": {
+        "tag": "Your Journey",
+        "title": "How It",
+        "titleHighlight": "Works",
+        "steps": [
+            { "step": "01", "title": "Register", "desc": "Submit application & select your preferred schedule" },
+            { "step": "02", "title": "Theory", "desc": "Complete certified ground school coursework" },
+            { "step": "03", "title": "Flight", "desc": "Hands-on practical flight training with mentors" },
+            { "step": "04", "title": "Certify", "desc": "Pass AOPA examination & receive your license" }
+        ]
+    },
+    "panels": [
+        { "title": "Service Process", "sub": "Step-by-step flowchart" },
+        { "title": "Certification", "sub": "AOPA official qualification" }
+    ],
+    "features": {
+        "tag": "What Sets Us Apart",
+        "title": "Course",
+        "titleHighlight": "Features",
+        "items": [
+            {
+                "title": "Humanized Course Arrangement",
+                "desc": "With off duty classes and weekend classes, suitable for different working groups to register."
+            },
+            {
+                "title": "Class Management System",
+                "desc": "Where each class is managed by a dedicated person and each student's study and rest time is reasonably arranged."
+            },
+            {
+                "title": "Experienced Mentors in Practical Projects",
+                "desc": "Allowing students to quickly understand the application of UAVs in practical projects."
+            },
+            {
+                "title": "High Pass Rate",
+                "desc": "With a multi rotor UAVs pilot class pass rate of 88%–90%."
+            }
+        ]
+    },
+    "cta": {
+        "title": "Ready to Get",
+        "titleHighlight": "Certified?",
+        "subtitle": "Join hundreds of certified UAV pilots trained at our AOPA-approved academy.",
+        "enroll": "Enroll Now",
+        "learnAopa": "Learn About AOPA Exam"
+    }
+}

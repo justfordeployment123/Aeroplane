@@ -1,0 +1,166 @@
+{
+    "hero": {
+        "badge": "Unmanned Transport Aircraft",
+        "title": "FP-98 Large Fixed Wing UAV",
+        "subtitle": "Double 1000, Double 100, Double 10 Unmanned Transport Aircraft Products for trunk, branch, and terminal line scenarios.",
+        "stats": {
+            "range": { "value": "1000km", "label": "Max Range" },
+            "payload": { "value": "1000kg", "label": "Payload" },
+            "flightHours": { "value": "10W+", "label": "Flight Hours" }
+        },
+        "cta": {
+            "explore": "Explore Systems",
+            "about": "About Us"
+        },
+        "scroll": "Scroll"
+    },
+    "stats": {
+        "items": [
+            { "prefix": "FP-", "value": 98, "suffix": "", "label": "Type Certified Aircraft" },
+            { "prefix": "", "value": 500, "suffix": "+", "label": "Certified Pilots" },
+            { "prefix": "", "value": 50, "suffix": "+", "label": "Global Partners" },
+            { "prefix": "", "value": 2024, "suffix": "", "label": "Red Dot Design Award" }
+        ]
+    },
+    "applications": {
+        "tag": "Use Cases",
+        "title": "Application Scenarios",
+        "viewAll": "View all scenarios",
+        "featured": "Featured",
+        "items": [
+            {
+                "title": "Civil Logistic",
+                "desc": "Provides systematic solutions for typical operation scenarios such as trunk logistics, branch logistics and terminal logistics.",
+                "stats": [
+                    { "value": "3-Tier", "label": "Network" },
+                    { "value": "24/7", "label": "Operation" },
+                    { "value": "99.8%", "label": "Delivery Rate" }
+                ]
+            },
+            {
+                "title": "Emergency Rescue",
+                "desc": "Innovate the UAVs emergency rescue mode. Build an intelligent three-dimensional rescue system. Provide systematic solutions for different disaster scenarios.",
+                "stats": [
+                    { "value": "<15min", "label": "Response" },
+                    { "value": "3D", "label": "Mapping" },
+                    { "value": "500km", "label": "Coverage" }
+                ]
+            },
+            {
+                "title": "Industry Service",
+                "desc": "A complete operational system for flight carrying. Provide customers with services such as operation, testing, and carrying of various models.",
+                "stats": [
+                    { "value": "Full", "label": "Lifecycle" },
+                    { "value": "11+", "label": "Models" },
+                    { "value": "AOPA", "label": "Certified" }
+                ]
+            },
+            {
+                "title": "Forest & Grassland Fire Prevention",
+                "desc": "Comprehensive forest and grassland fire prevention system including daily patrol, fire monitoring, fire scene reconnaissance, and emergency communications support.",
+                "stats": [
+                    { "value": "24/7", "label": "Patrol" },
+                    { "value": "Real-time", "label": "Monitoring" },
+                    { "value": "Emergency", "label": "Comms" }
+                ]
+            }
+        ]
+    },
+    "products": {
+        "tag": "Our Fleet",
+        "title": "Series Products",
+        "viewAll": "View All",
+        "specs": {
+            "range": "Range",
+            "payload": "Payload"
+        },
+        "viewDetails": "View Details",
+        "items": [
+            {
+                "title": "Double 1000 Series",
+                "subtitle": "Trunk Line",
+                "desc": "Drone Systems for Trunk Line Scenarios with 1000 km Range and 1000 kg Load.",
+                "range": "1,000 km",
+                "payload": "1,000 kg"
+            },
+            {
+                "title": "Double 100 Series",
+                "subtitle": "Branch Line",
+                "desc": "Drone Systems for Branch Line Scenarios with 100 km Range and 100 kg Load.",
+                "range": "100 km",
+                "payload": "100 kg"
+            },
+            {
+                "title": "Double 10 Series",
+                "subtitle": "Terminal Line",
+                "desc": "Drone Systems for Terminal Line Scenarios with 10 km Range and 10 kg Load.",
+                "range": "10 km",
+                "payload": "10 kg"
+            },
+            {
+                "title": "Ground Control Station",
+                "subtitle": "Command & Control",
+                "desc": "The Ground Control Station processes tasks through a control console, data link, or satellite communication. Include handheld control terminal, portable control terminal, shelter control station, etc.",
+                "range": "Full Range",
+                "payload": "Multi-UAV"
+            },
+            {
+                "title": "Operation Control System",
+                "subtitle": "Fleet Management",
+                "desc": "The Operation Control System can provide real-time data such as drone nameplates, situational information, and flight status, and perform artificial control operations such as airspace application and flight mission execution.",
+                "range": "Unlimited",
+                "payload": "Software"
+            }
+        ]
+    },
+    "advantages": {
+        "tag": "Why Choose Us",
+        "title": "Core Advantages",
+        "items": [
+            {
+                "title": "Systematic Solution",
+                "desc": "Provide scenario-level solutions for industry users in relevant countries and regions around the world",
+                "number": 100,
+                "suffix": "%"
+            },
+            {
+                "title": "Complete Product Layout",
+                "desc": "Full product lineup of 11+ UAV models covering trunk, branch, and terminal line scenarios",
+                "number": 11,
+                "suffix": "+"
+            },
+            {
+                "title": "10W+ Flight Time",
+                "desc": "Over 100,000 hours of accumulated flight time with proven safety and reliability records",
+                "number": 100000,
+                "suffix": ""
+            },
+            {
+                "title": "Airworthiness Certification",
+                "desc": "Full type certificate and airworthiness compliance certification for civil UAV operations",
+                "number": 9,
+                "suffix": "+"
+            }
+        ]
+    },
+    "training": {
+        "tag": "Pilot Training",
+        "title": "Training Center",
+        "subtitle": "Civil UAV pilot training institution certified by the China Association of Aircraft Owners and Pilots (AOPA).",
+        "learnMore": "Learn more",
+        "pilotCenter": {
+            "title": "Pilot Training Center",
+            "desc": "A civil unmanned aerial vehicle pilot training institution (Class III multi rotor) certified by the China Association of Aircraft Owners and Pilots (AOPA) can provide theoretical and practical training for Class III multi rotor in line of sight pilots and Class III multi rotor over line of sight pilots."
+        },
+        "aopa": {
+            "title": "AOPA Certification Exam",
+            "desc": "Humanized course arrangement, with off duty classes and weekend classes, suitable for different working groups to register. Class management system, where each class is managed by a dedicated person and each student's study and rest time is reasonably arranged. Experienced mentors in practical projects, allowing students to quickly understand the application of drones in practical projects. High pass rate, with a multi rotor drone pilot class pass rate of 88%-90%."
+        }
+    },
+    "cta": {
+        "title": "Aerospace Technology\nMakes Life Better",
+        "subtitle": "Providing scenario-level solutions for industry users with unmanned system technology, promoting the transformation of transportation from two-dimensional to three-dimensional mode.",
+        "exploreProducts": "Explore Products",
+        "trainingCenter": "Training Center"
+    }
+}
