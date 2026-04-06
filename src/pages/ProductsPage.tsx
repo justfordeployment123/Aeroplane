@@ -2,18 +2,19 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { productCategories } from "../data/product";
+import { useProducts } from "../hooks/useProducts";
 import { HoloCard } from "../components/products/HoloCard";
 import { ProductDetail } from "./ProductDetail";
 
 export const ProductsPage = () => {
-    const [activeSection, setActiveSection] = useState("uav");
+    const { translatedCategories, t } = useProducts();
+    const [activeSection, setActiveSection] = useState(translatedCategories[0]?.id ?? "uav");
     const [selectedProductId, setSelectedProductId] = useState<string | null>(null);
 
     useEffect(() => {
         if (selectedProductId) return;
         const observers: IntersectionObserver[] = [];
-        productCategories.forEach((cat) => {
+        translatedCategories.forEach((cat) => {
             const el = document.getElementById(cat.id);
             if (!el) return;
             const obs = new IntersectionObserver(
@@ -26,7 +27,7 @@ export const ProductsPage = () => {
             observers.push(obs);
         });
         return () => observers.forEach((o) => o.disconnect());
-    }, [selectedProductId]);
+    }, [selectedProductId, translatedCategories]);
 
     const scrollTo = (id: string) => {
         const el = document.getElementById(id);
@@ -88,14 +89,15 @@ export const ProductsPage = () => {
                     <motion.div initial={{ y: 28 }} animate={{ y: 0 }} transition={{ duration: 0.9 }}>
                         <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-aero-blue/30 bg-aero-card/80 text-aero-blue text-sm font-medium tracking-wide mb-6 backdrop-blur-md">
                             <span className="w-2 h-2 rounded-full bg-aero-blue animate-pulse" />
-                            Fleet & Hardware
+                            {t("hero.tag")}
                         </span>
                         <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-4 leading-none">
-                            Series <span className="bg-clip-text text-transparent bg-gradient-to-r from-aero-blue to-aero-purple">Products</span>
+                            {t("hero.title").split(" ")[0]}{" "}
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-aero-blue to-aero-purple">
+                                {t("hero.title").split(" ").slice(1).join(" ")}
+                            </span>
                         </h1>
-                        <p className="text-gray-300 text-lg max-w-lg mx-auto mt-3">
-                            A complete ecosystem of UAVs, control stations, and intelligent systems.
-                        </p>
+                        <p className="text-gray-300 text-lg max-w-lg mx-auto mt-3">{t("hero.subtitle")}</p>
                     </motion.div>
                 </div>
                 <motion.div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2" transition={{ delay: 1.5 }}>
@@ -124,7 +126,7 @@ export const ProductsPage = () => {
             >
                 <div className="max-w-7xl mx-auto px-6 overflow-x-auto">
                     <ul className="flex min-w-max">
-                        {productCategories.map((cat) => {
+                        {translatedCategories.map((cat) => {
                             const Icon = cat.icon;
                             const active = activeSection === cat.id;
                             return (
@@ -154,7 +156,7 @@ export const ProductsPage = () => {
             {/* Catalog */}
             <section className="py-24 relative overflow-hidden">
                 <div className="max-w-7xl mx-auto px-6 space-y-24">
-                    {productCategories.map((category) => {
+                    {translatedCategories.map((category) => {
                         const Icon = category.icon;
                         return (
                             <div key={category.id} id={category.id} className="scroll-mt-36">
@@ -186,11 +188,17 @@ export const ProductsPage = () => {
                                     <p className="text-gray-500 text-sm max-w-xl mt-4 ml-[76px]">{category.description}</p>
                                 </motion.div>
                                 <div
-                                    className={`grid gap-6 ${category.products.length === 1 ? "grid-cols-1 max-w-sm" : category.products.length === 2 ? "grid-cols-1 sm:grid-cols-2 max-w-2xl" : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"}`}
+                                    className={`grid gap-6 ${
+                                        category.products.length === 1
+                                            ? "grid-cols-1 max-w-sm"
+                                            : category.products.length === 2
+                                              ? "grid-cols-1 sm:grid-cols-2 max-w-2xl"
+                                              : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+                                    }`}
                                 >
                                     {category.products.map((product, pIdx) => (
                                         <HoloCard
-                                            key={pIdx}
+                                            key={product.id}
                                             product={product}
                                             accent={category.accent}
                                             idx={pIdx}
@@ -221,13 +229,13 @@ export const ProductsPage = () => {
                     className="relative z-10 text-center px-6 max-w-3xl mx-auto"
                 >
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                        Ready to Deploy
+                        {t("cta.title").split("\n")[0]}
                         <br />
-                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-aero-blue to-aero-purple">Your Fleet?</span>
+                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-aero-blue to-aero-purple">
+                            {t("cta.title").split("\n")[1]}
+                        </span>
                     </h2>
-                    <p className="text-gray-400 text-lg mb-12 max-w-xl mx-auto leading-relaxed">
-                        Contact our specialists for custom configurations and enterprise solutions.
-                    </p>
+                    <p className="text-gray-400 text-lg mb-12 max-w-xl mx-auto leading-relaxed">{t("cta.subtitle")}</p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <motion.button
                             whileHover={{ scale: 1.05 }}
@@ -235,7 +243,7 @@ export const ProductsPage = () => {
                             className="group px-10 py-4 bg-white text-black font-bold rounded-full hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] transition-all duration-300"
                         >
                             <span className="flex items-center gap-2">
-                                Request a Quote <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                {t("cta.requestQuote")} <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </span>
                         </motion.button>
                         <Link to="/applications">
@@ -244,7 +252,7 @@ export const ProductsPage = () => {
                                 whileTap={{ scale: 0.98 }}
                                 className="px-10 py-4 border border-white/15 text-gray-300 hover:text-white hover:border-white/30 font-medium rounded-full transition-all duration-300"
                             >
-                                View Applications
+                                {t("cta.viewApplications")}
                             </motion.button>
                         </Link>
                     </div>

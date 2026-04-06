@@ -1,12 +1,21 @@
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react";
 import { useEffect } from "react";
-import { allProducts } from "../data/product";
+import { useProducts, type TranslatedProduct } from "../hooks/useProducts";
 import { VideoPlayer } from "../components/products/VideoPlayer";
 import { HoloCard } from "../components/products/HoloCard";
 
-export const ProductDetail = ({ productId, onBack, onNavigate }: { productId: string; onBack: () => void; onNavigate?: (id: string) => void }) => {
-    const product = allProducts.find((p) => p.id === productId);
+export const ProductDetail = ({
+    productId,
+    onBack,
+    onNavigate,
+}: {
+    productId: string;
+    onBack: () => void;
+    onNavigate?: (id: string) => void;
+}) => {
+    const { getProduct, translatedCategories, t } = useProducts();
+    const product = getProduct(productId);
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: "smooth" });
@@ -14,6 +23,12 @@ export const ProductDetail = ({ productId, onBack, onNavigate }: { productId: st
 
     if (!product) return null;
     const accent = product.categoryAccent;
+
+    // Related products: same category, different id
+    const relatedProducts = translatedCategories
+        .find((cat) => cat.id === product.categoryId)
+        ?.products.filter((p) => p.id !== product.id)
+        .slice(0, 3) ?? [];
 
     return (
         <div className="min-h-screen text-white font-sans" style={{ background: "#161622" }}>
@@ -43,6 +58,7 @@ export const ProductDetail = ({ productId, onBack, onNavigate }: { productId: st
                 </div>
                 <div className="absolute top-24 left-8 w-16 h-16 border-t border-l hidden lg:block" style={{ borderColor: `${accent}25` }} />
                 <div className="absolute top-24 right-8 w-16 h-16 border-t border-r hidden lg:block" style={{ borderColor: `${accent}25` }} />
+
                 <motion.button
                     onClick={onBack}
                     initial={{ x: -20 }}
@@ -56,24 +72,16 @@ export const ProductDetail = ({ productId, onBack, onNavigate }: { productId: st
                         backdropFilter: "blur(12px)",
                     }}
                 >
-                    <ArrowLeft size={14} /> Back to Products
+                    <ArrowLeft size={14} /> {t("detail.back")}
                 </motion.button>
-                {/* <div
-                    className="absolute top-10 left-1/2 -translate-x-1/2 z-20 hidden lg:flex items-center gap-2 text-[11px] font-mono"
-                    style={{ color: `${accent}50` }}
-                >
-                    <span>Series Products</span>
-                    <ChevronRight size={10} />
-                    <span>{product.categoryTitle}</span>
-                    <ChevronRight size={10} />
-                    <span style={{ color: accent }}>{product.name}</span>
-                </div> */}
+
                 <div className="absolute top-28 right-12 text-[10px] font-mono text-right space-y-1 hidden lg:block" style={{ color: `${accent}40` }}>
                     <motion.div animate={{ opacity: [0.3, 1, 0.3] }} transition={{ duration: 2, repeat: Infinity }}>
-                        SYS.ACTIVE
+                        {t("detail.systemActive")}
                     </motion.div>
                     <div>ID: {product.id.toUpperCase()}</div>
                 </div>
+
                 <motion.div
                     className="absolute left-0 right-0 h-[1px] z-[2]"
                     style={{
@@ -109,31 +117,28 @@ export const ProductDetail = ({ productId, onBack, onNavigate }: { productId: st
                             className="flex items-center gap-2 px-6 py-3.5 rounded-full font-bold text-sm text-black"
                             style={{ background: `linear-gradient(135deg, ${accent}, ${accent}bb)`, boxShadow: `0 0 30px ${accent}35` }}
                         >
-                            Request a Quote <ArrowRight size={16} />
+                            {t("detail.requestQuote")} <ArrowRight size={16} />
                         </motion.button>
                     </motion.div>
+
                     <motion.div
                         initial={{ y: 30 }}
                         animate={{ y: 0 }}
                         transition={{ duration: 0.9, delay: 0.3 }}
                         className="relative flex items-center justify-center"
                     >
-                        {/* Large soft glow behind drone */}
                         <div
                             className="absolute inset-0 rounded-3xl"
                             style={{ background: `radial-gradient(ellipse at center, ${accent}40 0%, ${accent}15 40%, transparent 70%)` }}
                         />
-                        {/* Bottom reflection glow */}
                         <div
                             className="absolute bottom-[-10%] left-1/2 -translate-x-1/2 w-[90%] h-[50%] rounded-full blur-[50px]"
                             style={{ background: `${accent}50` }}
                         />
-                        {/* Center bright halo */}
                         <div
                             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50%] h-[50%] rounded-full blur-[60px]"
                             style={{ background: `${accent}30` }}
                         />
-                        {/* Subtle light backdrop panel so dark drone has contrast */}
                         <div
                             className="absolute top-[15%] left-[10%] right-[10%] bottom-[15%] rounded-2xl"
                             style={{ background: `radial-gradient(ellipse at center, rgba(255,255,255,0.06) 0%, transparent 70%)` }}
@@ -167,9 +172,9 @@ export const ProductDetail = ({ productId, onBack, onNavigate }: { productId: st
                 <div className="max-w-7xl mx-auto px-6">
                     <motion.div initial={{ y: 20 }} whileInView={{ y: 0 }} viewport={{ once: true, margin: "200px 0px" }} className="mb-8">
                         <p className="text-xs font-bold tracking-[0.2em] uppercase mb-2" style={{ color: accent }}>
-                            Product Showcase
+                            {t("detail.showcase")}
                         </p>
-                        <h2 className="text-3xl font-black text-white">Live Demonstration</h2>
+                        <h2 className="text-3xl font-black text-white">{t("detail.liveDemo")}</h2>
                     </motion.div>
                     <VideoPlayer src={product.video ?? null} accent={accent} />
                 </div>
@@ -180,9 +185,9 @@ export const ProductDetail = ({ productId, onBack, onNavigate }: { productId: st
                 <div className="max-w-7xl mx-auto px-6">
                     <motion.div initial={{ y: 20 }} whileInView={{ y: 0 }} viewport={{ once: true, margin: "200px 0px" }} className="mb-8">
                         <p className="text-xs font-bold tracking-[0.2em] uppercase mb-2" style={{ color: accent }}>
-                            Core Capabilities
+                            {t("detail.coreCapabilities")}
                         </p>
-                        <h2 className="text-3xl font-black text-white">Key Features</h2>
+                        <h2 className="text-3xl font-black text-white">{t("detail.keyFeatures")}</h2>
                     </motion.div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                         {product.highlights.map((h: string, i: number) => (
@@ -211,9 +216,9 @@ export const ProductDetail = ({ productId, onBack, onNavigate }: { productId: st
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
                         <motion.div initial={{ x: -24 }} whileInView={{ x: 0 }} viewport={{ once: true, margin: "200px 0px" }}>
                             <p className="text-xs font-bold tracking-[0.2em] uppercase mb-2" style={{ color: accent }}>
-                                Technical Data
+                                {t("detail.technicalData")}
                             </p>
-                            <h2 className="text-3xl font-black text-white mb-8">Main Performance Parameters</h2>
+                            <h2 className="text-3xl font-black text-white mb-8">{t("detail.mainPerformance")}</h2>
                             <div className="rounded-2xl overflow-hidden border" style={{ borderColor: `${accent}15` }}>
                                 <div
                                     className="flex px-5 py-3 text-[10px] font-bold tracking-widest uppercase"
@@ -222,7 +227,7 @@ export const ProductDetail = ({ productId, onBack, onNavigate }: { productId: st
                                     <span className="flex-1">Parameter</span>
                                     <span>Value</span>
                                 </div>
-                                {product.specs.map((spec: any, i: number) => (
+                                {product.specs.map((spec, i) => (
                                     <motion.div
                                         key={i}
                                         initial={{ x: -10 }}
@@ -238,11 +243,12 @@ export const ProductDetail = ({ productId, onBack, onNavigate }: { productId: st
                                 ))}
                             </div>
                         </motion.div>
+
                         <motion.div initial={{ x: 24 }} whileInView={{ x: 0 }} viewport={{ once: true, margin: "200px 0px" }}>
                             <p className="text-xs font-bold tracking-[0.2em] uppercase mb-2" style={{ color: accent }}>
-                                Use Cases
+                                {t("detail.useCases")}
                             </p>
-                            <h2 className="text-3xl font-black text-white mb-8">Application Scenarios</h2>
+                            <h2 className="text-3xl font-black text-white mb-8">{t("detail.applicationScenarios")}</h2>
                             <div className="space-y-4">
                                 {product.applications.map((app: string, i: number) => (
                                     <motion.div
@@ -280,6 +286,7 @@ export const ProductDetail = ({ productId, onBack, onNavigate }: { productId: st
                 </div>
             </section>
 
+            {/* Param image */}
             {product.paramImg && (
                 <section className="py-10">
                     <div className="max-w-5xl mx-auto px-6">
@@ -303,27 +310,23 @@ export const ProductDetail = ({ productId, onBack, onNavigate }: { productId: st
             )}
 
             {/* Related */}
-            {(() => {
-                const related = allProducts.filter((p) => p.categoryId === product.categoryId && p.id !== product.id).slice(0, 3);
-                if (!related.length) return null;
-                return (
-                    <section className="py-16 border-t border-white/[0.04]">
-                        <div className="max-w-7xl mx-auto px-6">
-                            <motion.div initial={{ y: 20 }} whileInView={{ y: 0 }} viewport={{ once: true, margin: "200px 0px" }} className="mb-8">
-                                <p className="text-xs font-bold tracking-[0.2em] uppercase mb-2" style={{ color: accent }}>
-                                    Same Series
-                                </p>
-                                <h2 className="text-2xl font-black text-white">Related Products</h2>
-                            </motion.div>
-                            <div className={`grid gap-5 grid-cols-1 sm:grid-cols-2 ${related.length >= 3 ? "lg:grid-cols-3" : ""}`}>
-                                {related.map((p: any, i: number) => (
-                                    <HoloCard key={p.id} product={p} accent={accent} idx={i} onClick={() => onNavigate?.(p.id)} />
-                                ))}
-                            </div>
+            {relatedProducts.length > 0 && (
+                <section className="py-16 border-t border-white/[0.04]">
+                    <div className="max-w-7xl mx-auto px-6">
+                        <motion.div initial={{ y: 20 }} whileInView={{ y: 0 }} viewport={{ once: true, margin: "200px 0px" }} className="mb-8">
+                            <p className="text-xs font-bold tracking-[0.2em] uppercase mb-2" style={{ color: accent }}>
+                                {t("detail.sameSeries")}
+                            </p>
+                            <h2 className="text-2xl font-black text-white">{t("detail.relatedProducts")}</h2>
+                        </motion.div>
+                        <div className={`grid gap-5 grid-cols-1 sm:grid-cols-2 ${relatedProducts.length >= 3 ? "lg:grid-cols-3" : ""}`}>
+                            {relatedProducts.map((p: TranslatedProduct, i: number) => (
+                                <HoloCard key={p.id} product={p} accent={accent} idx={i} onClick={() => onNavigate?.(p.id)} />
+                            ))}
                         </div>
-                    </section>
-                );
-            })()}
+                    </div>
+                </section>
+            )}
 
             {/* CTA */}
             <section className="py-24 relative overflow-hidden border-t border-white/5">
@@ -345,11 +348,10 @@ export const ProductDetail = ({ productId, onBack, onNavigate }: { productId: st
                     className="relative z-10 text-center px-6 max-w-2xl mx-auto"
                 >
                     <h2 className="text-4xl font-bold text-white mb-4">
-                        Ready to deploy <span style={{ color: accent }}>{product.name.split(" ")[0]}</span>?
+                        {t("detail.readyToDeploy")}{" "}
+                        <span style={{ color: accent }}>{product.name.split(" ")[0]}</span>?
                     </h2>
-                    <p className="text-gray-400 mb-10">
-                        Contact our specialists for custom configurations and enterprise solutions tailored to your mission profile.
-                    </p>
+                    <p className="text-gray-400 mb-10">{t("detail.ctaSubtitle")}</p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <motion.button
                             whileHover={{ scale: 1.05 }}
@@ -357,7 +359,7 @@ export const ProductDetail = ({ productId, onBack, onNavigate }: { productId: st
                             className="group px-10 py-4 bg-white text-black font-bold rounded-full hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] transition-all duration-300"
                         >
                             <span className="flex items-center gap-2">
-                                Request a Quote <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                {t("detail.requestQuote")} <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </span>
                         </motion.button>
                         <motion.button
@@ -366,7 +368,7 @@ export const ProductDetail = ({ productId, onBack, onNavigate }: { productId: st
                             whileTap={{ scale: 0.98 }}
                             className="px-10 py-4 border border-white/15 text-gray-300 hover:text-white hover:border-white/30 font-medium rounded-full transition-all duration-300"
                         >
-                            Browse All Products
+                            {t("detail.browseAll")}
                         </motion.button>
                     </div>
                 </motion.div>

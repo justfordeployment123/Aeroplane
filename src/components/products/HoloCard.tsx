@@ -1,8 +1,10 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 export const HoloCard = ({ product, accent, idx, onClick }: { product: any; accent: string; idx: number; onClick: () => void }) => {
+    const { t } = useTranslation("products");
     const ref = useRef<HTMLDivElement>(null);
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
@@ -91,7 +93,7 @@ export const HoloCard = ({ product, accent, idx, onClick }: { product: any; acce
                             <h3 className="text-sm font-bold text-gray-200 group-hover:text-white transition-colors leading-snug">{product.name}</h3>
                         </div>
                         <div className="flex items-center justify-between mt-2">
-                            <span className="text-xs font-medium text-gray-500 group-hover:text-white transition-colors">View Specs</span>
+                            <span className="text-xs font-medium text-gray-500 group-hover:text-white transition-colors">{t("card.viewSpecs")}</span>
                             <div
                                 className="w-8 h-8 rounded-full flex items-center justify-center border border-white/[0.06] group-hover:border-transparent transition-all"
                                 style={{ background: `linear-gradient(135deg, transparent, ${accent}15)` }}

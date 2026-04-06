@@ -1,348 +1,192 @@
 import { Plane, Rocket, MonitorDot, Cpu } from "lucide-react";
 
-export const productCategories = [
+// ─── Types ────────────────────────────────────────────────────────────────────
+
+export interface ProductSpec {
+    labelKey: string; // translation key suffix, e.g. "maxTakeoffWeight"
+    value: string;    // numeric/unit values stay here — never translated
+}
+
+export interface ProductConfig {
+    id: string;
+    img: string;
+    accent: string;
+    categoryId: string;
+    paramImg: string | null;
+    video: string | null;
+    highlightCount: number;   // how many highlights exist (for array indexing)
+    specCount: number;        // how many specs exist
+    applicationCount: number; // how many applications exist
+}
+
+export interface CategoryConfig {
+    id: string;
+    icon: typeof Plane;
+    accent: string;
+    productIds: string[];
+}
+
+// ─── Category Config (non-text) ───────────────────────────────────────────────
+
+export const productCategories: CategoryConfig[] = [
     {
         id: "uav",
-        title: "UAV",
-        subtitle: "Unmanned Aerial Vehicles",
-        description: "High-performance fixed-wing and multi-rotor platforms engineered for precision logistics.",
         icon: Plane,
         accent: "#00d2ff",
-        products: [
-            {
-                id: "fp-98",
-                name: "FP-98 Large Fixed Wing UAVs",
-                tag: "Fixed Wing",
-                img: "/images/products/fp-98.png",
-                description:
-                    "FP-98 Large Fixed Wing UAVs is the first large unmanned transport system in China, which can meet the needs of long-range material transportation and delivery in complex environments. Safe and reliable, short takeoff and landing distance, large cargo load, high efficiency, high intelligence, easy operation. Can achieve safe takeoff and landing using 800m Class A navigable airport runway conditions. The system comprises UAVs, data links, and ground control stations for transport delivery, emergency airdrop, communication relay, and special test pick-up scenarios, which can greatly improve the logistics transportation efficiency of cross-city or remote areas.",
-                highlights: [
-                    "Long Range / Large Cargo Load",
-                    "Mature Technology / Easy Maintenance",
-                    "Continuous Accurate Airdrop",
-                    "Airstrip Short Takeoff and Landing",
-                ],
-                specs: [
-                    { label: "Max Takeoff Weight", value: "≥ 100 kg" },
-                    { label: "Payload Capacity", value: "≥ 25 kg" },
-                    { label: "Max Range", value: "≥ 1500 km" },
-                    { label: "Cruise Speed", value: "160–200 km/h" },
-                    { label: "Max Altitude", value: "5000 m" },
-                    { label: "Takeoff Distance", value: "≤ 800 m (Class A)" },
-                    { label: "Data Link", value: "Dual-redundant" },
-                    { label: "Endurance", value: "≥ 10 h" },
-                ],
-                applications: ["Special Test Platform", "Emergency Rescue", "Island Transport", "Branch Logistics"],
-                paramImg: "/images/products/fp-98-params.png",
-                video: "/videos/1.mp4",
-            },
-            {
-                id: "fp-985",
-                name: "FP-985 Large Fixed Wing UAVs",
-                tag: "Fixed Wing",
-                img: "/images/products/fp-985.png",
-                description:
-                    "FP-985 large fixed-wing unmanned aircraft system can meet the demand for remote delivery of large loaded materials in complex terrain conditions such as plateau and high-cold, island and salt spray. The system consists of UAV, data chain and ground control station, which can take off and land at standard airports or airstrips, and is equipped with continuous and precise delivery device. The system is anti-deicing, lightning strike and high wind resistance in the air, which can guarantee all-weather flight under adverse meteorological conditions.",
-                highlights: [
-                    "Mission Capability in Complex Conditions",
-                    "Whole Life Condition Detection",
-                    "Continuous Accurate Airdrop",
-                    "Airstrip Short Takeoff and Landing",
-                ],
-                specs: [
-                    { label: "Max Takeoff Weight", value: "≥ 120 kg" },
-                    { label: "Payload Capacity", value: "≥ 30 kg" },
-                    { label: "Max Range", value: "≥ 1800 km" },
-                    { label: "Cruise Speed", value: "170–210 km/h" },
-                    { label: "Max Altitude", value: "5500 m" },
-                    { label: "Endurance", value: "≥ 12 h" },
-                    { label: "Data Link", value: "Dual-redundant" },
-                    { label: "Navigation", value: "Dual GPS / GLONASS" },
-                ],
-                applications: ["Civil Logistic", "Emergency Rescue", "Industry Service"],
-                paramImg: null,
-                video: "/videos/2.mp4",
-            },
-            {
-                id: "fp-981c",
-                name: "FP-981C VTOL Composite Wing UAVs",
-                tag: "VTOL",
-                img: "/images/products/fp-981c.png",
-                description:
-                    "The FP-981C VTOL Composite Wing UAVs has the characteristics of no landing site requirements, low operating cost, cluster operation, etc., and can be expanded in the field of forest fire protection, post-disaster emergency supplies delivery, support and other fields.",
-                highlights: [
-                    "Vertical Take-off and Landing",
-                    "Plateau Application",
-                    "Modularization",
-                    "Express Handling",
-                    "Multi-plane Network",
-                    "Fleet Operation",
-                    "Intelligent Path Planning",
-                ],
-                specs: [
-                    { label: "Wingspan", value: "≥ 3 m" },
-                    { label: "Payload Capacity", value: "≥ 6 kg" },
-                    { label: "Max Range", value: "≥ 300 km" },
-                    { label: "Cruise Speed", value: "100–130 km/h" },
-                    { label: "Max Altitude", value: "4000 m" },
-                    { label: "Endurance", value: "≥ 3 h" },
-                    { label: "Takeoff Mode", value: "VTOL / Short run" },
-                    { label: "Wind Resistance", value: "Level 6" },
-                ],
-                applications: ["Civil Logistic", "Emergency Rescue", "Industry Service"],
-                paramImg: null,
-                video: "/videos/3.mp4",
-            },
-            {
-                id: "fp-981a",
-                name: "FP-981A Multi-Rotor UAVs",
-                tag: "Multi-Rotor",
-                img: "/images/products/fp-981a.png",
-                description:
-                    "FP-981A Multi-Rotor UAVs, independently developed by Aerospace Times Feipeng Co., LTD., has the characteristics of large cargo capacity, large load, high reliability, high intelligence, rich expansion capabilities, etc., and has a wide range of uses in civil logistics transportation, urban fire protection, emergency communication, inspection and surveillance, emergency rescue and other fields. The FP-981A multi-rotor UAVs can meet the needs of intelligent unmanned transportation and distribution at the end. The system has the characteristics of fast delivery and multi-aircraft cooperative formation flight operation.",
-                highlights: [
-                    "Standard Hold / Express Handling",
-                    "Spot Hover / Precision Flight Control",
-                    "Excess Avionics / Multimode Communication Equipment",
-                    "Multiple Stations and Multiple UAV / Cooperative Formation",
-                ],
-                specs: [
-                    { label: "Configuration", value: "Octorotor" },
-                    { label: "Payload Capacity", value: "≥ 10 kg" },
-                    { label: "Max Range", value: "≥ 50 km" },
-                    { label: "Max Speed", value: "80 km/h" },
-                    { label: "Hover Accuracy", value: "±0.1 m (RTK)" },
-                    { label: "Endurance", value: "≥ 45 min" },
-                    { label: "Wind Resistance", value: "Level 5" },
-                    { label: "IP Rating", value: "IP54" },
-                ],
-                applications: ["Emergency Fire Fighting", "Urban Logistics", "Medical Assistance", "Cultural Tourist"],
-                paramImg: null,
-                video: "/videos/4.mp4",
-            },
-            {
-                id: "fp-980-7b",
-                name: "FP-980-7B Terminal Station Auto Airport",
-                tag: "Infrastructure",
-                img: "/images/products/fp-980-7b.png",
-                description:
-                    "The FP-980-7B Terminal Auto Airport is a device that can adapt to small multi-rotor UAVs and realize the automatic loading and unloading function of UAVs through the internal top cover opening and closing device, the centering device and the internal lifting mechanism. At the same time, customers can pick up goods by entering the last four digits of the mobile phone number in the operation panel of the cabinet, further improving the unmanned degree of the end logistics.",
-                highlights: [
-                    "Unattended",
-                    "Autonomous Take-off and Landing",
-                    "Full-time Monitoring",
-                    "Automatic Loading and Unloading",
-                ],
-                specs: [
-                    { label: "Compatible UAVs", value: "FP-981A / FP-981C" },
-                    { label: "Battery Swap Time", value: "≤ 5 min" },
-                    { label: "Cargo Capacity", value: "≤ 10 kg per mission" },
-                    { label: "Power Supply", value: "Grid / Solar hybrid" },
-                    { label: "Communication", value: "4G / 5G / Satellite" },
-                    { label: "Operating Temp", value: "-20°C ~ +55°C" },
-                    { label: "IP Rating", value: "IP55" },
-                    { label: "Footprint", value: "6 m × 6 m" },
-                ],
-                applications: ["Civil Logistic", "Emergency Rescue", "Industry Service"],
-                paramImg: null,
-                video: "/videos/5.mp4",
-            },
-        ],
+        productIds: ["fp-98", "fp-985", "fp-981c", "fp-981a", "fp-980-7b"],
     },
     {
         id: "special",
-        title: "Special Aircraft",
-        subtitle: "Mission-Critical Platforms",
-        description: "Specialized composite-wing aircraft engineered for demanding operational environments.",
         icon: Rocket,
         accent: "#a855f7",
-        products: [
-            {
-                id: "fp-981cs",
-                name: "FP-981CS VTOL Composite Wing UAVs",
-                tag: "Special Ops",
-                img: "/images/products/fp-981cs.png",
-                description:
-                    "The FP-981CS VTOL Composite Wing UAVs has the characteristics of long endurance, wide range of action, low requirements for landing sites, and can be expanded in the fields of maritime search and rescue, forest and grass patrol, post-disaster search and rescue, border patrol, communication relay and other fields.",
-                highlights: [
-                    "Long Endurance",
-                    "Extended Load",
-                    "Wide Operating Range",
-                    "Vertical Take-off and Landing",
-                ],
-                specs: [
-                    { label: "Wingspan", value: "≥ 3.2 m" },
-                    { label: "Payload Capacity", value: "≥ 8 kg" },
-                    { label: "Max Range", value: "≥ 500 km" },
-                    { label: "Cruise Speed", value: "110–140 km/h" },
-                    { label: "Max Altitude", value: "5000 m" },
-                    { label: "Endurance", value: "≥ 5 h" },
-                    { label: "Takeoff Mode", value: "VTOL" },
-                    { label: "Wind Resistance", value: "Level 7" },
-                ],
-                applications: ["Key Area Patrol", "Forestry and Plant Protection", "Support Security", "Marine Patrol"],
-                paramImg: null,
-                video: null,
-            },
-        ],
+        productIds: ["fp-981cs"],
     },
     {
         id: "ground-station",
-        title: "Ground Control Station",
-        subtitle: "Command & Control Hardware",
-        description: "The Ground Control Station processes tasks through a control console, data link, or satellite communication.",
         icon: MonitorDot,
         accent: "#06b6d4",
-        products: [
-            {
-                id: "fp-980-1",
-                name: "FP-980-1 Handheld Control Terminal",
-                tag: "Portable",
-                img: "/images/products/fp-980-1.png",
-                description:
-                    "FP-980-1 Handheld Control Terminal is a device that can be used by operators to control UAVs on the ground for flight control and management, timely and accurately perceive the flight status of UAVs, and realize demand control and emergency response of UAVs. As a handheld charge terminal integrating industrial computer system and integrated link remote control system, it has powerful computing and processing capabilities, supports the integration of data transmission chips of different frequencies, provides a multi-functional operating interface and efficient unmanned system control capabilities.",
-                highlights: [
-                    "Highly Integrated",
-                    "Support Expansion Suite",
-                    "All Aviation Aluminum Body Light Weight",
-                    "Customized Communication Links",
-                ],
-                specs: [
-                    { label: "Weight", value: "≤ 2.5 kg" },
-                    { label: "Screen", value: '7" high-brightness' },
-                    { label: "Battery Life", value: "≥ 4 h" },
-                    { label: "Communication", value: "Dual-frequency radio" },
-                    { label: "Control Range", value: "≥ 50 km (LOS)" },
-                    { label: "Operating Temp", value: "-20°C ~ +55°C" },
-                    { label: "IP Rating", value: "IP54" },
-                    { label: "GPS", value: "Integrated" },
-                ],
-                applications: ["Civil Logistic", "Emergency Rescue", "Industry Service"],
-                paramImg: null,
-                video: null,
-            },
-            {
-                id: "fp-980-2",
-                name: "FP-980-2 Portable Control Terminal",
-                tag: "Portable",
-                img: "/images/products/fp-980-2.png",
-                description:
-                    "FP-980-2 Portable Control Terminal is designed and developed by Aerospace Times Feipeng Co., LTD. It adopts high-performance reinforced three-screen laptop computer, integrates digital communication equipment, satellite navigation equipment, 5G communication module, power supply and distribution management module and various external expansion interfaces, etc. It has the characteristics of small size, high integration, strong expansion ability, easy operation and good portability. It has good environmental adaptability and can operate stably and reliably under complex environmental conditions.",
-                highlights: [
-                    "Dual Station Redundancy Backup Design",
-                    "Built-in Large Capacity Lithium Battery Removable Design with Spare 8000mAh Lithium Battery",
-                    "Real-time Monitoring of Internal Temperature of Equipment",
-                    "Support 3G/4G/5G, SIM Card Internet Access",
-                ],
-                specs: [
-                    { label: "Weight", value: "≤ 8 kg (carry case)" },
-                    { label: "Screen", value: '15" multi-touch' },
-                    { label: "Battery Life", value: "≥ 6 h" },
-                    { label: "Simultaneous UAVs", value: "Up to 3" },
-                    { label: "Control Range", value: "≥ 100 km" },
-                    { label: "Operating Temp", value: "-20°C ~ +60°C" },
-                    { label: "IP Rating", value: "IP55" },
-                    { label: "Data Recording", value: "512 GB SSD" },
-                ],
-                applications: ["Civil Logistic", "Emergency Rescue", "Industry Service"],
-                paramImg: null,
-                video: null,
-            },
-            {
-                id: "fp-980-3b",
-                name: "FP-980-3B Enhanced Shelter Control Station",
-                tag: "Shelter",
-                img: "/images/products/fp-980-3b.png",
-                description:
-                    "The FP-980-3B Enhanced Shelter Control Station is mainly composed of shelter body, power supply support equipment, command and control equipment and measurement and control communication equipment, which provides a convenient indoor control environment for UAVs ground operators. The shelter is equipped with 3 seats (2 charge seats and 1 monitoring seat), and the equipment cabinet integrates power supply support equipment, command and control equipment and measurement and control communication equipment to realize the command and control, system monitoring and other functions of the UAVs, which is an important part of the UAVs.",
-                highlights: [
-                    "Mobility: Civil Transport Chassis Transport",
-                    "Comfort: Complete Living Facilities",
-                    "Safety: Emergency Support Equipment",
-                    "Scalability: Reserved Space Interface",
-                ],
-                specs: [
-                    { label: "Shelter Type", value: "Standard 20 ft shelter" },
-                    { label: "Workstations", value: "3 seats (2 charge + 1 monitoring)" },
-                    { label: "Simultaneous UAVs", value: "Up to 10" },
-                    { label: "Power Supply", value: "Shore power / Generator" },
-                    { label: "A/C System", value: "Integrated HVAC" },
-                    { label: "Communications", value: "Satellite / 4G / 5G / VHF / UHF" },
-                    { label: "Data Storage", value: "RAID NAS 10 TB" },
-                    { label: "Operating Temp", value: "-30°C ~ +50°C (internal)" },
-                ],
-                applications: ["Civil Logistic", "Emergency Rescue", "Industry Service"],
-                paramImg: null,
-                video: null,
-            },
-            {
-                id: "fp-980-3c",
-                name: "FP-980-3C Vehicle Mounted Shelter Control Station",
-                tag: "Vehicle",
-                img: "/images/products/fp-980-3c.png",
-                description:
-                    "The FP-980-3C Vehicle Mounted Shelter Control Station is modified based on the chassis of four-wheel drive off-road vehicle, and the whole vehicle is divided into a top box and a chassis platform. The vehicle includes vehicle platform system, power supply and distribution system, command and control system, measurement and control communication system, and comprehensive support system and other five parts. The vehicle can provide a convenient and comfortable in-vehicle control environment and living environment for the UAVs ground operator, and realize the command and control, system monitoring and other functions of the UAVs, which is an important part of the UAVs.",
-                highlights: [
-                    "Land Fast Mobility",
-                    "Rapid Deployment",
-                    "Light and Flexible",
-                    "Type of Driver: C1 Driver's License",
-                ],
-                specs: [
-                    { label: "Vehicle Base", value: "4×4 off-road chassis" },
-                    { label: "Deployment Time", value: "≤ 30 min" },
-                    { label: "Workstations", value: "3 operator positions" },
-                    { label: "Simultaneous UAVs", value: "Up to 6" },
-                    { label: "Generator", value: "Integrated 15 kVA" },
-                    { label: "Communications", value: "Satellite / 4G / VHF / UHF" },
-                    { label: "Terrain", value: "All-terrain 4×4" },
-                    { label: "Operating Temp", value: "-40°C ~ +55°C" },
-                ],
-                applications: ["Civil Logistic", "Emergency Rescue", "Industry Service"],
-                paramImg: null,
-                video: null,
-            },
-        ],
+        productIds: ["fp-980-1", "fp-980-2", "fp-980-3b", "fp-980-3c"],
     },
     {
         id: "control-system",
-        title: "UAVs Control System",
-        subtitle: "Intelligent Flight Software",
-        description: "The Operation Control System can provide real-time data such as drone nameplates, situational information, and flight status, and perform artificial control operations such as airspace application and flight mission execution.",
         icon: Cpu,
         accent: "#10b981",
-        products: [
-            {
-                id: "uav-ocs",
-                name: "UAVs Operation Control System",
-                tag: "Software",
-                img: "/images/products/uav-ocs.png",
-                description:
-                    "The UAVs Operation Control System is dedicated to providing comprehensive and efficient control solutions, as well as comprehensive situation tracking and dynamic information display.",
-                highlights: [
-                    "Real-time Situation Display",
-                    "Takeoff and Landing Control",
-                    "Risk Warning",
-                    "Flow Control",
-                ],
-                specs: [
-                    { label: "Fleet Capacity", value: "Unlimited UAVs" },
-                    { label: "Concurrent Missions", value: "100+" },
-                    { label: "Route Optimisation", value: "AI-powered" },
-                    { label: "Map Integration", value: "Multi-source GIS" },
-                    { label: "Data Refresh Rate", value: "Real-time (< 1 s)" },
-                    { label: "API Integration", value: "RESTful / SDK" },
-                    { label: "Deployment", value: "Cloud / On-premise" },
-                    { label: "Uptime SLA", value: "99.9%" },
-                ],
-                applications: ["Civil Logistic", "Emergency Rescue", "Industry Service"],
-                paramImg: null,
-                video: null,
-            },
-        ],
+        productIds: ["uav-ocs"],
     },
 ];
 
-export const allProducts = productCategories.flatMap((cat) =>
-    cat.products.map((p) => ({ ...p, categoryAccent: cat.accent, categoryTitle: cat.title, categoryId: cat.id })),
-);
+// ─── Product Config (non-text) ────────────────────────────────────────────────
+
+export const productConfigs: Record<string, ProductConfig> = {
+    "fp-98": {
+        id: "fp-98",
+        img: "/images/products/fp-98.png",
+        accent: "#00d2ff",
+        categoryId: "uav",
+        paramImg: "/images/products/fp-98-params.png",
+        video: "/videos/1.mp4",
+        highlightCount: 4,
+        specCount: 8,
+        applicationCount: 4,
+    },
+    "fp-985": {
+        id: "fp-985",
+        img: "/images/products/fp-985.png",
+        accent: "#00d2ff",
+        categoryId: "uav",
+        paramImg: null,
+        video: "/videos/2.mp4",
+        highlightCount: 4,
+        specCount: 8,
+        applicationCount: 3,
+    },
+    "fp-981c": {
+        id: "fp-981c",
+        img: "/images/products/fp-981c.png",
+        accent: "#00d2ff",
+        categoryId: "uav",
+        paramImg: null,
+        video: "/videos/3.mp4",
+        highlightCount: 7,
+        specCount: 8,
+        applicationCount: 3,
+    },
+    "fp-981a": {
+        id: "fp-981a",
+        img: "/images/products/fp-981a.png",
+        accent: "#00d2ff",
+        categoryId: "uav",
+        paramImg: null,
+        video: "/videos/4.mp4",
+        highlightCount: 4,
+        specCount: 8,
+        applicationCount: 4,
+    },
+    "fp-980-7b": {
+        id: "fp-980-7b",
+        img: "/images/products/fp-980-7b.png",
+        accent: "#00d2ff",
+        categoryId: "uav",
+        paramImg: null,
+        video: "/videos/5.mp4",
+        highlightCount: 4,
+        specCount: 8,
+        applicationCount: 3,
+    },
+    "fp-981cs": {
+        id: "fp-981cs",
+        img: "/images/products/fp-981cs.png",
+        accent: "#a855f7",
+        categoryId: "special",
+        paramImg: null,
+        video: null,
+        highlightCount: 4,
+        specCount: 8,
+        applicationCount: 4,
+    },
+    "fp-980-1": {
+        id: "fp-980-1",
+        img: "/images/products/fp-980-1.png",
+        accent: "#06b6d4",
+        categoryId: "ground-station",
+        paramImg: null,
+        video: null,
+        highlightCount: 4,
+        specCount: 8,
+        applicationCount: 3,
+    },
+    "fp-980-2": {
+        id: "fp-980-2",
+        img: "/images/products/fp-980-2.png",
+        accent: "#06b6d4",
+        categoryId: "ground-station",
+        paramImg: null,
+        video: null,
+        highlightCount: 4,
+        specCount: 8,
+        applicationCount: 3,
+    },
+    "fp-980-3b": {
+        id: "fp-980-3b",
+        img: "/images/products/fp-980-3b.png",
+        accent: "#06b6d4",
+        categoryId: "ground-station",
+        paramImg: null,
+        video: null,
+        highlightCount: 4,
+        specCount: 8,
+        applicationCount: 3,
+    },
+    "fp-980-3c": {
+        id: "fp-980-3c",
+        img: "/images/products/fp-980-3c.png",
+        accent: "#06b6d4",
+        categoryId: "ground-station",
+        paramImg: null,
+        video: null,
+        highlightCount: 4,
+        specCount: 8,
+        applicationCount: 3,
+    },
+    "uav-ocs": {
+        id: "uav-ocs",
+        img: "/images/products/uav-ocs.png",
+        accent: "#10b981",
+        categoryId: "control-system",
+        paramImg: null,
+        video: null,
+        highlightCount: 4,
+        specCount: 8,
+        applicationCount: 3,
+    },
+};
+
+// ─── Helpers ──────────────────────────────────────────────────────────────────
+
+export const allProductIds = productCategories.flatMap((cat) => cat.productIds);
+
+export const getCategoryForProduct = (productId: string): CategoryConfig | undefined =>
+    productCategories.find((cat) => cat.productIds.includes(productId));
+
+export const getCategoryAccent = (categoryId: string): string =>
+    productCategories.find((c) => c.id === categoryId)?.accent ?? "#00d2ff";
