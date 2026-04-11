@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Cookie, Shield, BarChart3, Megaphone, ChevronDown, X, Check } from "lucide-react";
+import { Cookie, Shield, BarChart3, Megaphone, ChevronDown, Check } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import type { ConsentPreferences } from "../hooks/useCookieConsent";
 

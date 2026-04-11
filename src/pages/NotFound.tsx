@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useNavigate, Link } from "react-router-dom";
-import { Home, ArrowLeft, Search, Compass } from "lucide-react";
+import { Home, ArrowLeft, Compass } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 

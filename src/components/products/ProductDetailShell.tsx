@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, ChevronLeft } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { Breadcrumbs } from "./Breadcrumbs";
 import type { TranslatedProduct, TranslatedCategory } from "../../hooks/useProducts";
 
 interface ProductDetailShellProps {
@@ -13,7 +12,7 @@ interface ProductDetailShellProps {
     children: React.ReactNode;
 }
 
-export const ProductDetailShell = ({ product, categories, allProducts, onBack, onNavigate, children }: ProductDetailShellProps) => {
+export const ProductDetailShell = ({ product, categories, onBack, onNavigate, children }: ProductDetailShellProps) => {
     const { t } = useTranslation("products");
 
     // Category for this product
