@@ -49,7 +49,7 @@ export const CompanyProfile = ({ reducedMotion = false }: CompanyProfileProps) =
                             <motion.button
                                 whileHover={reducedMotion ? {} : { scale: 1.03 }}
                                 whileTap={reducedMotion ? {} : { scale: 0.97 }}
-                                className="group inline-flex items-center px-6 py-3 rounded-full font-semibold text-black bg-white hover:shadow-[0_0_25px_rgba(255,255,255,0.25)] transition-shadow duration-300 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aero-blue"
+                                className="group inline-flex items-center px-6 py-3 rounded-full font-semibold text-black bg-white hover:shadow-[0_0_25px_rgba(255,255,255,0.25)] transition-shadow duration-300 text-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aero-blue"
                             >
                                 {t("profile.btnProducts")}
                                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
@@ -59,7 +59,7 @@ export const CompanyProfile = ({ reducedMotion = false }: CompanyProfileProps) =
                             <motion.button
                                 whileHover={reducedMotion ? {} : { scale: 1.03 }}
                                 whileTap={reducedMotion ? {} : { scale: 0.97 }}
-                                className="inline-flex items-center px-6 py-3 rounded-full font-medium text-gray-300 border border-white/15 hover:border-white/30 hover:text-white transition-all duration-300 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/40"
+                                className="inline-flex items-center px-6 py-3 rounded-full font-medium text-gray-300 border border-white/15 hover:border-white/30 hover:text-white transition-all duration-300 text-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/40"
                             >
                                 {t("profile.btnApps")}
                             </motion.button>

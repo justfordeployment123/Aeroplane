@@ -6,18 +6,13 @@ import { useTranslation } from "react-i18next";
 
 // Non-translatable config: icons, colors — stays in TS
 const featureConfig = [
-    { icon: Calendar,    accent: "#00d2ff" },
-    { icon: Users,       accent: "#a855f7" },
+    { icon: Calendar, accent: "#00d2ff" },
+    { icon: Users, accent: "#a855f7" },
     { icon: GraduationCap, accent: "#10b981" },
-    { icon: TrendingUp,  accent: "#f97316" },
+    { icon: TrendingUp, accent: "#f97316" },
 ];
 
-const statsConfig = [
-    { icon: Award },
-    { icon: ShieldCheck },
-    { icon: CheckCircle2 },
-    { icon: Clock },
-];
+const statsConfig = [{ icon: Award }, { icon: ShieldCheck }, { icon: CheckCircle2 }, { icon: Clock }];
 
 const processColors = ["#00d2ff", "#a855f7", "#10b981", "#f97316"];
 
@@ -27,18 +22,31 @@ const panelConfig = [
 ];
 
 const floatingBadges = [
-    { x: "12%", y: "35%", text: "AOPA",   delay: 0 },
+    { x: "12%", y: "35%", text: "AOPA", delay: 0 },
     { x: "85%", y: "30%", text: "88-90%", delay: 1 },
-    { x: "78%", y: "65%", text: "500+",   delay: 2 },
+    { x: "78%", y: "65%", text: "500+", delay: 2 },
 ];
 
-interface StatItem   { value: string; label: string }
-interface StepItem   { step: string; title: string; desc: string }
-interface FeatureItem { title: string; desc: string }
-interface PanelItem  { title: string; sub: string }
+interface StatItem {
+    value: string;
+    label: string;
+}
+interface StepItem {
+    step: string;
+    title: string;
+    desc: string;
+}
+interface FeatureItem {
+    title: string;
+    desc: string;
+}
+interface PanelItem {
+    title: string;
+    sub: string;
+}
 
 /* ── 3D Feature Card ── */
-const FeatureCard3D = ({ feature, config, idx }: { feature: FeatureItem; config: typeof featureConfig[number]; idx: number }) => {
+const FeatureCard3D = ({ feature, config, idx }: { feature: FeatureItem; config: (typeof featureConfig)[number]; idx: number }) => {
     const ref = useRef<HTMLDivElement>(null);
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
@@ -64,7 +72,10 @@ const FeatureCard3D = ({ feature, config, idx }: { feature: FeatureItem; config:
             <motion.div
                 ref={ref}
                 onMouseMove={handleMouse}
-                onMouseLeave={() => { mouseX.set(0); mouseY.set(0); }}
+                onMouseLeave={() => {
+                    mouseX.set(0);
+                    mouseY.set(0);
+                }}
                 style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
                 className="group relative h-full"
             >
@@ -72,7 +83,10 @@ const FeatureCard3D = ({ feature, config, idx }: { feature: FeatureItem; config:
                     className="relative rounded-3xl overflow-hidden h-full"
                     style={{ background: "#181826", border: `1px solid ${config.accent}15` }}
                 >
-                    <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: `linear-gradient(90deg, transparent, ${config.accent}, transparent)` }} />
+                    <div
+                        className="absolute top-0 left-0 right-0 h-[2px]"
+                        style={{ background: `linear-gradient(90deg, transparent, ${config.accent}, transparent)` }}
+                    />
                     <div
                         className="absolute top-4 right-5 text-[80px] font-black leading-none pointer-events-none select-none"
                         style={{ color: `${config.accent}06`, transform: "translateZ(-20px)" }}
@@ -102,21 +116,23 @@ const FeatureCard3D = ({ feature, config, idx }: { feature: FeatureItem; config:
 export const TrainingCenter = () => {
     const { t } = useTranslation("training");
 
-    const stats   = t("stats",            { returnObjects: true }) as StatItem[];
-    const steps   = t("process.steps",    { returnObjects: true }) as StepItem[];
-    const features = t("features.items",  { returnObjects: true }) as FeatureItem[];
-    const panels  = t("panels",           { returnObjects: true }) as PanelItem[];
+    const stats = t("stats", { returnObjects: true }) as StatItem[];
+    const steps = t("process.steps", { returnObjects: true }) as StepItem[];
+    const features = t("features.items", { returnObjects: true }) as FeatureItem[];
+    const panels = t("panels", { returnObjects: true }) as PanelItem[];
 
     return (
         <div className="min-h-screen text-white font-sans" style={{ background: "#161622" }}>
-
             {/* ── Hero ── */}
             <section className="relative h-[65vh] min-h-[520px] flex items-center justify-center overflow-hidden">
                 <div
                     className="absolute inset-0 bg-cover bg-center"
                     style={{ backgroundImage: "url('/images/banners/training-hero.png')", filter: "brightness(0.22) saturate(1.4)" }}
                 />
-                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, #161622 10%, rgba(22,22,34,0.7) 55%, transparent 100%)" }} />
+                <div
+                    className="absolute inset-0"
+                    style={{ background: "linear-gradient(to top, #161622 10%, rgba(22,22,34,0.7) 55%, transparent 100%)" }}
+                />
 
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full border border-aero-blue/[0.06] z-[1]" />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] rounded-full border border-aero-purple/[0.06] z-[1]" />
@@ -155,7 +171,11 @@ export const TrainingCenter = () => {
                     <span className="text-[10px] uppercase tracking-[0.3em] text-gray-500">{t("hero.scroll")}</span>
                     <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity }}>
                         <div className="w-5 h-8 border border-white/20 rounded-full flex justify-center pt-1.5">
-                            <motion.div className="w-1 h-1 bg-aero-blue rounded-full" animate={{ y: [0, 10, 0], opacity: [1, 0.3, 1] }} transition={{ duration: 2, repeat: Infinity }} />
+                            <motion.div
+                                className="w-1 h-1 bg-aero-blue rounded-full"
+                                animate={{ y: [0, 10, 0], opacity: [1, 0.3, 1] }}
+                                transition={{ duration: 2, repeat: Infinity }}
+                            />
                         </div>
                     </motion.div>
                 </motion.div>
@@ -185,7 +205,11 @@ export const TrainingCenter = () => {
                                         whileHover={{ rotateY: 10, scale: 1.05 }}
                                         transition={{ duration: 0.3 }}
                                         className="relative rounded-2xl p-6"
-                                        style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", transformStyle: "preserve-3d" }}
+                                        style={{
+                                            background: "rgba(255,255,255,0.02)",
+                                            border: "1px solid rgba(255,255,255,0.06)",
+                                            transformStyle: "preserve-3d",
+                                        }}
                                     >
                                         <Icon size={20} className="mx-auto mb-3 text-aero-blue/60 group-hover:text-aero-blue transition-colors" />
                                         <div className="text-3xl font-black text-white mb-1">{stat.value}</div>
@@ -212,7 +236,12 @@ export const TrainingCenter = () => {
                             boxShadow: "0 0 80px rgba(0,210,255,0.05)",
                         }}
                     >
-                        {["top-5 left-5 border-t-2 border-l-2", "top-5 right-5 border-t-2 border-r-2", "bottom-5 left-5 border-b-2 border-l-2", "bottom-5 right-5 border-b-2 border-r-2"].map((cls, i) => (
+                        {[
+                            "top-5 left-5 border-t-2 border-l-2",
+                            "top-5 right-5 border-t-2 border-r-2",
+                            "bottom-5 left-5 border-b-2 border-l-2",
+                            "bottom-5 right-5 border-b-2 border-r-2",
+                        ].map((cls, i) => (
                             <div key={i} className={`absolute w-6 h-6 ${cls} border-aero-blue/30`} />
                         ))}
                         <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl mx-auto mb-8 bg-aero-blue/10 border border-aero-blue/25">
@@ -221,9 +250,7 @@ export const TrainingCenter = () => {
                         {/* Split on <highlight> tag for styled span */}
                         <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
                             {t("intro.body").split("<highlight>")[0]}
-                            <span className="text-aero-blue font-semibold">
-                                {t("intro.body").split("<highlight>")[1]?.split("</highlight>")[0]}
-                            </span>
+                            <span className="text-aero-blue font-semibold">{t("intro.body").split("<highlight>")[1]?.split("</highlight>")[0]}</span>
                             {t("intro.body").split("</highlight>")[1]}
                         </p>
                     </motion.div>
@@ -315,8 +342,13 @@ export const TrainingCenter = () => {
                                 style={{ transformStyle: "preserve-3d" }}
                             >
                                 <div className="flex items-center gap-4 mb-5">
-                                    <p className="text-[10px] font-bold tracking-[0.2em] uppercase" style={{ color: panelConfig[i].accent }}>{panel.sub}</p>
-                                    <div className="h-px flex-1" style={{ background: `linear-gradient(to right, ${panelConfig[i].accent}40, transparent)` }} />
+                                    <p className="text-[10px] font-bold tracking-[0.2em] uppercase" style={{ color: panelConfig[i].accent }}>
+                                        {panel.sub}
+                                    </p>
+                                    <div
+                                        className="h-px flex-1"
+                                        style={{ background: `linear-gradient(to right, ${panelConfig[i].accent}40, transparent)` }}
+                                    />
                                 </div>
                                 <div
                                     className="relative rounded-3xl overflow-hidden"
@@ -325,7 +357,10 @@ export const TrainingCenter = () => {
                                         boxShadow: `0 30px 60px -15px rgba(0,0,0,0.6), 0 0 40px -10px ${panelConfig[i].accent}10`,
                                     }}
                                 >
-                                    <div className="absolute top-0 inset-x-0 h-[1px]" style={{ background: `linear-gradient(90deg, transparent, ${panelConfig[i].accent}40, transparent)` }} />
+                                    <div
+                                        className="absolute top-0 inset-x-0 h-[1px]"
+                                        style={{ background: `linear-gradient(90deg, transparent, ${panelConfig[i].accent}40, transparent)` }}
+                                    />
                                     <div className="p-6 bg-[#1c1c2a]">
                                         <h2 className="text-2xl font-bold text-white mb-4">{panel.title}</h2>
                                         <img
@@ -345,7 +380,13 @@ export const TrainingCenter = () => {
 
             {/* ── Course Features ── */}
             <section className="py-24 relative overflow-hidden" style={{ background: "#111119" }}>
-                <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0,210,255,0.5) 1px, transparent 0)`, backgroundSize: "40px 40px" }} />
+                <div
+                    className="absolute inset-0 opacity-[0.02]"
+                    style={{
+                        backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0,210,255,0.5) 1px, transparent 0)`,
+                        backgroundSize: "40px 40px",
+                    }}
+                />
                 <div className="max-w-7xl mx-auto px-6 relative z-10">
                     <motion.div initial={{ y: 20 }} whileInView={{ y: 0 }} viewport={{ once: true, margin: "200px 0px" }} className="mb-16">
                         <div className="flex items-center gap-3 mb-4">

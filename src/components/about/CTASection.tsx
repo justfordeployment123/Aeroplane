@@ -48,7 +48,7 @@ export const CTASection = ({ reducedMotion = false }: CTASectionProps) => {
                             <motion.button
                                 whileHover={reducedMotion ? {} : { scale: 1.04 }}
                                 whileTap={reducedMotion ? {} : { scale: 0.97 }}
-                                className="group px-9 py-3.5 bg-white text-black font-bold rounded-full hover:shadow-[0_0_35px_rgba(255,255,255,0.25)] transition-shadow duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aero-blue"
+                                className="group px-9 py-3.5 bg-white text-black font-bold rounded-full hover:shadow-[0_0_35px_rgba(255,255,255,0.25)] transition-shadow duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aero-blue"
                             >
                                 <span className="flex items-center gap-2">
                                     {t("cta.btnProducts")}
@@ -60,7 +60,7 @@ export const CTASection = ({ reducedMotion = false }: CTASectionProps) => {
                             <motion.button
                                 whileHover={reducedMotion ? {} : { scale: 1.03 }}
                                 whileTap={reducedMotion ? {} : { scale: 0.97 }}
-                                className="px-9 py-3.5 border border-white/15 text-gray-300 hover:text-white hover:border-white/30 font-medium rounded-full transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/40"
+                                className="px-9 py-3.5 border border-white/15 text-gray-300 hover:text-white hover:border-white/30 font-medium rounded-full transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/40"
                             >
                                 {t("cta.btnTraining")}
                             </motion.button>
