@@ -19,7 +19,7 @@ export const ProductsNav = ({
 }: ProductsNavProps) => {
     return (
         <div
-            className="sticky top-[72px] z-40 border-b"
+            className="sticky top-[85px] z-40 border-b"
             style={{
                 background: "rgba(22,22,34,0.92)",
                 backdropFilter: "blur(20px)",
