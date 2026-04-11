@@ -88,7 +88,7 @@ export const Navbar = () => {
 
                     {/* Desktop actions */}
                     <div className="hidden md:flex items-center space-x-6 text-gray-300">
-                        <Search className="w-5 h-5 hover:text-aero-blue cursor-pointer transition-colors" />
+                        {/* <Search className="w-5 h-5 hover:text-aero-blue cursor-pointer transition-colors" /> */}
 
                         {/* Language switcher */}
                         <div className="relative">
