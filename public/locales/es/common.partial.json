@@ -1,0 +1,40 @@
+{
+    "cookies": {
+        "bannerLabel": "Consentimiento de cookies",
+        "title": "Usamos cookies",
+        "description": "Usamos cookies para mejorar tu experiencia, analizar el tráfico y personalizar el contenido. Puedes gestionar tus preferencias a continuación.",
+        "managePreferences": "Gestionar preferencias",
+        "required": "Obligatoria",
+        "acceptAll": "Aceptar todas",
+        "declineAll": "Rechazar todas",
+        "savePreferences": "Guardar preferencias",
+        "policyNote": "Al aceptar, estás de acuerdo con nuestra",
+        "privacyPolicy": "Política de privacidad",
+        "necessary": {
+            "title": "Necesarias",
+            "desc": "Imprescindibles para el funcionamiento del sitio web. No se pueden desactivar."
+        },
+        "analytics": {
+            "title": "Analíticas",
+            "desc": "Nos ayudan a entender cómo los visitantes interactúan con el sitio (p. ej. visitas a páginas, fuentes de tráfico)."
+        },
+        "marketing": {
+            "title": "Marketing",
+            "desc": "Se utilizan para mostrar anuncios relevantes y medir la eficacia de las campañas."
+        }
+    },
+    "notFound": {
+        "tag": "Página no encontrada",
+        "title": "Perdido en el espacio aéreo",
+        "subtitle": "La página que buscas no existe o ha sido movida. Volvamos a la ruta correcta.",
+        "goBack": "Volver atrás",
+        "goHome": "Ir al inicio",
+        "quickLinks": "O ir directamente a",
+        "links": {
+            "products": "Productos",
+            "applications": "Aplicaciones",
+            "training": "Formación",
+            "about": "Acerca de"
+        }
+    }
+}

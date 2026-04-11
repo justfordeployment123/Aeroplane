@@ -1,0 +1,40 @@
+{
+    "cookies": {
+        "bannerLabel": "Cookie consent",
+        "title": "We use cookies",
+        "description": "We use cookies to improve your experience, analyze traffic, and personalize content. You can manage your preferences below.",
+        "managePreferences": "Manage preferences",
+        "required": "Required",
+        "acceptAll": "Accept all",
+        "declineAll": "Decline all",
+        "savePreferences": "Save preferences",
+        "policyNote": "By accepting, you agree to our",
+        "privacyPolicy": "Privacy Policy",
+        "necessary": {
+            "title": "Necessary",
+            "desc": "Essential for the website to function. Cannot be disabled."
+        },
+        "analytics": {
+            "title": "Analytics",
+            "desc": "Help us understand how visitors interact with the site (e.g. page views, referrers)."
+        },
+        "marketing": {
+            "title": "Marketing",
+            "desc": "Used to show relevant ads and measure campaign effectiveness."
+        }
+    },
+    "notFound": {
+        "tag": "Page not found",
+        "title": "Lost in the airspace",
+        "subtitle": "The page you're looking for doesn't exist or has been moved. Let's get you back on course.",
+        "goBack": "Go back",
+        "goHome": "Go home",
+        "quickLinks": "Or jump to",
+        "links": {
+            "products": "Products",
+            "applications": "Applications",
+            "training": "Training",
+            "about": "About"
+        }
+    }
+}

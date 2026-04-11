@@ -1,0 +1,40 @@
+{
+    "cookies": {
+        "bannerLabel": "Cookie-Einwilligung",
+        "title": "Wir verwenden Cookies",
+        "description": "Wir verwenden Cookies, um Ihre Erfahrung zu verbessern, den Datenverkehr zu analysieren und Inhalte zu personalisieren. Sie können Ihre Einstellungen unten verwalten.",
+        "managePreferences": "Einstellungen verwalten",
+        "required": "Erforderlich",
+        "acceptAll": "Alle akzeptieren",
+        "declineAll": "Alle ablehnen",
+        "savePreferences": "Einstellungen speichern",
+        "policyNote": "Mit dem Akzeptieren stimmen Sie unserer",
+        "privacyPolicy": "Datenschutzerklärung zu",
+        "necessary": {
+            "title": "Notwendig",
+            "desc": "Unverzichtbar für den Betrieb der Website. Kann nicht deaktiviert werden."
+        },
+        "analytics": {
+            "title": "Analyse",
+            "desc": "Helfen uns zu verstehen, wie Besucher mit der Website interagieren (z. B. Seitenaufrufe, Verweisquellen)."
+        },
+        "marketing": {
+            "title": "Marketing",
+            "desc": "Werden verwendet, um relevante Werbung anzuzeigen und die Wirksamkeit von Kampagnen zu messen."
+        }
+    },
+    "notFound": {
+        "tag": "Seite nicht gefunden",
+        "title": "Im Luftraum verloren",
+        "subtitle": "Die gesuchte Seite existiert nicht oder wurde verschoben. Finden wir den richtigen Kurs zurück.",
+        "goBack": "Zurück",
+        "goHome": "Zur Startseite",
+        "quickLinks": "Oder direkt zu",
+        "links": {
+            "products": "Produkte",
+            "applications": "Anwendungen",
+            "training": "Training",
+            "about": "Über uns"
+        }
+    }
+}
