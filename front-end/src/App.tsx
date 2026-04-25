@@ -15,26 +15,32 @@ import { ContactPage } from "./pages/ContactPage";
 import { ScenarioDetail } from "./pages/ScenarioDetail";
 import { NotFound } from "./pages/NotFound";
 
+// Admin
+import { AdminAuthProvider } from "./hooks/useAdminAuth";
+import ProtectedAdminRoute from "./components/ProtectedAdminRoute";
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
+
 // Scroll to top on every route change
 const ScrollToTop = () => {
     const { pathname } = useLocation();
-    useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
     return null;
 };
 
-// Layout shell — wraps all real pages with Navbar + Footer
+// Layout shell — wraps all public pages with Navbar + Footer
 const Layout = () => (
     <div className="min-h-screen bg-aero-dark font-sans text-white selection:bg-aero-blue selection:text-black">
         <Navbar />
-        <Outlet />   {/* child route renders here */}
+        <Outlet />
         <Footer />
     </div>
 );
 
 function App() {
-    const [introComplete, setIntroComplete] = useState(
-        () => sessionStorage.getItem("intro-seen") === "true"
-    );
+    const [introComplete, setIntroComplete] = useState(() => sessionStorage.getItem("intro-seen") === "true");
 
     const handleIntroComplete = useCallback(() => {
         sessionStorage.setItem("intro-seen", "true");
@@ -47,25 +53,35 @@ function App() {
             {!introComplete && <IntroAnimation onComplete={handleIntroComplete} />}
 
             <ErrorBoundary>
-                <Routes>
-                    {/*
-                     * Layout route — Navbar + Footer wrap all children via <Outlet />.
-                     * Any path NOT listed here falls through to the * route below.
-                     */}
-                    <Route element={<Layout />}>
-                        <Route path="/"                  element={<Home />} />
-                        <Route path="/about"             element={<About />} />
-                        <Route path="/economy"           element={<LowAltitudeEconomy />} />
-                        <Route path="/applications"      element={<ApplicationsPage />} />
-                        <Route path="/applications/:id"  element={<ScenarioDetail />} />
-                        <Route path="/products"          element={<ProductsPage />} />
-                        <Route path="/training"          element={<TrainingCenter />} />
-                        <Route path="/contact"           element={<ContactPage />} />
-                    </Route>
+                {/* AdminAuthProvider wraps everything so any component can access auth state */}
+                <AdminAuthProvider>
+                    <Routes>
+                        {/* ── Public pages (Navbar + Footer) ─────────────── */}
+                        <Route element={<Layout />}>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/about" element={<About />} />
+                            <Route path="/economy" element={<LowAltitudeEconomy />} />
+                            <Route path="/applications" element={<ApplicationsPage />} />
+                            <Route path="/applications/:id" element={<ScenarioDetail />} />
+                            <Route path="/products" element={<ProductsPage />} />
+                            <Route path="/training" element={<TrainingCenter />} />
+                            <Route path="/contact" element={<ContactPage />} />
+                        </Route>
 
-                    {/* 404 — outside Layout, so NO Navbar or Footer */}
-                    <Route path="*" element={<NotFound />} />
-                </Routes>
+                        {/* ── Admin login (no Navbar / Footer) ───────────── */}
+                        <Route path="/admin/login" element={<AdminLogin />} />
+
+                        {/* ── Protected admin area ────────────────────────── */}
+                        <Route element={<ProtectedAdminRoute />}>
+                            <Route path="/admin/dashboard" element={<AdminDashboard />} />
+                            {/* add more admin routes here, e.g.: */}
+                            {/* <Route path="/admin/users"     element={<AdminUsers />} /> */}
+                        </Route>
+
+                        {/* ── 404 ────────────────────────────────────────── */}
+                        <Route path="*" element={<NotFound />} />
+                    </Routes>
+                </AdminAuthProvider>
             </ErrorBoundary>
         </Router>
     );
