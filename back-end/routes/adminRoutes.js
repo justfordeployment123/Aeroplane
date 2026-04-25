@@ -41,7 +41,7 @@ const sendToken = (res, admin, statusCode) => {
 // One-time route to create the FIRST superadmin.
 // Disabled automatically once any admin exists.
 // ────────────────────────────────────────────────────────────────────────────
-router.post("/setup", async (req, res) => {
+router.post("/setup", async (req, res, next) => {
     try {
         const existingCount = await Admin.countDocuments();
         if (existingCount > 0) {
@@ -76,6 +76,7 @@ router.post("/setup", async (req, res) => {
                 message: `${field} is already taken`,
             });
         }
+        console.log("Error in /setup:", err);
         res.status(500).json({ success: false, message: err.message });
     }
 });
