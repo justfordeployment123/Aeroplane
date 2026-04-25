@@ -1,4 +1,7 @@
-import { useState, useCallback, useEffect } from "react";
+// App.tsx — add /admin/products to the protected admin routes
+// Only showing the diff-relevant section; merge into your existing App.tsx
+
+import { useState, useEffect, useCallback } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation, Outlet } from "react-router-dom";
 
 import { Navbar } from "./components/Navbar";
@@ -20,8 +23,8 @@ import { AdminAuthProvider } from "./hooks/useAdminAuth";
 import ProtectedAdminRoute from "./components/ProtectedAdminRoute";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
+import AdminProducts from "./pages/AdminProducts"; // ← NEW
 
-// Scroll to top on every route change
 const ScrollToTop = () => {
     const { pathname } = useLocation();
     useEffect(() => {
@@ -30,7 +33,6 @@ const ScrollToTop = () => {
     return null;
 };
 
-// Layout shell — wraps all public pages with Navbar + Footer
 const Layout = () => (
     <div className="min-h-screen bg-aero-dark font-sans text-white selection:bg-aero-blue selection:text-black">
         <Navbar />
@@ -41,7 +43,6 @@ const Layout = () => (
 
 function App() {
     const [introComplete, setIntroComplete] = useState(() => sessionStorage.getItem("intro-seen") === "true");
-
     const handleIntroComplete = useCallback(() => {
         sessionStorage.setItem("intro-seen", "true");
         setIntroComplete(true);
@@ -53,10 +54,9 @@ function App() {
             {!introComplete && <IntroAnimation onComplete={handleIntroComplete} />}
 
             <ErrorBoundary>
-                {/* AdminAuthProvider wraps everything so any component can access auth state */}
                 <AdminAuthProvider>
                     <Routes>
-                        {/* ── Public pages (Navbar + Footer) ─────────────── */}
+                        {/* ── Public pages ─────────────────── */}
                         <Route element={<Layout />}>
                             <Route path="/" element={<Home />} />
                             <Route path="/about" element={<About />} />
@@ -68,17 +68,16 @@ function App() {
                             <Route path="/contact" element={<ContactPage />} />
                         </Route>
 
-                        {/* ── Admin login (no Navbar / Footer) ───────────── */}
+                        {/* ── Admin login ───────────────────── */}
                         <Route path="/admin/login" element={<AdminLogin />} />
 
-                        {/* ── Protected admin area ────────────────────────── */}
+                        {/* ── Protected admin area ─────────── */}
                         <Route element={<ProtectedAdminRoute />}>
                             <Route path="/admin/dashboard" element={<AdminDashboard />} />
-                            {/* add more admin routes here, e.g.: */}
-                            {/* <Route path="/admin/users"     element={<AdminUsers />} /> */}
+                            <Route path="/admin/products" element={<AdminProducts />} /> {/* ← NEW */}
                         </Route>
 
-                        {/* ── 404 ────────────────────────────────────────── */}
+                        {/* ── 404 ──────────────────────────── */}
                         <Route path="*" element={<NotFound />} />
                     </Routes>
                 </AdminAuthProvider>

@@ -8,6 +8,9 @@ const rateLimit = require("express-rate-limit");
 
 const adminRoutes = require("./routes/adminRoutes");
 
+const userProductsRouter = require("./routes/userProducts");
+const adminProductsRouter = require("./routes/adminProducts");
+
 const app = express();
 
 // ── Security headers ──────────────────────────────────────────────────────────
@@ -53,6 +56,16 @@ app.get("/api/health", (req, res) => res.json({ status: "ok" }));
 app.use((req, res) => {
     res.status(404).json({ success: false, message: "Route not found" });
 });
+
+// ── Add to your main server.js / app.js ───────────────────────────────────────
+// Install the new dependency first:
+//   npm install cloudinary multer
+
+// Public – no auth
+app.use("/api/user/products", userProductsRouter);
+
+// Protected – uses protect middleware internally
+app.use("/api/admin/products", adminProductsRouter);
 
 // Global error handler
 app.use((err, req, res, next) => {
