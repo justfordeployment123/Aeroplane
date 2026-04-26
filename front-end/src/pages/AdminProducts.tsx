@@ -62,11 +62,10 @@ const EMPTY_FORM = {
 };
 
 const CATEGORIES = [
-    { id: "uav", label: "UAV Systems" },
-    { id: "uav-accessories", label: "UAV Accessories" },
-    { id: "counter-uav", label: "Counter-UAV" },
-    { id: "ground-robot", label: "Ground Robots" },
-    { id: "charging", label: "Charging Solutions" },
+    { id: "uav", label: "UAV" },
+    { id: "special", label: "Special Aircraft" },
+    { id: "ground-station", label: "Ground Control Station" },
+    { id: "control-system", label: "UAVs Control System" },
 ];
 
 const API = import.meta.env.VITE_API_URL ?? "";
@@ -268,7 +267,7 @@ const SpecList = ({ specs, onChange }: { specs: Spec[]; onChange: (v: Spec[]) =>
                     value={s.value}
                     placeholder="Value"
                     onChange={(e) => {
-                    const n = [...specs];
+                        const n = [...specs];
                         n[i] = { ...n[i], value: e.target.value };
                         onChange(n);
                     }}

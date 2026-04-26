@@ -13,28 +13,19 @@ const Product = require("../models/Product");
 const CATEGORY_META = {
     uav: {
         order: 1,
-        accent: "#00D2FF",
-        defaultAccent: "#00D2FF",
+        accent: "#00d2ff",
     },
-    "uav-accessories": {
+    special: {
         order: 2,
-        accent: "#A78BFA",
-        defaultAccent: "#A78BFA",
+        accent: "#a855f7",
     },
-    "counter-uav": {
+    "ground-station": {
         order: 3,
-        accent: "#F87171",
-        defaultAccent: "#F87171",
+        accent: "#06b6d4",
     },
-    "ground-robot": {
+    "control-system": {
         order: 4,
-        accent: "#34D399",
-        defaultAccent: "#34D399",
-    },
-    charging: {
-        order: 5,
-        accent: "#FBBF24",
-        defaultAccent: "#FBBF24",
+        accent: "#10b981",
     },
 };
 

@@ -19,7 +19,7 @@ const productSchema = new mongoose.Schema(
         categoryId: {
             type: String,
             required: true,
-            enum: ["uav", "uav-accessories", "counter-uav", "ground-robot", "charging"],
+            enum: ["uav", "special", "ground-station", "control-system"],
         },
         accent: { type: String, default: "#00D2FF" }, // hex accent colour
 

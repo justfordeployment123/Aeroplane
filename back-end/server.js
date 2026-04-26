@@ -50,12 +50,6 @@ app.use("/api/admin/setup", authLimiter);
 app.use("/api/admin", adminRoutes);
 
 // Health check
-app.get("/api/health", (req, res) => res.json({ status: "ok" }));
-
-// 404 handler
-app.use((req, res) => {
-    res.status(404).json({ success: false, message: "Route not found" });
-});
 
 // ── Add to your main server.js / app.js ───────────────────────────────────────
 // Install the new dependency first:
@@ -66,6 +60,13 @@ app.use("/api/user/products", userProductsRouter);
 
 // Protected – uses protect middleware internally
 app.use("/api/admin/products", adminProductsRouter);
+
+app.get("/api/health", (req, res) => res.json({ status: "ok" }));
+
+// 404 handler
+app.use((req, res) => {
+    res.status(404).json({ success: false, message: "Route not found" });
+});
 
 // Global error handler
 app.use((err, req, res, next) => {

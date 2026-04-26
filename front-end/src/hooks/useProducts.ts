@@ -41,7 +41,7 @@ export interface TranslatedCategory {
 
 // ── Category static metadata (icons + display strings) ───────────────────────
 // Keep visual/structural info here; content lives in DB.
-import { Plane, Puzzle, ShieldAlert, Bot, Zap } from "lucide-react";
+import { Plane, Rocket, MonitorDot, Cpu } from "lucide-react";
 
 const CATEGORY_META: Record<
     string,
@@ -55,38 +55,32 @@ const CATEGORY_META: Record<
 > = {
     uav: {
         icon: Plane,
-        title: "UAV Systems",
+        title: "UAV",
         subtitle: "Unmanned Aerial Vehicles",
-        description: "Professional-grade unmanned aerial vehicles for industrial, commercial and defence applications.",
+        description: "High-performance fixed-wing and multi-rotor platforms engineered for precision logistics.",
         order: 1,
     },
-    "uav-accessories": {
-        icon: Puzzle,
-        title: "UAV Accessories",
-        subtitle: "Components & Payloads",
-        description: "Modular accessories and payload solutions engineered for seamless UAV integration.",
+    special: {
+        icon: Rocket,
+        title: "Special Aircraft",
+        subtitle: "Mission-Critical Platforms",
+        description: "Specialized composite-wing aircraft engineered for demanding operational environments.",
         order: 2,
     },
-    "counter-uav": {
-        icon: ShieldAlert,
-        title: "Counter-UAV",
-        subtitle: "Detection & Neutralisation",
-        description: "Advanced systems for detecting, tracking and neutralising unauthorised drone activity.",
+    "ground-station": {
+        icon: MonitorDot,
+        title: "Ground Control Station",
+        subtitle: "Command & Control Hardware",
+        description: "The Ground Control Station processes tasks through a control console, data link, or satellite communication.",
         order: 3,
     },
-    "ground-robot": {
-        icon: Bot,
-        title: "Ground Robots",
-        subtitle: "Unmanned Ground Vehicles",
-        description: "Rugged unmanned ground vehicles built for surveillance, logistics and hazardous environments.",
+    "control-system": {
+        icon: Cpu,
+        title: "UAVs Control System",
+        subtitle: "Intelligent Flight Software",
+        description:
+            "The Operation Control System provides real-time data and performs control operations such as airspace application and flight mission execution.",
         order: 4,
-    },
-    charging: {
-        icon: Zap,
-        title: "Charging Solutions",
-        subtitle: "Power Infrastructure",
-        description: "Smart charging stations and power management systems for sustained autonomous operations.",
-        order: 5,
     },
 };
 

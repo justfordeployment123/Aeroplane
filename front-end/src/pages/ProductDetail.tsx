@@ -14,7 +14,7 @@ export const ProductDetail = ({
     onBack: () => void;
     onNavigate?: (id: string) => void;
 }) => {
-    const { getProduct, translatedCategories, t } = useProducts();
+    const { getProduct, translatedCategories } = useProducts();
     const product = getProduct(productId);
 
     useEffect(() => {
@@ -24,7 +24,6 @@ export const ProductDetail = ({
     if (!product) return null;
     const accent = product.categoryAccent;
 
-    // Related products: same category, different id
     const relatedProducts = translatedCategories
         .find((cat) => cat.id === product.categoryId)
         ?.products.filter((p) => p.id !== product.id)
@@ -72,12 +71,12 @@ export const ProductDetail = ({
                         backdropFilter: "blur(12px)",
                     }}
                 >
-                    <ArrowLeft size={14} /> {t("detail.back")}
+                    <ArrowLeft size={14} /> Back to Products
                 </motion.button>
 
                 <div className="absolute top-28 right-12 text-[10px] font-mono text-right space-y-1 hidden lg:block" style={{ color: `${accent}40` }}>
                     <motion.div animate={{ opacity: [0.3, 1, 0.3] }} transition={{ duration: 2, repeat: Infinity }}>
-                        {t("detail.systemActive")}
+                        SYS.ACTIVE
                     </motion.div>
                     <div>ID: {product.id.toUpperCase()}</div>
                 </div>
@@ -117,7 +116,7 @@ export const ProductDetail = ({
                             className="flex items-center gap-2 px-6 py-3.5 rounded-full font-bold text-sm text-black"
                             style={{ background: `linear-gradient(135deg, ${accent}, ${accent}bb)`, boxShadow: `0 0 30px ${accent}35` }}
                         >
-                            {t("detail.requestQuote")} <ArrowRight size={16} />
+                            Request a Quote <ArrowRight size={16} />
                         </motion.button>
                     </motion.div>
 
@@ -172,9 +171,9 @@ export const ProductDetail = ({
                 <div className="max-w-7xl mx-auto px-6">
                     <motion.div initial={{ y: 20 }} whileInView={{ y: 0 }} viewport={{ once: true, margin: "200px 0px" }} className="mb-8">
                         <p className="text-xs font-bold tracking-[0.2em] uppercase mb-2" style={{ color: accent }}>
-                            {t("detail.showcase")}
+                            Product Showcase
                         </p>
-                        <h2 className="text-3xl font-black text-white">{t("detail.liveDemo")}</h2>
+                        <h2 className="text-3xl font-black text-white">Live Demonstration</h2>
                     </motion.div>
                     <VideoPlayer src={product.video ?? null} accent={accent} />
                 </div>
@@ -185,9 +184,9 @@ export const ProductDetail = ({
                 <div className="max-w-7xl mx-auto px-6">
                     <motion.div initial={{ y: 20 }} whileInView={{ y: 0 }} viewport={{ once: true, margin: "200px 0px" }} className="mb-8">
                         <p className="text-xs font-bold tracking-[0.2em] uppercase mb-2" style={{ color: accent }}>
-                            {t("detail.coreCapabilities")}
+                            Core Capabilities
                         </p>
-                        <h2 className="text-3xl font-black text-white">{t("detail.keyFeatures")}</h2>
+                        <h2 className="text-3xl font-black text-white">Key Features</h2>
                     </motion.div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                         {product.highlights.map((h: string, i: number) => (
@@ -216,9 +215,9 @@ export const ProductDetail = ({
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
                         <motion.div initial={{ x: -24 }} whileInView={{ x: 0 }} viewport={{ once: true, margin: "200px 0px" }}>
                             <p className="text-xs font-bold tracking-[0.2em] uppercase mb-2" style={{ color: accent }}>
-                                {t("detail.technicalData")}
+                                Technical Data
                             </p>
-                            <h2 className="text-3xl font-black text-white mb-8">{t("detail.mainPerformance")}</h2>
+                            <h2 className="text-3xl font-black text-white mb-8">Main Performance Parameters</h2>
                             <div className="rounded-2xl overflow-hidden border" style={{ borderColor: `${accent}15` }}>
                                 <div
                                     className="flex px-5 py-3 text-[10px] font-bold tracking-widest uppercase"
@@ -246,9 +245,9 @@ export const ProductDetail = ({
 
                         <motion.div initial={{ x: 24 }} whileInView={{ x: 0 }} viewport={{ once: true, margin: "200px 0px" }}>
                             <p className="text-xs font-bold tracking-[0.2em] uppercase mb-2" style={{ color: accent }}>
-                                {t("detail.useCases")}
+                                Use Cases
                             </p>
-                            <h2 className="text-3xl font-black text-white mb-8">{t("detail.applicationScenarios")}</h2>
+                            <h2 className="text-3xl font-black text-white mb-8">Application Scenarios</h2>
                             <div className="space-y-4">
                                 {product.applications.map((app: string, i: number) => (
                                     <motion.div
@@ -315,9 +314,9 @@ export const ProductDetail = ({
                     <div className="max-w-7xl mx-auto px-6">
                         <motion.div initial={{ y: 20 }} whileInView={{ y: 0 }} viewport={{ once: true, margin: "200px 0px" }} className="mb-8">
                             <p className="text-xs font-bold tracking-[0.2em] uppercase mb-2" style={{ color: accent }}>
-                                {t("detail.sameSeries")}
+                                Same Series
                             </p>
-                            <h2 className="text-2xl font-black text-white">{t("detail.relatedProducts")}</h2>
+                            <h2 className="text-2xl font-black text-white">Related Products</h2>
                         </motion.div>
                         <div className={`grid gap-5 grid-cols-1 sm:grid-cols-2 ${relatedProducts.length >= 3 ? "lg:grid-cols-3" : ""}`}>
                             {relatedProducts.map((p: TranslatedProduct, i: number) => (
@@ -348,10 +347,12 @@ export const ProductDetail = ({
                     className="relative z-10 text-center px-6 max-w-2xl mx-auto"
                 >
                     <h2 className="text-4xl font-bold text-white mb-4">
-                        {t("detail.readyToDeploy")}{" "}
+                        Ready to deploy{" "}
                         <span style={{ color: accent }}>{product.name.split(" ")[0]}</span>?
                     </h2>
-                    <p className="text-gray-400 mb-10">{t("detail.ctaSubtitle")}</p>
+                    <p className="text-gray-400 mb-10">
+                        Contact our specialists for custom configurations and enterprise solutions tailored to your mission profile.
+                    </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <motion.button
                             whileHover={{ scale: 1.05 }}
@@ -359,7 +360,7 @@ export const ProductDetail = ({
                             className="group px-10 py-4 bg-white text-black font-bold rounded-full hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] transition-all duration-300"
                         >
                             <span className="flex items-center gap-2">
-                                {t("detail.requestQuote")} <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                Request a Quote <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </span>
                         </motion.button>
                         <motion.button
@@ -368,7 +369,7 @@ export const ProductDetail = ({
                             whileTap={{ scale: 0.98 }}
                             className="px-10 py-4 border border-white/15 text-gray-300 hover:text-white hover:border-white/30 font-medium rounded-full transition-all duration-300"
                         >
-                            {t("detail.browseAll")}
+                            Browse All Products
                         </motion.button>
                     </div>
                 </motion.div>
