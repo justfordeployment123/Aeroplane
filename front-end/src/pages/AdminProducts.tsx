@@ -10,7 +10,6 @@ import {
     ChevronUp,
     ChevronDown,
     X,
-    Upload,
     Loader2,
     AlertCircle,
     CheckCircle2,

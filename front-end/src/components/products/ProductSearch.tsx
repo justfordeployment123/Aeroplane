@@ -31,7 +31,7 @@ export const ProductSearch = ({ allProducts, categories, onSelect }: ProductSear
                           p.name.toLowerCase().includes(q) ||
                           p.tag.toLowerCase().includes(q) ||
                           p.description.toLowerCase().includes(q) ||
-                          p.categoryTitle.toLowerCase().includes(q) ||
+                        //   p.categoryTitle.toLowerCase().includes(q) ||
                           p.highlights.some((h) => h.toLowerCase().includes(q))
                       );
                   })

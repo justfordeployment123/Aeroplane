@@ -1,21 +1,22 @@
 {
-  "name": "aeroplane",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/justfordeployment123/Aeroplane.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/justfordeployment123/Aeroplane/issues"
-  },
-  "homepage": "https://github.com/justfordeployment123/Aeroplane#readme"
+    "name": "aeroplane",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "npm run build --prefix front-end && npm run build --prefix back-end"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/justfordeployment123/Aeroplane.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "bugs": {
+        "url": "https://github.com/justfordeployment123/Aeroplane/issues"
+    },
+    "homepage": "https://github.com/justfordeployment123/Aeroplane#readme"
 }
