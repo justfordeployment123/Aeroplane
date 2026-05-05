@@ -72,9 +72,14 @@ const API = import.meta.env.VITE_API_URL ?? "";
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
 const apiFetch = async (path: string, opts: RequestInit = {}) => {
+    const token = localStorage.getItem("adminToken");
     const res = await fetch(`${API}${path}`, {
         credentials: "include",
-        headers: { "Content-Type": "application/json", ...(opts.headers ?? {}) },
+        headers: {
+            "Content-Type": "application/json",
+            ...(token ? { Authorization: `Bearer ${token}` } : {}),
+            ...(opts.headers ?? {}),
+        },
         ...opts,
     });
     const data = await res.json();
@@ -126,9 +131,11 @@ const ImgUploader = ({ label, value, folder, onChange }: ImgUploaderProps) => {
             formData.append("image", file);
             formData.append("folder", folder);
 
+            const token = localStorage.getItem("adminToken");
             const res = await fetch(`${API}/admin/products/upload-image`, {
                 method: "POST",
                 credentials: "include",
+                headers: token ? { Authorization: `Bearer ${token}` } : undefined,
                 body: formData,
             });
             const data = await res.json();

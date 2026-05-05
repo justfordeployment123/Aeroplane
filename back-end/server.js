@@ -13,6 +13,9 @@ const adminProductsRouter = require("./routes/adminProducts");
 
 const app = express();
 
+// Trust the first proxy hop (nginx) so X-Forwarded-For is honored for rate-limit/IP logging
+app.set("trust proxy", 1);
+
 // ── Security headers ──────────────────────────────────────────────────────────
 app.use(helmet());
 
