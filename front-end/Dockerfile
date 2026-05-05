@@ -28,7 +28,7 @@ ARG VITE_API_URL
 ENV VITE_API_URL=$VITE_API_URL
 
 COPY package.json package-lock.json ./
-RUN npm ci
+RUN npm ci --include=dev
 
 COPY . .
 RUN npx vite build
